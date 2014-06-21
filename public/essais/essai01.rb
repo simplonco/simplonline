@@ -1,3 +1,3 @@
 def app(name)
-  puts "hello world"
+  "hello world"
 end
