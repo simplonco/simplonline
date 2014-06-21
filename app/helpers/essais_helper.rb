@@ -1,0 +1,2 @@
+module EssaisHelper
+end
