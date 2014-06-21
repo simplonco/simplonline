@@ -1,0 +1,14 @@
+= link_to "Nouvel essai ?", new_essai_path, class: "small button radius"
+
+%table
+  %thead
+    %tr
+      %th Essai numéro
+      / %th Exercice
+      %th Réussi
+  %tbody
+    - @essais.each do |essai|
+      %tr
+        %td= essai.id
+        / %td= essai.excercice_id
+        %td= essai.status ? "WIN" : "LOOSE"

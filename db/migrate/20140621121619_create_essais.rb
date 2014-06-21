@@ -1,7 +1,7 @@
 class CreateEssais < ActiveRecord::Migration
   def change
     create_table :essais do |t|
-      t.text :content
+      t.string :fichier
       t.boolean :status
       t.belongs_to :exercice
 

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140621121619) do
 
   create_table "essais", force: true do |t|
-    t.text     "content"
+    t.string   "fichier"
     t.boolean  "status"
     t.integer  "exercice_id"
     t.datetime "created_at"

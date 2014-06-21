@@ -1,0 +1,7 @@
+%h3 Nouvel essai
+%br
+
+= form_for(@essai) do |f|
+  = f.select :exercice_id, Exercice.all.collect { |p| [ p.id ] }
+  = f.file_field :fichier
+  = f.submit class: "small button radius"
