@@ -6,6 +6,6 @@ one:
   expected_output: MyString
 
 two:
-  consigne: MyString
-  input: MyString
-  expected_output: MyString
+  consigne: Créez une fonction qui retourne "Hello (name)"
+  input: Emilien
+  expected_output: Hello Emilien

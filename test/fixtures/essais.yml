@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  content: MyString
-  status: MyString
-
 two:
-  content: MyString
-  status: MyString
+  content: "essai01"
+  exercice: two
+
+three:
+  content: "essai02"
+  exercice: two
