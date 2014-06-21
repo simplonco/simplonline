@@ -1,28 +1,12 @@
-== README
+== Sensei App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Plateforme de correction d'exercices à distance de Simplon.co
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Principe
+  - les simploniens présentitels définissent des exercices lors de la restitution du Vendredi.
+  - 2 semaines plus tard, les élèves à distance recoivent l'exercice sur leur tableau de bord.
+  - il soumettent leurs essais sous forme de fichiers, que la plateforme valide ou non. 
+
+Fonctionnalités terminées
+  - Vérification d'un fichier selon un input pré-défini
