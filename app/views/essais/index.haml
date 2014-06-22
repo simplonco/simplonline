@@ -1,14 +1,14 @@
-= link_to "Nouvel essai ?", new_essai_path, class: "small button radius"
+= link_to "Nouvel exercice ?", new_exercice_path, class: "button radius small"
 
-%table
-  %thead
-    %tr
-      %th Essai numéro
-      / %th Exercice
-      %th Réussi
-  %tbody
-    - @essais.each do |essai|
-      %tr
-        %td= essai.id
-        / %td= essai.excercice_id
-        %td= essai.status ? "WIN" : "LOOSE"
+.row 
+  .columns
+    - @exercices.each do |exo|
+      %h4
+        = "Exercice : #{exo.id} | #{exo.consigne}"
+      - exo.essais.each do |essai|
+        .columns.small-6
+          = "Essai : #{essai.id}"
+        .columns.small-6
+          = essai.status ? "WIN" : "LOOSE"
+      = link_to "Nouvel essai ?", new_essai_path, class: "small button radius"
+      

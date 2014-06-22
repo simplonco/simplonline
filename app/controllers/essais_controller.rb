@@ -1,6 +1,7 @@
 class EssaisController < ApplicationController
   def index
     @essais = Essai.all
+    @exercices = Exercice.all
   end
 
   def new
