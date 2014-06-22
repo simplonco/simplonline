@@ -1,0 +1,9 @@
+.columns
+  = form_for(@exercice) do |exo|
+    = exo.label :consigne
+    = exo.text_area :consigne
+    = exo.label :input
+    = exo.text_area :input
+    = exo.label :expected_output
+    = exo.text_area :expected_output
+    = exo.submit

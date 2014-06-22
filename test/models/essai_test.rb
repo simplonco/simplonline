@@ -14,4 +14,8 @@ class EssaiTest < ActiveSupport::TestCase
     essais(:hello_name).run
     assert_equal true, essais(:hello_name).status
   end
+  
+  test "charge_un_essai" do
+    assert_equal "#{Rails.root}/public/essais/2/essai2", essais(:hello_name).load_file
+  end
 end

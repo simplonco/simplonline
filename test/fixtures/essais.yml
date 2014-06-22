@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 hello_world:
-  content: "essai01"
+  id: 1
+  fichier: "essai1"
   exercice: two
 
 hello_name:
-  content: "essai02"
+  id: 2
+  fichier: 'def app(name); "Hello #{name}"; end'
   exercice: two
