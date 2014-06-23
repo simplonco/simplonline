@@ -1,5 +1,6 @@
-
 source 'https://rubygems.org'
+
+ruby '2.1.2'
 
 gem 'rails', '4.1.1'
 gem 'sqlite3'
@@ -20,8 +21,5 @@ group :development do
   gem 'spring'
   gem 'rails-clean-logs'
   gem 'pry-rescue'
-  gem 'jazz_hands' 
 end
-
-
 
