@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   root 'essais#index'
   resources :essais
   resources :exercices
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

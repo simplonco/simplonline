@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'foreman'
+
 gem 'carrierwave'
 gem 'foundation-rails'
 gem 'font-awesome-sass'
