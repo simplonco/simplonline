@@ -8,6 +8,7 @@ mount_uploader :fichier, FichierUploader
   def run  
     require File.path("#{Rails.root}/public#{self.fichier_url}")
     self.fichier
+    
     if app(self.exercice.input) == self.exercice.expected_output.to_i
       self.status = true
     else
