@@ -15,9 +15,7 @@ class EssaisController < ApplicationController
 
   def create
     @essai = Essai.create(essai_params)
-    @essai.load_file
-    @essai.run
-    @essai.save
+    Verificateur.perform_async(@essai.id)
     redirect_to root_path
   end
 
