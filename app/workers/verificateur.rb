@@ -3,8 +3,8 @@ class Verificateur
 
   def perform(essai_id)
     essai = Essai.find(essai_id)
-    output = `sudo docker run -v #{Rails.root}/public/essai_sample:/opt/essai_sample:ro litaio/ruby ruby -Iopt/essai_sample -e "require 'essai02'; puts app('#{essai.exercice.input}')"`
-    
+    # FAKE essai02 !!
+    output = `sudo docker run -v #{essai.dossier}:/opt/dossier_essai:ro litaio/ruby ruby -Iopt/dossier_essai -e "require 'essai02'; puts app('#{essai.exercice.input}')"`
     if output.strip == essai.exercice.expected_output
       essai.status = true
     else
