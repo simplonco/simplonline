@@ -3,12 +3,9 @@ class Verificateur
 
   def perform(essai_id)
     essai = Essai.find(essai_id)
-
-    essai_contenu = File.open("#{Rails.root}/public#{essai.fichier_url}", "r").read
-
-    output = `sudo docker run litaio/ruby /bin/echo -n "#{essai_contenu}" > test && bin/bash`
-    #ruby -I. -e "require 'test'; app(#{essai.exercice.input})`
-    if output == essai.exercice.expected_output
+    output = `sudo docker run -v #{Rails.root}/public/essai_sample:/opt/essai_sample:ro litaio/ruby ruby -Iopt/essai_sample -e "require 'essai02'; puts app('#{essai.exercice.input}')"`
+    
+    if output.strip == essai.exercice.expected_output
       essai.status = true
     else
       essai.status = false
