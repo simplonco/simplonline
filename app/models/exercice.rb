@@ -1,3 +1,3 @@
 class Exercice < ActiveRecord::Base
-  has_many :essais
+  has_many :essais, dependent: :destroy
 end
