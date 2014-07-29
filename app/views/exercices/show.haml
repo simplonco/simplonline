@@ -1,0 +1,11 @@
+%h1= "Exercice #{@exercice.id}"
+%p= @exercice.consigne
+%p= @exercice.echantillon
+%small
+  Format de réponse attendu : 
+  = @exercice.format_reponse
+%h3
+  Vous devez obtenir la réponse suivante ! 
+  = @exercice.reponse
+= link_to "Soumettre un essai", new_exercice_essai_path(@exercice.id), class: "small button"  
+

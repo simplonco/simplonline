@@ -5,11 +5,11 @@ class ExercicesController < ApplicationController
 
   def create
     @exercice = Exercice.create(exercice_params)
-    redirect_to root_path
+    redirect_to exercice_path @exercice
   end
 
   def show
-    
+    @exercice = Exercice.find(params[:id])
   end
 
   def edit

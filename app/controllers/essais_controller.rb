@@ -5,18 +5,19 @@ class EssaisController < ApplicationController
   end
 
   def new
-    @essai = Essai.new
+    @exercice = Exercice.find(params[:exercice_id])
+    @essai = @exercice.essais.new
   end
 
   def show
     @essai = Essai.find(params[:id])
-
   end
 
   def create
-    @essai = Essai.create(essai_params)
+    @exercice = Exercice.find(params[:exercice_id])
+    @essai = @exercice.essais.create(essai_params)
     Verificateur.perform_async(@essai.id)
-    redirect_to root_path
+    redirect_to exercice_path(@essai.exercice.id)
   end
 
   def update
@@ -24,7 +25,7 @@ class EssaisController < ApplicationController
 
 private
   def essai_params
-    params.require(:essai).permit(:fichier, :exercice_id, :validateur)
+    params.require(:essai).permit(:fichier, :exercice_id, :validateur, :fichier_tests, :reponse_char)
   end
 
 end

@@ -1,7 +1,16 @@
 %h3 Nouvel essai
 %br
-
-= form_for(@essai) do |f|
-  = f.select :exercice_id, Exercice.all.collect { |p| [ p.id ] }
-  = f.file_field :fichier
+= form_for(@essai, url: exercice_essais_path(@essai.exercice)) do |f|
+  - case @essai.exercice.format_reponse
+  - when 1 || 2
+    = f.text_area :reponse_char
+  - when 3
+    = f.file_field :fichier
+  - when 4
+    = f.label :fichier
+    = f.file_field :fichier
+    = f.label :fichier_tests
+    = f.file_field :fichier_tests 
+  - when 5 
+    = f.file_field :fichier_tests
   = f.submit class: "small button radius"
