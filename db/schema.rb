@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729124958) do
+ActiveRecord::Schema.define(version: 20140729145855) do
 
   create_table "essais", force: true do |t|
     t.string   "fichier"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140729124958) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "format_reponse"
+    t.string   "titre"
   end
 
 end
