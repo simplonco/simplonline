@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621121619) do
+ActiveRecord::Schema.define(version: 20140729092227) do
 
   create_table "essais", force: true do |t|
     t.string   "fichier"
@@ -19,14 +19,16 @@ ActiveRecord::Schema.define(version: 20140621121619) do
     t.integer  "exercice_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "validateur"
   end
 
   create_table "exercices", force: true do |t|
     t.text     "consigne"
-    t.text     "input"
-    t.text     "expected_output"
+    t.text     "echantillon"
+    t.text     "reponse"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "format_reponse"
   end
 
 end

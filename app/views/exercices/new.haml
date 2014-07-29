@@ -2,8 +2,10 @@
   = form_for(@exercice) do |exo|
     = exo.label :consigne
     = exo.text_area :consigne
-    = exo.label :input
-    = exo.text_area :input
-    = exo.label :expected_output
-    = exo.text_area :expected_output
+    = exo.label :echantillon
+    = exo.text_area :echantillon
+    = exo.label :format_reponse
+    = exo.select :format_reponse, [['Text/chiffre', 1], ['JSON', 2], ['Programme', 3], ['Programme + tests', 4], ['Tests', 5]]
+    = exo.label :reponse
+    = exo.text_area :reponse
     = exo.submit

@@ -24,7 +24,7 @@ class EssaisController < ApplicationController
 
 private
   def essai_params
-    params.require(:essai).permit(:fichier, :exercice_id)
+    params.require(:essai).permit(:fichier, :exercice_id, :validateur)
   end
 
 end

@@ -7,5 +7,5 @@ one:
 
 two:
   consigne: Créez une fonction qui retourne "Hello (name)"
-  input: Emilien
-  expected_output: Hello Emilien
+  echantillon: Emilien
+  reponse: Hello Emilien
