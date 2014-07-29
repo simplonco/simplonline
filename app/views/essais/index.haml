@@ -3,12 +3,16 @@
 .row 
   .columns
     - @exercices.each do |exo|
-      %h4
-        = link_to "Exercice : #{exo.id} | #{exo.titre}", exercice_path(exo)
+      %h4= link_to "Exercice #{exo.id} | #{exo.titre}", exercice_path(exo)
       - exo.essais.last(5).each do |essai|
-        .columns.small-6
-          = "Essai : #{essai.id}"
-        .columns.small-6
-          = essai.status ? "WIN" : "LOOSE"
-      = link_to "Nouvel essai ?", new_exercice_essai_path(exo.id), class: "tiny button radius"
+        %hr
+        .columns.small-3
+          = "Essai n°#{essai.id}"
+        .columns.small-1
+          = essai.status ? icon('check-square-o', '', class: "fa-list-essai") : icon('square-o', '', class: "fa-list-essai")
+        .columns.small-1
+          = link_to(icon('eye', '', class: "fa-list-essai"))
+      .columns
+        %br
+        = link_to "Nouvel essai ?", new_exercice_essai_path(exo.id), class: "tiny button radius"
       

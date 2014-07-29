@@ -1,1 +1,12 @@
-= link_to "Nouvel essai", new_essai_path, class: "button"
+%h3 Détail de l'essai
+%br
+- case @essai.exercice.format_reponse
+- when 1 || 2
+  =  @essai.reponse_char
+- when 3
+  = @essai.fichier
+- when 4
+  = @essai.fichier
+  = @essai.fichier_tests 
+- when 5 
+  = @essai.fichier_tests
