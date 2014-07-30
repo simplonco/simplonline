@@ -20,6 +20,7 @@ gem 'carrierwave'
 gem 'foundation-rails'
 gem 'font-awesome-sass'
 gem 'haml'
+gem 'omniauth-browserid'
 
 group :development do
   gem 'spring'
