@@ -1,14 +1,16 @@
 .columns
-  %h2 Votre nouvel exercice : 
+  %h2 Votre nouvel exercice 
   %br
   = form_for(@exercice) do |exo|
     = exo.label :titre, class: "label"
     = exo.text_field :titre
     = exo.label :consigne, class: "label"
     = exo.text_area :consigne
+    = exo.label :format_echantillon, class: "label"
+    = exo.select :format_echantillon, [['String', 1], ['JSON', 2]]
     = exo.label :echantillon, class: "label"
     = exo.text_area :echantillon
-    = exo.label :format_reponse, "Type d'exercice", class: "label"
+    = exo.label :format_reponse, "Format de réponse", class: "label"
     = exo.select :format_reponse, [['Text/chiffre', 1], ['JSON', 2], ['Programme', 3], ['Programme + tests', 4], ['Tests', 5]]
     = exo.label :reponse, "Réponse attendue", class: "label"
     = exo.text_area :reponse

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730104959) do
+ActiveRecord::Schema.define(version: 20140731161124) do
 
   create_table "essais", force: true do |t|
     t.string   "fichier"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 20140730104959) do
     t.text     "validateur"
     t.text     "reponse_char"
     t.string   "fichier_tests"
+    t.integer  "utilisateur_id"
   end
+
+  add_index "essais", ["utilisateur_id"], name: "index_essais_on_utilisateur_id"
 
   create_table "exercices", force: true do |t|
     t.text     "consigne"
@@ -32,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140730104959) do
     t.datetime "updated_at"
     t.integer  "format_reponse"
     t.string   "titre"
+    t.string   "format_echantillon"
   end
 
   create_table "utilisateurs", force: true do |t|
@@ -40,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140730104959) do
     t.string   "provider"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",      default: false
   end
 
 end

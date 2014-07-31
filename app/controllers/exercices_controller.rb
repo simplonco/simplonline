@@ -1,4 +1,8 @@
 class ExercicesController < ApplicationController
+  def index
+    @exercices = Exercice.all
+    @essais = utilisateur_actuel.essais
+  end
   def new
     @exercice = Exercice.new
   end
@@ -10,6 +14,7 @@ class ExercicesController < ApplicationController
 
   def show
     @exercice = Exercice.find(params[:id])
+    @essais = Essai.where(exercice_id: @exercice.id, utilisateur_id: utilisateur_actuel)
   end
 
   def edit
@@ -20,6 +25,6 @@ class ExercicesController < ApplicationController
 
   private
   def exercice_params
-    params.require(:exercice).permit(:consigne, :validateur, :format_reponse, :echantillon, :reponse)
+    params.require(:exercice).permit(:consigne, :validateur, :format_reponse, :format_echantillon, :echantillon, :reponse)
   end
 end

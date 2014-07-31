@@ -1,8 +1,4 @@
 class EssaisController < ApplicationController
-  def index
-    @essais = Essai.all
-    @exercices = Exercice.all
-  end
 
   def new
     @exercice = Exercice.find(params[:exercice_id])
@@ -11,22 +7,28 @@ class EssaisController < ApplicationController
 
   def show
     @essai = Essai.find(params[:id])
-    @afficher_fichier = File.open "exercice/#{@essai.exercice.id}/user/essai/#{@essai.id}"
+    #TODO
+    #@afficher_essai = File.open(@essai.fichier) if @essai.exercice.format_reponse == 3 || 4 || 5
   end
 
   def create
     @exercice = Exercice.find(params[:exercice_id])
-    @essai = @exercice.essais.create(essai_params)
+    @essai = @exercice.essais.new(essai_params)
+    @essai.utilisateur_id = utilisateur_actuel.id
+    @essai.save
     Verificateur.perform_async(@essai.id)
     redirect_to exercice_path(@essai.exercice.id)
   end
 
   def update
   end
+  
+  def accueil
+  end
 
 private
   def essai_params
-    params.require(:essai).permit(:fichier, :exercice_id, :validateur, :fichier_tests, :reponse_char)
+    params.require(:essai).permit(:fichier, :exercice_id, :utilisateur_id, :validateur, :fichier_tests, :reponse_char)
   end
 
 end
