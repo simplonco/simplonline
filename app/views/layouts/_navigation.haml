@@ -1,13 +1,13 @@
 %br
 %nav
   - if utilisateur_actuel
-    = link_to "Bonjour #{utilisateur_actuel.nom}", edit_utilisateur_path, title: 'Modifier mon nom'
+    = link_to "#{utilisateur_actuel.nom}", edit_utilisateur_path, title: 'Modifier mon nom'
     |
     = link_to 'Déconnexion', deconnexion_path
   - else
     %form{:id => 'browser_id_form', :action => '/auth/browser_id/callback'}
       %input{:type => 'hidden', :name => 'assertion'}/
       %button{:type => 'submit', :class => 'small radius secondary'}
-        Se connecter avec Persona
+        Connectez-vous avec Persona
 %br
 

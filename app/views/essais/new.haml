@@ -1,4 +1,8 @@
-%h3 Nouvel essai
+%h3 
+  Nouvel essai
+  = "pour l'exercice #{@essai.exercice.id} | #{@essai.exercice.titre}"
+.label Rappel de la consigne
+%blockquote= @essai.exercice.consigne
 %br
 = form_for(@essai, url: exercice_essais_path(@essai.exercice)) do |f|
   - case @essai.exercice.format_reponse
@@ -14,3 +18,4 @@
   - when 5 
     = f.file_field :fichier_tests
   = f.submit class: "small button radius"
+  = link_to "Revenir à l'exercice", exercice_path(@essai.exercice.id), class: "small button radius"  

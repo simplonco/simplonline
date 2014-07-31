@@ -1,19 +1,32 @@
-%h1= "Exercice #{@exercice.id}"
-%p= @exercice.consigne
-%p= @exercice.echantillon
-%small
-  Format de réponse attendu : 
-  = @exercice.format_reponse
-%h3
-  Vous devez obtenir la réponse suivante ! 
-  = @exercice.reponse
+%h2= "Exercice #{@exercice.id} | #{@exercice.titre}"
+.label Consigne de l'exercice
+%blockquote= @exercice.consigne
+.label A partie de l'échantillon suivant
+%blockquote= @exercice.echantillon
+.label Format de réponse attendu :
+- case @exercice.format_reponse
+  - when 1
+    %blockquote Un champs texte OU un nombre
+  - when 2
+    %blockquote Un JSON
+  - when 3
+    %blockquote Un fichier programme à uploader
+  - when 4
+    %blockquote Un fichier programme ET un fichier test
+  - when 5
+    %blockquote Un fichier test à uploader
+.label Vous devez obtenir la réponse suivante
+%blockquote= @exercice.reponse
+%hr
 - if @essais
-  %h3 Essais soumis
+  %h3 Vos essais
   - @essais.each do |essai|
-    .columns.small-6
-      = "Essai : #{essai.id}"
-    .columns.small-6
+    .columns.small-3
+      = "Essai #{essai.id}"
+    .columns.small-3
       = essai.status ? "WIN" : "LOOSE"
-
-= link_to "Soumettre un essai", new_exercice_essai_path(@exercice.id), class: "small button radius"  
+%br
+%hr
+= link_to "Nouvel essai ?", new_exercice_essai_path(@exercice.id), class: "small button radius"
+= link_to "Revenir à l'accueil", exercices_path, class: "small button radius"  
 
