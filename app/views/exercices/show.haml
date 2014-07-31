@@ -7,12 +7,13 @@
 %h3
   Vous devez obtenir la réponse suivante ! 
   = @exercice.reponse
-%h3 Essais soumis
-- @exercice.essais.each do |essai|
-  .columns.small-6
-    = "Essai : #{essai.id}"
-  .columns.small-6
-    = essai.status ? "WIN" : "LOOSE"
+- if @essais
+  %h3 Essais soumis
+  - @essais.each do |essai|
+    .columns.small-6
+      = "Essai : #{essai.id}"
+    .columns.small-6
+      = essai.status ? "WIN" : "LOOSE"
 
 = link_to "Soumettre un essai", new_exercice_essai_path(@exercice.id), class: "small button radius"  
 

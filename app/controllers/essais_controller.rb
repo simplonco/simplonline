@@ -7,7 +7,6 @@ class EssaisController < ApplicationController
 
   def show
     @essai = Essai.find(params[:id])
-    @afficher_fichier = File.open "exercice/#{@essai.exercice.id}/user/essai/#{@essai.id}"
   end
 
   def create

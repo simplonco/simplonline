@@ -14,6 +14,7 @@ class ExercicesController < ApplicationController
 
   def show
     @exercice = Exercice.find(params[:id])
+    @essais = Essai.where(exercice_id: @exercice.id, utilisateur_id: utilisateur_actuel)
   end
 
   def edit
