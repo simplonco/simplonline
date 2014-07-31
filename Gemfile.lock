@@ -50,6 +50,8 @@ GEM
     dotenv-deployment (0.0.2)
     erubis (2.7.0)
     execjs (2.2.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
     foreman (0.74.0)
@@ -60,6 +62,7 @@ GEM
       sass (>= 3.2.0)
     haml (4.0.5)
       tilt
+    hashie (3.2.0)
     hike (1.2.3)
     i18n (0.6.9)
     interception (0.5)
@@ -77,6 +80,14 @@ GEM
     mime-types (1.25.1)
     minitest (5.3.5)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-browserid (0.0.1)
+      faraday
+      multi_json
+      omniauth (~> 1.0)
     polyglot (0.3.5)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -170,6 +181,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  omniauth-browserid
   pry-rescue
   rails (= 4.1.1)
   rails-clean-logs

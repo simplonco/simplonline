@@ -1,0 +1,7 @@
+%h1 Modifier mon nom d'utilisateur
+= form_for @utilisateur do |f|
+  = f.text_field :nom
+  = f.submit 'Enregistrer', class: 'button small success radius'
+  ou
+  = link_to 'Annuler', root_url
+

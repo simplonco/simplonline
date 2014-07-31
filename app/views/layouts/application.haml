@@ -1,0 +1,22 @@
+!!!
+%html{:lang => 'fr'}
+  %head
+    %meta{:charset => 'utf-8'}/  
+    %meta{:name => 'viewport', :content => 'width=device-width', 'initial-scale' => '1.0'}
+    %title= content_for?(:title) ? yield(:title) : 'Simplonline'
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'vendor/modernizer'
+    %script{:src => 'https://login.persona.org/include.js', :type => 'text/javascript'}
+    = csrf_meta_tags
+  %body
+    .medium-8.medium-centered.columns
+      = render 'layouts/navigation'
+      -# display alerts and notices
+      - if flash[:alert]
+        %p.flash-error= "» #{flash[:alert]}"
+      - if flash[:notice]
+        %p.flash-notice= "» #{flash[:notice]}"
+      = yield
+    = javascript_include_tag 'application'
+    = render 'layouts/login'
+
