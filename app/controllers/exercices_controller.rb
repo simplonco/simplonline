@@ -1,4 +1,8 @@
 class ExercicesController < ApplicationController
+  def index
+    @exercices = Exercice.all
+    @essais = utilisateur_actuel.essais
+  end
   def new
     @exercice = Exercice.new
   end

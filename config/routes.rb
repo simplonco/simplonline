@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'essais#index'
+  root 'essais#accueil'
+  get 'essais/accueil'
   
   get '/auth/:provider/callback' => 'sessions#create'
   get 'deconnexion' => 'sessions#destroy'
