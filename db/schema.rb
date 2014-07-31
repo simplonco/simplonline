@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731125955) do
+ActiveRecord::Schema.define(version: 20140731161124) do
 
   create_table "essais", force: true do |t|
     t.string   "fichier"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140731125955) do
     t.datetime "updated_at"
     t.integer  "format_reponse"
     t.string   "titre"
+    t.string   "format_echantillon"
   end
 
   create_table "utilisateurs", force: true do |t|

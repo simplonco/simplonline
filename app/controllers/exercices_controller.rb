@@ -25,6 +25,6 @@ class ExercicesController < ApplicationController
 
   private
   def exercice_params
-    params.require(:exercice).permit(:consigne, :validateur, :format_reponse, :echantillon, :reponse)
+    params.require(:exercice).permit(:consigne, :validateur, :format_reponse, :format_echantillon, :echantillon, :reponse)
   end
 end
