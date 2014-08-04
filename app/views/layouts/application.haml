@@ -1,24 +1,32 @@
 !!!
 %html{:lang => 'fr'}
   %head
-    %meta{:charset => 'utf-8'}/  
+    %meta{:charset => 'utf-8'}
     %meta{:name => 'viewport', :content => 'width=device-width', 'initial-scale' => '1.0'}
     %title= content_for?(:title) ? yield(:title) : 'Simplonline'
     = stylesheet_link_tag 'application'
-    = stylesheet_link_tag 'vendor/modernizer'
     %script{:src => 'https://login.persona.org/include.js', :type => 'text/javascript'}
     = csrf_meta_tags
   %body
-    .columns.left
-      = render 'layouts/navigation'
-    .medium-8.medium-centered.columns
-      .columns
-        -# display alerts and notices
-        - if flash[:alert]
-          %p.label.flash-error= "» #{flash[:alert]}"
-        - if flash[:notice]
-          %p.label.flash-notice= "» #{flash[:notice]}"
+    %nav.columns.left
+      - if utilisateur_actuel
+        = link_to "#{utilisateur_actuel.nom}", edit_utilisateur_path, title: 'Modifier mon nom'
+        |
+        = link_to 'Déconnexion', deconnexion_path
+      - else
+        %form{:id => 'browser_id_form', :action => '/auth/browser_id/callback'}
+          %input{:type => 'hidden', :name => 'assertion'}/
+          %button{:type => 'submit', :class => 'small radius secondary'}
+            Connectez-vous avec Persona
+
+    .notification
+      - if flash[:alert]
+        %p.label.flash-error= "» #{flash[:alert]}"
+      - if flash[:notice]
+        %p.label.flash-notice= "» #{flash[:notice]}"
+    %main
       = yield
+
     = javascript_include_tag 'application'
     = render 'layouts/login'
 
