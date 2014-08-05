@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ExerciceTest < ActiveSupport::TestCase
-  test "une_consigne_existe" do
-    assert_equal "a", exercices(:one).consigne 
+  test "valid factory" do
+    assert_equal true, FactoryGirl.build(:exercice).valid?
   end
 end

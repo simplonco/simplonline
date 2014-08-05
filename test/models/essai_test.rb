@@ -2,17 +2,17 @@ require 'test_helper'
 
 class EssaiTest < ActiveSupport::TestCase
 
-  test "un_essai_faux_renvoi_faux" do
-    assert_equal false, essais(:hello_world).run
+  test "valid factory" do
+    assert_equal true, FactoryGirl.build(:essai).valid?
   end
 
-  test "un_essai_vrai_renvoi_vrai" do
-    assert_equal true, essais(:hello_name).run
+  test "invalid without exercice" do
+    assert_equal true, FactoryGirl.build(:essai, exercice: nil).invalid?
   end
 
-  test "un_essai_vrai_renvoi_un_statut_vrai" do
-    essais(:hello_name).run
-    assert_equal true, essais(:hello_name).status
+  test "return a dossier" do
+    essai = FactoryGirl.create(:essai)
+    expected_dir = "#{Rails.root}/public/exercice/#{essai.exercice.id}/user/essai/#{essai.id}"
+    assert_equal expected_dir, essai.dossier
   end
-
 end

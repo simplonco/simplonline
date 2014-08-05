@@ -30,5 +30,6 @@ group :development do
   gem 'spring'
   gem 'rails-clean-logs'
   gem 'pry-rescue'
+  gem 'factory_girl_rails'
 end
 
