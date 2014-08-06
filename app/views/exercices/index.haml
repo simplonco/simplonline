@@ -1,5 +1,6 @@
 = link_to("Nouvel exercice ?", new_exercice_path, class: "button radius small") if utilisateur_actuel.admin == true
-.row 
+
+.row
   .columns
     - @exercices.each do |exo|
       %h4= link_to "Exercice #{exo.id} | #{exo.titre}", exercice_path(exo)

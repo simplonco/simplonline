@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :utilisateur_actuel
 
   private
+
   def utilisateur_actuel
     @utilisateur_actuel ||= Utilisateur.find(session[:utilisateur_id]) if session[:utilisateur_id]
   end

@@ -8,16 +8,19 @@
     %script{:src => 'https://login.persona.org/include.js', :type => 'text/javascript'}
     = csrf_meta_tags
   %body
+    %header
+      %h1= t('.title')
+
     %nav.columns.left
       - if utilisateur_actuel
-        = link_to "#{utilisateur_actuel.nom}", edit_utilisateur_path, title: 'Modifier mon nom'
+        = link_to "#{utilisateur_actuel.nom.capitalize}", edit_utilisateur_path, title: t('.update_login')
         |
-        = link_to 'Déconnexion', deconnexion_path
+        = link_to t('.logout'), deconnexion_path
       - else
         %form{:id => 'browser_id_form', :action => '/auth/browser_id/callback'}
           %input{:type => 'hidden', :name => 'assertion'}/
           %button{:type => 'submit', :class => 'small radius secondary'}
-            Connectez-vous avec Persona
+            = t('.login')
 
     .notification
       - if flash[:alert]

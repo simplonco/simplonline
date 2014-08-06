@@ -1,0 +1,30 @@
+fr:
+  layouts:
+    application:
+      title: F.O.A.D. Simplon.co
+      login: Se connecter
+      update_login: Mon compte
+      logout: Se déconnecter
+  utilisateurs:
+    edit:
+      title: Modifier mon compte
+      user_name: Nom
+      cancel: Annuler
+      submit: Mettre à jour
+  essais:
+    accueil:
+      title: Bienvenue sur Simplonline
+      explain: "Simplonline va beaucoup plus loin qu’un CLOM/MOOC (Cours en Ligne Ouvert Massivement / Massive Open Online Courses) et place d'emblée la barre très haut puisqu'il s'agit bel et bien de disposer des mêmes conditions de formation que les apprenants physiquement présents à Montreuil, mais en ligne et à distance, en français.
+
+
+Simplonline est éligible au Droit Individuel à la Formation (DIF) et au Plan de formation car Simplon.co est enregistré en tant qu’organisme de formation sous le numéro 11 93 06676 93.
+
+
+Curriculum et approche pédagogique :
+
+
+* Mise en condition de 1 mois sur les fondamentaux hardware (matériels) et software (logiciels, protocoles) pour partir tous ensemble sur de bonnes bases et s'assurer une progression pédagogique rapide pour la suite
+
+* 5 mois restants : accompagnement pas-à-pas à l’apprentissage de langages de présentation et de balisage (HTML et CSS), de la programmation orientée objet (Ruby, Python, Java, Go, Javascript), fonctionnelle (Haskell, Erlang, Clojure) et des frameworks qui permettent de développer des sites et des applications rapidement (Sinatra, Rails, Snap, React, Meteor...)
+
+* Des défis techniques à vocation pédagogique et des hackathons internes spécifiques réservés aux Simplonien(ne)s"

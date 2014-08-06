@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'essais#accueil'
   get 'essais/accueil'
-  
+
   get '/auth/:provider/callback' => 'sessions#create'
   get 'deconnexion' => 'sessions#destroy'
   get 'utilisateurs/edit' => 'utilisateurs#edit', as: :edit_utilisateur
