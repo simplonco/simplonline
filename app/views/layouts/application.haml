@@ -28,5 +28,22 @@
       = yield
 
     = javascript_include_tag 'application'
-    = render 'layouts/login'
+    :javascript
+      function loginViaEmail() {
+        navigator.id.get(function(assertion) {
+          if (assertion) {
+            $('input[name=assertion]').val(assertion);
+            $('#browser_id_form').submit();
+          } else {
+            console.log('Erreur on login persona')
+          }
+        });
+      }
+      $(function() {
+        $('#browser_id_form button').click(function() {
+          loginViaEmail();
+          return false;
+        });
+      });
+
 
