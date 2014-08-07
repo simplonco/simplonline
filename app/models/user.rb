@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :essais, dependent: :destroy
+
   validates :uid, presence: true
   validates :provider, presence: true
   validates :nom, uniqueness: true
