@@ -1,7 +1,7 @@
 class ExercicesController < ApplicationController
   def index
     @exercices = Exercice.all
-    @essais = utilisateur_actuel.essais
+    @essais = current_user.essais
   end
   def new
     @exercice = Exercice.new
@@ -14,7 +14,7 @@ class ExercicesController < ApplicationController
 
   def show
     @exercice = Exercice.find(params[:id])
-    @essais = Essai.where(exercice_id: @exercice.id, utilisateur_id: utilisateur_actuel)
+    @essais = Essai.where(exercice_id: @exercice.id, user_id: current_user)
   end
 
   def edit

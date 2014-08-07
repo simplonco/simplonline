@@ -5,7 +5,7 @@ fr:
       login: Se connecter
       update_login: Mon compte
       logout: Se déconnecter
-  utilisateurs:
+  users:
     edit:
       title: Modifier mon compte
       user_name: Nom

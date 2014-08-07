@@ -1,4 +1,4 @@
-= link_to("Nouvel exercice ?", new_exercice_path, class: "button radius small") if utilisateur_actuel.admin == true
+= link_to("Nouvel exercice ?", new_exercice_path, class: "button radius small") if current_user.admin == true
 
 .row
   .columns

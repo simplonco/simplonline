@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#create'
   get 'deconnexion' => 'sessions#destroy'
-  get 'utilisateurs/edit' => 'utilisateurs#edit', as: :edit_utilisateur
-  patch 'utilisateurs/edit' => 'utilisateurs#update', as: :utilisateur
+
+  resources :users, only: [:edit, :update]
 
   resources :exercices do
     resources :essais

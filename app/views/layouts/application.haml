@@ -12,8 +12,8 @@
       %h1= t('.title')
 
     %nav.columns.left
-      - if utilisateur_actuel
-        = link_to "#{utilisateur_actuel.nom.capitalize}", edit_utilisateur_path, title: t('.update_login')
+      - if current_user
+        = link_to "#{current_user.nom.capitalize}", edit_user_path(current_user), title: t('.update_login')
         |
         = link_to t('.logout'), deconnexion_path
       - else
