@@ -17,12 +17,16 @@
         |
         = link_to t('.logout'), deconnexion_path
       - else
-        %form{:id => 'browser_id_form', :action => '/auth/browser_id/callback'}
-          %input{:type => 'hidden', :name => 'assertion'}/
-          %button{:type => 'submit', :class => 'small radius secondary'}
-            = t('.login')
+        = form_tag sessions_path do
+          = label_tag :email, t('.email')
+          = email_field_tag :email
+          = label_tag :password, t('.password')
+          = password_field_tag :password
+          = submit_tag t('.login'), class: 'small radius secondary'
 
     .notification
+      - if flash[:error].present?
+        %p.label.flash-error= "» #{flash[:error]}"
       - if flash[:alert]
         %p.label.flash-error= "» #{flash[:alert]}"
       - if flash[:notice]

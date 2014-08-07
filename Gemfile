@@ -25,8 +25,9 @@ gem 'foreman'
 gem 'carrierwave'
 gem 'font-awesome-sass'
 gem 'haml'
-gem 'omniauth-browserid'
 gem 'nested_form'
+
+gem 'bcrypt'
 
 group :development do
   gem 'spring'

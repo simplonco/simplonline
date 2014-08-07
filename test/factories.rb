@@ -8,8 +8,8 @@ FactoryGirl.define do
   end
 
   factory :user do
-    provider "browser_id"
-    uid "12345"
+    password 'truc'
+    password_confirmation 'truc'
   end
 
   factory :qcm do
