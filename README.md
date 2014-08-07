@@ -10,23 +10,10 @@ Sensei App
 * il soumettent leurs essais sous forme de fichiers, que la plateforme valide ou non.
 
 
-### Fonctionnalités terminées
-
-* Vérification d'un fichier selon un input pré-défini
-
-
-### TODO
-
-* définir la convention pour les formats d'input et output
-* virer carrierwave pour stoker le contenu des fichiers d'essais dans la bdd
-* imbriquer les routes exercices essais
-
-
 ## Développement / Déploiement
 
 * Démarrer un serveur redis
-* Démarrer sidekiq `foreman start`
-* Démarrer le serveur rails `rails s`
+* Démarrer sidekiq et rails `foreman start`
 
 
 
