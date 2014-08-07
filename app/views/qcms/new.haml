@@ -1,0 +1,34 @@
+%h1 Créer un nouveu QCM
+
+= nested_form_for @qcm do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.label :desc
+  = f.text_area :desc
+
+  = f.fields_for :questions do |question|
+    = question.label :question_title
+    = question.text_field :title
+    = question.label :choix1
+    = question.text_field :choix1
+    = question.label :choix2
+    = question.text_field :choix2
+    = question.label :choix3
+    = question.text_field :choix3
+    = question.label :choix4
+    = question.text_field :choix4
+    = question.label :choix5
+    = question.text_field :choix5
+    = question.label :choix6
+    = question.text_field :choix6
+    = question.label :choix7
+    = question.text_field :choix7
+    = question.label :choix8
+    = question.text_field :choix8
+    = question.label :choix9
+    = question.text_field :choix9
+    = question.label :valid_answers
+    = question.text_field :valid_answers
+  = f.link_to_add 'Add Q°', :questions
+  = f.submit
+

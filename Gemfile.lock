@@ -84,6 +84,7 @@ GEM
     minitest (5.3.5)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    nested_form (0.3.2)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
@@ -189,6 +190,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  nested_form
   omniauth-browserid
   pry-rescue
   rails (= 4.1.1)

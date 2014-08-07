@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :qcms
+
   root 'essais#accueil'
   get 'essais/accueil'
 

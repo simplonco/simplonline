@@ -26,6 +26,7 @@ gem 'carrierwave'
 gem 'font-awesome-sass'
 gem 'haml'
 gem 'omniauth-browserid'
+gem 'nested_form'
 
 group :development do
   gem 'spring'
