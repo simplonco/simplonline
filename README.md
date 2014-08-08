@@ -15,5 +15,9 @@ Sensei App
 * Démarrer un serveur redis
 * Démarrer sidekiq et rails `foreman start`
 
+`rake db:seed` crée 2 utilisateur, l'un en présentiel, l'autre est un auditeur à distance.
+
+present@simplon.co/present
+distant@simplon.co/distant
 
 
