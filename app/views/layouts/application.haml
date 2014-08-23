@@ -15,7 +15,8 @@
       - if current_user
         = link_to "#{current_user.nom.capitalize}", edit_user_path(current_user), title: t('.update_login')
         |
-        = link_to t('.logout'), deconnexion_path
+        = form_tag session_path, method: 'delete' do
+          = submit_tag t('.logout')
       - else
         = form_tag sessions_path do
           = label_tag :email, t('.email')
