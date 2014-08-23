@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807202119) do
+ActiveRecord::Schema.define(version: 20140823210525) do
 
   create_table "essais", force: true do |t|
     t.string   "fichier"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 20140807202119) do
     t.integer  "format_reponse"
     t.string   "titre"
     t.string   "format_echantillon"
+  end
+
+  create_table "lessons", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "qcms", force: true do |t|

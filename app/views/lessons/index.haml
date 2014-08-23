@@ -1,0 +1,9 @@
+
+%h3
+  = t('.title')
+
+%ul
+  - @lessons.each do |lesson|
+    %li
+      = lesson.title
+

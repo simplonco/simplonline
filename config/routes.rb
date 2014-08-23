@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
   resources :qcms
 
+  resources :lessons
+
   resources :exercices do
     resources :essais
   end

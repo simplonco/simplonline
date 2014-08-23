@@ -1,4 +1,3 @@
-
 FactoryGirl.define do
   factory :essai do
     exercice
@@ -16,6 +15,9 @@ FactoryGirl.define do
   end
 
   factory :question do
+  end
+
+  factory :lesson do
   end
 end
 
