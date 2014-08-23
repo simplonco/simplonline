@@ -1,5 +1,23 @@
 
 %h2
-  Welcome user
-  = @user.nom
-  = @user.email
+  Welcome #{@user.nom}
+
+.last-messages
+  %p
+    Voici les derniers messages sur le forum
+  %ul
+    %li
+      message de Raymond, le 22/9/2014 à 22h34
+      %em
+        non mais c'est quoi ce binzzz
+
+.last-lessons
+  %p
+    Les cours disponibles
+  %ul
+    %li
+      %a{href:'#'}
+        Cours du 4/10/2014
+    %li
+      %a{href:'#'}
+        Cours du 23/9/2014
