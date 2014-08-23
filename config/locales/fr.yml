@@ -11,8 +11,8 @@ fr:
       user_name: Nom
       cancel: Annuler
       submit: Mettre à jour
-  essais:
-    accueil:
+  static:
+    welcome:
       title: Bienvenue sur Simplonline
       explain: "Simplonline va beaucoup plus loin qu’un CLOM/MOOC (Cours en Ligne Ouvert Massivement / Massive Open Online Courses) et place d'emblée la barre très haut puisqu'il s'agit bel et bien de disposer des mêmes conditions de formation que les apprenants physiquement présents à Montreuil, mais en ligne et à distance, en français.
 

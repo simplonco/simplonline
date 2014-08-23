@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'essais#accueil'
+  root 'static#welcome'
+
+  get '/', to: 'static#welcome'
+
+
   get 'essais/accueil'
 
   resources :sessions, only: [:create, :destroy]
