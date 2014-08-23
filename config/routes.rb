@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'essais/accueil'
 
-  resources :sessions, only: [:create, :destroy]
+  resource :sessions, only: [:create, :destroy]
   resources :users, only: [:edit, :update, :show]
   resources :qcms
 

@@ -3,6 +3,8 @@ fr:
     application:
       title: F.O.A.D. Simplon.co
       login: Se connecter
+      email: Email
+      password: Mot de passe
       update_login: Mon compte
       logout: Se déconnecter
   users:
