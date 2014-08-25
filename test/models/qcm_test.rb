@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class QcmTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "have a valid factory" do
+    assert FactoryGirl.build(:qcm).valid?
+  end
 end

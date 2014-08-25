@@ -1,29 +1,38 @@
 require 'test_helper'
 
 class QuestionsControllerTest < ActionController::TestCase
+
+  def setup
+    @qcm = FactoryGirl.create(:qcm)
+  end
+
   test "should get new" do
-    get :new
+    question = FactoryGirl.create(:question)
+    get :new, qcm_id: question.qcm_id, id: question.id
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
+  test "create" do
+    post :create, qcm_id: @qcm.id, question: {title: 'truc'}
+    assert_response :redirect
+  end
+
+  test "delete" do
+    question = FactoryGirl.create(:question)
+    delete :destroy, qcm_id: question.qcm_id, id: question.id
+    assert_response :redirect
+  end
+
+  test "edit" do
+    question = FactoryGirl.create(:question)
+    get :edit, qcm_id: @qcm.id, id: question.id
     assert_response :success
   end
 
-  test "should get delete" do
-    get :delete
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get update" do
-    get :update
-    assert_response :success
+  test "post update" do
+    question = FactoryGirl.create(:question)
+    post :update, qcm_id: question.qcm_id, id: question.id, question: {title: 'truc'}
+    assert_response :redirect
   end
 
 end

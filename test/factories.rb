@@ -15,6 +15,11 @@ FactoryGirl.define do
   end
 
   factory :question do
+    qcm
+  end
+
+  factory :choice do
+    question
   end
 
   factory :lesson do
