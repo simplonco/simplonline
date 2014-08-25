@@ -12,6 +12,7 @@ class QcmsController < ApplicationController
 
   def create
     @qcm = Qcm.create(qcm_params)
+    redirect_to new_qcm_question_path @qcm.id
   end
 
   def edit
@@ -26,22 +27,6 @@ class QcmsController < ApplicationController
   private
   
   def qcm_params
-    params.require(:qcm).permit(:title,
-                                :desc,
-                                questions_attributes: [:id,
-                                                       :title,
-                                                       :desc,
-                                                       :choix1,
-                                                       :choix2,
-                                                       :choix3,
-                                                       :choix4,
-                                                       :choix5,
-                                                       :choix6,
-                                                       :choix7,
-                                                       :choix8,
-                                                       :choix9,
-                                                       :valid_answers,
-                                                       :_destroy,
-                                ])
+    params.require(:qcm).permit(:title, :desc)
   end
 end

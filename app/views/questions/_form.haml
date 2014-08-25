@@ -1,0 +1,17 @@
+- if @question.id.blank?
+  - url = qcm_questions_path(@question.qcm_id)
+- else
+  - url = qcm_question_path(@question.qcm_id, @question.id)
+
+= nested_form_for( @question, url: url ) do |f|
+  = f.label :question_title
+  = f.text_field :title
+
+  = f.fields_for :choices do |choice|
+    = choice.label :content
+    = choice.text_field :content
+    = choice.label :valid_answer
+    = choice.check_box :valid_answer
+  = f.link_to_add "Add a choice", :choices
+  = f.submit
+

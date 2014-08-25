@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823210525) do
+ActiveRecord::Schema.define(version: 20140825130326) do
+
+  create_table "choices", force: true do |t|
+    t.string  "content"
+    t.integer "question_id"
+    t.boolean "valid_answer"
+  end
 
   create_table "essais", force: true do |t|
     t.string   "fichier"
@@ -54,16 +60,6 @@ ActiveRecord::Schema.define(version: 20140823210525) do
   create_table "questions", force: true do |t|
     t.string   "title"
     t.integer  "qcm_id"
-    t.string   "choix1"
-    t.string   "choix2"
-    t.string   "choix3"
-    t.string   "choix4"
-    t.string   "choix5"
-    t.string   "choix6"
-    t.string   "choix7"
-    t.string   "choix8"
-    t.string   "choix9"
-    t.string   "valid_answers"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

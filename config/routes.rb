@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resource :sessions, only: [:create, :destroy]
   resources :users, only: [:edit, :update, :show]
-  resources :qcms
+  resources :qcms do
+    resources :questions
+  end
 
   resources :lessons
 
