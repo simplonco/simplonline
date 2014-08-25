@@ -1,9 +1,2 @@
-%h1 Créer un nouveu QCM
-
-= nested_form_for @qcm do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :desc
-  = f.text_area :desc
-  = f.submit
-
+%h1 Créer un nouveau QCM
+= render 'form'

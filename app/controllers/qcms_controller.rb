@@ -1,6 +1,7 @@
 class QcmsController < ApplicationController
   def show
-
+    @qcm = Qcm.find(params[:id])
+    @questions = @qcm.questions
   end
 
   def index
@@ -16,9 +17,13 @@ class QcmsController < ApplicationController
   end
 
   def edit
+    @qcm = Qcm.find(params[:id])
   end
 
   def update
+    @qcm = Qcm.find(params[:id])
+    @qcm.update(qcm_params)
+    redirect_to qcm_path(@qcm.id)
   end
 
   def delete

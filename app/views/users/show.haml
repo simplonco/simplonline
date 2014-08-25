@@ -23,3 +23,11 @@
         Cours du 23/9/2014
   %p
     = link_to t('.lessons'), lessons_path
+
+.last-qcms
+  %p Les derniers QCMs
+  %ul
+    - @qcms.each do |qcm|
+      %li
+        = link_to qcm.title, qcm_path(qcm.id)
+  = link_to "Créer votre QCM", new_qcm_path

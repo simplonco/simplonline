@@ -12,6 +12,7 @@
     = choice.text_field :content
     = choice.label :valid_answer
     = choice.check_box :valid_answer
-  = f.link_to_add "Add a choice", :choices
+    = choice.link_to_remove "Supprimer ce choix"
+  = f.link_to_add "Ajouter un choix", :choices
   = f.submit
 

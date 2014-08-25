@@ -1,2 +1,14 @@
-<h1>Qcms#show</h1>
-<p>Find me in app/views/qcms/show.html.erb</p>
+%h1
+  = "QCM #{@qcm.id}: #{@qcm.title}"
+  = link_to "Edit", edit_qcm_path(@qcm.id)
+
+.questions
+  %ul
+    - @questions.each do |question|
+      %li
+        = link_to question.id, edit_qcm_question_path(@qcm.id, question.id)
+        = question.title
+        = link_to "Supprimer", qcm_question_path(@qcm.id, question.id), method: :delete
+        
+  = link_to "Ajouter une question", new_qcm_question_path(@qcm.id)
+  
