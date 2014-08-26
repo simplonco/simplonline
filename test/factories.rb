@@ -22,6 +22,11 @@ FactoryGirl.define do
     question
   end
 
+  factory :answer do
+    question
+    user
+  end
+
   factory :lesson do
   end
 end

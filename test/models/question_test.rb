@@ -12,27 +12,27 @@ class QuestionTest < ActiveSupport::TestCase
 
   test "no valid_answers when no choices" do
     question = FactoryGirl.create(:question)
-    assert_equal 0, question.valid_answers
+    assert_equal 0, question.valid_answers.count
   end
 
   test "one valid_answers when one choice" do
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
-    assert_equal 1, question.valid_answers
+    assert_equal 1, question.valid_answers.count
   end
 
   test "two valid_answers when two choices" do
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
-    assert_equal 2, question.valid_answers
+    assert_equal 2, question.valid_answers.count
   end
 
   test "valid_answers count only valid choices" do
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
     FactoryGirl.create(:choice, valid_answer: false, question: question)
-    assert_equal 1, question.valid_answers
+    assert_equal 1, question.valid_answers.count
   end
 
   test "true si la question a une réponse" do
