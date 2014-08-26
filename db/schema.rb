@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826093133) do
+ActiveRecord::Schema.define(version: 20140826152812) do
 
   create_table "answers", force: true do |t|
     t.string  "chosen_choices"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140826093133) do
     t.boolean  "admin",           default: false
     t.string   "email"
     t.string   "password_digest"
+    t.boolean  "remote",          default: true
   end
 
 end
