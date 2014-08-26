@@ -9,7 +9,7 @@
     = csrf_meta_tags
   %body
     %header
-      %h1= t('.title')
+      %h1= link_to t('.title'), root_path
 
     %nav.columns.left
       - if current_user

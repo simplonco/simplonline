@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'static#welcome'
-  get '/', to: 'static#welcome'
+  get '/', to: 'users#show'
+
+  get '/welcome', to: 'static#welcome'
+
+  root 'users#show'
 
   resource :sessions, only: [:create, :destroy]
   resources :users, only: [:edit, :update, :show]
