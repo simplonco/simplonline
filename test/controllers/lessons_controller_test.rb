@@ -3,7 +3,8 @@ require 'test_helper'
 class LessonsControllerTest < ActionController::TestCase
 
   def setup
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user, remote: false)
+    session[:user_id] = user.id
   end
 
   test "index" do
