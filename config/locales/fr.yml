@@ -1,13 +1,20 @@
 fr:
   layouts:
     application:
-      title: F.O.A.D. Simplon.co
-      login: Se connecter
-      email: Email
-      password: Mot de passe
-      update_login: Mon compte
-      logout: Se déconnecter
+      title: 'F.O.A.D. Simplon.co'
+      login: 'Se connecter'
+      email: 'Email'
+      password: 'Mot de passe'
+      update_login: 'Mon compte'
+      logout: 'Se déconnecter'
+      footer-text: 'Un site Simplonco(tm), un design Pierre Kowarsky'
   users:
+    show:
+      title: 'Bienvenue %{name}'
+      last-message-title: 'Voici les derniers messages sur le forum'
+      last-lessons-title: 'Les dernier cours disponibles'
+      lessons: 'voir tous les cours'
+      last-qcms-title: 'Les derniers QCMs'
     edit:
       title: Modifier mon compte
       user_name: Nom

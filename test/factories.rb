@@ -33,6 +33,7 @@ FactoryGirl.define do
   end
 
   factory :lesson do
+    title { generate(:name) }
   end
 end
 
