@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/', to: 'users#show'
 
   get '/welcome', to: 'static#welcome'
+  get '/contact', to: 'static#contact'
+  get '/legal', to: 'static#legal'
 
   root 'users#show'
 

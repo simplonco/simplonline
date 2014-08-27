@@ -35,3 +35,9 @@ Curriculum et approche pédagogique :
 * 5 mois restants : accompagnement pas-à-pas à l’apprentissage de langages de présentation et de balisage (HTML et CSS), de la programmation orientée objet (Ruby, Python, Java, Go, Javascript), fonctionnelle (Haskell, Erlang, Clojure) et des frameworks qui permettent de développer des sites et des applications rapidement (Sinatra, Rails, Snap, React, Meteor...)
 
 * Des défis techniques à vocation pédagogique et des hackathons internes spécifiques réservés aux Simplonien(ne)s"
+    contact:
+      title: 'Contact'
+      your_email: 'Email'
+      your_name: 'Nom'
+      your_message: 'Message'
+      send: 'Envoyer'

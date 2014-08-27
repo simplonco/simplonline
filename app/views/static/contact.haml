@@ -1,0 +1,11 @@
+%h3
+  = t('.title')
+
+= form_tag do
+  = label :email, t('.your_email')
+  = email_field_tag :email
+  =label :name, t('.your_name')
+  = text_field_tag :name
+  =label :message, t('.your_message')
+  = text_field_tag :message
+  = submit_tag t('.send')
