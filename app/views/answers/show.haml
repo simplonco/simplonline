@@ -1,0 +1,6 @@
+%h2= @answer.is_valid? ? "GOOD" : "BHOOO"
+%h3 Explications
+- @question.choices.each do |choice|
+  %p{class: "#{class_chosen(@answer, choice)} #{class_valid(choice)}"}
+    = choice.content
+= link_to_next(@question.id, @question.qcm.id, @question.qcm.question_ids)

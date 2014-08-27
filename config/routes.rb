@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
 
   resources :qcms do
-    resources :questions
+    resources :questions do
+      resources :answers
+    end
   end
 
   resources :lessons
