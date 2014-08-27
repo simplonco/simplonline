@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user
+
   def edit
     @user = current_user
   end
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @qcms = Qcm.last(5)
   end
 

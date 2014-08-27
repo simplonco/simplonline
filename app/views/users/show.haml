@@ -23,6 +23,8 @@
         Cours du 23/9/2014
   %p
     = link_to t('.lessons'), lessons_path
+  - if current_user.local?
+    = link_to t('.create_lesson'), new_lesson_path
 
 .last-qcms
   %p Les derniers QCMs

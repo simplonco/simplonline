@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  sequence :name do |n|
+    "name_#{n}"
+  end
+
   factory :essai do
     exercice
   end
@@ -9,6 +13,7 @@ FactoryGirl.define do
   factory :user do
     password 'truc'
     password_confirmation 'truc'
+    nom { generate(:name) }
   end
 
   factory :qcm do

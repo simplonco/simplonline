@@ -13,6 +13,11 @@ fr:
       user_name: Nom
       cancel: Annuler
       submit: Mettre à jour
+  lessons:
+    new:
+      title: Créer une leçon
+      create: Créer
+      title_field: Titre
   static:
     welcome:
       title: Bienvenue sur Simplonline

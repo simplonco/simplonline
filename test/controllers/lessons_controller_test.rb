@@ -3,7 +3,8 @@ require 'test_helper'
 class LessonsControllerTest < ActionController::TestCase
 
   def setup
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user, remote: false)
+    session[:user_id] = user.id
   end
 
   test "index" do
@@ -13,4 +14,14 @@ class LessonsControllerTest < ActionController::TestCase
     assert_equal [lesson], assigns(:lessons)
   end
 
+  test "new" do
+    get :new
+    assert_response :success
+  end
+
+  test "create" do
+    post :create, lesson: {title: 'Something new'}
+    assert_redirected_to lessons_path
+    assert_equal 'Something new', Lesson.first.title
+  end
 end
