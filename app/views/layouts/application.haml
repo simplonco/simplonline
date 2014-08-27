@@ -35,6 +35,14 @@
     %main
       = yield
 
+    %footer{class: 'footer'}
+      %ul{class: 'footer-menu'}
+        %li= link_to t('.contact'), contact_path, class: 'footer-menu-item'
+        %li= link_to t('.legal'), legal_path, class: 'footer-menu-item'
+
+      %p
+        = t('.footer-text')
+
     = javascript_include_tag 'application'
     :javascript
       function loginViaEmail() {

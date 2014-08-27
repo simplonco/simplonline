@@ -1,13 +1,20 @@
 fr:
   layouts:
     application:
-      title: F.O.A.D. Simplon.co
-      login: Se connecter
-      email: Email
-      password: Mot de passe
-      update_login: Mon compte
-      logout: Se déconnecter
+      title: 'F.O.A.D. Simplon.co'
+      login: 'Se connecter'
+      email: 'Email'
+      password: 'Mot de passe'
+      update_login: 'Mon compte'
+      logout: 'Se déconnecter'
+      footer-text: 'Un site Simplonco(tm), un design Pierre Kowarsky'
   users:
+    show:
+      title: 'Bienvenue %{name}'
+      last-message-title: 'Voici les derniers messages sur le forum'
+      last-lessons-title: 'Les dernier cours disponibles'
+      lessons: 'voir tous les cours'
+      last-qcms-title: 'Les derniers QCMs'
     edit:
       title: Modifier mon compte
       user_name: Nom
@@ -35,3 +42,9 @@ Curriculum et approche pédagogique :
 * 5 mois restants : accompagnement pas-à-pas à l’apprentissage de langages de présentation et de balisage (HTML et CSS), de la programmation orientée objet (Ruby, Python, Java, Go, Javascript), fonctionnelle (Haskell, Erlang, Clojure) et des frameworks qui permettent de développer des sites et des applications rapidement (Sinatra, Rails, Snap, React, Meteor...)
 
 * Des défis techniques à vocation pédagogique et des hackathons internes spécifiques réservés aux Simplonien(ne)s"
+    contact:
+      title: 'Contact'
+      your_email: 'Email'
+      your_name: 'Nom'
+      your_message: 'Message'
+      send: 'Envoyer'
