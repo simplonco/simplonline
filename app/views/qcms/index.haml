@@ -1,2 +1,5 @@
-<h1>Qcms#index</h1>
-<p>Find me in app/views/qcms/index.html.erb</p>
+- @qcms.each do |qcm|
+  %p
+    = link_to "QCM #{qcm.id}: #{qcm.title}", qcm_path(qcm.id)
+    %br
+    = qcm.desc

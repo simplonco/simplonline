@@ -1,7 +1,7 @@
 %h2= "Exercice #{@exercice.id} | #{@exercice.titre}"
 .label Consigne de l'exercice
 %blockquote= @exercice.consigne
-.label A partie de l'échantillon suivant
+.label A partir de l'échantillon suivant
 %blockquote= @exercice.echantillon
 .label Format de réponse attendu :
 - case @exercice.format_reponse
@@ -15,7 +15,6 @@
     %blockquote Un fichier programme ET un fichier test
   - when 5
     %blockquote Un fichier test à uploader
-.label Vous devez obtenir la réponse suivante
 %blockquote= @exercice.reponse
 %hr
 - if @essais
@@ -27,6 +26,5 @@
       = essai.status ? "WIN" : "LOOSE"
 %br
 %hr
-= link_to "Nouvel essai ?", new_exercice_essai_path(@exercice.id), class: "small button radius"
-= link_to "Revenir à l'accueil", exercices_path, class: "small button radius"  
+= link_to "Nouvel essai ?", new_exercice_essai_path(@exercice.id)
 

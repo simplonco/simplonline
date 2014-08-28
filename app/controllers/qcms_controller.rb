@@ -5,6 +5,7 @@ class QcmsController < ApplicationController
   end
 
   def index
+    @qcms = Qcm.all
   end
 
   def new

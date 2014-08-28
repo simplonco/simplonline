@@ -4,15 +4,17 @@
   - url = qcm_question_path(@question.qcm_id, @question.id)
 
 = nested_form_for( @question, url: url ) do |f|
-  = f.label :question_title
-  = f.text_field :title
+  %p
+    = f.label :question_title
+    = f.text_field :title
 
-  = f.fields_for :choices do |choice|
-    = choice.label :content
-    = choice.text_field :content
-    = choice.label :valid_answer
-    = choice.check_box :valid_answer
-    = choice.link_to_remove "Supprimer ce choix"
-  = f.link_to_add "Ajouter un choix", :choices
+  %p
+    = f.fields_for :choices do |choice|
+      = choice.label :content
+      = choice.text_field :content
+      = choice.label :valid_answer
+      = choice.check_box :valid_answer
+      = choice.link_to_remove "Supprimer"
+    = f.link_to_add "Ajouter un choix", :choices
   = f.submit
 

@@ -6,8 +6,8 @@ class QuestionsController < ApplicationController
 
   def create
     @qcm = Qcm.find(params[:qcm_id])
-    @question = @qcm.questions.create(question_params)
-    redirect_to qcm_path(@question.qcm_id)
+    @qcm.questions.create(question_params)
+    redirect_to qcm_path(@qcm.id)
   end
 
   def destroy

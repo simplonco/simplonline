@@ -1,7 +1,10 @@
-= nested_form_for @qcm do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.label :desc
-  = f.text_area :desc
-  = f.submit
+%p
+  = nested_form_for @qcm do |f|
+    = f.label :title, "Titre"
+    = f.text_field :title
+    %br
+    = f.label :desc, "Description"
+    = f.text_area :desc
+    %br
+    = f.submit
 
