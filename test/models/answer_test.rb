@@ -17,7 +17,7 @@ class AnswerTest < ActiveSupport::TestCase
   test "valid if question with one valid choice" do
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
-    answer = FactoryGirl.create(:answer, chosen_choices: "1", question: question) 
+    answer = FactoryGirl.create(:answer, chosen_choices: "1", question: question)
     assert_equal true, answer.is_valid?
   end
 
@@ -30,7 +30,7 @@ class AnswerTest < ActiveSupport::TestCase
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
-    answer = FactoryGirl.create(:answer, chosen_choices: "2", question: question) 
+    answer = FactoryGirl.create(:answer, chosen_choices: "2", question: question)
     assert ! answer.is_valid?
   end
 
@@ -38,7 +38,7 @@ class AnswerTest < ActiveSupport::TestCase
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: false, question: question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
-    answer = FactoryGirl.create(:answer, chosen_choices: "2", question: question) 
+    answer = FactoryGirl.create(:answer, chosen_choices: "2", question: question)
     assert answer.is_valid?
   end
 end

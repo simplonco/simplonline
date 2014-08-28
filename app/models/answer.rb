@@ -10,6 +10,6 @@ class Answer < ActiveRecord::Base
   end
 
   def chosen_choice_ids
-    chosen_choices.split(",").map{|id| id.to_i} 
+    chosen_choices.split(",").map{|id| id.to_i}
   end
 end
