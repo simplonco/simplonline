@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: sensei
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: sensei_dev
+
+test: &test
+  <<: *default
+  database: sensei_test
+
+production:
+  <<: *default
+  database: sensei
+
+cucumber:
+  <<: *test
