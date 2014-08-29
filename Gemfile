@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'redcarpet'
+gem 'rails_12factor'
 
 gem 'jbuilder', '~> 2.0'
 
