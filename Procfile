@@ -1,1 +1,1 @@
-web: bundle exec rails s
+web: bundle exec rails server -p $PORT -e $RAILS_ENV
