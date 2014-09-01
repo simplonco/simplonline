@@ -9,16 +9,15 @@ Sensei App
 * 2 semaines plus tard, les élèves à distance recoivent l'exercice sur leur tableau de bord.
 * ils soumettent leurs essais sous forme de fichier, que la plateforme valide ou non.
 
+Cette plateforme doit donc recevoir deux type de message:
+
+* Création d'exercice (énoncé, mais surtout outil de vérification)
+* Submission (fichiers versus un exercice)
+
 
 ## Développement / Déploiement
 
-* Démarrer un serveur redis
-* Démarrer docker, ex. sur Arch: `sudo systemctl start docker`
-* Démarrer sidekiq et rails `foreman start`
+Basé sur un outil de queuing (c'est ce qui semble le mieux ?) Genre ActiveMQ, RabitMQ, 0mq ou ..
 
-`rake db:seed` crée 2 utilisateur, l'un en présentiel, l'autre est un auditeur à distance.
-
-present@simplon.co/present
-distant@simplon.co/distant
-
+Cet outil inscrit les résultats dans l'application principal via une API restfull (
 
