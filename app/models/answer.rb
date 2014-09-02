@@ -9,6 +9,7 @@ class Answer < ActiveRecord::Base
     chosen_choice_ids == valid_ids
   end
 
+  #TODO à stocker comme un array dans pg
   def chosen_choice_ids
     chosen_choices.split(",").map{|id| id.to_i}
   end
