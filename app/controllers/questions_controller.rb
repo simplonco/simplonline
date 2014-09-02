@@ -6,7 +6,8 @@ class QuestionsController < ApplicationController
 
   def create
     @qcm = Qcm.find(params[:qcm_id])
-    @qcm.questions.create(question_params)
+    @question = @qcm.questions.create(question_params.select{|k, v| k == "title"})
+    @question.update(question_params)
     redirect_to qcm_path(@qcm.id)
   end
 
