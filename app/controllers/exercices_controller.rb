@@ -9,6 +9,7 @@ class ExercicesController < ApplicationController
 
   def create
     @exercice = Exercice.create(exercice_params)
+    ExerciceWorker.perform_async(exercice_params.merge(id: @exercice.id))
     redirect_to exercice_path @exercice
   end
 
@@ -21,6 +22,7 @@ class ExercicesController < ApplicationController
   end
 
   def update
+    @exercice = Exercice.find(params[:id])
   end
 
   private
