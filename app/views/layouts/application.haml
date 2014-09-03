@@ -3,39 +3,41 @@
   %head
     %meta{:charset => 'utf-8'}
     %meta{:name => 'viewport', :content => 'width=device-width', 'initial-scale' => '1.0'}
-    %title= content_for?(:title) ? yield(:title) : 'Simplonline'
+    %title= content_for?(:title) ? yield(:title) : t('.title_window')
     = stylesheet_link_tag 'application'
     = csrf_meta_tags
   %body
-    %header
-      %h1= link_to t('.title'), root_path
+    %header.header
+      .connexion
+        - if current_user
+          = link_to "#{current_user.nom.capitalize}", edit_user_path(current_user), title: t('.update_login')
+          |
+          = form_tag sessions_path, method: 'delete' do
+            = submit_tag t('.logout')
+        - else
+          = form_tag sessions_path do
+            = label_tag :email, t('.email')
+            = email_field_tag :email, nil, placeholder: 'me@example.com', class: 'field'
+            = label_tag :password, t('.password')
+            = password_field_tag :password, nil, placeholder: 'my secret', class: 'field'
 
-    %nav.columns.left
-      - if current_user
-        = link_to "#{current_user.nom.capitalize}", edit_user_path(current_user), title: t('.update_login')
-        |
-        = form_tag sessions_path, method: 'delete' do
-          = submit_tag t('.logout')
-      - else
-        = form_tag sessions_path do
-          = label_tag :email, t('.email')
-          = email_field_tag :email
-          = label_tag :password, t('.password')
-          = password_field_tag :password
-          = submit_tag t('.login'), class: 'small radius secondary'
+            = submit_tag t('.login'), class: 'small radius secondary', class: 'field button'
 
-    .notification
-      - if flash[:error].present?
-        %p.label.flash-error= "» #{flash[:error]}"
-      - if flash[:alert]
-        %p.label.flash-error= "» #{flash[:alert]}"
-      - if flash[:notice]
-        %p.label.flash-notice= "» #{flash[:notice]}"
-    %main
+      %h1= link_to t('.title'), root_path, class: 'header-title'
+
+      .notification
+        - if flash[:error].present?
+          %p.label.flash-error= "» #{flash[:error]}"
+        - if flash[:alert]
+          %p.label.flash-error= "» #{flash[:alert]}"
+        - if flash[:notice]
+          %p.label.flash-notice= "» #{flash[:notice]}"
+
+    %main.content
       = yield
 
-    %footer{class: 'footer'}
-      %ul{class: 'footer-menu'}
+    %footer.footer
+      %ul.footer-menu
         %li= link_to t('.contact'), contact_path, class: 'footer-menu-item'
         %li= link_to t('.legal'), legal_path, class: 'footer-menu-item'
 
@@ -43,6 +45,7 @@
         = t('.footer-text')
 
     = javascript_include_tag 'application'
+
     :javascript
       function loginViaEmail() {
         navigator.id.get(function(assertion) {

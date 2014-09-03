@@ -1,13 +1,16 @@
 fr:
   layouts:
     application:
-      title: 'F.O.A.D. Simplon.co'
-      login: 'Se connecter'
-      email: 'Email'
-      password: 'Mot de passe'
+      title_window: 'Simplonline'
+      title: 'Simplonline'
       update_login: 'Mon compte'
       logout: 'Se déconnecter'
       footer-text: 'Un site Simplonco(tm), un design Pierre Kowarsky'
+      contact: 'Contact'
+      legal: 'Mentions légales'
+      login: 'Se connecter'
+      email: 'Email'
+      password: 'Mot de passe'
   users:
     show:
       title: 'Bienvenue %{name}'
@@ -27,21 +30,24 @@ fr:
       title_field: Titre
   static:
     welcome:
-      title: Bienvenue sur Simplonline
-      explain: "Simplonline va beaucoup plus loin qu’un CLOM/MOOC (Cours en Ligne Ouvert Massivement / Massive Open Online Courses) et place d'emblée la barre très haut puisqu'il s'agit bel et bien de disposer des mêmes conditions de formation que les apprenants physiquement présents à Montreuil, mais en ligne et à distance, en français.
+      title: 'Bienvenue sur Simplonline'
+      explain: "[Simplonline](http://simplonline.simplon.co) est une plateforme permettant aux étudiants en physiquement présents à Montreuil de partager leurs expériences avec tous ceux qui le souhaitent. Chaque semaine, le lundi vers 18h, les étudiant mettrons à disposition un _cours_ contenant le meilleur de ce qu'ils ont appris accompagné d'exercices permettant de partager également leurs découverte par la pratique.
 
 
-Simplonline est éligible au Droit Individuel à la Formation (DIF) et au Plan de formation car Simplon.co est enregistré en tant qu’organisme de formation sous le numéro 11 93 06676 93.
+Le démarrage aura lieu le *6 octobre 2014*. Les inscriptions seront close à partir de cette date.
 
 
-Curriculum et approche pédagogique :
+Les premier jours seront orienté autour des fondamentaux. L'idée étant de faire le _tour du propriétaire_ en découvrant ou reparcourant l'univers du développeur (hardware, software) et du développement logiciel (outils, partiques d'équipes, langages, ...). Cela permettra de partir sur de bonnes bases communes, avec un vocabulaire et un niveau de connaissance théorique partagé. Pour les personnes physiquement présente, cela permettra aussi qu'elles fassent connaissance.
 
 
-* Mise en condition de 1 mois sur les fondamentaux hardware (matériels) et software (logiciels, protocoles) pour partir tous ensemble sur de bonnes bases et s'assurer une progression pédagogique rapide pour la suite
+Ensuite, nous passerons à un apprentissage pas-à-pas, en se mettant en situation sur des cas pratiques (logiciels libre, projets interne Simplon). Dans ce contexte nous partirons à la découverte de langages de présentation (HTML, CSS), de langages de programmation (Ruby, Python, Java, Go, Haskell, Erlang, Clojure, Javascript). Nous explorerons également divers frameworks et outils (Sinatra, Rails, Snap, React, ...).
 
-* 5 mois restants : accompagnement pas-à-pas à l’apprentissage de langages de présentation et de balisage (HTML et CSS), de la programmation orientée objet (Ruby, Python, Java, Go, Javascript), fonctionnelle (Haskell, Erlang, Clojure) et des frameworks qui permettent de développer des sites et des applications rapidement (Sinatra, Rails, Snap, React, Meteor...)
 
-* Des défis techniques à vocation pédagogique et des hackathons internes spécifiques réservés aux Simplonien(ne)s"
+Nous organiserons également des rencontres physique à l'occasion d'évènements pour faciliter certains échanges
+
+
+La plateforme propose égalemet un forum permettant à tous de communiquer facilement pour apprendre ensemble.
+    "
     contact:
       title: 'Contact'
       your_email: 'Email'

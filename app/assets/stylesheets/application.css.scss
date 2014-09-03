@@ -3,6 +3,49 @@
  *= require_self
  */
 
+body {
+  background:#000101;
+  color:#fdfdfd;
+  margin:0;
+  padding:0;
+}
+
+.header {
+  text-align:center;
+  background-color:#ee1752;
+  margin:0;
+  padding:1em;
+}
+
+.header-title {
+  color: #fdfdfd;
+  text-decoration: none;
+}
+
+.content {
+  max-width: 62em;
+  margin:auto;
+  background-color:#ccd0d0;
+  color:#094146;
+  padding:1em;
+}
+
+.connexion {
+  background-color: #fdfdfd;
+  color:#094146;
+  padding:1em;
+  text-align:right;
+}
+
+.field {
+  border:1px solid #ccd0d0;
+}
+
+.button {
+  background-color: #ee1752;
+  color: #fdfdfd;
+}
+
 .fa-list-essai {
   color: #999;
   font-size : 1.2em;
@@ -10,10 +53,19 @@
 }
 
 .footer {
+  background-color:#ee1752;
   font-size:0.9em;
   margin:1em 0;
   padding: 1em;
+  text-align:center;
 }
 
 .footer-menu {
+  list-style:none;
 }
+
+.footer-menu-item {
+  display:inline;
+  color: #fdfdfd;
+}
+
