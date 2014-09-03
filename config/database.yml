@@ -14,8 +14,8 @@ test: &test
   database: sensei_test
 
 production:
-  <<: *default
-  database: sensei
+  url: <%= ENV['APPSDECK_POSTGRESQL_URL'] %>
+
 
 cucumber:
   <<: *test
