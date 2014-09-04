@@ -3,31 +3,83 @@
  *= require_self
  */
 
-body {
-  background:#000101;
-  color:#fdfdfd;
+* {
   margin:0;
   padding:0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000 asset-url('bgi-body.jpg') center top no-repeat fixed;
+  vertical-align: baseline;
+  font-family: 'futurabook',Arial,Helvetica,sans-serif;
+  font-size: 1em;
+  line-height: 2rem;
+  height: 100%;
+  width: 100%;
+  color:#fdfdfd;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal;}
+
+li { list-style-type: none;}
+
+a, button { cursor: pointer;}
+
+.color-01 { color: rgba(94,52,12,1);}    /*marron foncé*/
+.color-02 { color: rgba(12,89,95,1);}    /*bleu foncé*/
+.color-03 { color: rgba(18,179,174,1);}  /*bleu clair*/
+.color-04 { color: rgba(255,255,255,1);} /*blanc*/
+
+.connexion {
+  background: #fff;
+  padding: 1rem 0;
+  margin: 0 auto;
 }
 
 .header {
   text-align:center;
   background-color:#ee1752;
-  margin:0;
   padding:1em;
+  margin:0;
+  height: 6rem;
+  box-shadow: 0 -4px 0 rgba(0,0,0,.2) inset;
 }
 
 .header-title {
   color: #fdfdfd;
   text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 0;
 }
 
 .content {
-  max-width: 62em;
-  margin:auto;
-  background-color:#ccd0d0;
+  max-width: 80em;
+  margin:4rem auto;
+  padding: 2em;
+  background: rgba(255,255,255,.8);
   color:#094146;
-  padding:1em;
+  overflow: hidden;
+  -moz-border-image: asset-url('border-01.png') 10 / 10px  stretch;
+  -webkit-border-image: asset-url('border-01.png') 10 / 10px  stretch;
+  -o-border-image: asset-url('border-01.png') 10 / 10px  stretch;
+  border-image: asset-url('border-01.png') 10 / 10px  stretch;
+}
+
+.content h3 {
+  font-family: 'futuraheavy',Arial,Helvetica,sans-serif;
+  font-size: 2rem;
+  margin: 1.2em;
+}
+
+.content p  {
+  width: 70%;
+  margin: 1.2em;
 }
 
 .connexion {
@@ -53,11 +105,10 @@ body {
 }
 
 .footer {
-  background-color:#ee1752;
-  font-size:0.9em;
-  margin:1em 0;
-  padding: 1em;
   text-align:center;
+  background: rgba(238,23,82,1);
+  padding: 2em 0;
+  box-shadow: 0 4px 0 rgba(0,0,0,.2) inset;
 }
 
 .footer-menu {
