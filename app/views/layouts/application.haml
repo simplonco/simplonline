@@ -11,7 +11,7 @@
       - if current_user
         = link_to "#{current_user.nom.capitalize}", edit_user_path(current_user), title: t('.update_login')
         |
-        = form_tag sessions_path, method: 'delete' do
+        = form_tag sessions_path, method: 'delete', class: 'little-form' do
           = submit_tag t('.logout')
       - else
         = form_tag sessions_path do
