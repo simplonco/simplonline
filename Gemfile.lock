@@ -119,6 +119,8 @@ GEM
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
+    puma (2.9.0)
+      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -222,6 +224,7 @@ DEPENDENCIES
   nested_form
   pg
   pry-rescue
+  puma
   rails (= 4.1.1)
   rails-clean-logs
   rails_12factor
