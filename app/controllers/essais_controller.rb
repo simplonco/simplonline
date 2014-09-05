@@ -7,8 +7,7 @@ class EssaisController < ApplicationController
 
   def show
     @essai = Essai.find(params[:id])
-    #TODO
-    #@afficher_essai = File.open(@essai.fichier) if @essai.exercice.format_reponse == 3 || 4 || 5
+    #TODO - @afficher_essai = File.open(@essai.fichier) if @essai.exercice.format_reponse == 3 || 4 || 5
   end
 
   def create
