@@ -13,6 +13,10 @@ class LessonsController < ApplicationController
     redirect_to action: :index
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
   private
 
   def lesson_params

@@ -24,4 +24,12 @@ class LessonsControllerTest < ActionController::TestCase
     assert_redirected_to lessons_path
     assert_equal 'Something new', Lesson.first.title
   end
+
+  test "edit" do
+    lesson = FactoryGirl.create(:lesson)
+    get :edit, id: lesson.id
+    assert_response :success
+    assert_equal lesson, assigns(:lesson)
+  end
+
 end

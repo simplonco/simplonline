@@ -2,6 +2,15 @@
 %h3= t('.title')
 
 = form_for Lesson.new do |l|
-  = l.label :title, t('.title_field')
-  = l.text_field :title
-  = l.submit t('.create')
+  %p
+    = l.label :title, t('.title_field')
+  %p
+    = l.text_field :title
+
+  %p
+    = l.label :publish_at, t('.publish_at_field')
+  %p
+    = l.date_field :publish_at
+
+  %p
+    = l.submit t('.create')

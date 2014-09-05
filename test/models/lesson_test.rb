@@ -14,4 +14,9 @@ class LessonTest < ActiveSupport::TestCase
     lesson = FactoryGirl.create(:lesson)
     assert_equal [lesson], Lesson.last_lessons
   end
+
+  test "exist without chapters" do
+    lesson = FactoryGirl.create(:lesson)
+    assert_equal [], lesson.chapters
+  end
 end

@@ -1,0 +1,7 @@
+%h3= t('.title')
+
+= form_for @chapter, url: lesson_chapter_path(@chapter, @chapter.lesson) do |c|
+
+  = render partial: 'form', locals: {c: c}
+
+  = c.submit t('.update')

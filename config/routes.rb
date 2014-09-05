@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :lessons
+  resources :lessons do
+    resources :chapters
+  end
 
   get 'essais/accueil'
 

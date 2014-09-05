@@ -38,6 +38,11 @@ FactoryGirl.define do
   factory :lesson do
     title { generate(:name) }
   end
+
+  factory :chapter do
+    lesson
+    title { generate(:name) }
+  end
 end
 
 

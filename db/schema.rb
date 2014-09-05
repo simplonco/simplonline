@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827122851) do
+ActiveRecord::Schema.define(version: 20140905064958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20140827122851) do
     t.string  "chosen_choices"
     t.integer "question_id"
     t.integer "user_id"
+  end
+
+  create_table "chapters", force: true do |t|
+    t.integer "lesson_id"
+    t.text    "content",   default: "once uppon a time...", null: false
+    t.string  "title"
   end
 
   create_table "choices", force: true do |t|
@@ -58,6 +64,7 @@ ActiveRecord::Schema.define(version: 20140827122851) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "publish_at"
   end
 
   create_table "qcms", force: true do |t|
