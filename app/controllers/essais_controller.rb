@@ -7,16 +7,16 @@ class EssaisController < ApplicationController
 
   def show
     @essai = Essai.find(params[:id])
-    #TODO
-    #@afficher_essai = File.open(@essai.fichier) if @essai.exercice.format_reponse == 3 || 4 || 5
+    #TODO - @afficher_essai = File.open(@essai.fichier) if @essai.exercice.format_reponse == 3 || 4 || 5
   end
 
   def create
     @exercice = Exercice.find(params[:exercice_id])
     @essai = @exercice.essais.new(essai_params)
+    @essai.file_writer
     @essai.user_id = current_user.id
     @essai.save
-    Verificateur.perform_async(@essai.id)
+    Verificateur.perform_async(@essai)
     redirect_to exercice_path(@essai.exercice.id)
   end
 

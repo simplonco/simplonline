@@ -9,10 +9,9 @@ class EssaiTest < ActiveSupport::TestCase
     assert_equal true, FactoryGirl.build(:essai, exercice: nil).invalid?
   end
 
-  test "return a dossier" do
-    essai = FactoryGirl.create(:essai)
-    expected_dir = "#{Rails.root}/public/exercice/#{essai.exercice.id}/user/essai/#{essai.id}"
-    assert_equal expected_dir, essai.dossier
+  test 'inscrire fichier uploader dans la base de données' do
+   # essai = FactoryGirl.build(:essai)
+   # assert_equal "def app(echantillon)\n  echantillon.split(',').map{|s| s.to_i}.inject(:+)\nend\n", essai.file_writer
   end
 
 end

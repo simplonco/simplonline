@@ -7,7 +7,6 @@ FactoryGirl.define do
     exercice
     fichier { fixture_file_upload(Rails.root.join('test','essai_sample.rb'))}
     fichier_tests { fixture_file_upload(Rails.root.join('test','essai_sample_test.rb'))}
-
   end
 
   factory :exercice do

@@ -4,6 +4,5 @@ class ExerciceWorker
   def perform(exercice_params)
     Exercice.create(exercice_params)
   end
-  #TODO
-  #perform for update exercice
+  #TODO - perform for update exercice
 end
