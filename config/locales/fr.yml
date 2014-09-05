@@ -5,7 +5,7 @@ fr:
       title: 'Simplonline'
       update_login: 'Mon compte'
       logout: 'Se déconnecter'
-      footer-text: 'Un site Simplonco(tm), un design Pierre Kowarsky'
+      footer-text: 'Un site Simplon.co, un design Pierre Kowarsky'
       contact: 'Contact'
       legal: 'Mentions légales'
       login: 'Se connecter'
@@ -31,22 +31,18 @@ fr:
   static:
     welcome:
       title: 'Bienvenue sur Simplonline'
-      explain: "[Simplonline](http://simplonline.simplon.co) est une plateforme permettant aux étudiants en physiquement présents à Montreuil de partager leurs expériences avec tous ceux qui le souhaitent. Chaque semaine, le lundi vers 18h, les étudiant mettrons à disposition un _cours_ contenant le meilleur de ce qu'ils ont appris accompagné d'exercices permettant de partager également leurs découverte par la pratique.
+      explain: "[Simplonline](http://simplonline.simplon.co) est une plateforme permettant aux apprenants qui sont en formation physiquement à Montreuil, aux inscrits à la Formation Ouverte A Distance (FOAD) et aux ancien(ne)s Simplonien(ne)s d'interagir et de partager leurs expériences. Chaque semaine, le lundi vers 18h, les apprenants en formation à Montreuil mettrons à disposition des inscrits à la FOAD un _cours_ contenant le meilleur de ce qu'ils ont appris la semaine passée et également des exercices, des ressources (screencasts, tutoriels, liens pour aller plus loin). La forum de discussion commun permettra de prolonger le _cours_, de partager les découvertes et d'échanger par la pratique, et aussi de prolonger les questions réponses sur les ressources.
 
+Le démarrage aura lieu le *6 octobre 2014*. Les inscriptions seront closes à partir de cette date.
 
-Le démarrage aura lieu le *6 octobre 2014*. Les inscriptions seront close à partir de cette date.
-
-
-Les premier jours seront orienté autour des fondamentaux. L'idée étant de faire le _tour du propriétaire_ en découvrant ou reparcourant l'univers du développeur (hardware, software) et du développement logiciel (outils, partiques d'équipes, langages, ...). Cela permettra de partir sur de bonnes bases communes, avec un vocabulaire et un niveau de connaissance théorique partagé. Pour les personnes physiquement présente, cela permettra aussi qu'elles fassent connaissance.
-
+Les premier jours seront orientés autour des fondamentaux. L'idée étant de faire le _tour du propriétaire_ en découvrant ou reparcourant l'univers du développeur (hardware, software) et du développement logiciel (outils, partiques d'équipes, langages, ...). Cela permettra de partir sur de bonnes bases communes, avec un vocabulaire et un niveau de connaissance théorique partagé. Pour les personnes physiquement présente, cela permettra aussi qu'elles fassent connaissance.
 
 Ensuite, nous passerons à un apprentissage pas-à-pas, en se mettant en situation sur des cas pratiques (logiciels libre, projets interne Simplon). Dans ce contexte nous partirons à la découverte de langages de présentation (HTML, CSS), de langages de programmation (Ruby, Python, Java, Go, Haskell, Erlang, Clojure, Javascript). Nous explorerons également divers frameworks et outils (Sinatra, Rails, Snap, React, ...).
 
-
-Nous organiserons également des rencontres physique à l'occasion d'évènements pour faciliter certains échanges
-
-
 La plateforme propose égalemet un forum permettant à tous de communiquer facilement pour apprendre ensemble.
+
+Nous organiserons également des rencontres physique à l'occasion d'évènements pour faciliter certains échanges, des synchronisations "live" (Hangout, Skype) et un IRC sera également mis à disposition.
+
     "
     contact:
       title: 'Contact'
