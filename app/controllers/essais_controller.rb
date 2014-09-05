@@ -14,9 +14,10 @@ class EssaisController < ApplicationController
   def create
     @exercice = Exercice.find(params[:exercice_id])
     @essai = @exercice.essais.new(essai_params)
+    @essai.file_writer
     @essai.user_id = current_user.id
     @essai.save
-    Verificateur.perform_async(@essai.id)
+    Verificateur.perform_async(@essai)
     redirect_to exercice_path(@essai.exercice.id)
   end
 
