@@ -21,3 +21,6 @@ Basé sur un outil de queuing (c'est ce qui semble le mieux ?) Genre ActiveMQ, R
 
 Cet outil inscrit les résultats dans l'application principal via une API restfull (
 
+## Production
+
+Pour le moment, nous déployons sur http://foad.simplon.co 
