@@ -3,7 +3,9 @@
 .row
   .columns
     - @exercices.each do |exo|
-      %h4= link_to "Exercice #{exo.id} | #{exo.titre}", exercice_path(exo)
+      %h4
+        = link_to "Exercice #{exo.id} | #{exo.titre}", exercice_path(exo)
+        = link_to "Modifier", edit_exercice_path(exo)
       - @essais.select{|essai| essai.exercice_id == exo.id}.last(5).each do |essai|
         .columns.small-3
           = "Essai n°#{essai.id}"

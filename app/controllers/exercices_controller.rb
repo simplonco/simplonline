@@ -19,14 +19,18 @@ class ExercicesController < ApplicationController
   end
 
   def edit
+    @exercice = Exercice.find(params[:id])
   end
 
   def update
     @exercice = Exercice.find(params[:id])
+    @exercice.update(exercice_params.merge(id: @exercice.id))
+    ExerciceWorker.perform_async(exercice_params.merge(id: @exercice.id))
+    redirect_to exercice_path @exercice
   end
 
   private
   def exercice_params
-    params.require(:exercice).permit(:consigne, :validateur, :format_reponse, :format_echantillon, :echantillon, :reponse)
+    params.require(:exercice).permit(:titre, :consigne, :validateur, :format_reponse, :format_echantillon, :echantillon, :reponse)
   end
 end
