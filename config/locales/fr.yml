@@ -28,7 +28,29 @@ fr:
       title: 'Créer une leçon'
       create: 'Créer'
       title_field: 'Titre'
+    edit:
+      title: 'Modifier une leçon'
+      title_field: 'Titre'
+      publish_at_field: 'Publié le'
+      add_chapter: 'Ajouter un chapitre'
+      update: 'Mettre à jour'
+      cancel: 'Annuler'
+    index:
+      title: 'Toutes les leçons'
+      create_lesson: 'Ajouter une leçon'
+  chapters:
+    edit:
+      title: 'Modifier un chapitre'
+      update: 'Mettre à jour'
+      cancel: 'annuler'
+  placeholder:
+    email: 'me@example.com'
+    name: 'Edgar Hoover'
+    message: 'All you data are belongs to us...'
   static:
+    legal:
+      title: 'Mentions légales'
+      content: "Ce site appartient à Simplon(tm)..."
     welcome:
       title: 'Bienvenue sur Simplonline'
       explain: "[Simplonline](http://simplon.co/foad) est une plateforme permettant aux apprenants qui sont en formation physiquement à Montreuil, aux inscrits à la Formation Ouverte A Distance (FOAD) et aux ancien(ne)s Simplonien(ne)s d'interagir et de partager leurs expériences. Chaque semaine, le lundi vers 18h, les apprenants en formation à Montreuil mettront à disposition des inscrits à la FOAD un _cours_ contenant le meilleur de ce qu'ils ont appris la semaine passée ainsi que des exercices, des ressources (screencasts, tutoriels, liens pour aller plus loin). Le forum de discussion commun permettra de prolonger le _cours_, de partager les découvertes et d'échanger par la pratique, et aussi de prolonger les questions/réponses sur les ressources. Le temps de travail estimé pour les apprenants de la FOAD est de 2 à 4h par semaine, mais des ressources pourront satisfaire la soif de celles et ceux qui en veulent plus ;-)
@@ -55,3 +77,4 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       your_name: 'Nom'
       your_message: 'Message'
       send: 'Envoyer'
+      cancel: 'Annuler'
