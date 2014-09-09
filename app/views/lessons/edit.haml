@@ -20,7 +20,7 @@
 
   %ol
     - @lesson.qcms.each do |qcm|
-      %li= link_to qcm.title, edit_lesson_qcm_path(qcm, @lesson)
+      %li= link_to qcm.title, edit_lesson_qcm_path(@lesson, qcm)
 
   %p
     = link_to t('.add_qcm'), new_lesson_qcm_path(@lesson)

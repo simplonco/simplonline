@@ -48,6 +48,7 @@ fr:
       cancel: 'annuler'
   placeholder:
     email: 'me@example.com'
+    password: '****'
     name: 'Edgar Hoover'
     message: 'All you data are belongs to us...'
   static:
