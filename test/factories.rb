@@ -27,11 +27,9 @@ FactoryGirl.define do
   end
 
   factory :choice do
-    text "MyString"
-    correct "MyString"
-    question_id 1
+    question
   end
-  
+
   factory :answer do
     question
     user
