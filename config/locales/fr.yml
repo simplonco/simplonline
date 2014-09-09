@@ -38,6 +38,9 @@ fr:
     index:
       title: 'Toutes les leçons'
       create_lesson: 'Ajouter une leçon'
+  qcms:
+    new:
+      title: 'Créer un nouveau QCM'
   chapters:
     edit:
       title: 'Modifier un chapitre'

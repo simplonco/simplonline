@@ -1,6 +1,7 @@
 class QcmsController < ApplicationController
   def show
     @qcm = Qcm.find(params[:id])
+    @lesson = @qcm.lesson
     @questions = @qcm.questions
   end
 
@@ -9,16 +10,20 @@ class QcmsController < ApplicationController
   end
 
   def new
-    @qcm = Qcm.new
+    @lesson = Lesson.find(params[:lesson_id])
   end
 
   def create
-    @qcm = Qcm.create(qcm_params)
-    redirect_to new_qcm_question_path @qcm.id
+    lesson = Lesson.find(params[:lesson_id])
+    qcm = lesson.qcms.new
+    qcm.update_attributes(qcm_params)
+    qcm.save!
+    redirect_to new_lesson_qcm_question_path(lesson, qcm)
   end
 
   def edit
     @qcm = Qcm.find(params[:id])
+    @lesson = @qcm.lesson
   end
 
   def update
@@ -31,7 +36,7 @@ class QcmsController < ApplicationController
   end
 
   private
-  
+
   def qcm_params
     params.require(:qcm).permit(:title, :desc)
   end

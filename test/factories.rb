@@ -19,6 +19,7 @@ FactoryGirl.define do
   end
 
   factory :qcm do
+    lesson
   end
 
   factory :question do

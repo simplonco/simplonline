@@ -23,10 +23,3 @@
     %p
       = link_to t('.create_lesson'), new_lesson_path
 
-%section.last-qcms
-  %h1= t('.last-qcms-title')
-  %ul
-    - @qcms.each do |qcm|
-      %li
-        = link_to qcm.title, qcm_path(qcm.id)
-  = link_to "Créer votre QCM", new_qcm_path

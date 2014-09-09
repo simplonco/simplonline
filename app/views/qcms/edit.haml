@@ -1,2 +1,10 @@
-%h2= "Edit QCM #{@qcm.id}"
-= render 'form'
+%h2= t('.title')
+
+= form_for @qcm, url: lesson_qcm_path(@qcm, @qcm.lesson) do |f|
+
+  = render partial: 'form', locals: {f: f}
+
+  %p
+    = f.submit t('.update')
+    = link_to t('.cancel'), edit_lesson_path(@qcm.lesson)
+

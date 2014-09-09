@@ -6,32 +6,35 @@ class QuestionsControllerTest < ActionController::TestCase
     @qcm = FactoryGirl.create(:qcm)
   end
 
-  test "should get new" do
-    question = FactoryGirl.create(:question)
-    get :new, qcm_id: question.qcm_id, id: question.id
+  test "new" do
+    qcm = FactoryGirl.create(:qcm)
+    assert_not_nil qcm.lesson.id
+    get :new, lesson_id: qcm.lesson.id, qcm_id: qcm.id
     assert_response :success
+    assert_equal qcm, assigns(:qcm)
   end
 
   test "create" do
-    post :create, qcm_id: @qcm.id, question: {title: 'truc'}
+    post :create, lesson_id: @qcm.lesson.id, qcm_id: @qcm.id, question: {title: 'truc'}
     assert_response :redirect
   end
 
   test "delete" do
     question = FactoryGirl.create(:question)
-    delete :destroy, qcm_id: question.qcm_id, id: question.id
+    delete :destroy, lesson_id: question.id, qcm_id: question.qcm_id, id: question.id
     assert_response :redirect
   end
 
   test "edit" do
     question = FactoryGirl.create(:question)
-    get :edit, qcm_id: @qcm.id, id: question.id
+    get :edit, lesson_id: @qcm.lesson.id, qcm_id: @qcm.id, id: question.id
     assert_response :success
+    assert_equal question.qcm, assigns(:qcm)
   end
 
   test "post update" do
     question = FactoryGirl.create(:question)
-    post :update, qcm_id: question.qcm_id, id: question.id, question: {title: 'truc'}
+    post :update, lesson_id: question.qcm.lesson.id, qcm_id: question.qcm_id, id: question.id, question: {title: 'truc'}
     assert_response :redirect
   end
 

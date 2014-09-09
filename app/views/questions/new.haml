@@ -1,2 +1,8 @@
-%h2= "Nouvelle question, QCM #{@question.qcm.id}: #{@question.qcm.title}"
-= render "form"
+%h2= t('.title')
+
+= form_for Question.new, url: lesson_qcm_questions_path(@lesson, @qcm) do |f|
+
+  = render partial: "form", locals: {f: f}
+
+  = f.submit t('.submit')
+  = link_to t('.cancel'), lesson_qcm_path(@lesson, @qcm)

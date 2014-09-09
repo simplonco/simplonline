@@ -1,10 +1,9 @@
 %p
-  = nested_form_for @qcm do |f|
-    = f.label :title, "Titre"
-    = f.text_field :title
-    %br
-    = f.label :desc, "Description"
-    = f.text_area :desc
-    %br
-    = f.submit
+  = f.label :title, t(".titre")
+%p
+  = f.text_field :title
 
+%p
+  = f.label :desc, t(".description")
+%p
+  = f.text_area :desc

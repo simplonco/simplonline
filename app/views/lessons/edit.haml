@@ -18,6 +18,13 @@
   %p
     = link_to t('.add_chapter'), new_lesson_chapter_path(@lesson)
 
+  %ol
+    - @lesson.qcms.each do |qcm|
+      %li= link_to qcm.title, edit_lesson_qcm_path(qcm, @lesson)
+
+  %p
+    = link_to t('.add_qcm'), new_lesson_qcm_path(@lesson)
+
   %p
     = l.submit t('.update')
     = link_to t('.cancel'), lessons_path

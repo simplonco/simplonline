@@ -11,14 +11,13 @@ Rails.application.routes.draw do
   resource :sessions, only: [:create, :destroy]
   resources :users, only: [:edit, :update, :show]
 
-  resources :qcms do
-    resources :questions do
-      resources :answers
-    end
-  end
-
   resources :lessons do
     resources :chapters
+    resources :qcms do
+      resources :questions do
+        resources :answers
+      end
+    end
   end
 
   get 'essais/accueil'

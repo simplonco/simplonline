@@ -1,2 +1,10 @@
 %h1= "Editer question #{@question.id}"
-= render "form"
+
+= form_for @question, url: lesson_qcm_question_path(@lesson, @qcm, @question) do |f|
+
+  = render partial: 'form', locals: {f: f}
+
+  %p
+    = f.submit t('.create')
+    = link_to t('.cancel'), edit_lesson_qcm_path(@lesson, @qcm)
+

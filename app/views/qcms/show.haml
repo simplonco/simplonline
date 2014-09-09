@@ -1,9 +1,11 @@
 %h2
   = "QCM #{@qcm.id}: #{@qcm.title}"
-  |
-  = link_to "Éditer", edit_qcm_path(@qcm.id)
-  |
-  = link_to "Répondre", new_qcm_question_answer_path(@qcm.id, @qcm.questions.first.id)
+
+%p
+  = link_to "Éditer", edit_lesson_qcm_path(@lesson, @qcm)
+  - if @qcm.questions.any?
+    = link_to "Répondre", new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.questions.first)
+
 %p= @qcm.desc
 
 .questions
@@ -11,12 +13,11 @@
     - @questions.each do |question|
       %li
         = "#{question.id}: #{question.title}"
-        = link_to "Éditer", edit_qcm_question_path(@qcm.id, question.id)
+        = link_to "Éditer", edit_lesson_qcm_question_path(@lesson, @qcm, question)
         |
-        = link_to "Supprimer", qcm_question_path(@qcm.id, question.id), method: :delete
+        = link_to "Supprimer", lesson_qcm_question_path(@lesson, @qcm, question), method: :delete
         %ul
           - question.choices.each do |choice|
             %li= choice.content
 
-    %li= link_to "Ajouter une question", new_qcm_question_path(@qcm.id)
-  
+    %li= link_to "Ajouter une question", new_lesson_qcm_question_path(@lesson, @qcm)

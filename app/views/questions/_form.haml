@@ -1,20 +1,15 @@
-- if @question.id.blank?
-  - url = qcm_questions_path(@question.qcm_id)
-- else
-  - url = qcm_question_path(@question.qcm_id, @question.id)
+%p
+  = f.label :question_title
+  = f.text_field :title
 
-= nested_form_for( @question, url: url ) do |f|
+- f.fields_for :choices do |choice|
   %p
-    = f.label :question_title
-    = f.text_field :title
+    = choice.label :content
+    = choice.text_field :content
+    = choice.label :valid_answer
+    = choice.check_box :valid_answer
+    = choice.link_to_remove t('.remove')
 
   %p
-    = f.fields_for :choices do |choice|
-      = choice.label :content
-      = choice.text_field :content
-      = choice.label :valid_answer
-      = choice.check_box :valid_answer
-      = choice.link_to_remove "Supprimer"
-    = f.link_to_add "Ajouter un choix", :choices
-  = f.submit
+    = f.link_to_add t('.add_choice'), :choices
 
