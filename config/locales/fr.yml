@@ -17,6 +17,7 @@ fr:
       last-message-title: 'Voici les derniers messages sur le forum'
       last-lessons-title: 'Les dernier cours disponibles'
       lessons: 'voir tous les cours'
+      create_lesson: "Créer une leçon"
       last-qcms-title: 'Les derniers QCMs'
     edit:
       title: 'Modifier mon compte'
@@ -38,6 +39,10 @@ fr:
     index:
       title: 'Toutes les leçons'
       create_lesson: 'Ajouter une leçon'
+    show:
+      edit: "Éditer"
+      add_chapter: 'Ajouter un chapitre'
+      add_qcm: 'Ajouter un QCM'
   qcms:
     new:
       title: 'Créer un nouveau QCM'
