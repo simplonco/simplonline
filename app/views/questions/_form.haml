@@ -9,5 +9,6 @@
   = choice.text_field :explanation
   = choice.check_box :valid_answer
   = choice.label :valid_answer
+  = choice.link_to_remove t('.delete_choice')
 
-
+= f.link_to_add t('.add_choice'), :choices
