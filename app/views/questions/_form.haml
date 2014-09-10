@@ -2,14 +2,12 @@
   = f.label :question_title
   = f.text_field :title
 
-- f.fields_for :choices do |choice|
-  %p
-    = choice.label :content
-    = choice.text_field :content
-    = choice.label :valid_answer
-    = choice.check_box :valid_answer
-    = choice.link_to_remove t('.remove')
+= f.fields_for :choices do |choice|
+  = choice.label :content
+  = choice.text_field :content
+  = choice.label :explanation
+  = choice.text_field :explanation
+  = choice.check_box :valid_answer
+  = choice.label :valid_answer
 
-  %p
-    = f.link_to_add t('.add_choice'), :choices
 
