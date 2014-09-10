@@ -1,23 +1,26 @@
 %h2
   = "QCM #{@qcm.id}: #{@qcm.title}"
 
+%p= link_to t('.back_to_lesson'), lesson_path(@lesson)
+
 %p
   = link_to "Éditer", edit_lesson_qcm_path(@lesson, @qcm)
+
   - if @qcm.questions.any?
     = link_to "Répondre", new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.questions.first)
 
 %p= @qcm.desc
 
-.questions
-  %ul
-    - @questions.each do |question|
-      %li
-        = "#{question.id}: #{question.title}"
-        = link_to "Éditer", edit_lesson_qcm_question_path(@lesson, @qcm, question)
-        |
-        = link_to "Supprimer", lesson_qcm_question_path(@lesson, @qcm, question), method: :delete
-        %ul
-          - question.choices.each do |choice|
-            %li= choice.content
 
-    %li= link_to "Ajouter une question", new_lesson_qcm_question_path(@lesson, @qcm)
+%ol.questions
+  - @questions.each do |question|
+    %li
+      = question.title
+      = link_to "Éditer", edit_lesson_qcm_question_path(@lesson, @qcm, question)
+      |
+      = link_to "Supprimer", lesson_qcm_question_path(@lesson, @qcm, question), method: :delete
+      /%ul
+      /  - question.choices.each do |choice|
+      /    %li= choice.content
+
+  %li= link_to "Ajouter une question", new_lesson_qcm_question_path(@lesson, @qcm)

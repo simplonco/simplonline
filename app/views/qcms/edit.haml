@@ -1,10 +1,10 @@
 %h2= t('.title')
 
-= form_for @qcm, url: lesson_qcm_path(@lesson, @qcm) do |f|
+= form_for @qcm, url: lesson_qcm_path(@qcm, @lesson) do |f|
 
   = render partial: 'form', locals: {f: f}
 
   %p
     = f.submit t('.update')
-    = link_to t('.cancel'), edit_lesson_path(@lesson)
+    = link_to t('.cancel'), lesson_qcm_path(@lesson, @qcm)
 
