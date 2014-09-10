@@ -23,5 +23,25 @@ class ChaptersControllerTest < ActionController::TestCase
     get :edit, lesson_id: lesson, id: chapter.id
     assert_response :success
     assert_equal chapter, assigns(:chapter)
+    assert_equal lesson, assigns(:lesson)
+  end
+
+  test "update" do
+    chapter = FactoryGirl.create(:chapter, content: 'something')
+    lesson = chapter.lesson
+    post :update, lesson_id: lesson, id: chapter.id, chapter: {content: 'something other'}
+    assert_redirected_to lesson_chapter_path(chapter, lesson)
+    assert_equal 'something other', chapter.reload.content
+  end
+
+
+
+  test "show" do
+    chapter = FactoryGirl.create(:chapter)
+    lesson = chapter.lesson
+    get :show, lesson_id: lesson, id: chapter.id
+    assert_response :success
+    assert_equal chapter, assigns(:chapter)
+    assert_equal lesson, assigns(:lesson)
   end
 end

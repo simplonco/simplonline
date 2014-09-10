@@ -13,6 +13,20 @@ class ChaptersController < ApplicationController
 
   def edit
     @chapter = Chapter.find(params[:id])
+    @lesson = @chapter.lesson
+  end
+
+  def update
+    chapter = Chapter.find(params[:id])
+    lesson = chapter.lesson
+    chapter.update_attributes(chapter_attributes)
+    chapter.save!
+    redirect_to lesson_chapter_path(chapter, lesson)
+  end
+
+  def show
+    @chapter = Chapter.find(params[:id])
+    @lesson = @chapter.lesson
   end
 
   private

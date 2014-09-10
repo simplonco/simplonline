@@ -6,4 +6,4 @@
 
   %p
     = c.submit t('.update')
-    = link_to t('.cancel'), edit_lesson_path(@chapter.lesson)
+    = link_to t('.cancel'), lesson_chapter_path(@chapter, @chapter.lesson)
