@@ -32,4 +32,11 @@ class LessonsControllerTest < ActionController::TestCase
     assert_equal lesson, assigns(:lesson)
   end
 
+  test "show" do
+    lesson = FactoryGirl.create(:lesson)
+    get :show, id: lesson.id
+    assert_response :success
+    assert_equal lesson, assigns(:lesson)
+  end
+
 end

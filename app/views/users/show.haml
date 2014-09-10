@@ -15,7 +15,7 @@
   %ul
     - @last_lessons.each do |lesson|
       %li
-        = link_to lesson.title, edit_lesson_path(lesson)
+        = link_to lesson.title, lesson_path(lesson)
   %p
     = link_to t('.lessons'), lessons_path
 

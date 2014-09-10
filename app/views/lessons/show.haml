@@ -1,0 +1,21 @@
+%h2= @lesson.title
+
+%p= @lesson.publish_at
+
+%p= link_to t('.edit'), edit_lesson_path(@lesson)
+
+%ol
+  - @lesson.chapters.each do |chapter|
+    %li= link_to chapter.title, lesson_chapter_path(chapter, @lesson)
+
+%p
+  = link_to t('.add_chapter'), new_lesson_chapter_path(@lesson)
+
+
+%ol
+  - @lesson.qcms.each do |qcm|
+    %li= link_to qcm.title, lesson_qcm_path(@lesson, qcm)
+
+%p
+  = link_to t('.add_qcm'), new_lesson_qcm_path(@lesson)
+
