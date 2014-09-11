@@ -1,6 +1,6 @@
 %h2= t('.title')
 
-= form_for Question.new, url: lesson_qcm_questions_path(@lesson, @qcm) do |f|
+= nested_form_for Question.new, url: lesson_qcm_questions_path(@lesson, @qcm) do |f|
 
   = render partial: "form", locals: {f: f}
 
