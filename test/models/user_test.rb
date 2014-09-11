@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "invalid without nom" do
-    assert_equal true, FactoryGirl.build(:user, nom: nil).invalid?
+    assert_equal true, FactoryGirl.build(:user, name: nil).invalid?
   end
 
   test "check email and password on login" do

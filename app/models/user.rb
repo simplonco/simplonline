@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :essais, dependent: :destroy
 
-  validates :nom, uniqueness: true
-  validates_presence_of :nom
+  validates :name, uniqueness: true
+  validates_presence_of :name
 
   def self.login(email, password)
     user = User.find_by(email: email)

@@ -5,7 +5,6 @@ FactoryGirl.define do
 
   factory :essai do
     exercice
-    # fichier {Rack::Test::UploadedFile.new(File.open(Rails.root.join('test','essai_sample.rb')), :filename => "essai_sample.rb")} 
   end
 
   factory :exercice do
@@ -14,7 +13,7 @@ FactoryGirl.define do
   factory :user do
     password 'truc'
     password_confirmation 'truc'
-    nom { generate(:name) }
+    name { generate(:name) }
   end
 
   factory :qcm do

@@ -1,8 +1,8 @@
 %h1=t('.title')
 
 = form_for @user do |f|
-  %p= f.label :nom, t('.user_name')
-  %p= f.text_field :nom
+  %p= f.label :name, t('.user_name')
+  %p= f.text_field :name
 
   %p
     = f.submit t('.submit'), class: 'button small success radius'
