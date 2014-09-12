@@ -52,6 +52,10 @@ fr:
       create: 'Enregistrer'
       title: 'Créer un nouveau QCM'
   chapters:
+    new:
+      title: 'Créer un chapitre'
+      create: 'Enregistrer'
+      cancel: 'annuler'
     edit:
       title: 'Modifier un chapitre'
       update: 'Mettre à jour'
@@ -70,6 +74,8 @@ fr:
     password: '****'
     name: 'Edgar Hoover'
     message: 'All you data are belongs to us...'
+    chapter_title: 'A propos de code...'
+    chapter_content: 'Nous avons découvert cette semaine... '
   static:
     legal:
       title: 'Mentions légales'

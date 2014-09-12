@@ -1,11 +1,11 @@
 
 %p
   = c.label :title
-%p
-  = c.text_field :title
+  %br
+  = c.text_field :title, placeholder: t('placeholder.chapter_title')
 
 %p
   = c.label :content
-%p
-  = c.text_area :content
+  %br
+  = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
 
