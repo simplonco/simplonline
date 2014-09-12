@@ -32,6 +32,13 @@ class LessonsControllerTest < ActionController::TestCase
     assert_equal lesson, assigns(:lesson)
   end
 
+  test "update" do
+    lesson = FactoryGirl.create(:lesson, title: 'Perl')
+    post :update, id: lesson.id, lesson: {title: 'Python'}
+    assert_redirected_to lesson_path(lesson)
+    assert_equal 'Python', lesson.reload.title
+  end
+
   test "show" do
     lesson = FactoryGirl.create(:lesson)
     get :show, id: lesson.id

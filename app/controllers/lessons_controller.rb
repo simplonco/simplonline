@@ -17,6 +17,12 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
   end
 
+  def update
+    lesson = Lesson.find(params[:id])
+    lesson.update_attributes(lesson_params)
+    redirect_to lesson_path(lesson)
+  end
+
   def show
     @lesson = Lesson.find(params[:id])
   end
@@ -24,6 +30,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title)
+    params.require(:lesson).permit(:title, :publish_at)
   end
 end
