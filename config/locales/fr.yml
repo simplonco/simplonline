@@ -56,6 +56,15 @@ fr:
       title: 'Modifier un chapitre'
       update: 'Mettre à jour'
       cancel: 'annuler'
+  questions:
+    form:
+      add_choice: 'Ajouter un choix'
+      delete_choice: 'Supprimer ce choix'
+    edit:
+      title: 'Mise à jour de question'
+      create: 'Enregistrer'
+      cancel: 'Retour'
+      delete_choice: 'Supprimer ce choix'
   placeholder:
     email: 'me@example.com'
     password: '****'
