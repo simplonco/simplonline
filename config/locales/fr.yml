@@ -5,7 +5,7 @@ fr:
       title: 'Simplonline - beta'
       update_login: 'Mon compte'
       logout: 'Se déconnecter'
-      footer-text: 'Un site Simplon.co, un design Pierre Kowarsky'
+      footer-text: 'Un site réalisé par [simplon.co](http://simplon.co) avec un design de [Pierre Kowarsky](http://pkowarsky.fr) le tout hébergé chez [appsdeck.eu](http://appsdeck.eu)'
       contact: 'Contact'
       legal: 'Mentions légales'
       login: 'Se connecter'

@@ -41,27 +41,7 @@
         = link_to t('.contact'), contact_path, class: 'footer-menu-item'
         = link_to t('.legal'), legal_path, class: 'footer-menu-item'
 
-      %p
-        = t('.footer-text')
+      :markdown
+        #{t('.footer-text')}
 
     = javascript_include_tag 'application'
-
-    :javascript
-      function loginViaEmail() {
-        navigator.id.get(function(assertion) {
-          if (assertion) {
-            $('input[name=assertion]').val(assertion);
-            $('#browser_id_form').submit();
-          } else {
-            console.log('Erreur on login persona')
-          }
-        });
-      }
-      $(function() {
-        $('#browser_id_form button').click(function() {
-          loginViaEmail();
-          return false;
-        });
-      });
-
-
