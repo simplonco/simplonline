@@ -1,5 +1,5 @@
-User.create({nom: 'Present', email: 'present@simplon.co', password: 'present', password_confirmation: 'present', remote: false})
-User.create({nom: 'Distant', email: 'distant@simplon.co', password: 'distant', password_confirmation: 'distant', remote: true})
+User.create({name: 'Present', email: 'present@simplon.co', password: 'present', password_confirmation: 'present', remote: false})
+User.create({name: 'Distant', email: 'distant@simplon.co', password: 'distant', password_confirmation: 'distant', remote: true})
 Exercice.create({consigne: "Ceci est l'exercice 1", echantillon: 'some string JSON', reponse: 'some string JSON', format_reponse: 1, titre: 'baz', format_echantillon: '1'})
 Exercice.create({consigne: "Ceci est l'exercice 2", echantillon: 'foo', reponse: 'bar', format_reponse: 2, titre: 'baz', format_echantillon: '2'})
 Exercice.create({consigne: "Ceci est l'exercice 3", echantillon: 'foo', reponse: 'bar', format_reponse: 3, titre: 'baz', format_echantillon: '3'})

@@ -18,14 +18,14 @@ before_action :exercice, only: [:new, :create, :show]
       @essai.file_writer
       @essai.save
       Verificateur.perform_async(@essai)
+      last_essai = Essai.where(user_id: @essai.user_id, exercice_id: @essai.exercice_id).order("id DESC").offset(1).first
+      last_essai.delete
+      last_essai.save
     when 1 || 2
       @essai.status = true if @exercice.reponse == @essai.reponse_char
       @essai.save
     end
     redirect_to exercice_path(@essai.exercice.id)
-  end
-
-  def update
   end
 
   def accueil
