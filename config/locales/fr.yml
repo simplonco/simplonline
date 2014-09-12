@@ -44,7 +44,12 @@ fr:
       add_chapter: 'Ajouter un chapitre'
       add_qcm: 'Ajouter un QCM'
   qcms:
+    form:
+      description: 'Description'
+      title: 'Titre'
     new:
+      cancel: 'retour'
+      create: 'Enregistrer'
       title: 'Créer un nouveau QCM'
   chapters:
     edit:
