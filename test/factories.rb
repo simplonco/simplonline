@@ -35,6 +35,7 @@ FactoryGirl.define do
 
   factory :lesson do
     title { generate(:name) }
+    publish_at DateTime.new(2013,11,24,14,56)
   end
 
   factory :chapter do

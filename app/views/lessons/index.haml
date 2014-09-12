@@ -5,6 +5,7 @@
 %ul
   - @lessons.each do |lesson|
     %li
+      = l(lesson.publish_at)
       = link_to lesson.title, edit_lesson_path(lesson)
 
 - if current_user && current_user.local?

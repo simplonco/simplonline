@@ -10,6 +10,10 @@ class LessonTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:lesson, title: nil).invalid?
   end
 
+  test "invalid without publish date" do
+    assert FactoryGirl.build(:lesson, publish_at: nil).invalid?
+  end
+
   test "last_lesson" do
     lesson = FactoryGirl.create(:lesson)
     assert_equal [lesson], Lesson.last_lessons

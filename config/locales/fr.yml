@@ -101,3 +101,6 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       your_message: 'Message'
       send: 'Envoyer'
       cancel: 'Annuler'
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%S"

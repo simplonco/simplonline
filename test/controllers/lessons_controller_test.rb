@@ -20,7 +20,7 @@ class LessonsControllerTest < ActionController::TestCase
   end
 
   test "create" do
-    post :create, lesson: {title: 'Something new'}
+    post :create, lesson: {title: 'Something new', publish_at: '2014-12-13'}
     assert_redirected_to lessons_path
     assert_equal 'Something new', Lesson.first.title
   end
