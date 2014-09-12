@@ -25,6 +25,14 @@ class QcmsControllerTest < ActionController::TestCase
     assert_equal qcm, assigns(:qcm)
   end
 
+  test "update" do
+    qcm = FactoryGirl.create(:qcm, title: 'something')
+    lesson = qcm.lesson
+    post :update, id: qcm.id, lesson_id: lesson.id, qcm: {title: 'other'}
+    assert_redirected_to lesson_qcm_path(lesson, qcm)
+    assert_equal 'other', qcm.reload.title
+  end
+
   test "show" do
     qcm = FactoryGirl.create(:qcm)
     lesson = qcm.lesson

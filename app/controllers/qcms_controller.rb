@@ -27,9 +27,9 @@ class QcmsController < ApplicationController
   end
 
   def update
-    @qcm = Qcm.find(params[:id])
-    @qcm.update(qcm_params)
-    redirect_to qcm_path(@qcm.id)
+    qcm = Qcm.find(params[:id])
+    qcm.update_attributes(qcm_params)
+    redirect_to lesson_qcm_path(qcm.lesson, qcm)
   end
 
   def delete

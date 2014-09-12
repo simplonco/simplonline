@@ -1,6 +1,6 @@
 %h2= t('.title')
 
-= form_for @qcm, url: lesson_qcm_path(@qcm, @lesson) do |f|
+= form_for @qcm, url: lesson_qcm_path(@lesson, @qcm) do |f|
 
   = render partial: 'form', locals: {f: f}
 
