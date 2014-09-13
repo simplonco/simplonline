@@ -3,17 +3,24 @@ require 'test_helper'
 class StaticControllerTest < ActionController::TestCase
 
   test "welcome" do
-    get 'welcome'
+    get :welcome
     assert_response :success
   end
 
   test "legal" do
-    get 'legal'
+    get :legal
     assert_response :success
   end
 
   test "contact" do
-    get 'contact'
+    get :contact
+    assert_response :success
+  end
+
+  test "dashboard" do
+    user = FactoryGirl.create(:user, remote: false)
+    session[:user_id] = user.id
+    get :dashboard
     assert_response :success
   end
 end

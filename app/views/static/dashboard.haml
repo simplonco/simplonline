@@ -1,0 +1,25 @@
+
+%h2
+  = t('.title', name: @user.name)
+
+%section.last-messages
+  %h1= t('.last-message-title')
+  %ul
+    %li
+      message de Raymond, le 22/9/2014 à 22h34
+      %em
+        non mais c'est quoi ce binzzz
+
+%section.last-lessons
+  %h1= t('.last-lessons-title')
+  %ul
+    - @last_lessons.each do |lesson|
+      %li
+        = link_to lesson.title, lesson_path(lesson)
+  %p
+    = link_to t('.lessons'), lessons_path
+
+  - if current_user.local?
+    %p
+      = link_to t('.create_lesson'), new_lesson_path
+

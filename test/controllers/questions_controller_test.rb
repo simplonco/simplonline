@@ -4,6 +4,8 @@ class QuestionsControllerTest < ActionController::TestCase
 
   def setup
     @qcm = FactoryGirl.create(:qcm)
+    user = FactoryGirl.create(:user)
+    session[:user_id] = user.id
   end
 
   test "new" do

@@ -2,6 +2,11 @@ require 'test_helper'
 
 class ChaptersControllerTest < ActionController::TestCase
 
+  def setup
+    user = FactoryGirl.create(:user)
+    session[:user_id] = user.id
+  end
+
   test "new" do
     lesson = FactoryGirl.create(:lesson)
     get :new, lesson_id: lesson

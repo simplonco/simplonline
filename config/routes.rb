@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'users#show'
+  get '/', to: 'static#dashboard'
 
   get '/welcome', to: 'static#welcome'
   get '/contact', to: 'static#contact'
   get '/legal', to: 'static#legal'
 
-  root 'users#show'
+  root 'static#dashboard'
 
   resource :sessions, only: [:create, :destroy]
   resources :users, only: [:edit, :update, :show]
