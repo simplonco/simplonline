@@ -20,8 +20,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'essais/accueil'
-
   resources :exercices do
     resources :essais
   end

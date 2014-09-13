@@ -28,9 +28,6 @@ before_action :exercice, only: [:new, :create, :show]
     redirect_to exercice_path(@essai.exercice.id)
   end
 
-  def accueil
-  end
-
 private
   def exercice
     @exercice = Exercice.find(params[:exercice_id])
