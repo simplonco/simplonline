@@ -64,6 +64,10 @@ fr:
     form:
       add_choice: 'Ajouter un choix'
       delete_choice: 'Supprimer ce choix'
+    new:
+      title: 'Créer une question'
+      cancel: 'Retour'
+      submit: 'Enregistrer'
     edit:
       title: 'Mise à jour de question'
       create: 'Enregistrer'
