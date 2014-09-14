@@ -11,6 +11,7 @@ class QcmsController < ApplicationController
 
   def new
     @lesson = Lesson.find(params[:lesson_id])
+    @available_authors = User.all
   end
 
   def create
@@ -24,6 +25,7 @@ class QcmsController < ApplicationController
   def edit
     @qcm = Qcm.find(params[:id])
     @lesson = @qcm.lesson
+    @available_authors = User.all
   end
 
   def update
@@ -38,6 +40,6 @@ class QcmsController < ApplicationController
   private
 
   def qcm_params
-    params.require(:qcm).permit(:title, :desc)
+    params.require(:qcm).permit(:title, :desc, authors: [])
   end
 end

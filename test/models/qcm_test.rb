@@ -9,4 +9,8 @@ class QcmTest < ActiveSupport::TestCase
   test "invalid without lesson" do
     assert FactoryGirl.build(:qcm, lesson: nil).invalid?
   end
+
+  test "invalid without authors" do
+    assert FactoryGirl.build(:qcm, authors: []).invalid?
+  end
 end

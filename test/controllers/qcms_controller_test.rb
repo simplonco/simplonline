@@ -2,8 +2,10 @@ require 'test_helper'
 
 class QcmsControllerTest < ActionController::TestCase
 
+  attr_reader :user
+
   def setup
-    user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user)
     session[:user_id] = user.id
   end
 
@@ -12,11 +14,12 @@ class QcmsControllerTest < ActionController::TestCase
     get :new, lesson_id: lesson.id
     assert_response :success
     assert_equal lesson, assigns(:lesson)
+    assert_equal [user], assigns(:available_authors)
   end
 
   test "create" do
     lesson = FactoryGirl.create(:lesson)
-    post :create, lesson_id: lesson.id, qcm: {title: 'something', description: 'a ubber qcm from nowhere'}
+    post :create, lesson_id: lesson.id, qcm: {title: 'something', description: 'a ubber qcm from nowhere', authors: ['Paul']}
     assert_redirected_to new_lesson_qcm_question_path(lesson, Qcm.first)
     assert_equal 1, Qcm.count
   end
@@ -28,6 +31,7 @@ class QcmsControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal lesson, assigns(:lesson)
     assert_equal qcm, assigns(:qcm)
+    assert_equal [user], assigns(:available_authors)
   end
 
   test "update" do

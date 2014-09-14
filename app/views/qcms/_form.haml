@@ -8,3 +8,9 @@
 %p
   = f.text_area :desc
 
+%p
+  = f.label :authors
+  %br
+  = f.select :authors, @available_authors.map(&:name), {}, multiple: true
+
+

@@ -9,3 +9,9 @@
   %br
   = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
 
+%p
+  = c.label :authors
+  %br
+  = c.select :authors, @available_authors.map(&:name), {}, multiple: true
+
+

@@ -2,8 +2,10 @@ require 'test_helper'
 
 class ChaptersControllerTest < ActionController::TestCase
 
+  attr_reader :user
+
   def setup
-    user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user)
     session[:user_id] = user.id
   end
 
@@ -12,11 +14,12 @@ class ChaptersControllerTest < ActionController::TestCase
     get :new, lesson_id: lesson
     assert_response :success
     assert_equal lesson, assigns(:lesson)
+    assert_equal [user], assigns(:available_authors)
   end
 
   test "create" do
     lesson = FactoryGirl.create(:lesson)
-    post :create, lesson_id: lesson, chapter: {title: 'something', content: 'Once uppon a time, there was a big story that never end'}
+    post :create, lesson_id: lesson, chapter: {title: 'something', content: 'Once uppon a time, there was a big story that never end', authors: ['Henri']}
     assert_redirected_to edit_lesson_path(lesson)
     assert_equal 1, Chapter.count
     assert_equal 1, lesson.reload.chapters.count
@@ -29,6 +32,7 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal chapter, assigns(:chapter)
     assert_equal lesson, assigns(:lesson)
+    assert_equal [user], assigns(:available_authors)
   end
 
   test "update" do

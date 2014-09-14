@@ -18,6 +18,7 @@ FactoryGirl.define do
 
   factory :qcm do
     lesson
+    authors ['someone', 'someone else']
   end
 
   factory :question do
@@ -41,6 +42,7 @@ FactoryGirl.define do
   factory :chapter do
     lesson
     title { generate(:name) }
+    authors ['someone', 'someone else']
   end
 end
 

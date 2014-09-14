@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913224321) do
+ActiveRecord::Schema.define(version: 20140914202448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,16 @@ ActiveRecord::Schema.define(version: 20140913224321) do
     t.integer "chosen_choices", array: true
   end
 
+  create_table "chapter_authors", force: true do |t|
+    t.integer "user_id"
+    t.integer "chapter_id"
+  end
+
   create_table "chapters", force: true do |t|
     t.integer "lesson_id"
     t.text    "content",   default: "", null: false
     t.string  "title"
+    t.string  "authors",   default: [],              array: true
   end
 
   create_table "choices", force: true do |t|
@@ -67,12 +73,18 @@ ActiveRecord::Schema.define(version: 20140913224321) do
     t.datetime "publish_at"
   end
 
+  create_table "qcm_authors", force: true do |t|
+    t.integer "user_id"
+    t.integer "qcm_id"
+  end
+
   create_table "qcms", force: true do |t|
     t.string   "title"
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "lesson_id"
+    t.string   "authors",    default: [], array: true
   end
 
   add_index "qcms", ["lesson_id"], name: "index_qcms_on_lesson_id", using: :btree

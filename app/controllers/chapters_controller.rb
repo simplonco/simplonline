@@ -2,18 +2,20 @@ class ChaptersController < ApplicationController
 
   def new
     @lesson = Lesson.find(params[:lesson_id])
+    @available_authors = User.all
   end
 
   def create
     lesson = Lesson.find(params[:lesson_id])
-    chapter = lesson.chapters.create(chapter_attributes)
-    chapter.save!
+    chapter = lesson.chapters.new(chapter_attributes)
+    chapter.save
     redirect_to edit_lesson_path(lesson)
   end
 
   def edit
     @chapter = Chapter.find(params[:id])
     @lesson = @chapter.lesson
+    @available_authors = User.all
   end
 
   def update
@@ -32,7 +34,7 @@ class ChaptersController < ApplicationController
   private
 
   def chapter_attributes
-    params.require(:chapter).permit(:title, :content)
+    params.require(:chapter).permit(:title, :content, authors: [])
   end
 
 end
