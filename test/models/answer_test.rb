@@ -17,20 +17,15 @@ class AnswerTest < ActiveSupport::TestCase
   test "valid if question with one valid choice" do
     question = FactoryGirl.create(:question)
     choice = FactoryGirl.create(:choice, valid_answer: true, question: question)
-    answer = FactoryGirl.create(:answer, chosen_choices: choice.id.to_s, question: question)
+    answer = FactoryGirl.create(:answer, chosen_choices: [choice.id], question: question)
     assert_equal true, answer.is_valid?
-  end
-
-  test "chosen_choice_ids" do
-    answer = FactoryGirl.create(:answer, chosen_choices: "2, 4, 5, 6")
-    assert_equal [2, 4, 5, 6], answer.chosen_choice_ids
   end
 
   test "invalid if answer incomplete" do
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
     FactoryGirl.create(:choice, valid_answer: true, question: question)
-    answer = FactoryGirl.create(:answer, chosen_choices: "2", question: question)
+    answer = FactoryGirl.create(:answer, chosen_choices: [2], question: question)
     assert ! answer.is_valid?
   end
 
@@ -38,7 +33,7 @@ class AnswerTest < ActiveSupport::TestCase
     question = FactoryGirl.create(:question)
     FactoryGirl.create(:choice, valid_answer: false, question: question)
     choice = FactoryGirl.create(:choice, valid_answer: true, question: question)
-    answer = FactoryGirl.create(:answer, chosen_choices: choice.id.to_s, question: question)
+    answer = FactoryGirl.create(:answer, chosen_choices: [choice.id], question: question)
     assert answer.is_valid?
   end
 end
