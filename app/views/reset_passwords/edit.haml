@@ -1,0 +1,15 @@
+%h1= t('.title')
+
+= form_for(@user) do |u|
+  %p
+    = u.label :password
+    %br
+    = u.password_field :password
+
+  %p
+    = u.label :password_confirmation
+    %br
+    = u.password_field :password_confirmation
+
+  %p
+    = u.submit t('.submit')

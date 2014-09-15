@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resource :sessions, only: [:create, :destroy]
   resources :users, only: [:edit, :update, :show]
+  resource :reset_password
 
   resources :lessons do
     resources :chapters

@@ -40,4 +40,10 @@ class UserTest < ActiveSupport::TestCase
     user = FactoryGirl.create(:user, remote: true)
     assert ! user.local?
   end
+
+  test "generate reset_password_key!" do
+    user = FactoryGirl.create(:user, reset_password_key: nil)
+    user.generate_reset_password_key!
+    assert_not_nil user.reset_password_key
+  end
 end
