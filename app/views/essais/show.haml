@@ -1,10 +1,11 @@
 %h3 Détail de l'essai
-%br
 - case @essai.exercice.format_reponse
 - when 1 || 2
-  =  @essai.reponse_char
+  = @essai.reponse_char
 - when 3
-  = @essai.fichier
+  - @essai.fichier.gsub(/ /,'&#160').split(/\n/).each_with_index do |line, index|
+    .code
+      = "#{index} " "#{line}".html_safe            
 - when 4
   = @essai.fichier
   = @essai.fichier_tests 
@@ -13,3 +14,4 @@
 %hr
 = link_to "Nouvel essai ?", new_exercice_essai_path(@essai.exercice.id), class: "small button radius"
 = link_to "Revenir à l'accueil", exercices_path, class: "small button radius"  
+/ TODO afficher l'indentation des fichiers essai dans show.haml
