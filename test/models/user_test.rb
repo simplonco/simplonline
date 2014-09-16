@@ -6,13 +6,17 @@ class UserTest < ActiveSupport::TestCase
     assert_equal true, FactoryGirl.build(:user).valid?
   end
 
-  test "invalid without nom" do
+  test "invalid without name" do
     assert_equal true, FactoryGirl.build(:user, name: nil).invalid?
+  end
+
+  test "invalid without email" do
+    assert_equal true, FactoryGirl.build(:user, email: nil).invalid?
   end
 
   test "check email and password on login" do
     user = FactoryGirl.create(:user, password: 'something', password_confirmation: 'something')
-    assert_equal user, User.find_by(user.email).authenticate('something')
+    assert_equal user, User.find_by(email: user.email).authenticate('something')
     assert User.login(user.email, 'something'), 'login with email and password fail'
   end
 
@@ -45,5 +49,18 @@ class UserTest < ActiveSupport::TestCase
     user = FactoryGirl.create(:user, reset_password_key: nil)
     user.generate_reset_password_key!
     assert_not_nil user.reset_password_key
+  end
+
+  test "reset_password" do
+    user = FactoryGirl.create(:user, reset_password_key: nil)
+    User.reset_password(user.email)
+    assert_not_nil user.reload.reset_password_key
+  end
+
+  test "update_password" do
+    user = FactoryGirl.create(:user, reset_password_key: 'ert')
+    user.update_password('truc', 'truc')
+    assert_nil user.reload.reset_password_key
+    assert user.authenticate('truc')
   end
 end

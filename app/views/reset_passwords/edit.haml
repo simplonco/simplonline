@@ -1,15 +1,15 @@
 %h1= t('.title')
 
-= form_for(@user) do |u|
+= form_tag(reset_password_path(user_id: @user.id)) do
   %p
-    = u.label :password
+    = label_tag :password
     %br
-    = u.password_field :password
+    = password_field_tag :password
 
   %p
-    = u.label :password_confirmation
+    = label_tag :password_confirmation
     %br
-    = u.password_field :password_confirmation
+    = password_field_tag :password_confirmation
 
   %p
-    = u.submit t('.submit')
+    = submit_tag t('.submit')

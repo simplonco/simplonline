@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :essais, dependent: :destroy
 
-  validates :name, uniqueness: true
-  validates_presence_of :name
+  validates :name, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true
 
   def self.login(email, password)
     user = User.find_by(email: email)
@@ -27,4 +27,20 @@ class User < ActiveRecord::Base
     self.reset_password_key = key
     self.save!
   end
+
+  def self.reset_password(email)
+    user = User.where(email: email).first
+    if user
+      user.generate_reset_password_key!
+      UserMailer.reset_password(user).deliver
+    end
+  end
+
+  def update_password(password, password_confirmation)
+    self.reset_password_key = nil
+    self.password = password
+    self.password_confirmation = password_confirmation
+    self.save!
+  end
+
 end

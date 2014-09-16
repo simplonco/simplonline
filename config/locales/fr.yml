@@ -17,6 +17,9 @@ fr:
       title: "Demande de renouvellement de mot de passe"
       email: "Email"
       ask_for_reset_password: "Envoyer"
+    edit:
+      title: "Changement de mot de passe"
+      submit: "Enregistrer"
   users:
     show:
       title: "Bienvenue %{name}"

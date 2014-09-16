@@ -8,20 +8,22 @@ class ResetPasswordsControllerTest < ActionController::TestCase
   end
 
   test "create" do
-    post :create
+    post :create, email: 'me@somewhere.com'
     assert_redirected_to welcome_path
-    # email sent
+    assert_not ActionMailer::Base.deliveries.empty?
   end
 
   test "edit" do
-    user = FactoryGirl.create(:user)
-    get :edit
+    other_user = FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user, reset_password_key: 'something')
+    get :edit, key: user.reset_password_key
     assert_response :success
     assert_equal user, assigns(:user)
   end
 
   test "update" do
-    post :update
+    user = FactoryGirl.create(:user)
+    post :update, user_id: user.id, password: 'newpass', password_confirmation: 'newpass'
     assert_redirected_to root_path
   end
 end
