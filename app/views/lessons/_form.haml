@@ -7,3 +7,8 @@
   = l.label :publish_at, t('.publish_at_field')
   %br
   = l.date_field :publish_at, placeholder: t('placeholder.date'), required: true
+
+%p
+  = l.label :description, t('.description')
+  %br
+  = l.text_area :description, placeholder: t('placeholder.description')
