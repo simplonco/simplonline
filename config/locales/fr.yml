@@ -37,14 +37,14 @@ fr:
     new:
       title: "Créer une leçon"
       create: "Créer"
-      title_field: "Titre"
     edit:
       title: "Modifier une leçon"
-      title_field: "Titre"
-      publish_at_field: "Publié le"
       add_chapter: "Ajouter un chapitre"
       update: "Mettre à jour"
       cancel: "Annuler"
+    form:
+      title_field: "Titre"
+      publish_at_field: "Publié le"
     index:
       title: "Toutes les leçons"
       create_lesson: "Ajouter une leçon"
@@ -86,10 +86,18 @@ fr:
     email: "me@example.com"
     password: "****"
     name: "Edgar Hoover"
+    title: "H2G2"
+    date: "23/10/2014"
     message: "All you data are belongs to us..."
     chapter_title: "A propos de code..."
     chapter_content: "Nous avons découvert cette semaine... "
   static:
+    dashboard:
+      title: "Bienvenue"
+      last-message-title: "Les derniers messages sur le forum"
+      last-lessons-title: "Les dernières session"
+      lessons: "Toutes les sessions"
+      create_lesson: "Créer une session"
     legal:
       title: "Mentions légales"
       content: "Ce site appartient à Simplon(tm)..."

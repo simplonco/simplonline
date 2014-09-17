@@ -2,15 +2,8 @@
 %h3= t('.title')
 
 = form_for Lesson.new do |l|
-  %p
-    = l.label :title, t('.title_field')
-  %p
-    = l.text_field :title
 
-  %p
-    = l.label :publish_at, t('.publish_at_field')
-  %p
-    = l.date_field :publish_at
+  = render partial: 'form', locals: {l:l}
 
   %p
     = l.submit t('.create')
