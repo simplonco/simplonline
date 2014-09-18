@@ -33,10 +33,13 @@ class LessonsControllerTest < ActionController::TestCase
   end
 
   test "update" do
-    lesson = FactoryGirl.create(:lesson, title: 'Perl')
-    post :update, id: lesson.id, lesson: {title: 'Python'}
+    lesson = FactoryGirl.create(:lesson, title: 'Perl', description: 'truc', publish_at: '1/2/2013')
+    post :update, id: lesson.id, lesson: {title: 'Python', description: "something other", publish_at: '30/02/2014 14h56'}
     assert_redirected_to lesson_path(lesson)
-    assert_equal 'Python', lesson.reload.title
+    lesson.reload
+    assert_equal 'Python', lesson.title
+    assert_equal 'something other', lesson.description
+    assert_equal Time.new(2014,2,30,14,56), lesson.publish_at
   end
 
   test "show" do

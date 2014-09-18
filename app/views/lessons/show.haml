@@ -2,6 +2,10 @@
 
 %p= @lesson.publish_at
 
+%p
+  :markdown
+    #{@lesson.description}
+
 %p= link_to t('.edit'), edit_lesson_path(@lesson)
 
 %ol

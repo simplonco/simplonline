@@ -40,9 +40,11 @@ fr:
     edit:
       title: "Modifier une leçon"
       add_chapter: "Ajouter un chapitre"
+      add_qcm: "Ajouter un QCM"
       update: "Mettre à jour"
       cancel: "Annuler"
     form:
+      description: "Édito"
       title_field: "Titre"
       publish_at_field: "Publié le"
     index:
@@ -91,6 +93,7 @@ fr:
     message: "All you data are belongs to us..."
     chapter_title: "A propos de code..."
     chapter_content: "Nous avons découvert cette semaine... "
+    description: "Bonjour à tous, ..."
   static:
     dashboard:
       title: "Bienvenue"
