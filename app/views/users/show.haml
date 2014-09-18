@@ -3,3 +3,6 @@
   = t('.title', name: @user.name)
 
 %p= @user.email
+
+- if @user == current_user
+  = link_to t('.edit'), edit_user_path(current_user)

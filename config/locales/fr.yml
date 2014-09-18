@@ -26,7 +26,7 @@ fr:
       last-message-title: "Voici les derniers messages sur le forum"
       last-lessons-title: "Les dernier cours disponibles"
       lessons: "voir tous les cours"
-      create_lesson: "Créer une leçon"
+      create_lesson: "Créer une session"
       last-qcms-title: "Les derniers QCMs"
     edit:
       title: "Modifier mon compte"
@@ -35,10 +35,10 @@ fr:
       submit: "Mettre à jour"
   lessons:
     new:
-      title: "Créer une leçon"
+      title: "Créer une session"
       create: "Créer"
     edit:
-      title: "Modifier une leçon"
+      title: "Modifier une session"
       update: "Mettre à jour"
       cancel: "Annuler"
     form:
@@ -46,13 +46,14 @@ fr:
       title_field: "Titre"
       publish_at_field: "Publié le"
     index:
-      title: "Toutes les leçons"
-      create_lesson: "Ajouter une leçon"
+      title: "Toutes les sessions"
+      create_lesson: "Ajouter une session"
     show:
       edit: "Éditer"
       add_chapter: "Ajouter un chapitre"
       add_qcm: "Ajouter un QCM"
       add_exercice: "Ajouter un Exercice"
+      lessons: 'Toutes les sessions'
   exercices:
     new:
       title: 'Créer un exercice'
