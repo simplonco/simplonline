@@ -1,10 +1,12 @@
 class ExercicesController < ApplicationController
+
   def index
     @exercices = Exercice.all
     @essais = current_user.essais
   end
+
   def new
-    @exercice = Exercice.new
+    @lesson = Lesson.find(params[:lesson_id])
   end
 
   def create

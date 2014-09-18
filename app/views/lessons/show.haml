@@ -23,3 +23,10 @@
 %p
   = link_to t('.add_qcm'), new_lesson_qcm_path(@lesson)
 
+%ol
+  - @lesson.exercices.each do |exercice|
+    %li= link_to exercice.title, lesson_exercice_path(@lesson, exercice)
+
+%p
+  = link_to t('.add_exercice'), new_lesson_exercice_path(@lesson)
+

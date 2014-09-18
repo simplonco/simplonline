@@ -1,2 +1,9 @@
-%h2 Votre nouvel exercice 
-= render partial: "form"
+%h2= t('.title')
+
+= form_for(Exercice.new) do |exo|
+
+  = render partial: "form", locals: {exo:exo}
+
+  %p
+    = exo.submit t('.submit')
+    = link_to t('.cancel'), lesson_path(@lesson)

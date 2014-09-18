@@ -28,4 +28,9 @@ class LessonTest < ActiveSupport::TestCase
     lesson = FactoryGirl.create(:lesson)
     assert_equal [], lesson.qcms
   end
+
+  test "exist without exercices" do
+    lesson = FactoryGirl.create(:lesson)
+    assert_equal [], lesson.exercices
+  end
 end

@@ -39,8 +39,6 @@ fr:
       create: "Créer"
     edit:
       title: "Modifier une leçon"
-      add_chapter: "Ajouter un chapitre"
-      add_qcm: "Ajouter un QCM"
       update: "Mettre à jour"
       cancel: "Annuler"
     form:
@@ -54,6 +52,18 @@ fr:
       edit: "Éditer"
       add_chapter: "Ajouter un chapitre"
       add_qcm: "Ajouter un QCM"
+      add_exercice: "Ajouter un Exercice"
+  exercices:
+    new:
+      title: 'Créer un exercice'
+      submit: 'Enregistrer'
+    form:
+      response: "Réponse attendue"
+      title_field: "Titre"
+      consigne: "Consigne"
+      format_response: "Format de la réponse"
+      echantillon: "Échantillon"
+      format_echantillon: "Format de l'échantillon"
   qcms:
     form:
       description: "Description"

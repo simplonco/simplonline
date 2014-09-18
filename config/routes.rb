@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         resources :answers
       end
     end
+    resources :exercices
   end
 
   resources :exercices do
