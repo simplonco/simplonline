@@ -3,15 +3,25 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   test "valid factory" do
-    assert_equal true, FactoryGirl.build(:user).valid?
+    assert FactoryGirl.build(:user).valid?
   end
 
   test "invalid without name" do
-    assert_equal true, FactoryGirl.build(:user, name: nil).invalid?
+    assert FactoryGirl.build(:user, name: nil).invalid?
+  end
+
+  test "invalid without password if reset password nil" do
+    skip
+    assert FactoryGirl.build(:user, password: nil).invalid?
+  end
+
+  test "valid without password if reset password not nil" do
+    skip
+    assert FactoryGirl.build(:user, password: nil, reset_password_key: 'akey322r23r').valid?
   end
 
   test "invalid without email" do
-    assert_equal true, FactoryGirl.build(:user, email: nil).invalid?
+    assert FactoryGirl.build(:user, email: nil).invalid?
   end
 
   test "check email and password on login" do
@@ -62,5 +72,14 @@ class UserTest < ActiveSupport::TestCase
     user.update_password('truc', 'truc')
     assert_nil user.reload.reset_password_key
     assert user.authenticate('truc')
+  end
+
+  test "inscription" do
+    assert_nil User.find_by(email: 'an@email.net')
+    result = User.inscription('an@email.net')
+    assert_kind_of User, result
+    user = User.find_by(email: 'an@email.net')
+    assert_not_nil user
+    assert_not_nil user.reset_password_key
   end
 end
