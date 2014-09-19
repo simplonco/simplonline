@@ -1,8 +1,8 @@
 fr:
   layouts:
     application:
-      title_window: "Simplonline - beta"
-      title: "Simplonline - beta"
+      title_window: "Simplonline"
+      title: "Simplonline"
       update_login: "Mon compte"
       logout: "Se déconnecter"
       footer-text: "Un site réalisé par [simplon.co](http://simplon.co) avec un design de [Pierre Kowarsky](http://pkowarsky.fr) le tout hébergé chez [appsdeck.eu](http://appsdeck.eu)"
