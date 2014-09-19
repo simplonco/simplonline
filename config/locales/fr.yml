@@ -98,12 +98,7 @@ Les premiers jours seront orientés autour des fondamentaux. L'idée étant de f
 Ensuite, nous passerons à un apprentissage pas-à-pas, en se mettant en situation sur des cas pratiques (logiciels libre, projets interne Simplon). Dans ce contexte nous partirons à la découverte de langages de présentation (HTML, CSS), de langages de programmation (Ruby, Python, Java, Go, Haskell, Erlang, Clojure, Javascript). Nous explorerons également divers frameworks et outils (Sinatra, Rails, Snap, React, ...).
 
 
-La plateforme propose égalemet un forum permettant à tous de communiquer facilement pour apprendre ensemble.
-
-
-Nous organiserons également des rencontres physiques à l'occasion d'évènements pour faciliter les échanges.
-
-    "
+Nous organiserons également des rencontres physiques à l'occasion d'évènements pour faciliter les échanges."
     contact:
       title: 'Contact'
       your_email: 'Email'

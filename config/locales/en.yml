@@ -1,0 +1,102 @@
+en:
+  layouts:
+    application:
+      title_window: 'Simplonline - beta'
+      title: 'Simplonline - beta'
+      update_login: 'My account'
+      logout: 'Logout'
+      footer-text: 'Site design by [simplon.co](http://simplon.co) with a design of [Pierre Kowarsky](http://pkowarsky.fr) hosted at [appsdeck.eu](http://appsdeck.eu)'
+      contact: 'Contact'
+      legal: 'Legal mentions'
+      login: 'Login'
+      email: 'Email'
+      password: 'Password'
+  users:
+    show:
+      title: 'Welcome %{name}'
+      last-message-title: 'Last forum messages'
+      last-lessons-title: 'Last sessions'
+      lessons: 'see all sessions'
+      create_lesson: "Create a session"
+      last-qcms-title: 'Last MCQs'
+    edit:
+      title: 'Modify my account'
+      user_name: 'Name'
+      cancel: 'Cancel'
+      submit: 'Update'
+  lessons:
+    new:
+      title: 'Create a session'
+      create: 'Create'
+      title_field: 'Title'
+    edit:
+      title: 'Update a leçon'
+      title_field: 'Title'
+      publish_at_field: 'Posted on'
+      add_chapter: 'Add a Chapter'
+      update: 'Update'
+      cancel: 'Cancel'
+    index:
+      title: 'All Sessions'
+      create_lesson: 'Add a Session'
+    show:
+      edit: "Edit"
+      add_chapter: 'Add a chapter'
+      add_qcm: 'Add a MCQ'
+  qcms:
+    form:
+      description: 'Description'
+      title: 'Title'
+    new:
+      cancel: 'back'
+      create: 'Save'
+      title: 'Create a new MCQ'
+  chapters:
+    new:
+      title: 'Add a chapter'
+      create: 'Save'
+      cancel: 'cancel'
+    edit:
+      title: 'Update a chapter'
+      update: 'Update'
+      cancel: 'cancel'
+  questions:
+    form:
+      add_choice: 'Add a choice'
+      delete_choice: 'Delete this choice'
+    new:
+      title: 'Create a new question'
+      cancel: 'Back'
+      submit: 'Save'
+    edit:
+      title: 'Update question'
+      create: 'Save'
+      cancel: 'Back'
+      delete_choice: 'Delete this choice'
+  placeholder:
+    email: 'me@example.com'
+    password: '****'
+    name: 'Edgar Hoover'
+    message: 'All you data are belongs to us...'
+    chapter_title: 'About coding...'
+    chapter_content: 'This week we discovered... '
+  static:
+    legal:
+      title: 'Legal mentions'
+      content: "Copyright Simplon(tm)..."
+    welcome:
+      title: 'Welcome to Simplonline'
+      explain: "[Simplonline](http://simplon.co/foad) is a platform that allows trainees from Montreuil, Distant Training subscribers and former Simplonians to collaborate and share their experience. Every Mondays around 6:00pm, trainees release a class session for distants subscribers. These sessions contain the best of what they learnt during the week and lessons, exercices, videos, MCQs. The common discussion forum allows to continue learning together what have been written in sessions. For a subscriber to the Distant Training the estimated time per week is 2 to 4 hours, ressources can satisfy the motivated ones who want more ;-) 
+
+Opening on the *6th October 2014*. Subscriptions will be close by then."
+
+    contact:
+      title: 'Contact'
+      your_email: 'Email'
+      your_name: 'Name'
+      your_message: 'Message'
+      send: 'Send'
+      cancel: 'Cancel'
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%S"
