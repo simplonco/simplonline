@@ -1,0 +1,10 @@
+
+%h3= t('.title')
+
+= form_for @lexique do |l|
+
+  = render partial: 'form', locals: {l: l}
+
+  %p
+    = l.submit t('.update')
+    = link_to t('.cancel'), lexiques_path

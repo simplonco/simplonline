@@ -1,0 +1,21 @@
+
+%p
+  = l.label :keyword
+  %br
+  = l.text_field :keyword, placeholder: t('placeholder.lexique_keyword')
+
+%p
+  = l.label :description
+  %br
+  = l.text_area :description, rows: 21, cols: 82, placeholder: t('placeholder.lexique_description')
+%p
+  = l.label :url
+  %br
+  = l.text_field :url, placeholder: t('placeholder.lexique_url')
+
+/ %p
+/   = l.label :authors
+/   %br
+/   = l.select :authors, @available_authors.map(&:name), {}, multiple: true
+
+

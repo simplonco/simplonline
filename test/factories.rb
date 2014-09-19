@@ -44,6 +44,10 @@ FactoryGirl.define do
     title { generate(:name) }
     authors ['someone', 'someone else']
   end
+
+  factory :lexique do
+    keyword { generate(:name)}
+  end
 end
 
 
