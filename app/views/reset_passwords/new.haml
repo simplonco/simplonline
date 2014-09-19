@@ -1,0 +1,9 @@
+%h1= t('.title')
+
+= form_tag reset_password_path do
+  %label
+    = t('.email')
+    = email_field_tag :email, ''
+
+  = submit_tag t('.ask_for_reset_password')
+

@@ -6,7 +6,7 @@
   - @lessons.each do |lesson|
     %li
       = l(lesson.publish_at)
-      = link_to lesson.title, edit_lesson_path(lesson)
+      = link_to lesson.title, lesson_path(lesson)
 
 - if current_user && current_user.local?
   = link_to t('.create_lesson'), new_lesson_path

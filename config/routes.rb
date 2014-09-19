@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resource :sessions, only: [:create, :destroy]
   resources :users, only: [:edit, :update, :show]
+  resource :reset_password
 
   resources :lessons do
     resources :chapters
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
         resources :answers
       end
     end
+    resources :exercices
   end
 
   resources :exercices do

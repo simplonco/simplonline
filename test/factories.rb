@@ -3,6 +3,10 @@ FactoryGirl.define do
     "name_#{n}"
   end
 
+  sequence :email do |n|
+    "people#{n}@laposte.net"
+  end
+
   factory :essai do
     exercice
   end
@@ -13,6 +17,7 @@ FactoryGirl.define do
   factory :user do
     password 'truc'
     password_confirmation 'truc'
+    email { generate(:email) }
     name { generate(:name) }
   end
 

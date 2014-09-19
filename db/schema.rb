@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914202448) do
+ActiveRecord::Schema.define(version: 20140918065657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,13 +64,17 @@ ActiveRecord::Schema.define(version: 20140914202448) do
     t.integer  "format_reponse"
     t.string   "titre"
     t.string   "format_echantillon"
+    t.integer  "lesson_id"
   end
+
+  add_index "exercices", ["lesson_id"], name: "index_exercices_on_lesson_id", using: :btree
 
   create_table "lessons", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "publish_at"
+    t.text     "description"
   end
 
   create_table "qcm_authors", force: true do |t|
@@ -100,10 +104,11 @@ ActiveRecord::Schema.define(version: 20140914202448) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",              default: false
     t.string   "email"
     t.string   "password_digest"
-    t.boolean  "remote",          default: true
+    t.boolean  "remote",             default: true
+    t.string   "reset_password_key"
   end
 
 end

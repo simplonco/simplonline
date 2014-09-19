@@ -9,7 +9,8 @@ class UserMailerTest < ActionMailer::TestCase
 
     assert_equal ['from@example.com'], email.from
     assert_equal ['tu@grrr.com'], email.to
-    assert_equal 'Welcome to My Awesome Site', email.subject
+    assert_equal I18n.t('user_mailer.reset_password.subject'), email.subject
+    assert email.body.include?(user.name)
   end
 
 end

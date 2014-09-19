@@ -20,6 +20,7 @@ class LessonsController < ApplicationController
   def update
     lesson = Lesson.find(params[:id])
     lesson.update_attributes(lesson_params)
+    lesson.save!
     redirect_to lesson_path(lesson)
   end
 
@@ -30,6 +31,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :publish_at)
+    params.require(:lesson).permit(:title, :publish_at, :description)
   end
 end

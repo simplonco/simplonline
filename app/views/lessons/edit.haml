@@ -1,30 +1,10 @@
 %h3= t('.title')
 
 = form_for @lesson do |l|
-  %p
-    = l.label :title, t('.title_field')
-  %p
-    = l.text_field :title
 
-  %p
-    = l.label :publish_at, t('.publish_at_field')
-  %p
-    = l.date_field :publish_at
-
-  %ol
-    - @lesson.chapters.each do |chapter|
-      %li= link_to chapter.title, edit_lesson_chapter_path(chapter, @lesson)
-
-  %p
-    = link_to t('.add_chapter'), new_lesson_chapter_path(@lesson)
-
-  %ol
-    - @lesson.qcms.each do |qcm|
-      %li= link_to qcm.title, edit_lesson_qcm_path(@lesson, qcm)
-
-  %p
-    = link_to t('.add_qcm'), new_lesson_qcm_path(@lesson)
+  = render partial: 'form', locals: {l:l}
 
   %p
     = l.submit t('.update')
     = link_to t('.cancel'), lesson_path(@lesson)
+

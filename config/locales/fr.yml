@@ -1,61 +1,83 @@
 fr:
   layouts:
     application:
-      title_window: 'Simplonline - beta'
-      title: 'Simplonline - beta'
-      update_login: 'Mon compte'
-      logout: 'Se déconnecter'
-      footer-text: 'Un site réalisé par [simplon.co](http://simplon.co) avec un design de [Pierre Kowarsky](http://pkowarsky.fr) le tout hébergé chez [appsdeck.eu](http://appsdeck.eu)'
-      contact: 'Contact'
-      legal: 'Mentions légales'
-      login: 'Se connecter'
-      email: 'Email'
-      password: 'Mot de passe'
+      title_window: "Simplonline - beta"
+      title: "Simplonline - beta"
+      update_login: "Mon compte"
+      logout: "Se déconnecter"
+      footer-text: "Un site réalisé par [simplon.co](http://simplon.co) avec un design de [Pierre Kowarsky](http://pkowarsky.fr) le tout hébergé chez [appsdeck.eu](http://appsdeck.eu)"
+      contact: "Contact"
+      legal: "Mentions légales"
+      login: "Se connecter"
+      email: "Email"
+      password: "Mot de passe"
+      reset_password: "Mot de passe oublié ?"
+  reset_passwords:
+    new:
+      title: "Demande de renouvellement de mot de passe"
+      email: "Email"
+      ask_for_reset_password: "Envoyer"
+    edit:
+      title: "Changement de mot de passe"
+      submit: "Enregistrer"
   users:
     show:
-      title: 'Bienvenue %{name}'
-      last-message-title: 'Voici les derniers messages sur le forum'
-      last-lessons-title: 'Les dernier cours disponibles'
-      lessons: 'voir tous les cours'
-      create_lesson: "Créer une leçon"
-      last-qcms-title: 'Les derniers QCMs'
+      title: "Bienvenue %{name}"
+      last-message-title: "Voici les derniers messages sur le forum"
+      last-lessons-title: "Les dernier cours disponibles"
+      lessons: "voir tous les cours"
+      create_lesson: "Créer une session"
+      last-qcms-title: "Les derniers QCMs"
     edit:
-      title: 'Modifier mon compte'
-      user_name: 'Nom'
-      cancel: 'Annuler'
-      submit: 'Mettre à jour'
+      title: "Modifier mon compte"
+      user_name: "Nom"
+      cancel: "Annuler"
+      submit: "Mettre à jour"
   lessons:
     new:
-      title: 'Créer une leçon'
-      create: 'Créer'
-      title_field: 'Titre'
+      title: "Créer une session"
+      create: "Créer"
     edit:
-      title: 'Modifier une leçon'
-      title_field: 'Titre'
-      publish_at_field: 'Publié le'
-      add_chapter: 'Ajouter un chapitre'
-      update: 'Mettre à jour'
-      cancel: 'Annuler'
+      title: "Modifier une session"
+      update: "Mettre à jour"
+      cancel: "Annuler"
+    form:
+      description: "Édito"
+      title_field: "Titre"
+      publish_at_field: "Publié le"
     index:
-      title: 'Toutes les leçons'
-      create_lesson: 'Ajouter une leçon'
+      title: "Toutes les sessions"
+      create_lesson: "Ajouter une session"
     show:
       edit: "Éditer"
-      add_chapter: 'Ajouter un chapitre'
-      add_qcm: 'Ajouter un QCM'
+      add_chapter: "Ajouter un chapitre"
+      add_qcm: "Ajouter un QCM"
+      add_exercice: "Ajouter un Exercice"
+      lessons: 'Toutes les sessions'
+  exercices:
+    new:
+      title: 'Créer un exercice'
+      submit: 'Enregistrer'
+    form:
+      response: "Réponse attendue"
+      title_field: "Titre"
+      consigne: "Consigne"
+      format_response: "Format de la réponse"
+      echantillon: "Échantillon"
+      format_echantillon: "Format de l'échantillon"
   qcms:
     form:
-      description: 'Description'
-      title: 'Titre'
+      description: "Description"
+      title: "Titre"
     new:
-      cancel: 'retour'
-      create: 'Enregistrer'
-      title: 'Créer un nouveau QCM'
+      cancel: "retour"
+      create: "Enregistrer"
+      title: "Créer un nouveau QCM"
   chapters:
     new:
-      title: 'Créer un chapitre'
-      create: 'Enregistrer'
-      cancel: 'annuler'
+      title: "Créer un chapitre"
+      create: "Enregistrer"
+      cancel: "annuler"
     edit:
       title: 'Modifier un chapitre'
       update: 'Mettre à jour'
@@ -75,17 +97,17 @@ fr:
       cancel: 'annuler'
   questions:
     form:
-      add_choice: 'Ajouter un choix'
-      delete_choice: 'Supprimer ce choix'
+      add_choice: "Ajouter un choix"
+      delete_choice: "Supprimer ce choix"
     new:
-      title: 'Créer une question'
-      cancel: 'Retour'
-      submit: 'Enregistrer'
+      title: "Créer une question"
+      cancel: "Retour"
+      submit: "Enregistrer"
     edit:
-      title: 'Mise à jour de question'
-      create: 'Enregistrer'
-      cancel: 'Retour'
-      delete_choice: 'Supprimer ce choix'
+      title: "Mise à jour de question"
+      create: "Enregistrer"
+      cancel: "Retour"
+      delete_choice: "Supprimer ce choix"
   placeholder:
     email: 'me@example.com'
     password: '****'
@@ -96,12 +118,13 @@ fr:
     lexique_keyword: 'De quel terme parlons-nous'
     lexique_description: "Une manière de l'expliquer serait de dire..."
     lexique_url: 'Un lien qui illustre le propos'
+    description: "Bonjour à tous, ..."
   static:
     legal:
-      title: 'Mentions légales'
+      title: "Mentions légales"
       content: "Ce site appartient à Simplon(tm)..."
     welcome:
-      title: 'Bienvenue sur Simplonline'
+      title: "Bienvenue sur Simplonline"
       explain: "[Simplonline](http://simplon.co/foad) est une plateforme permettant aux apprenants qui sont en formation physiquement à Montreuil, aux inscrits à la Formation Ouverte A Distance (FOAD) et aux ancien(ne)s Simplonien(ne)s d'interagir et de partager leurs expériences. Chaque semaine, le lundi vers 18h, les apprenants en formation à Montreuil mettront à disposition des inscrits à la FOAD un _cours_ contenant le meilleur de ce qu'ils ont appris la semaine passée ainsi que des exercices, des ressources (screencasts, tutoriels, liens pour aller plus loin). Le forum de discussion commun permettra de prolonger le _cours_, de partager les découvertes et d'échanger par la pratique, et aussi de prolonger les questions/réponses sur les ressources. Le temps de travail estimé pour les apprenants de la FOAD est de 2 à 4h par semaine, mais des ressources pourront satisfaire la soif de celles et ceux qui en veulent plus ;-)
 
 
@@ -116,12 +139,31 @@ Ensuite, nous passerons à un apprentissage pas-à-pas, en se mettant en situati
 
 Nous organiserons également des rencontres physiques à l'occasion d'évènements pour faciliter les échanges."
     contact:
-      title: 'Contact'
-      your_email: 'Email'
-      your_name: 'Nom'
-      your_message: 'Message'
-      send: 'Envoyer'
-      cancel: 'Annuler'
+      title: "Contact"
+      your_email: "Email"
+      your_name: "Nom"
+      your_message: "Message"
+      send: "Envoyer"
+      cancel: "Annuler"
+  user_mailer:
+    reset_password:
+      subject: "[Simplonline] Changer de mot de passe"
+      body: "
+        # Changement de mot de passe
+
+
+        Bonjour %{user_name},
+
+
+        Vous avez demandé à changer de mot de passe, ou bien votre compte viens d'être créé et vous devez venir en saisir un. Pour faire cela veuillez vous render sur la page (%{link_to_reset_password}) puis suivre les instructions.
+
+
+        Si jamais ce message ne correspond pas à une inscription ou une demande de votre part, merci de nous le signaler à [team@simplon.co](mailto:team@simplon.co) merci.
+
+
+
+        L'équipe Simplon.co
+      "
   time:
     formats:
       default: "%d/%m/%Y %H:%S"

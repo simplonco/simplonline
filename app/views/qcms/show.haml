@@ -3,8 +3,9 @@
 
 %p= link_to t('.back_to_lesson'), lesson_path(@lesson)
 
-%p
-  = link_to t('.edit'), edit_lesson_qcm_path(@lesson, @qcm)
+- if current_user.local?
+  %p
+    = link_to t('.edit'), edit_lesson_qcm_path(@lesson, @qcm)
 
   - if @qcm.questions.any?
     = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.questions.first)
@@ -15,8 +16,10 @@
   - @questions.each do |question|
     %li
       = question.title
+
       = link_to t('.edit_question'), edit_lesson_qcm_question_path(@lesson, @qcm, question)
       |
       = link_to t('.delete_question'), lesson_qcm_question_path(@lesson, @qcm, question), method: :delete
 
-  %li= link_to t('.add_question'), new_lesson_qcm_question_path(@lesson, @qcm)
+  - if current_user.local?
+    %li= link_to t('.add_question'), new_lesson_qcm_question_path(@lesson, @qcm)
