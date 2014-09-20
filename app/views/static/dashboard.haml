@@ -25,7 +25,7 @@
   %ul
     - @last_definitions.each do |definition|
       %li
-        = link_to definition.title, definitions_path(anchor: definition.title)
+        = link_to definition.keyword, definitions_path(anchor: definition.keyword)
 
   - if current_user.local?
     %p

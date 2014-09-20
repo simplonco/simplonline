@@ -82,11 +82,11 @@ fr:
       title: 'Modifier un chapitre'
       update: 'Mettre à jour'
       cancel: 'annuler'
-  lexiques:
+  definitions:
     index:
-      title: 'La liste de tous les mot-clés du lexique'
+      title: 'Lexique'
       readmore: '...[Lire la suite]'
-      addkeyword: 'Ajouter un mot-clé au lexique'
+      add_keyword: 'Ajouter un mot-clé au lexique'
     new:
       title: 'Créer un mot-clé'
       create: 'Enregistrer'
@@ -115,9 +115,9 @@ fr:
     message: 'All you data are belongs to us...'
     chapter_title: 'A propos de code...'
     chapter_content: 'Nous avons découvert cette semaine... '
-    lexique_keyword: 'De quel terme parlons-nous'
-    lexique_description: "Une manière de l'expliquer serait de dire..."
-    lexique_url: 'Un lien qui illustre le propos'
+    definition_keyword: 'De quel terme parlons-nous'
+    definition_description: "Une manière de l'expliquer serait de dire..."
+    definition_url: 'Un lien qui illustre le propos'
     description: "Bonjour à tous, ..."
   static:
     legal:
