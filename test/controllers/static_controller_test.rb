@@ -22,5 +22,6 @@ class StaticControllerTest < ActionController::TestCase
     session[:user_id] = user.id
     get :dashboard
     assert_response :success
+    assert_not_nil assigns(:last_definitions)
   end
 end

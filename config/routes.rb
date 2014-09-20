@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :essais
   end
 
-  resources :lexiques
+  resources :definitions
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

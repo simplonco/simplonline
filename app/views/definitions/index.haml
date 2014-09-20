@@ -1,0 +1,12 @@
+
+%h3= t('.title')
+
+%p= link_to t('.add_keyword'), new_definition_path
+%p= link_to t('.lessons'), lessons_path
+
+%dl
+  - @definitions.each do |definition|
+    %dt{id: definition.keyword}
+      = definition.keyword
+    %dd
+      = definition.description

@@ -13,5 +13,6 @@ class StaticController < ApplicationController
   def dashboard
     @user = current_user
     @last_lessons = Lesson.last_lessons
+    @last_definitions = Definition.last_updated
   end
 end

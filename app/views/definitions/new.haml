@@ -1,10 +1,10 @@
 
 %h3= t('.title')
 
-= form_for Lexique.new do |l|
+= form_for Definition.new do |l|
 
   = render partial: 'form', locals: {l: l}
 
   %p
     = l.submit t('.create')
-    = link_to t('.cancel'), lexiques_path
+    = link_to t('.cancel'), definitions_path
