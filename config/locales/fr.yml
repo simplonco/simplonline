@@ -84,9 +84,9 @@ fr:
       cancel: 'annuler'
   definitions:
     index:
-      title: 'Lexique'
+      title: 'Définition'
       readmore: '...[Lire la suite]'
-      add_keyword: 'Ajouter un mot-clé au lexique'
+      add_keyword: 'Ajouter une Définition'
     new:
       title: 'Créer un mot-clé'
       create: 'Enregistrer'
@@ -95,6 +95,8 @@ fr:
       title: 'Modifier un mot-clé'
       update: 'Mettre à jour'
       cancel: 'annuler'
+    show:
+      edit: 'Modifier la définition'
   questions:
     form:
       add_choice: "Ajouter un choix"
@@ -119,6 +121,8 @@ fr:
     definition_description: "Une manière de l'expliquer serait de dire..."
     definition_url: 'Un lien qui illustre le propos'
     description: "Bonjour à tous, ..."
+    title: "Nous avons découvert cette semaine..."
+    date: "Contenu publié le"
   static:
     legal:
       title: "Mentions légales"
