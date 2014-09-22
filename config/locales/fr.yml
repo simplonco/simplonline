@@ -23,11 +23,7 @@ fr:
   users:
     show:
       title: "Bienvenue %{name}"
-      last-message-title: "Voici les derniers messages sur le forum"
-      last-lessons-title: "Les dernier cours disponibles"
       lessons: "voir tous les cours"
-      create_lesson: "Créer une session"
-      last-qcms-title: "Les derniers QCMs"
     edit:
       title: "Modifier mon compte"
       user_name: "Nom"
@@ -124,6 +120,14 @@ fr:
     title: "Nous avons découvert cette semaine..."
     date: "Contenu publié le"
   static:
+    dashboard:
+      title: 'Tableau de bord'
+      last-message-title: "Voici les derniers messages sur le forum"
+      last-lessons-title: "Les dernier cours disponibles"
+      last-qcms-title: "Les derniers QCMs"
+      last-definitions-title: "Les derniers entrées du lexique"
+      create_lesson: "Créer une session"
+      create_definition: "Ajouter un mot dans le lexique"
     legal:
       title: "Mentions légales"
       content: "Ce site appartient à Simplon(tm)..."
