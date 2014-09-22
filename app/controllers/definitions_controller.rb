@@ -10,6 +10,7 @@ class DefinitionsController < ApplicationController
   def create
     definition = Definition.new(definition_attributes)
     definition.save!
+    definition.links_in_chapters
     redirect_to action: :index, anchor: definition.keyword
   end
 
@@ -22,6 +23,10 @@ class DefinitionsController < ApplicationController
     definition.update_attributes(definition_attributes)
     definition.save!
     redirect_to action: :index, anchor: definition.keyword
+  end
+
+  def show
+    @definition = Definition.find(params[:id])
   end
 
   private

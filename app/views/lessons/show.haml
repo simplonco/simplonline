@@ -11,11 +11,10 @@
 
 %ol
   - @lesson.chapters.each do |chapter|
-    %li= link_to chapter.title, lesson_chapter_path(chapter, @lesson)
+    %li= link_to chapter.title, lesson_chapter_path(@lesson, chapter)
 
 - if current_user.local?
-  %p
-    = link_to t('.add_chapter'), new_lesson_chapter_path(@lesson)
+  %p= link_to t('.add_chapter'), new_lesson_chapter_path(@lesson)
 
 
 %ol
