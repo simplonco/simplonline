@@ -3,3 +3,6 @@ User.create({name: 'Distant', email: 'distant@simplon.co', password: 'distant', 
 Exercice.create({consigne: "Ceci est l'exercice 1", echantillon: 'some string JSON', reponse: 'some string JSON', format_reponse: 1, titre: 'baz', format_echantillon: '1'})
 Exercice.create({consigne: "Ceci est l'exercice 2", echantillon: 'foo', reponse: 'bar', format_reponse: 2, titre: 'baz', format_echantillon: '2'})
 Exercice.create({consigne: "Ceci est l'exercice 3", echantillon: 'foo', reponse: 'bar', format_reponse: 3, titre: 'baz', format_echantillon: '3'})
+Lesson.create({id: 1, title: "Premiere lecon Ruby", publish_at: DateTime.new(2014,9,1,17), description: "On va apprendre ruby"})
+Chapter.create({lesson_id: 1, title: "Ruby", content: "Ruby is the best ruby"})
+Definition.create({keyword: "ruby", description: "the best", url: "https://www.ruby-lang.org"})
