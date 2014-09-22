@@ -43,8 +43,6 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_equal 'something other', chapter.reload.content
   end
 
-
-
   test "show" do
     chapter = FactoryGirl.create(:chapter)
     lesson = chapter.lesson
@@ -52,5 +50,12 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal chapter, assigns(:chapter)
     assert_equal lesson, assigns(:lesson)
+  end
+
+  test "add definitions to chapter" do
+    chap = FactoryGirl.create(:chapter, content: "Word")
+    definition = FactoryGirl.create(:definition, id: 1, keyword: "word")
+    chap.insert_definitions
+    assert_equal "<a href='/definitions/1' class='definition'>Word</a>", chap.content
   end
 end

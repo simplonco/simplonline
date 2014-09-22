@@ -10,6 +10,7 @@ class ChaptersController < ApplicationController
     chapter = lesson.chapters.new(chapter_attributes)
     chapter.save
     redirect_to edit_lesson_path(lesson)
+    chapter.insert_definitions
   end
 
   def edit
