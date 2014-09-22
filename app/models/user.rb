@@ -44,9 +44,12 @@ class User < ActiveRecord::Base
   end
 
   def self.inscription(email)
-    user = create!(email: email, name: email, password: email, password_confirmation: email)
-    user.errors.full_messages
-    reset_password(email)
+    user = new(email: email, name: email, password: email, password_confirmation: email)
+    if user.save
+      reset_password(email)
+    else
+      puts user.errors.full_messages
+    end
     user
   end
 
