@@ -9,9 +9,9 @@ namespace :simplon do
       File.open(file) do |f|
         email = f.read.chomp
         user = User.find_by(email: email)
-        if user
-          User.reset_password(email)
-        else
+        puts "existing user: #{user.inspect}"
+        unless user
+          puts "inscription"
           User.inscription(f.read)
         end
       end
