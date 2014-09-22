@@ -5,14 +5,13 @@ namespace :simplon do
     task :create_users => [:environment] do
       file = ENV['file']
       puts "create users with #{file}"
-
-      File.open(file) do |f|
+      File.open(file, 'r') do |f|
         email = f.read.chomp
         user = User.find_by(email: email)
         puts "existing user: #{user.inspect}"
         unless user
           puts "inscription"
-          User.inscription(f.read)
+          User.inscription(email)
         end
       end
 
