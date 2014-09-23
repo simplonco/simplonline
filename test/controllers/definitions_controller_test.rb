@@ -37,4 +37,14 @@ class DefinitionsControllerTest < ActionController::TestCase
     post :update, id: definition.id, definition: {description: 'other thing'}
     assert_redirected_to definitions_path(anchor: definition.keyword)
   end
+
+  test "destroy" do
+    definition = FactoryGirl.create(:definition, keyword: 'foo')
+    chapter = FactoryGirl.create(:chapter, title: 'something', content: "<a href='/definitions/#{definition.id}' class='definition'>#{definition.keyword}</a>", authors: "c")
+    definition.delete_links_in_chapters
+    delete :destroy, id: definition.id
+    assert_equal "foo", chapter.content
+    assert_response :redirect
+  end
 end
+  
