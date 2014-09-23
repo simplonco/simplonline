@@ -80,9 +80,9 @@ fr:
       cancel: 'annuler'
   definitions:
     index:
-      title: 'Définition'
+      title: 'Toutes les définitions'
       readmore: '...[Lire la suite]'
-      add_keyword: 'Ajouter une Définition'
+      add_keyword: 'Ajouter une définition'
     new:
       title: 'Créer un mot-clé'
       create: 'Enregistrer'
@@ -90,9 +90,10 @@ fr:
     edit:
       title: 'Modifier un mot-clé'
       update: 'Mettre à jour'
-      cancel: 'annuler'
+      cancel: 'Annuler'
     show:
-      edit: 'Modifier la définition'
+      edit: 'Modifier cette définition'
+      delete: 'Supprimer cette définition'
   questions:
     form:
       add_choice: "Ajouter un choix"
@@ -123,9 +124,9 @@ fr:
     dashboard:
       title: 'Tableau de bord'
       last-message-title: "Voici les derniers messages sur le forum"
-      last-lessons-title: "Les dernier cours disponibles"
+      last-lessons-title: "Les dernières Lessons disponibles"
       last-qcms-title: "Les derniers QCMs"
-      last-definitions-title: "Les derniers entrées du lexique"
+      last-definitions-title: "Les dernières Définitions"
       create_lesson: "Créer une session"
       create_definition: "Ajouter un mot dans le lexique"
     legal:
