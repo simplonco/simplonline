@@ -74,12 +74,24 @@ class UserTest < ActiveSupport::TestCase
     assert user.authenticate('truc')
   end
 
-  test "inscription" do
+  test "inscription remote" do
     assert_nil User.find_by(email: 'an@email.net')
     result = User.inscription('an@email.net')
     assert_kind_of User, result
     user = User.find_by(email: 'an@email.net')
     assert_not_nil user
     assert_not_nil user.reset_password_key
+    assert user.remote?
   end
+
+  test "inscription local" do
+    assert_nil User.find_by(email: 'an@email.net')
+    result = User.inscription_local('an@email.net')
+    assert_kind_of User, result
+    user = User.find_by(email: 'an@email.net')
+    assert_not_nil user
+    assert_not_nil user.reset_password_key
+    assert user.local?
+  end
+
 end
