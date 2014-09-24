@@ -40,11 +40,11 @@ class DefinitionsControllerTest < ActionController::TestCase
 
   test "destroy" do
     definition = FactoryGirl.create(:definition, keyword: 'foo')
-    chapter = FactoryGirl.create(:chapter, title: 'something', content: "<a href='/definitions/#{definition.id}' class='definition'>#{definition.keyword}</a>", authors: "c")
+    chapter = FactoryGirl.create(:chapter, title: 'something', content: "<a href='/definitions/#{definition.id}' class='definition'>#{definition.keyword}</a>")
     definition.delete_links_in_chapters
     delete :destroy, id: definition.id
-    assert_equal "foo", chapter.content
     assert_response :redirect
+    assert_equal 0, Definition.count
   end
 end
-  
+

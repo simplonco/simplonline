@@ -20,7 +20,7 @@ class ChaptersControllerTest < ActionController::TestCase
   test "create" do
     lesson = FactoryGirl.create(:lesson)
     post :create, lesson_id: lesson, chapter: {title: 'something', content: 'Once uppon a time, there was a big story that never end', authors: ['Henri']}
-    assert_redirected_to edit_lesson_path(lesson)
+    assert_redirected_to lesson_chapter_path(lesson, Chapter.first)
     assert_equal 1, Chapter.count
     assert_equal 1, lesson.reload.chapters.count
   end
