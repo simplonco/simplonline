@@ -8,9 +8,9 @@ class ChaptersController < ApplicationController
   def create
     lesson = Lesson.find(params[:lesson_id])
     chapter = lesson.chapters.new(chapter_attributes)
+    chapter.insert_definitions!
     chapter.save
     redirect_to lesson_chapter_path(lesson, chapter)
-    chapter.insert_definitions
   end
 
   def edit
