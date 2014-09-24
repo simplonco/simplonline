@@ -39,7 +39,7 @@ class ChaptersControllerTest < ActionController::TestCase
     chapter = FactoryGirl.create(:chapter, content: 'something')
     lesson = chapter.lesson
     post :update, lesson_id: lesson, id: chapter.id, chapter: {content: 'something other'}
-    assert_redirected_to lesson_chapter_path(chapter, lesson)
+    assert_redirected_to lesson_chapter_path(lesson, chapter)
     assert_equal 'something other', chapter.reload.content
   end
 

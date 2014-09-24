@@ -24,7 +24,7 @@ class ChaptersController < ApplicationController
     lesson = chapter.lesson
     chapter.update_attributes(chapter_attributes)
     chapter.save!
-    redirect_to lesson_chapter_path(chapter, lesson)
+    redirect_to lesson_chapter_path(lesson, chapter)
   end
 
   def show

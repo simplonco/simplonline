@@ -14,19 +14,28 @@ class ChapterTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:chapter, authors: []).invalid?
   end
 
+  test "add definitions to chapter" do
+    definition = FactoryGirl.create(:definition, keyword: "word")
+    chapter = FactoryGirl.build(:chapter, content: "Word")
+    chapter.insert_definitions!
+    expected_content = "[Word](/definitions/#{definition.id})"
+    assert_equal expected_content, chapter.content
+  end
+
   test "insert defintion" do
     definition = FactoryGirl.create(:definition, keyword: 'keyword')
-    chapter = FactoryGirl.create(:chapter, content: "a content with some **keyword** that I wanna link to *definition*")
+    chapter = FactoryGirl.build(:chapter, content: "a content with some **keyword** that I wanna link to *definition*")
     chapter.insert_definitions!
     expected_content = "a content with some [**keyword**](/definitions/#{definition.id}) that I wanna link to *definition*"
     assert_equal expected_content, chapter.content
   end
 
-  test "add definitions to chapter" do
-    chapter = FactoryGirl.create(:chapter, content: "Word")
-    definition = FactoryGirl.create(:definition, id: 1, keyword: "word")
+  test "add definitions when an other definition is already linked to chapter" do
+    skip
+    definition = FactoryGirl.create(:definition, keyword: 'agilité')
+    chapter = FactoryGirl.build(:chapter, content: "le mot [agilité](/definitions/#{definition.id}) c'est mieux  le gras **agilité** est-ce mieux ?")
     chapter.insert_definitions!
-    expected_content = "[Word](/definitions/#{definition.id})"
+    expected_content = "le mot [agilité](/definitions/#{definition.id}) c'est mieux le gras [**agilité**](/definitions/#{definition.id}) est-ce mieux ?"
     assert_equal expected_content, chapter.content
   end
 end

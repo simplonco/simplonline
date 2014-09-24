@@ -5,7 +5,7 @@ class Chapter < ActiveRecord::Base
 
   def insert_definitions!
     Definition.all.each do |definition|
-      self.content = self.content.gsub(/[\*_]*#{definition.keyword.to_sym}[\*_]*/i){ |s| "[#{s}](/definitions/#{definition.id})"}
+      self.content = self.content.gsub(/[\*]*#{definition.keyword.to_sym}[\*]*/i) { |s| "[#{s}](/definitions/#{definition.id})" }
     end
   end
 end

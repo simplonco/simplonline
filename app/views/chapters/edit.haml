@@ -1,9 +1,9 @@
 %h3= t('.title')
 
-= form_for @chapter, url: lesson_chapter_path(@chapter, @chapter.lesson) do |c|
+= form_for @chapter, url: lesson_chapter_path(@lesson, @chapter) do |c|
 
   = render partial: 'form', locals: {c: c}
 
   %p
     = c.submit t('.update')
-    = link_to t('.cancel'), lesson_chapter_path(@chapter, @chapter.lesson)
+    = link_to t('.cancel'), lesson_chapter_path(@lesson, @chapter)

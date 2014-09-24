@@ -1,7 +1,7 @@
 %h2= t('.title', lesson_title: @lesson.title, chapter_title: @chapter.title)
 
 - if current_user.local?
-  %p= link_to t('.edit'), edit_lesson_chapter_path(@chapter, @lesson)
+  %p= link_to t('.edit'), edit_lesson_chapter_path(@lesson, @chapter)
 
 %p= link_to t('.back_to_lesson'), lesson_path(@lesson)
 
