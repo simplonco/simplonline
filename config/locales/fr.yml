@@ -176,3 +176,6 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
   time:
     formats:
       default: "%d/%m/%Y %H:%S"
+  date:
+    formats:
+      default: "%d/%m/%Y %H:%S"
