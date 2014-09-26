@@ -4,6 +4,7 @@
 
 %p= link_to t('.edit'), edit_definition_path(@definition)
 
-%p= link_to t('.delete'), definition_path(@definition), method: :delete
+= form_for @definition, method: :delete do |d|
+  = d.submit t('.delete')
 
 
