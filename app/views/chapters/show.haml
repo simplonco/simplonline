@@ -1,11 +1,17 @@
-%h2= @chapter.title
+%section
+  %h1= @chapter.title
 
-%p
+  %article.content
+    :markdown
+      #{@chapter.content}
+
+  %p.authors
+    - @chapter.authors.each do |author|
+      = link_to(author.name, user_path(author))
+
+%nav
   = link_to t('.back_to_lesson'), lesson_path(@lesson)
   - if current_user.local?
     = link_to t('.edit'), edit_lesson_chapter_path(@lesson, @chapter)
 
-
-:markdown
-  #{@chapter.content}
 

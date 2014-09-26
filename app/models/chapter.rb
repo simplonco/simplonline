@@ -1,7 +1,10 @@
 class Chapter < ActiveRecord::Base
   belongs_to :lesson
 
-  validates_presence_of :lesson, :title, :authors
+  has_many :chapter_authors
+  has_many :authors, through: :chapter_authors, source: :user
+
+  validates_presence_of :lesson, :title
 
   def insert_definitions!
     Definition.all.each do |definition|

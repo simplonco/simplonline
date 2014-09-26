@@ -10,8 +10,7 @@
   = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
 
 %p
-  = c.label :authors
+  = c.label :author_ids
   %br
-  = c.select :authors, @available_authors.map(&:name), {}, multiple: true
-
+  = c.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true, include_blank: false
 

@@ -35,7 +35,7 @@ class ChaptersController < ApplicationController
   private
 
   def chapter_attributes
-    params.require(:chapter).permit(:title, :content, authors: [])
+    params.require(:chapter).permit(:title, :content, author_ids: [])
   end
 
 end
