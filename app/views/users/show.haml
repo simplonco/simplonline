@@ -2,7 +2,7 @@
 %h2
   = t('.title', name: @user.name)
 
-%p= @user.email
+%p= t('.email', email: @user.email)
 
 - if @user == current_user
   = link_to t('.edit'), edit_user_path(current_user)

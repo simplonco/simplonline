@@ -22,8 +22,9 @@ fr:
       submit: "Enregistrer"
   users:
     show:
-      title: "Bienvenue %{name}"
+      title: "Bienvenue %{name},"
       lessons: "voir tous les cours"
+      email: "Votre email est %{email}."
     edit:
       title: "Modifier mon compte"
       user_name: "Nom"
