@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     resources :essais
   end
 
+  resources :tags
+
   resources :definitions
 
   require 'sidekiq/web'

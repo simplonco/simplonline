@@ -6,9 +6,19 @@ class Chapter < ActiveRecord::Base
 
   validates_presence_of :lesson, :title, :authors
 
+  Tags = %w{ code_review book_review kata tools framework }
+
+
+  scope :about, ->(tag) { where("ARRAY[?]::varchar[] && tags", tag) }
+
   def insert_definitions!
     Definition.all.each do |definition|
       self.content = self.content.gsub(/[\*]*#{definition.keyword.to_sym}[\*]*/i) { |s| "[#{s}](/definitions/#{definition.id})" }
     end
+  end
+
+  def tags=(tags)
+    tags.reject!(&:blank?)
+    write_attribute(:tags, tags)
   end
 end

@@ -5,6 +5,10 @@
     :markdown
       #{@chapter.content}
 
+  %p.tags
+    - @chapter.tags.each do |tag|
+      = link_to(t("tags.#{tag}"), tag_path(id: tag))
+
   %p.authors
     - @chapter.authors.each do |author|
       = link_to(author.name, user_path(author))

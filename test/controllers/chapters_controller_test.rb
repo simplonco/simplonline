@@ -15,6 +15,7 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal lesson, assigns(:lesson)
     assert_equal [user], assigns(:available_authors)
+    assert_equal Chapter::Tags, assigns(:available_tags)
   end
 
   test "create" do
@@ -33,6 +34,7 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_equal chapter, assigns(:chapter)
     assert_equal lesson, assigns(:lesson)
     assert_equal User.all, assigns(:available_authors)
+    assert_equal Chapter::Tags, assigns(:available_tags)
   end
 
   test "update" do

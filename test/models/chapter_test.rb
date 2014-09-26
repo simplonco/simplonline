@@ -38,6 +38,12 @@ class ChapterTest < ActiveSupport::TestCase
     expected_content = "le mot [agilité](/definitions/#{definition.id}) c'est mieux le gras [**agilité**](/definitions/#{definition.id}) est-ce mieux ?"
     assert_equal expected_content, chapter.content
   end
+
+  test "filter on tag" do
+    tools_chapter = FactoryGirl.create(:chapter, tags: ['tools'])
+    kata_chapter = FactoryGirl.create(:chapter, tags: ['kata'])
+    assert_equal [kata_chapter], Chapter.about(:kata)
+  end
 end
 
 

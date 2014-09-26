@@ -1,0 +1,6 @@
+%h1= @tag
+
+%ol
+  - @chapters.each do |chapter|
+    %li= link_to chapter.title, lesson_chapter_path(chapter.lesson, chapter)
+

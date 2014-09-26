@@ -10,6 +10,11 @@
   = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
 
 %p
+  = c.label :tags
+  %br
+  = c.select :tags, @available_tags.map{|t| [t("tags.#{t}"), t]}, {}, multiple: true, include_blank: false
+
+%p
   = c.label :author_ids
   %br
   = c.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true, include_blank: false

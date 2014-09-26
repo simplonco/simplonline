@@ -3,6 +3,7 @@ class ChaptersController < ApplicationController
   def new
     @lesson = Lesson.find(params[:lesson_id])
     @available_authors = User.all
+    @available_tags = Chapter::Tags
   end
 
   def create
@@ -17,6 +18,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     @lesson = @chapter.lesson
     @available_authors = User.all
+    @available_tags = Chapter::Tags
   end
 
   def update
@@ -35,7 +37,7 @@ class ChaptersController < ApplicationController
   private
 
   def chapter_attributes
-    params.require(:chapter).permit(:title, :content, author_ids: [])
+    params.require(:chapter).permit(:title, :content, tags: [], author_ids: [])
   end
 
 end

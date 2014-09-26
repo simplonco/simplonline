@@ -171,6 +171,12 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
 
         L'équipe Simplon.co
       "
+  tags:
+    kata: "Kata"
+    book_review: "Livre"
+    code_review: "Explication de code"
+    tools: "Outils"
+    framework: "Framework & Lib"
   time:
     formats:
       default: "%d/%m/%Y %H:%S"
