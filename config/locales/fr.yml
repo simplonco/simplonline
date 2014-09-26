@@ -155,9 +155,9 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       your_message: "Message"
       send: "Envoyer"
       cancel: "Annuler"
-  user_mailer:
+  user_mailer: "foad@simplon.co"
     reset_password:
-      subject: "[Simplonline] Changer de mot de passe"
+      subject: "Votre accès à la plateforme Simplonline - FOAD de Simplon.co"
       body: "
         # Changement de mot de passe
 
@@ -165,12 +165,13 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
         Bonjour %{user_name},
 
 
-        Vous avez demandé à changer de mot de passe, ou bien votre compte viens d'être créé et vous devez venir en saisir un. Pour faire cela veuillez vous render sur la page (%{link_to_reset_password}) puis suivre les instructions.
+        L'aventure va bientôt commencer et vous pouvez dès maintenant accéder à la plateforme Simplonline. Pour cela, merci de vous rendre sur la page (%{link_to_reset_password}) et de changer votre mot de passe.
 
+        Vous pourrez ensuite vous connecter à la plateforme en utilisant votre adresse mail et votre mot de passe.
 
-        Si jamais ce message ne correspond pas à une inscription ou une demande de votre part, merci de nous le signaler à [team@simplon.co](mailto:team@simplon.co) merci.
-
-
+        Si jamais ce message ne correspond pas à une inscription ou une demande de votre part, merci de nous le signaler à [team@simplon.co](mailto:team@simplon.co).
+        
+        À très bientôt !
 
         L'équipe Simplon.co
       "
