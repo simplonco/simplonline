@@ -4,5 +4,5 @@ git pull && \
 bundle exec rake test && \
 bundle exec cucumber && \
 git push && \
-git push appsdeck master
+git push appsdeck-prod master
 
