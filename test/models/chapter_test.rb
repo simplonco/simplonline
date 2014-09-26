@@ -11,7 +11,7 @@ class ChapterTest < ActiveSupport::TestCase
   end
 
   test "invalid without authors" do
-    assert FactoryGirl.build(:chapter, authors: []).invalid?
+    assert FactoryGirl.build(:chapter, authors: []).invalid?, 'should have at leat one author'
   end
 
   test "add definitions to chapter" do

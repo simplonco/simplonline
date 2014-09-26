@@ -19,7 +19,7 @@ class ChaptersControllerTest < ActionController::TestCase
 
   test "create" do
     lesson = FactoryGirl.create(:lesson)
-    post :create, lesson_id: lesson, chapter: {title: 'something', content: 'Once uppon a time, there was a big story that never end', authors: ['Henri']}
+    post :create, lesson_id: lesson, chapter: {title: 'something', content: 'Once uppon a time, there was a big story that never end', author_ids: [user.id.to_s]}
     assert_redirected_to lesson_chapter_path(lesson, Chapter.first)
     assert_equal 1, Chapter.count
     assert_equal 1, lesson.reload.chapters.count
@@ -32,7 +32,7 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal chapter, assigns(:chapter)
     assert_equal lesson, assigns(:lesson)
-    assert_equal [user], assigns(:available_authors)
+    assert_equal User.all, assigns(:available_authors)
   end
 
   test "update" do

@@ -10,7 +10,6 @@ class ResetPasswordsControllerTest < ActionController::TestCase
   test "create" do
     post :create, email: 'me@somewhere.com'
     assert_redirected_to welcome_path
-    assert_not ActionMailer::Base.deliveries.empty?
   end
 
   test "edit" do

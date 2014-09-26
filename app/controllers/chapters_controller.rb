@@ -9,7 +9,7 @@ class ChaptersController < ApplicationController
     lesson = Lesson.find(params[:lesson_id])
     chapter = lesson.chapters.new(chapter_attributes)
     chapter.insert_definitions!
-    chapter.save
+    chapter.save!
     redirect_to lesson_chapter_path(lesson, chapter)
   end
 
