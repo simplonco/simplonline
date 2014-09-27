@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates :name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
 
+  scope :authors, -> { where(student_type: User::LOCAL) }
+
   def self.login(email, password)
     user = User.find_by(email: email)
     if user && user.reset_password_key.nil?

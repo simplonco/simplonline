@@ -5,7 +5,7 @@ class ChaptersControllerTest < ActionController::TestCase
   attr_reader :user
 
   def setup
-    @user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user, student_type: User::LOCAL)
     session[:user_id] = user.id
   end
 
@@ -33,7 +33,7 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal chapter, assigns(:chapter)
     assert_equal lesson, assigns(:lesson)
-    assert_equal User.all, assigns(:available_authors)
+    assert_equal [user], assigns(:available_authors)
     assert_equal Chapter::Tags, assigns(:available_tags)
   end
 

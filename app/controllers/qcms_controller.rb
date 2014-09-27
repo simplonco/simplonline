@@ -11,7 +11,7 @@ class QcmsController < ApplicationController
 
   def new
     @lesson = Lesson.find(params[:lesson_id])
-    @available_authors = User.all
+    @available_authors = User.authors
   end
 
   def create
@@ -25,7 +25,7 @@ class QcmsController < ApplicationController
   def edit
     @qcm = Qcm.find(params[:id])
     @lesson = @qcm.lesson
-    @available_authors = User.all
+    @available_authors = User.authors
   end
 
   def update

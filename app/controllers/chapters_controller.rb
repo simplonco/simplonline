@@ -2,7 +2,7 @@ class ChaptersController < ApplicationController
 
   def new
     @lesson = Lesson.find(params[:lesson_id])
-    @available_authors = User.all
+    @available_authors = User.authors
     @available_tags = Chapter::Tags
   end
 
@@ -17,7 +17,7 @@ class ChaptersController < ApplicationController
   def edit
     @chapter = Chapter.find(params[:id])
     @lesson = @chapter.lesson
-    @available_authors = User.all
+    @available_authors = User.authors
     @available_tags = Chapter::Tags
   end
 

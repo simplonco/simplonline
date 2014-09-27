@@ -96,4 +96,10 @@ class UserTest < ActiveSupport::TestCase
     assert user.local?, "User was not created as local user"
   end
 
+  test "list only authors" do
+    author = FactoryGirl.create(:user, student_type: User::LOCAL)
+    staff = FactoryGirl.create(:user, student_type: User::STAFF)
+    remote = FactoryGirl.create(:user, student_type: User::REMOTE)
+    assert_equal [author], User.authors
+  end
 end

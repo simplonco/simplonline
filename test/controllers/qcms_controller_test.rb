@@ -5,7 +5,7 @@ class QcmsControllerTest < ActionController::TestCase
   attr_reader :user
 
   def setup
-    @user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user, student_type: User::LOCAL)
     session[:user_id] = user.id
   end
 
