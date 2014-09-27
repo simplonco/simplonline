@@ -4,5 +4,6 @@ git pull && \
 bundle exec rake test && \
 bundle exec cucumber && \
 git push && \
+git push simplon-dev master && \
 git push appsdeck-prod master
 

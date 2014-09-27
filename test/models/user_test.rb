@@ -24,6 +24,10 @@ class UserTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:user, email: nil).invalid?
   end
 
+  test "invalid without type" do
+    assert FactoryGirl.build(:user, student_type: nil).invalid?, "Student type can't be nil"
+  end
+
   test "check email and password on login" do
     user = FactoryGirl.create(:user, password: 'something', password_confirmation: 'something')
     assert_equal user, User.find_by(email: user.email).authenticate('something')
@@ -36,22 +40,22 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "remote? true when remote student" do
-    user = FactoryGirl.create(:user, remote: true)
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
     assert user.remote?
   end
 
   test "remote? false when remote student" do
-    user = FactoryGirl.create(:user, remote: false)
+    user = FactoryGirl.create(:user, student_type: User::LOCAL)
     assert ! user.remote?
   end
 
   test "local? true when presential student" do
-    user = FactoryGirl.create(:user, remote: false)
+    user = FactoryGirl.create(:user, student_type: User::LOCAL)
     assert user.local?
   end
 
   test "local? false when presential student" do
-    user = FactoryGirl.create(:user, remote: true)
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
     assert ! user.local?
   end
 
@@ -79,9 +83,8 @@ class UserTest < ActiveSupport::TestCase
     result = User.inscription('an@email.net')
     assert_kind_of User, result
     user = User.find_by(email: 'an@email.net')
-    assert_not_nil user
     assert_not_nil user.reset_password_key
-    assert user.remote?
+    assert user.remote?, "User was not created as remote user"
   end
 
   test "inscription local" do
@@ -89,9 +92,8 @@ class UserTest < ActiveSupport::TestCase
     result = User.inscription_local('an@email.net')
     assert_kind_of User, result
     user = User.find_by(email: 'an@email.net')
-    assert_not_nil user
     assert_not_nil user.reset_password_key
-    assert user.local?
+    assert user.local?, "User was not created as local user"
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926210447) do
+ActiveRecord::Schema.define(version: 20140927200654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,8 +115,8 @@ ActiveRecord::Schema.define(version: 20140926210447) do
     t.boolean  "admin",              default: false
     t.string   "email"
     t.string   "password_digest"
-    t.boolean  "remote",             default: true
     t.string   "reset_password_key"
+    t.string   "student_type",       default: "remote"
   end
 
 end

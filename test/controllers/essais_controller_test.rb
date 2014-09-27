@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EssaisControllerTest < ActionController::TestCase
   def setup
-    user = FactoryGirl.create(:user, remote: false)
+    user = FactoryGirl.create(:user, student_type: User::LOCAL)
     session[:user_id] = user.id
   end
 

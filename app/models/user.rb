@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
 
   has_many :essais, dependent: :destroy
 
+  LOCAL = :local
+  REMOTE = :remote
+  STAFF = :staff
+
+  validates :student_type, presence: true
   validates :name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
 
@@ -16,7 +21,11 @@ class User < ActiveRecord::Base
   end
 
   def local?
-    ! self.remote?
+    self.student_type.to_s == User::LOCAL.to_s
+  end
+
+  def remote?
+    self.student_type.to_s == User::REMOTE.to_s
   end
 
   def generate_reset_password_key!
@@ -44,12 +53,12 @@ class User < ActiveRecord::Base
   end
 
   def self.inscription(email)
-    user = new(email: email, name: email, password: email, password_confirmation: email)
+    user = new(email: email, name: email, password: email, password_confirmation: email, student_type: User::REMOTE)
     save_and_reset_password(user)
   end
 
   def self.inscription_local(email)
-    user = new(email: email, name: email, password: email, password_confirmation: email, remote: false)
+    user = new(email: email, name: email, password: email, password_confirmation: email, student_type: User::LOCAL)
     save_and_reset_password(user)
   end
 

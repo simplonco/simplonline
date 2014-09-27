@@ -18,7 +18,7 @@ class StaticControllerTest < ActionController::TestCase
   end
 
   test "dashboard" do
-    user = FactoryGirl.create(:user, remote: false)
+    user = FactoryGirl.create(:user, student_type: User::LOCAL)
     session[:user_id] = user.id
     get :dashboard
     assert_response :success
