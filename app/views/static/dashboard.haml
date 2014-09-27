@@ -27,8 +27,9 @@
       %li
         = link_to definition.keyword, definitions_path(anchor: definition.keyword)
 
+  %p
+    = link_to t('.definitions'), definitions_path
   - if current_user.local?
-    %p
-      = link_to t('.create_definition'), new_definition_path
+    = link_to t('.create_definition'), new_definition_path
 
 

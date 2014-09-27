@@ -2,9 +2,12 @@
 
 %p= @definition.description
 
-%p= link_to t('.edit'), edit_definition_path(@definition)
+%p
+  = link_to t('.definitions'), definitions_path
+  - if current_user.local?
+    = link_to t('.edit'), edit_definition_path(@definition)
 
-= form_for @definition, method: :delete do |d|
-  = d.submit t('.delete')
+    = form_for @definition, method: :delete do |d|
+      = d.submit t('.delete')
 
 

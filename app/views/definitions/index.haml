@@ -1,7 +1,8 @@
 %h3= t('.title')
 
-%p= link_to t('.add_keyword'), new_definition_path
 %p= link_to t('.lessons'), lessons_path
+- if current_user.local?
+  = link_to t('.add_keyword'), new_definition_path
 
 %dl
   - @definitions.each do |definition|
