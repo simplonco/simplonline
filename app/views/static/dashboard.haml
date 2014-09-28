@@ -16,8 +16,9 @@
       %li
         = link_to lesson.title, lesson_path(lesson)
 
-  - if current_user.local?
-    %p
+  %p
+    = link_to t('.lessons'), lessons_path
+    - if current_user.local?
       = link_to t('.create_lesson'), new_lesson_path
 
 %section.last-definitions
