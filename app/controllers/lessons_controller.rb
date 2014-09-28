@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  before_filter :remote_can_access, except: [:index, :show]
 
   def index
     @lessons = Lesson.all
@@ -32,5 +33,9 @@ class LessonsController < ApplicationController
 
   def lesson_params
     params.require(:lesson).permit(:title, :online, :description)
+  end
+
+  def remote_can_access
+    redirect_to root_path if current_user.remote?
   end
 end
