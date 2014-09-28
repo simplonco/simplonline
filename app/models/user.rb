@@ -55,18 +55,22 @@ class User < ActiveRecord::Base
   end
 
   def self.inscription(email)
-    user = new(email: email, name: email, password: email, password_confirmation: email, student_type: User::REMOTE)
-    save_and_reset_password(user)
+    save_and_reset_password(email, User::REMOTE)
   end
 
   def self.inscription_local(email)
-    user = new(email: email, name: email, password: email, password_confirmation: email, student_type: User::LOCAL)
-    save_and_reset_password(user)
+    save_and_reset_password(email, User::LOCAL)
+  end
+
+  def self.inscription_staff(email)
+    save_and_reset_password(email, User::STAFF)
   end
 
   private
 
-  def self.save_and_reset_password(user)
+  def self.save_and_reset_password(email, status)
+    user = new(email: email, name: email, password: email, password_confirmation: email, student_type: status)
+
     if user.save
       reset_password(user.email)
     else
