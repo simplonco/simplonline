@@ -1,6 +1,6 @@
 %h2= @lesson.title
 
-%p= l(@lesson.publish_at)
+%p= @lesson.online? ? t('.online') : t('.offline')
 
 %p
   :markdown

@@ -3,7 +3,11 @@ class Lesson < ActiveRecord::Base
   has_many :qcms
   has_many :exercices
 
-  validates_presence_of :title, :publish_at
+  validates_presence_of :title
 
-  scope :last_lessons, -> { all }
+  scope :last_lessons, -> { where(online: true) }
+
+  def offline?
+    ! online
+  end
 end

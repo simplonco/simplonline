@@ -10,13 +10,18 @@ class LessonTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:lesson, title: nil).invalid?
   end
 
-  test "invalid without publish date" do
-    assert FactoryGirl.build(:lesson, publish_at: nil).invalid?
+  test "offline by defaut" do
+    assert FactoryGirl.build(:lesson).offline?
   end
 
-  test "last_lesson" do
-    lesson = FactoryGirl.create(:lesson)
-    assert_equal [lesson], Lesson.last_lessons
+  test "online when ask to be" do
+    assert FactoryGirl.build(:lesson, online: true).online?
+  end
+
+  test "last_lesson about only online ones" do
+    offline_lesson = FactoryGirl.create(:lesson, online: false)
+    online_lesson = FactoryGirl.create(:lesson, online: true)
+    assert_equal [online_lesson], Lesson.last_lessons
   end
 
   test "exist without chapters" do

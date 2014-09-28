@@ -14,9 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @last_lessons = Lesson.last_lessons
     @user = current_user
-    @qcms = Qcm.last(5)
   end
 
   private

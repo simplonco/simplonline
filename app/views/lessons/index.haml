@@ -5,7 +5,7 @@
 %ul
   - @lessons.each do |lesson|
     %li
-      = l(lesson.publish_at)
+      = lesson.offline? ? t('.offline') : t('.online')
       = link_to lesson.title, lesson_path(lesson)
 
 - if current_user && current_user.local?

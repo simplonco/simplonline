@@ -4,9 +4,9 @@
   = l.text_field :title, placeholder: t('placeholder.title'), required: true
 
 %p
-  = l.label :publish_at, t('.publish_at_field')
+  = l.label :online, t('.online_field')
   %br
-  = l.datetime_field :publish_at, placeholder: t('placeholder.date'), required: true
+  = l.check_box :online
 
 %p
   = l.label :description, t('.description')
