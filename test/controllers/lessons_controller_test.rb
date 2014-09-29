@@ -15,6 +15,15 @@ class LessonsControllerTest < ActionController::TestCase
     assert_equal [lesson], assigns(:lessons)
   end
 
+  test "index for remote show only online session" do
+    setup_with(User::REMOTE)
+    online_lesson = FactoryGirl.create(:lesson, online: true)
+    offline_lesson = FactoryGirl.create(:lesson, online: false)
+    get :index
+    assert_response :success
+    assert_equal [online_lesson], assigns(:lessons)
+  end
+
   test "new" do
     setup_with(User::LOCAL)
     get :new

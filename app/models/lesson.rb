@@ -6,6 +6,7 @@ class Lesson < ActiveRecord::Base
   validates_presence_of :title
 
   scope :last_lessons, -> { where(online: true) }
+  scope :online, -> { where(online: true) }
 
   def offline?
     ! online

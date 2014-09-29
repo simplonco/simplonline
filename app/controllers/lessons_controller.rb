@@ -1,7 +1,11 @@
 class LessonsController < ApplicationController
 
   def index
-    @lessons = Lesson.all
+    if current_user.remote?
+      @lessons = Lesson.online
+    else
+      @lessons = Lesson.all
+    end
   end
 
   def new

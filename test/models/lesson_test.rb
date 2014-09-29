@@ -38,4 +38,10 @@ class LessonTest < ActiveSupport::TestCase
     lesson = FactoryGirl.create(:lesson)
     assert_equal [], lesson.exercices
   end
+
+  test "online" do
+    online_lesson = FactoryGirl.create(:lesson, online: true)
+    offline_lesson = FactoryGirl.create(:lesson, online: false)
+    assert_equal [online_lesson], Lesson.online
+  end
 end

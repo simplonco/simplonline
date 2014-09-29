@@ -12,7 +12,7 @@ Given(/^I am a loggued user$/) do
 end
 
 Given(/^a lesson call "(.*?)" exist$/) do |lesson_name|
-  FactoryGirl.create(:lesson, title: lesson_name)
+  FactoryGirl.create(:lesson, title: lesson_name, online: true)
 end
 
 When(/^I go to home page$/) do
