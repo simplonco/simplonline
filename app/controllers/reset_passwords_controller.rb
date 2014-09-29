@@ -1,5 +1,6 @@
 class ResetPasswordsController < ApplicationController
   skip_filter :authenticate_user
+  skip_filter :remote_can_access
 
   def new
   end

@@ -2,41 +2,58 @@ require 'test_helper'
 
 class QuestionsControllerTest < ActionController::TestCase
 
+  attr_reader :qcm, :user, :lesson
+
   def setup
     @qcm = FactoryGirl.create(:qcm)
+    @lesson = @qcm.lesson
     user = FactoryGirl.create(:user)
     session[:user_id] = user.id
   end
 
+  def setup_with(student_type)
+    @user = FactoryGirl.create(:user, student_type: student_type)
+    session[:user_id] = @user.id
+  end
+
   test "new" do
-    qcm = FactoryGirl.create(:qcm)
-    assert_not_nil qcm.lesson.id
-    get :new, lesson_id: qcm.lesson.id, qcm_id: qcm.id
+    setup_with(User::LOCAL)
+    get :new, lesson_id: lesson.id, qcm_id: qcm.id
     assert_response :success
     assert_equal qcm, assigns(:qcm)
   end
 
+  test "Remote student cant access to new" do
+    setup_with(User::REMOTE)
+    get :new, lesson_id: lesson.id, qcm_id: qcm.id
+    assert_redirected_to root_path
+  end
+
   test "create" do
-    post :create, lesson_id: @qcm.lesson.id, qcm_id: @qcm.id, question: {title: 'truc'}
+    setup_with(User::LOCAL)
+    post :create, lesson_id: lesson.id, qcm_id: qcm.id, question: {title: 'truc'}
     assert_response :redirect
   end
 
   test "delete" do
-    question = FactoryGirl.create(:question)
-    delete :destroy, lesson_id: question.id, qcm_id: question.qcm_id, id: question.id
+    setup_with(User::LOCAL)
+    question = FactoryGirl.create(:question, qcm: qcm)
+    delete :destroy, lesson_id: lesson.id, qcm_id: qcm.id, id: question.id
     assert_response :redirect
   end
 
   test "edit" do
-    question = FactoryGirl.create(:question)
-    get :edit, lesson_id: @qcm.lesson.id, qcm_id: @qcm.id, id: question.id
+    setup_with(User::LOCAL)
+    question = FactoryGirl.create(:question, qcm: qcm)
+    get :edit, lesson_id: lesson.id, qcm_id: qcm.id, id: question.id
     assert_response :success
     assert_equal question.qcm, assigns(:qcm)
   end
 
   test "post update" do
-    question = FactoryGirl.create(:question)
-    post :update, lesson_id: question.qcm.lesson.id, qcm_id: question.qcm_id, id: question.id, question: {title: 'truc'}
+    setup_with(User::LOCAL)
+    question = FactoryGirl.create(:question, qcm: qcm)
+    post :update, lesson_id: lesson.id, qcm_id: qcm.id, id: question.id, question: {title: 'truc'}
     assert_response :redirect
   end
 

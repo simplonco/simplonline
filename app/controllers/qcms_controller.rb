@@ -1,4 +1,5 @@
 class QcmsController < ApplicationController
+
   def show
     @qcm = Qcm.find(params[:id])
     @lesson = @qcm.lesson

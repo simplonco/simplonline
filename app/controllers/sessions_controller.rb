@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_filter :authenticate_user, only: [:create]
+  skip_filter :remote_can_access, only: [:create]
 
   def create
     user = User.login(params[:email], params[:password])

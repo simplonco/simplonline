@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   skip_filter :authenticate_user, only: [:welcome, :contact, :legal]
+  skip_filter :remote_can_access
 
   def welcome
   end
