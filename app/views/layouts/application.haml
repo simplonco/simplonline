@@ -9,6 +9,7 @@
   %body
     .connexion
       - if current_user
+        = link_to t('.home'), root_path
         = link_to "#{current_user.name.capitalize}", user_path(current_user), title: t('.update_login')
         |
         = form_tag sessions_path, method: 'delete', class: 'little-form' do

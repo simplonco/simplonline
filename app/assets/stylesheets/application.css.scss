@@ -3,6 +3,25 @@
  *= require_self
  */
 
+@font-face {
+  font-family: 'futurabook';
+  src: url('futura_book-webfont.eot');
+  src: url('futura_book-webfont.eot?#iefix') format('embedded-opentype'),
+  url('futura_book-webfont.woff') format('woff'),
+  url('futura_book-webfont.ttf') format('truetype'),
+  url('futura_book-webfont.svg#futurabook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futuraheavy';
+  src: url('futura_heavy-webfont.eot');
+  src: url('futura_heavy-webfont.eot?#iefix') format('embedded-opentype'), url('futura_heavy-webfont.woff') format('woff'), url('futura_heavy-webfont.ttf') format('truetype'), url('futura_heavy-webfont.svg#futuraheavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin:0;
   padding:0;
@@ -20,7 +39,6 @@ body {
   line-height: 2rem;
   height: 100%;
   width: 100%;
-  color:#fdfdfd;
 }
 
 h1,h2,h3,h4,h5,h6 { font-weight: normal;}
@@ -131,3 +149,4 @@ a, button { cursor: pointer;}
   font-family: Courier;
   padding:5px;
 }
+
