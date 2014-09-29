@@ -1,6 +1,7 @@
 fr:
   layouts:
     application:
+      home: "Tableau de bord"
       title_window: "Simplonline"
       title: "Simplonline"
       update_login: "Mon compte"
@@ -63,6 +64,13 @@ fr:
       echantillon: "Échantillon"
       format_echantillon: "Format de l'échantillon"
   qcms:
+    show:
+      back_to_lesson: "Retour à la session"
+      edit: "Modifier"
+      respond: "Répondre"
+      edit_question: "Modifier"
+      delete_question: "Supprimer"
+      add_question: "Ajouter une question"
     form:
       description: "Description"
       title: "Titre"
@@ -70,6 +78,10 @@ fr:
       cancel: "retour"
       create: "Enregistrer"
       title: "Créer un nouveau QCM"
+  answers:
+    new:
+      title: "Répondre au QCM"
+      submit: "Vérifier"
   chapters:
     new:
       title: "Créer un chapitre"

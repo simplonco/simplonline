@@ -37,6 +37,7 @@ FactoryGirl.define do
   factory :answer do
     question
     user
+    chosen_choices {|t| [t.association(:choice)] }
   end
 
   factory :lesson do

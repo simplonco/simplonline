@@ -1,6 +1,12 @@
-%h2= @answer.is_valid? ? "GOOD" : "BHOOO"
-%h3 Explications
-- @question.choices.each do |choice|
-  %p{class: "#{class_chosen(@answer, choice)} #{class_valid(choice)}"}
-    = choice.content
+%h2= @answer.is_valid? ? t('.good') : t('.bad')
+
+%h3= t('.explanations')
+
+- @answer.chosen_choices.each do |choice|
+  %p
+    = Choice.find(choice).content
+
+  %p
+    = Choice.find(choice).explanation
+
 = link_to_next(@question.qcm.lesson.id, @question.qcm.id, @question.id, @question.qcm.question_ids)

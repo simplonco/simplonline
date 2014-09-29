@@ -31,10 +31,7 @@ class AnswersControllerTest < ActionController::TestCase
   test "show" do
     answer = FactoryGirl.create(:answer)
     question = answer.question
-    get :show, lesson_id: question.qcm.lesson.id,
-               qcm_id: question.qcm.id,
-               question_id: question.id,
-               id: answer.id
+    get :show, lesson_id: question.qcm.lesson.id, qcm_id: question.qcm.id, question_id: question.id, id: answer.id
     assert_response :success
     assert_equal answer, assigns(:answer)
     assert_equal question, assigns(:question)

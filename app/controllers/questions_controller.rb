@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, choices_attributes: [:id, :content, :valid_answer, :_destroy])
+    params.require(:question).permit(:title, choices_attributes: [:id, :content, :explanation, :valid_answer, :_destroy])
   end
 
 end

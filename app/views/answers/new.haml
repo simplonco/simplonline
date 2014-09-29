@@ -1,9 +1,12 @@
-%h2= "QCM #{params[:qcm_id]}, question #{params[:question_id]}"
+%h2= t('.title')
+
 %p= @question.title
+
 = form_for @answer, url: lesson_qcm_question_answers_path(@question.qcm.lesson.id, @question.qcm.id, @question.id) do |f|
+
   - @question.choices.each do |choice|
     %p
       = check_box_tag "answer[#{choice.id}]"
       = f.label choice.content
-  = f.submit "Valider"
-    
+
+  = f.submit t('.submit')
