@@ -1,7 +1,7 @@
 %h3= t('.title')
 
 %p= link_to t('.lessons'), lessons_path
-- if current_user.local?
+- unless current_user.remote?
   = link_to t('.add_keyword'), new_definition_path
 
 %dl

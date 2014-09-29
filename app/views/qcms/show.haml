@@ -3,7 +3,7 @@
 
 %p= link_to t('.back_to_lesson'), lesson_path(@lesson)
 
-- if current_user.local?
+- unless current_user.remote?
   %p
     = link_to t('.edit'), edit_lesson_qcm_path(@lesson, @qcm)
 
@@ -21,5 +21,5 @@
       |
       = link_to t('.delete_question'), lesson_qcm_question_path(@lesson, @qcm, question), method: :delete
 
-  - if current_user.local?
+  - unless current_user.remote?
     %li= link_to t('.add_question'), new_lesson_qcm_question_path(@lesson, @qcm)

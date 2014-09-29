@@ -18,7 +18,7 @@
 
   %p
     = link_to t('.lessons'), lessons_path
-    - if current_user.local?
+    - unless current_user.remote?
       = link_to t('.create_lesson'), new_lesson_path
 
 %section.last-definitions
@@ -30,7 +30,7 @@
 
   %p
     = link_to t('.definitions'), definitions_path
-  - if current_user.local?
+  - unless current_user.remote?
     = link_to t('.create_definition'), new_definition_path
 
 

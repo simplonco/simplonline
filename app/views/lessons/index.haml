@@ -8,7 +8,7 @@
       = lesson.offline? ? t('.offline') : t('.online')
       = link_to lesson.title, lesson_path(lesson)
 
-- if current_user && current_user.local?
+- unless current_user.remote?
   = link_to t('.create_lesson'), new_lesson_path
 
 %p= link_to t('.definitions'), definitions_path
