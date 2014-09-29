@@ -66,10 +66,26 @@ class User < ActiveRecord::Base
     save_and_reset_password(email, User::STAFF)
   end
 
+  def name
+    db_name = read_attribute(:name)
+    if db_name
+      db_name
+    else
+    end
+  end
+
   private
 
+  def self.generate_password
+    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+    newpass = ""
+    1.upto(7) { |i| newpass << chars[rand(chars.size-1)] }
+    newpass
+  end
+
   def self.save_and_reset_password(email, status)
-    user = new(email: email, name: email, password: email, password_confirmation: email, student_type: status)
+    tmp_pwd = generate_password
+    user = new(email: email, name: email.split('@').first, password: tmp_pwd, password_confirmation: tmp_pwd, student_type: status)
 
     if user.save
       reset_password(user.email)

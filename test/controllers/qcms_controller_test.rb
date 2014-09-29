@@ -29,7 +29,7 @@ class QcmsControllerTest < ActionController::TestCase
 
   test "create" do
     setup_with(User::LOCAL)
-    post :create, lesson_id: lesson.id, qcm: {title: 'something', description: 'a ubber qcm from nowhere', authors: ['Paul']}
+    post :create, lesson_id: lesson.id, qcm: {title: 'something', description: 'a ubber qcm from nowhere', author_ids: [user.id]}
     assert_redirected_to new_lesson_qcm_question_path(lesson, Qcm.first)
     assert_equal 1, Qcm.count
   end

@@ -10,6 +10,9 @@
 
 %p= @qcm.desc
 
+%p.authors
+  = @qcm.authors.map(&:name).join(' ,')
+
 %ol.questions
   - @questions.each do |question|
     %li

@@ -23,7 +23,7 @@ FactoryGirl.define do
 
   factory :qcm do
     lesson
-    authors ['someone', 'someone else']
+    authors {|t| [t.association(:user)] }
   end
 
   factory :question do

@@ -78,10 +78,13 @@ fr:
       cancel: "retour"
       create: "Enregistrer"
       title: "Créer un nouveau QCM"
+    edit:
+      title: "Mise à jour de QCM"
+      cancel: "Retour"
+      update: "Modifier"
   answers:
     new:
       title: "Répondre au QCM"
-      submit: "Vérifier"
   chapters:
     new:
       title: "Créer un chapitre"

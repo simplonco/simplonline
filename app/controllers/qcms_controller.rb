@@ -41,6 +41,6 @@ class QcmsController < ApplicationController
   private
 
   def qcm_params
-    params.require(:qcm).permit(:title, :desc, authors: [])
+    params.require(:qcm).permit(:title, :desc, author_ids: [])
   end
 end

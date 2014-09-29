@@ -9,8 +9,8 @@
   = f.text_area :desc
 
 %p
-  = f.label :authors
+  = f.label :author_ids
   %br
-  = f.select :authors, @available_authors.map(&:name), {}, multiple: true
+  = f.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true
 
 

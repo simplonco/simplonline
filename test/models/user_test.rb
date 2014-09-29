@@ -102,4 +102,5 @@ class UserTest < ActiveSupport::TestCase
     remote = FactoryGirl.create(:user, student_type: User::REMOTE)
     assert_equal [author], User.authors
   end
+
 end
