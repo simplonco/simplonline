@@ -112,7 +112,7 @@ fr:
     email: 'me@example.com'
     password: '****'
     name: 'Edgar Hoover'
-    message: 'All you data are belongs to us...'
+    message: 'All your data are belongs to us...'
     chapter_title: 'A propos de code...'
     chapter_content: 'Nous avons découvert cette semaine... '
     definition_keyword: 'De quel terme parlons-nous'
