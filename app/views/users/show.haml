@@ -2,7 +2,10 @@
 %h2
   = t('.title', name: @user.name)
 
-%p= t('.email', email: @user.email)
+%p
+  :markdown
+    #{t('.email', email: @user.email)}
 
-- if @user == current_user
-  = link_to t('.edit'), edit_user_path(current_user)
+%p
+  - if @user == current_user
+    = link_to t('.edit'), edit_user_path(current_user)
