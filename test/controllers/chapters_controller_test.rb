@@ -5,7 +5,7 @@ class ChaptersControllerTest < ActionController::TestCase
   attr_reader :user, :lesson
 
   def setup
-    @lesson = FactoryGirl.create(:lesson)
+    @lesson = FactoryGirl.create(:lesson, online: true)
   end
 
   def setup_with(student_type)
@@ -55,7 +55,15 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_equal 'something other', chapter.reload.content
   end
 
-  test "show" do
+  test "redirect remote when lesosn is offline" do
+    setup_with(User::REMOTE)
+    lesson = FactoryGirl.create(:lesson, online: false)
+    chapter = FactoryGirl.create(:chapter, lesson: lesson)
+    get :show, lesson_id: lesson, id: chapter.id
+    assert_redirected_to root_path
+  end
+
+  test "show chapter to remote" do
     setup_with(User::REMOTE)
     chapter = FactoryGirl.create(:chapter, lesson: lesson)
     get :show, lesson_id: lesson, id: chapter.id
@@ -63,5 +71,6 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_equal chapter, assigns(:chapter)
     assert_equal lesson, assigns(:lesson)
   end
+
 
 end

@@ -72,12 +72,19 @@ class LessonsControllerTest < ActionController::TestCase
     assert_equal lesson, assigns(:lesson)
   end
 
-  test "show to remote student" do
+  test "show for remote only when online" do
     setup_with(User::REMOTE)
-    lesson = FactoryGirl.create(:lesson)
+    lesson = FactoryGirl.create(:lesson, online: true)
     get :show, id: lesson.id
     assert_response :success
     assert_equal lesson, assigns(:lesson)
+  end
+
+  test "cant show for remote when offline" do
+    setup_with(User::REMOTE)
+    lesson = FactoryGirl.create(:lesson, online: false)
+    get :show, id: lesson.id
+    assert_redirected_to root_path
   end
 
 end

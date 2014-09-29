@@ -30,8 +30,12 @@ class ChaptersController < ApplicationController
   end
 
   def show
-    @chapter = Chapter.find(params[:id])
-    @lesson = @chapter.lesson
+    @lesson = Lesson.find(params[:lesson_id])
+    @chapter = @lesson.chapters.find(params[:id])
+    if current_user.remote? && @lesson.offline?
+      flash[:error] = t('.not_found')
+      redirect_to root_path
+    end
   end
 
   private

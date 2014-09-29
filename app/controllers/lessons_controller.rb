@@ -32,6 +32,10 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    if current_user.remote? && @lesson.offline?
+      flash[:error] = t('.not_found')
+      redirect_to root_path
+    end
   end
 
   private

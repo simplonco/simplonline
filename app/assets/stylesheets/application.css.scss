@@ -228,7 +228,7 @@ body {
   width: 100%;
 }
 
-a, button { cursor: pointer;}
+a, button, .button { cursor: pointer;}
 
 .color-01 { color: rgba(94,52,12,1);}    /*marron foncé*/
 .color-02 { color: rgba(12,89,95,1);}    /*bleu foncé*/
@@ -379,21 +379,16 @@ a, button { cursor: pointer;}
 }
 
 .field {
-  width: 100%;
-  padding: 1.3333rem;
   border-radius: .25rem;
-  font-size: 1rem;
 }
 
 .button {
-  padding: 1.3333rem 40px;
+  padding: 0.8rem 0.8rem;
   border-radius: .25rem;
   background: rgba(238,23,82,1);
   font-family: 'futuraheavy',Arial,Helvetica,sans-serif;
-  font-size: 1rem;
   color: rgba(255,255,255,1);
   box-shadow: 0 -4px 0 rgba(0,0,0,.2) inset;
-  margin: 1rem 0;
 }
 
 .button:hover {
