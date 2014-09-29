@@ -2,8 +2,10 @@ require 'test_helper'
 
 class LessonsControllerTest < ActionController::TestCase
 
+  attr_reader :user
+
   def setup_with(student_type)
-    user = FactoryGirl.create(:user, student_type: student_type)
+    @user = FactoryGirl.create(:user, student_type: student_type)
     session[:user_id] = user.id
   end
 
@@ -38,7 +40,7 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "create" do
     setup_with(User::LOCAL)
-    post :create, lesson: {title: 'Something new'}
+    post :create, lesson: {title: 'Something new', author_ids: [user.id.to_s]}
     assert_redirected_to lessons_path
     assert_equal 'Something new', Lesson.first.title
   end

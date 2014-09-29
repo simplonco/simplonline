@@ -9,6 +9,7 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @available_authors = User.authors
   end
 
   def create
@@ -19,6 +20,7 @@ class LessonsController < ApplicationController
 
   def edit
     @lesson = Lesson.find(params[:id])
+    @available_authors = User.authors
   end
 
   def update
@@ -35,6 +37,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :online, :description)
+    params.require(:lesson).permit(:title, :online, :description, author_ids: [])
   end
 end

@@ -42,6 +42,7 @@ FactoryGirl.define do
   factory :lesson do
     title { generate(:name) }
     online false
+    authors {|t| [t.association(:user)] }
   end
 
   factory :chapter do

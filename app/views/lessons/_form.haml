@@ -12,3 +12,9 @@
   = l.label :description, t('.description')
   %br
   = l.text_area :description, rows: 21, cols: 82, placeholder: t('placeholder.description')
+
+%p
+  = l.label :author_ids
+  %br
+  = l.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true, include_blank: false
+

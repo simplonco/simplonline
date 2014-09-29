@@ -10,6 +10,10 @@ class LessonTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:lesson, title: nil).invalid?
   end
 
+  test "invalid without authors" do
+    assert FactoryGirl.build(:lesson, authors: []).invalid?
+  end
+
   test "offline by defaut" do
     assert FactoryGirl.build(:lesson).offline?
   end
