@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929213520) do
+ActiveRecord::Schema.define(version: 20140930070038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140929213520) do
     t.text    "content",   default: "", null: false
     t.string  "title"
     t.string  "tags",      default: [],              array: true
+    t.integer "number",    default: 0
   end
 
   create_table "choices", force: true do |t|
@@ -63,6 +64,11 @@ ActiveRecord::Schema.define(version: 20140929213520) do
 
   add_index "essais", ["user_id"], name: "index_essais_on_user_id", using: :btree
 
+  create_table "exercice_authors", force: true do |t|
+    t.integer "user_id"
+    t.integer "exercice_id"
+  end
+
   create_table "exercices", force: true do |t|
     t.text     "consigne"
     t.text     "echantillon"
@@ -73,6 +79,7 @@ ActiveRecord::Schema.define(version: 20140929213520) do
     t.string   "titre"
     t.string   "format_echantillon"
     t.integer  "lesson_id"
+    t.integer  "number",             default: 0
   end
 
   add_index "exercices", ["lesson_id"], name: "index_exercices_on_lesson_id", using: :btree
@@ -107,6 +114,7 @@ ActiveRecord::Schema.define(version: 20140929213520) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "lesson_id"
+    t.integer  "number",     default: 0
   end
 
   add_index "qcms", ["lesson_id"], name: "index_qcms_on_lesson_id", using: :btree

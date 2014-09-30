@@ -14,6 +14,10 @@ class ChapterTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:chapter, authors: []).invalid?, 'should have at leat one author'
   end
 
+  test "invalid without number" do
+    assert FactoryGirl.build(:chapter, number: nil).invalid?, 'should have an number'
+  end
+
   test "add definitions to chapter" do
     definition = FactoryGirl.create(:definition, keyword: "word")
     chapter = FactoryGirl.build(:chapter, content: "Word")
@@ -43,6 +47,12 @@ class ChapterTest < ActiveSupport::TestCase
     tools_chapter = FactoryGirl.create(:chapter, tags: ['tools'])
     kata_chapter = FactoryGirl.create(:chapter, tags: ['kata'])
     assert_equal [kata_chapter], Chapter.about(:kata)
+  end
+
+  test "default sort by number" do
+    second_chapter = FactoryGirl.create(:chapter, number: 1)
+    first_chapter = FactoryGirl.create(:chapter, number: 0)
+    assert_equal [first_chapter, second_chapter], Chapter.all
   end
 end
 

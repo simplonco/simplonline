@@ -45,6 +45,7 @@ fr:
       publish_at_field: "Publié le"
     index:
       title: "Toutes les sessions"
+      definitions: 'Lexique'
       create_lesson: "Ajouter une session"
     show:
       edit: "Éditer"
@@ -125,6 +126,7 @@ fr:
       delete_choice: "Supprimer ce choix"
   placeholder:
     email: 'me@example.com'
+    number: '0'
     password: '****'
     name: 'Edgar Hoover'
     message: 'All your data are belongs to us...'
@@ -138,9 +140,11 @@ fr:
     date: "Contenu publié le"
   static:
     dashboard:
+      lessons: 'Toutes les sessions'
+      definitions: 'Lexique'
       title: 'Tableau de bord'
       last-message-title: "Voici les derniers messages sur le forum"
-      last-lessons-title: "Les dernières Lessons disponibles"
+      last-lessons-title: "Les dernières sessions disponibles"
       last-qcms-title: "Les derniers QCMs"
       last-definitions-title: "Les dernières Définitions"
       create_lesson: "Créer une session"

@@ -1,8 +1,12 @@
-
 %p
   = c.label :title
   %br
-  = c.text_field :title, placeholder: t('placeholder.chapter_title')
+  = c.text_field :title, placeholder: t('placeholder.chapter_title'), required: true
+
+%p
+  = c.label :number
+  %br
+  = c.number_field :number, placeholder: t('placeholder.number'), required: true
 
 %p
   = c.label :content
