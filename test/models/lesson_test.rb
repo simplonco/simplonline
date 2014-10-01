@@ -48,4 +48,11 @@ class LessonTest < ActiveSupport::TestCase
     offline_lesson = FactoryGirl.create(:lesson, online: false)
     assert_equal [online_lesson], Lesson.online
   end
+
+  test "chapters order by number " do
+    lesson = FactoryGirl.create(:lesson)
+    second_chapter = FactoryGirl.create(:chapter, number: 2, lesson: lesson)
+    first_chapter = FactoryGirl.create(:chapter, number: 0, lesson: lesson)
+    assert_equal [first_chapter, second_chapter], lesson.chapters
+  end
 end
