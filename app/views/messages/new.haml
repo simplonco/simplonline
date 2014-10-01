@@ -1,0 +1,18 @@
+%h2= t('.title')
+
+= form_for Message.new do |m|
+
+  %p
+    = m.label :title
+    %br
+    = m.text_field :title, placeholder: t('placeholder.title'), required: true
+
+  %p
+    = m.label :content
+    %br
+    = m.text_area :content, rows: 21, cols: 82,  placeholder: t('placeholder.content'), required: true
+
+  %p
+    = m.submit t('.post_message')
+    = link_to t('.cancel'), messages_path
+

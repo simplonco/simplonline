@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     resources :essais
   end
 
+  resources :messages
+
   resources :tags
 
   resources :definitions

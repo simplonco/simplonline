@@ -1,0 +1,9 @@
+%h2= t('.title')
+
+%ol
+  - @messages.each do |message|
+    %li
+      = message.title
+      = l(message.updated_at)
+      = message.user_name
+

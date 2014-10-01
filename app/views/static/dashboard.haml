@@ -3,11 +3,15 @@
 
 %section.last-messages
   %h1= t('.last-message-title')
-  %ul
-    %li
-      message de Raymond, le 22/9/2014 à 22h34
-      %em
-        non mais c'est quoi ce binzzz
+  %ol
+    - @last_messages.each do |message|
+      %li
+        = message.title
+        = l(message.updated_at)
+        = message.user_name
+  %p
+    = link_to t('.messages'), messages_path
+    = link_to t('.post_new_message'), new_message_path
 
 %section.last-lessons
   %h1= t('.last-lessons-title')

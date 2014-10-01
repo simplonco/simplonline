@@ -31,6 +31,11 @@ fr:
       user_name: "Nom"
       cancel: "Annuler"
       submit: "Mettre à jour"
+  messages:
+    new:
+      title: "Poster un nouveau message"
+      cancel: 'Retour'
+      post_message: "Poster"
   lessons:
     new:
       title: "Créer une session"
@@ -125,6 +130,7 @@ fr:
       cancel: "Retour"
       delete_choice: "Supprimer ce choix"
   placeholder:
+    content: "ex; Un avis, une questions"
     email: 'me@example.com'
     number: '0'
     password: '****'
@@ -140,6 +146,8 @@ fr:
     date: "Contenu publié le"
   static:
     dashboard:
+      messages: 'Tous les message'
+      post_new_message: 'Poster un message'
       lessons: 'Toutes les sessions'
       definitions: 'Lexique'
       title: 'Tableau de bord'

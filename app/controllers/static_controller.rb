@@ -15,5 +15,6 @@ class StaticController < ApplicationController
     @user = current_user
     @last_lessons = Lesson.last_lessons
     @last_definitions = Definition.last_updated
+    @last_messages = Message.recent
   end
 end

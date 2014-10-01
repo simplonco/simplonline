@@ -56,6 +56,10 @@ FactoryGirl.define do
     keyword { generate(:name)}
     description { generate(:name)}
   end
+
+  factory :message do
+    user
+  end
 end
 
 
