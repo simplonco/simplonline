@@ -26,4 +26,11 @@ class MessagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal [message], assigns(:messages)
   end
+
+  test "show" do
+    message = FactoryGirl.create(:message)
+    get :show, id: message.id
+    assert_response :success
+    assert_equal message, assigns(:message)
+  end
 end

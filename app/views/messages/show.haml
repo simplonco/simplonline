@@ -1,0 +1,32 @@
+%h2= t('.title')
+
+%section
+  %h1= @message.title
+
+  %p.author
+    = link_to @message.user_name, user_path(@message.user)
+
+  .content
+    :markdown
+      #{@message.content}
+
+%ol
+  - @message.comments.each do |comment|
+    %li
+      = comment.user_name
+      = comment.updated_at
+      .content
+        :markdown
+          #{comment.content}
+
+
+= form_for Comment.new, url: message_comments_path(@message) do |c|
+  %p
+    = c.label :content
+    %br
+    = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.content'), required: true
+
+  %p
+    = c.submit t('.post_comment')
+    = link_to t('.cancel'), messages_path
+

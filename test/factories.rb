@@ -60,6 +60,11 @@ FactoryGirl.define do
   factory :message do
     user
   end
+
+  factory :comment do
+    user
+    message
+  end
 end
 
 

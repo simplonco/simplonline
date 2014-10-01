@@ -32,10 +32,16 @@ fr:
       cancel: "Annuler"
       submit: "Mettre à jour"
   messages:
+    index:
+      title: 'Messages'
     new:
       title: "Poster un nouveau message"
       cancel: 'Retour'
       post_message: "Poster"
+    show:
+      post_comment: 'Poster un commentaire'
+      cancel: 'Retour'
+      title: 'Message'
   lessons:
     new:
       title: "Créer une session"

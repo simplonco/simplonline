@@ -10,6 +10,10 @@ class MessageTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:message, user: nil).invalid?
   end
 
+  test "invalid without status" do
+    assert FactoryGirl.build(:message, status: nil).invalid?
+  end
+
   test "can return user_name" do
     message = FactoryGirl.build(:message)
     user = message.user
@@ -21,5 +25,9 @@ class MessageTest < ActiveSupport::TestCase
     message = FactoryGirl.create(:message, updated_at: today)
     old_message = FactoryGirl.create(:message, updated_at: today - 40.days)
     assert_equal [message], Message.recent(1)
+  end
+
+  test "have empty comments" do
+    assert_equal [], Message.new.comments
   end
 end

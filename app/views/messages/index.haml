@@ -3,7 +3,7 @@
 %ol
   - @messages.each do |message|
     %li
-      = message.title
+      = link_to message.title, message_path(message)
       = l(message.updated_at)
       = message.user_name
 
