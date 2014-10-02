@@ -2,10 +2,6 @@
 
 %p= @lesson.online? ? t('.online') : t('.offline')
 
-%section
-  :markdown
-    #{@lesson.description}
-
 - unless current_user.remote?
   %p= link_to t('.edit'), edit_lesson_path(@lesson)
 

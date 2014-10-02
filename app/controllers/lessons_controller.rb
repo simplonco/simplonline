@@ -41,6 +41,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :online, :description, author_ids: [])
+    params.require(:lesson).permit(:title, :online, author_ids: [])
   end
 end

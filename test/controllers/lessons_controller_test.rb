@@ -55,12 +55,11 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "update" do
     setup_with(User::LOCAL)
-    lesson = FactoryGirl.create(:lesson, title: 'Perl', description: 'truc')
-    post :update, id: lesson.id, lesson: {title: 'Python', description: "something other"}
+    lesson = FactoryGirl.create(:lesson, title: 'Perl')
+    post :update, id: lesson.id, lesson: {title: 'Python'}
     assert_redirected_to lesson_path(lesson)
     lesson.reload
     assert_equal 'Python', lesson.title
-    assert_equal 'something other', lesson.description
     assert_equal true, lesson.offline?
   end
 
