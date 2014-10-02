@@ -59,6 +59,7 @@ fr:
       definitions: 'Lexique'
       create_lesson: "Ajouter une session"
     show:
+      by: "par %{authors}"
       edit: "Éditer"
       add_chapter: "Ajouter un chapitre"
       add_qcm: "Ajouter un QCM"
