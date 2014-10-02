@@ -11,8 +11,12 @@ class AnswersController < ApplicationController
     answer = question.answers.new
     answer.chosen_choices = params[:answer].keys.map{|id| id.to_i}
     answer.user = current_user
-    answer.save
-    redirect_to lesson_qcm_question_answer_path(question.qcm.lesson, question.qcm, question, answer)
+    first_unanswered_question = question.find_first_unanswered_question(question)
+    if question.answers.empty?
+      answer.save
+    else
+      redirect_to new_lesson_qcm_question_answer_path(question.qcm.lesson, question.qcm, first_unanswered_question)
+    end
   end
 
   def show

@@ -97,6 +97,8 @@ fr:
   answers:
     new:
       title: "Répondre au QCM"
+    show:
+      explanations: "Explications"
   chapters:
     new:
       title: "Créer un chapitre"

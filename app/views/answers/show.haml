@@ -3,10 +3,7 @@
 %h3= t('.explanations')
 
 - @answer.chosen_choices.each do |choice|
-  %p
-    = Choice.find(choice).content
-
-  %p
-    = Choice.find(choice).explanation
+  %p= Choice.find(choice).content
+  %p= Choice.find(choice).explanation
 
 = link_to_next(@question.qcm.lesson.id, @question.qcm.id, @question.id, @question.qcm.question_ids)
