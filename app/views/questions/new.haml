@@ -4,5 +4,6 @@
 
   = render partial: "form", locals: {f: f}
 
-  = f.submit t('.submit')
-  = link_to t('.cancel'), lesson_qcm_path(@lesson, @qcm)
+  = f.link_to_add t('.add_choice'), :choices, class: 'button'
+  = f.submit t('.submit'), class: 'button'
+  = link_to t('.cancel'), lesson_qcm_path(@lesson, @qcm), class: 'button'

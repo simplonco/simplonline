@@ -58,12 +58,16 @@ fr:
       title: "Toutes les sessions"
       definitions: 'Lexique'
       create_lesson: "Ajouter une session"
+      online: 'En ligne'
+      offline: 'Hors ligne'
     show:
       edit: "Éditer"
       add_chapter: "Ajouter un chapitre"
       add_qcm: "Ajouter un QCM"
       add_exercice: "Ajouter un Exercice"
       lessons: 'Toutes les sessions'
+      online: 'En ligne'
+      offline: 'Hors ligne'
   next_lesson: 'Session suivante'
   exercices:
     new:
@@ -76,6 +80,16 @@ fr:
       format_response: "Format de la réponse"
       echantillon: "Échantillon"
       format_echantillon: "Format de l'échantillon"
+    show:
+      consigne: "Consigne de l'exercice"
+      echantillon: "A partir de l'échantillon suivant"
+      format_reponse: "Format de réponse attendu"
+      reponse: "Réponse attendue"
+      essais: "Vos essais"
+  essais:
+    new:
+      new_essai: "Nouvel essai pour l'exercice"
+      desc: "Rappel de la consigne"
   qcms:
     show:
       back_to_lesson: "Retour à la session"
@@ -98,6 +112,7 @@ fr:
   answers:
     new:
       title: "Répondre au QCM"
+      submit: "Prochaine question"
     show:
       explanations: "Explications"
   chapters:
@@ -159,7 +174,7 @@ fr:
     date: "Contenu publié le"
   static:
     dashboard:
-      messages: 'Tous les message'
+      messages: 'Tous les messages'
       post_new_message: 'Poster un message'
       lessons: 'Toutes les sessions'
       definitions: 'Lexique'

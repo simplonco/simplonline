@@ -5,5 +5,5 @@
   = render partial: "form", locals: {exo:exo}
 
   %p
-    = exo.submit t('.submit')
-    = link_to t('.cancel'), lesson_path(@lesson)
+    = exo.submit t('.submit'), class: 'button'
+    = link_to t('.cancel'), lesson_path(@lesson), class: 'button'

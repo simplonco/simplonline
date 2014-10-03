@@ -1,12 +1,12 @@
 %h3= t('.title')
 
-%p= link_to t('.lessons'), lessons_path
-- unless current_user.remote?
-  = link_to t('.add_keyword'), new_definition_path
-
 %dl
   - @definitions.each do |definition|
     %dt{id: definition.keyword}
       = link_to definition.keyword, definition_path(definition)
     %dd
       = definition.description
+
+%p= link_to t('.lessons'), lessons_path, class: 'button'
+- unless current_user.remote?
+  = link_to t('.add_keyword'), new_definition_path, class: 'button'

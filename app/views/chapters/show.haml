@@ -14,8 +14,7 @@
       = link_to(author.name, user_path(author))
 
 %nav
-  = link_to t('.back_to_lesson'), lesson_path(@lesson)
-  |
+  = link_to t('.back_to_lesson'), lesson_path(@lesson), class: 'button'
   = link_to_next_chapter(@chapter.lesson, @chapter.id, @chapter.lesson.chapter_ids)
   - unless current_user.remote?
-    = link_to t('.edit'), edit_lesson_chapter_path(@lesson, @chapter)
+    = link_to t('.edit'), edit_lesson_chapter_path(@lesson, @chapter), class: 'button'

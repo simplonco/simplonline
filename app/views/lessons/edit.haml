@@ -5,6 +5,6 @@
   = render partial: 'form', locals: {l:l}
 
   %p
-    = l.submit t('.update')
-    = link_to t('.cancel'), lesson_path(@lesson)
+    = l.submit t('.update'), class: 'button'
+    = link_to t('.cancel'), lesson_path(@lesson), class: 'button'
 

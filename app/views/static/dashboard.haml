@@ -10,8 +10,8 @@
         = l(message.updated_at)
         = message.user_name
   %p
-    = link_to t('.messages'), messages_path
-    = link_to t('.post_new_message'), new_message_path
+    = link_to t('.messages'), messages_path, class: 'button'
+    = link_to t('.post_new_message'), new_message_path, class: 'button'
 
 %section.last-lessons
   %h1= t('.last-lessons-title')
@@ -21,9 +21,9 @@
         = link_to lesson.title, lesson_path(lesson)
 
   %p
-    = link_to t('.lessons'), lessons_path
+    = link_to t('.lessons'), lessons_path, class: 'button'
     - unless current_user.remote?
-      = link_to t('.create_lesson'), new_lesson_path
+      = link_to t('.create_lesson'), new_lesson_path, class: 'button'
 
 %section.last-definitions
   %h1= t('.last-definitions-title')
@@ -33,8 +33,8 @@
         = link_to definition.keyword, definitions_path(anchor: definition.keyword)
 
   %p
-    = link_to t('.definitions'), definitions_path
-  - unless current_user.remote?
-    = link_to t('.create_definition'), new_definition_path
+    = link_to t('.definitions'), definitions_path, class: 'button'
+    - unless current_user.remote?
+      = link_to t('.create_definition'), new_definition_path, class: 'button'
 
 

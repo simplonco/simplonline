@@ -3,7 +3,7 @@ module ChaptersHelper
     next_id = chapter_ids.reject{ |id| id <= chapter_id }.first
 
     if not next_id.blank?
-      link_to t('next_chapter'), lesson_chapter_path(lesson_id, next_id)
+      link_to t('next_chapter'), lesson_chapter_path(lesson_id, next_id), class: 'button'
     else
     end
   end
