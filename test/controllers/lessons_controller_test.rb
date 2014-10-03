@@ -40,7 +40,7 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "create" do
     setup_with(User::LOCAL)
-    post :create, lesson: {title: 'Something new', author_ids: [user.id.to_s]}
+    post :create, lesson: {title: 'Something new'}
     assert_redirected_to lessons_path
     assert_equal 'Something new', Lesson.first.title
   end
