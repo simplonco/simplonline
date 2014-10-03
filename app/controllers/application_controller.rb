@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
   end
 
   def remote_cant_access
-    redirect_to root_path if current_user.remote?
+    if current_user.remote?
+      flash[:notice] = I18n.t('notice.cant_access')
+      redirect_to root_path
+    end
   end
 end

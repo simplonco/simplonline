@@ -1,4 +1,6 @@
 fr:
+  notice:
+    cant_access: "Vous ne pouvez pas accéder à cette page"
   layouts:
     application:
       home: "Tableau de bord"
