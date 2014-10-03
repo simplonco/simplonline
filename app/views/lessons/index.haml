@@ -8,6 +8,6 @@
       = link_to lesson.title, lesson_path(lesson)
 
 - unless current_user.remote?
-  = link_to t('.create_lesson'), new_lesson_path, class: 'button'
+  = link_to t('.create_lesson'), new_lesson_path
 
-= link_to t('.definitions'), definitions_path, class: 'button'
+= link_to t('.definitions'), definitions_path

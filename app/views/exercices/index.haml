@@ -3,9 +3,9 @@
     = link_to "Exercice #{exo.id} | #{exo.titre}", exercice_path(exo)
   %ul
     - @essais.select{|essai| essai.exercice_id == exo.id}.last(5).each do |essai|
-      %li 
+      %li
         = "Essai n°#{essai.id} |"
         = essai.status ? "Win" : "Loose"
-  = link_to "Nouvel essai ?", new_exercice_essai_path(exo.id), class: "button"
+  = link_to "Nouvel essai ?", new_exercice_essai_path(exo.id)
   - unless current_user.remote?
-    = link_to "Modifier", edit_exercice_path(exo), class: 'button'
+    = link_to "Modifier", edit_exercice_path(exo)

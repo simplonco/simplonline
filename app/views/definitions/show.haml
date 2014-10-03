@@ -3,9 +3,9 @@
 %p= @definition.description
 
 %p
-  = link_to t('.definitions'), definitions_path, class: 'button'
+  = link_to t('.definitions'), definitions_path
   - unless current_user.remote?
-    = link_to t('.edit'), edit_definition_path(@definition), class: 'button'
+    = link_to t('.edit'), edit_definition_path(@definition)
 
     = form_for @definition, method: :delete do |d|
       = d.submit t('.delete'), class: 'button'

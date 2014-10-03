@@ -1,4 +1,4 @@
-%h3 
+%h3
   = t('.new_essai')
   = "#{@essai.exercice.id} | #{@essai.exercice.titre}"
 %h4= t('.desc')
@@ -14,8 +14,8 @@
     = f.label :fichier
     = f.file_field :fichier
     = f.label :fichier_tests
-    = f.file_field :fichier_tests 
-  - when 5 
+    = f.file_field :fichier_tests
+  - when 5
     = f.file_field :fichier_tests
   = f.submit class: 'button'
-  = link_to "Revenir à l'exercice", exercice_path(@essai.exercice.id), class: 'button'
+  = link_to "Revenir à l'exercice", exercice_path(@essai.exercice.id)

@@ -5,13 +5,12 @@
 - when 3
   - @essai.fichier.gsub(/ /,'&#160').split(/\n/).each_with_index do |line, index|
     .code
-      = "#{index} " "#{line}".html_safe            
+      = "#{index} " "#{line}".html_safe
 - when 4
   = @essai.fichier
-  = @essai.fichier_tests 
-- when 5 
+  = @essai.fichier_tests
+- when 5
   = @essai.fichier_tests
 %hr
-= link_to "Nouvel essai ?", new_exercice_essai_path(@essai.exercice.id), class: 'button'
-= link_to "Revenir à l'accueil", exercices_path, class: 'button' 
-/ TODO afficher l'indentation des fichiers essai dans show.haml
+= link_to "Nouvel essai ?", new_exercice_essai_path(@essai.exercice.id)
+= link_to "Revenir à l'accueil", exercices_path
