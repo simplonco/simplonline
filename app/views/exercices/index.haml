@@ -1,19 +1,11 @@
-= link_to("Nouvel exercice ?", new_exercice_path, class: "button radius small") if current_user.admin == true
-
-.row
-  .columns
-    - @exercices.each do |exo|
-      %h4
-        = link_to "Exercice #{exo.id} | #{exo.titre}", exercice_path(exo)
-        = link_to "Modifier", edit_exercice_path(exo)
-      - @essais.select{|essai| essai.exercice_id == exo.id}.last(5).each do |essai|
-        .columns.small-3
-          = "Essai n°#{essai.id}"
-        .columns.small-1
-          = essai.status ? icon('check-square-o', '', class: "fa-list-essai") : icon('square-o', '', class: "fa-list-essai")
-        .columns.small-1
-          = link_to(icon('eye'), exercice_essai_path(exo.id, essai.id), class: "fa-list-essai")
-      .columns
-        %br
-        = link_to "Nouvel essai ?", new_exercice_essai_path(exo.id), class: "tiny button radius"
-      %hr
+- @exercices.each do |exo|
+  %h3
+    = link_to "Exercice #{exo.id} | #{exo.titre}", exercice_path(exo)
+  %ul
+    - @essais.select{|essai| essai.exercice_id == exo.id}.last(5).each do |essai|
+      %li 
+        = "Essai n°#{essai.id} |"
+        = essai.status ? "Win" : "Loose"
+  = link_to "Nouvel essai ?", new_exercice_essai_path(exo.id), class: "button"
+  - unless current_user.remote?
+    = link_to "Modifier", edit_exercice_path(exo), class: 'button'

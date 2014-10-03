@@ -1,29 +1,28 @@
 %h2= "Exercice #{@exercice.id} | #{@exercice.titre}"
-.label Consigne de l'exercice
-%blockquote= @exercice.consigne
-.label A partir de l'échantillon suivant
-%blockquote= @exercice.echantillon
-.label Format de réponse attendu :
+%h4= t('.consigne')
+%p= @exercice.consigne
+%h4= t('.echantillon')
+%p= @exercice.echantillon
+%h4= t('.format_reponse')
 - case @exercice.format_reponse
   - when 1
-    %blockquote Un champs texte OU un nombre
+    %p Un champs texte OU un nombre
   - when 2
-    %blockquote Un JSON
+    %p Un JSON
   - when 3
-    %blockquote Un fichier programme à uploader
+    %p Un fichier programme à uploader
   - when 4
-    %blockquote Un fichier programme ET un fichier test
+    %p Un fichier programme ET un fichier test
   - when 5
-    %blockquote Un fichier test à uploader
-%blockquote= @exercice.reponse
-%hr
-- if @essais
-  %h3 Vos essais
-  - @essais.each do |essai|
-    .columns.small-3
-      = "Essai #{essai.id}"
-    .columns.small-3
-      = essai.status ? "WIN" : "LOOSE"
+    %p Un fichier test à uploader
+%h4= t('.reponse')
+%p= @exercice.reponse
+%h4= t('.essais')
+%ul
+- @essais.each do |essai|
+  %li
+    = "Essai #{essai.id}"
+    |
+    = essai.status ? "WIN" : "LOOSE"
 %br
-%hr
-= link_to "Nouvel essai ?", new_exercice_essai_path(@exercice.id)
+= link_to "Nouvel essai ?", new_exercice_essai_path(@exercice.id), class: 'button'
