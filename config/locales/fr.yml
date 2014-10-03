@@ -100,6 +100,9 @@ fr:
     show:
       explanations: "Explications"
   chapters:
+    show:
+      back_to_lesson: "Retour à la session"
+      edit: "Editer le chapitre"
     new:
       title: "Créer un chapitre"
       create: "Enregistrer"
@@ -138,7 +141,7 @@ fr:
       cancel: "Retour"
       delete_choice: "Supprimer ce choix"
   placeholder:
-    content: "ex; Un avis, une questions"
+    content: "exemple: Un avis, une question"
     email: 'me@example.com'
     number: '0'
     password: '****'
