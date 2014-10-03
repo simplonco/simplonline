@@ -1,20 +1,27 @@
-%h2= "QCM #{@qcm.title}"
+%h2
+  = "QCM #{@qcm.title}"
+
+%p
+  = link_to t('.back_to_lesson'), lesson_path(@lesson)
+  - unless current_user.remote?
+    = link_to t('.edit'), edit_lesson_qcm_path(@lesson, @qcm)
+  - if current_user.remote? && @qcm.questions.any?
+    = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.questions.first)
 
 %p= @qcm.desc
-%p.authors= @qcm.authors.map(&:name).join(' ,')
+
+%p.authors
+  = @qcm.authors.map(&:name).join(' ,')
 
 %ol.questions
   - @questions.each do |question|
-    %li= question.title
+    %li
+      = question.title
+
     - unless current_user.remote?
       = link_to t('.edit_question'), edit_lesson_qcm_question_path(@lesson, @qcm, question)
       |
       = link_to t('.delete_question'), lesson_qcm_question_path(@lesson, @qcm, question), method: :delete
 
-= link_to t('.back_to_lesson'), lesson_path(@lesson)
 - unless current_user.remote?
-  = link_to t('.add_question'), new_lesson_qcm_question_path(@lesson, @qcm)
-  = link_to t('.edit'), edit_lesson_qcm_path(@lesson, @qcm)
-  = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.questions.first)
-- if current_user.remote? && @qcm.questions.any?
-  = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.questions.first)
+  %p= link_to t('.add_question'), new_lesson_qcm_question_path(@lesson, @qcm)
