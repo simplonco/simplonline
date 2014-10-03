@@ -64,6 +64,7 @@ fr:
       add_qcm: "Ajouter un QCM"
       add_exercice: "Ajouter un Exercice"
       lessons: 'Toutes les sessions'
+  next_lesson: 'Session suivante'
   exercices:
     new:
       title: 'Créer un exercice'
