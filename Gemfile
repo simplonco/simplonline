@@ -28,6 +28,7 @@ gem 'haml'
 gem 'nested_form'
 
 gem "redcarpet"
+gem 'coderay'
 
 gem 'bcrypt'
 
