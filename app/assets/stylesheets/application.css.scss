@@ -132,7 +132,7 @@ label {
 
 ul,
 ol {
-  padding-left: 2em;
+  padding: 0 0 2em 1em;
 }
 
 code,
@@ -291,7 +291,7 @@ a, button, .button { cursor: pointer;}
   max-width: 80em;
   margin:4rem auto;
   padding: 2em;
-  background: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.9);
   color:#094146;
   overflow: hidden;
   -moz-border-image: asset-url('border-01.png') 10 / 10px  stretch;
@@ -389,9 +389,16 @@ a, button, .button { cursor: pointer;}
   font-family: 'futuraheavy',Arial,Helvetica,sans-serif;
   color: rgba(255,255,255,1);
   box-shadow: 0 -4px 0 rgba(0,0,0,.2) inset;
+  text-decoration: none
 }
 
 .button:hover {
   background: rgba(237,71,115,1);
 }
 
+.edit_box {
+  padding: 1.2rem;
+  margin: 0.8rem;
+  border-radius: 3px;
+  background: #FFF;
+}
