@@ -112,6 +112,7 @@ fr:
       title: 'Modifier un chapitre'
       update: 'Mettre à jour'
       cancel: 'annuler'
+  next_chapter: 'Chapitre suivant'
   definitions:
     index:
       title: 'Toutes les définitions'
