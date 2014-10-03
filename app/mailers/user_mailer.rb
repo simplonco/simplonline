@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "foad@simplon.co"
 
   def reset_password(user)
     @url = 'truc'
