@@ -1,19 +1,25 @@
 %h3
   = t('.title')
 
-= form_tag do
-  %p
-    = label :email, t('.your_email')
-  %p
-    = email_field_tag :email, '', required: true, placeholder: t('placeholder.email')
-  %p
-    = label :name, t('.your_name')
-  %p
-    = text_field_tag :name, '', placeholder: t('placeholder.name')
+= form_tag contact_path do
+  - if current_user.present?
+    = hidden_field_tag :email, current_user.email
+    = hidden_field_tag :name, current_user.name
+
+  - else
+    %p
+      = label :email, t('.your_email')
+    %p
+      = email_field_tag :email, '', required: true, placeholder: t('placeholder.email')
+    %p
+      = label :name, t('.your_name')
+    %p
+      = text_field_tag :name, '', placeholder: t('placeholder.name')
+
   %p
     = label :message, t('.your_message')
   %p
-    = text_area_tag :message, '', placeholder: t('placeholder.message')
+    = text_area_tag :message, '', rows: 17, cols: 82, placeholder: t('placeholder.message')
   %p
     = submit_tag t('.send')
     = link_to t('.cancel'), root_path

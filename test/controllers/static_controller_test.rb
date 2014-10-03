@@ -17,6 +17,11 @@ class StaticControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "send contact" do
+    post :send_contact, email: 'te@example.com', name: "tete", message: 'a message that contains chars'
+    assert_redirected_to root_path
+  end
+
   test "dashboard" do
     user = FactoryGirl.create(:user, student_type: User::LOCAL)
     online_lesson = FactoryGirl.create(:lesson, online: true)
