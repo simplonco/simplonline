@@ -7,6 +7,6 @@
   - @question.choices.each do |choice|
     %p
       = check_box_tag "answer[#{choice.id}]"
-      = f.label choice.content
+      = f.label choice.content, for: "answer_#{choice.id}"
 
   = f.submit t('.submit'), class: 'button'

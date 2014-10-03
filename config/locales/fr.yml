@@ -3,6 +3,8 @@ fr:
     cant_access: "Vous ne pouvez pas accéder à cette page"
   layouts:
     application:
+      session: "Session"
+      definition: "Définition"
       home: "Tableau de bord"
       title_window: "Simplonline"
       title: "Simplonline"
@@ -148,6 +150,9 @@ fr:
       edit: 'Modifier cette définition'
       delete: 'Supprimer cette définition'
   questions:
+    result:
+      title: "Résultat"
+      your_answer: "votre réponse %{answer}"
     form:
       add_choice: "Ajouter un choix"
       delete_choice: "Supprimer ce choix"

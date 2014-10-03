@@ -57,4 +57,23 @@ class QuestionsControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+  test "result" do
+    setup_with(User::REMOTE)
+    question = FactoryGirl.create(:question, qcm: qcm, position: 0)
+    next_question = FactoryGirl.create(:question, qcm: qcm, position: 1)
+    choice = FactoryGirl.create(:choice, question: question, explanation: 'super tu as trouvé la bonne réponse')
+    answer = FactoryGirl.create(:answer, question: question, chosen_choices: [choice.id], user: user)
+
+    result = choice.explanation
+
+    get :result, lesson_id: lesson.id, qcm_id: qcm.id, question_id: question.id
+    assert_response :success
+    assert_equal question, assigns(:question)
+    assert_equal qcm, assigns(:qcm)
+    assert_equal lesson, assigns(:lesson)
+    assert_equal result, assigns(:result)
+    assert_equal answer, assigns(:answer)
+    assert_equal next_question, assigns(:next_question)
+  end
+
 end

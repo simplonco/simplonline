@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  skip_filter :remote_cant_access, only: [:result]
+
   def new
     @qcm = Qcm.find(params[:qcm_id])
     @lesson = @qcm.lesson
@@ -32,10 +34,19 @@ class QuestionsController < ApplicationController
     redirect_to lesson_qcm_path(@question.qcm.lesson_id, @question.qcm_id)
   end
 
+  def result
+    @question = Question.find(params[:question_id])
+    @next_question = @question.next
+    @qcm = @question.qcm
+    @lesson = @qcm.lesson
+    @answer = Answer.where(user: current_user, question: @question).first
+    @result = @question.choices.where("id in (?)", @answer.chosen_choices).map(&:explanation).join(', ')
+  end
+
   private
 
   def question_params
-    params.require(:question).permit(:title, choices_attributes: [:id, :content, :explanation, :valid_answer, :_destroy])
+    params.require(:question).permit(:title, :position, choices_attributes: [:id, :content, :explanation, :valid_answer, :_destroy])
   end
 
 end

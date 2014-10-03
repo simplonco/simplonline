@@ -8,4 +8,8 @@ class Qcm < ActiveRecord::Base
   validates_presence_of :lesson, :authors
 
   accepts_nested_attributes_for :questions, allow_destroy: true
+
+  def first_question
+    questions.order(:position).first
+  end
 end

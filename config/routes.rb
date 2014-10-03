@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :qcms do
       resources :questions do
         resources :answers
+        get 'result'
       end
     end
     resources :exercices

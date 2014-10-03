@@ -6,7 +6,7 @@
   - unless current_user.remote?
     = link_to t('.edit'), edit_lesson_qcm_path(@lesson, @qcm)
   - if current_user.remote? && @qcm.questions.any?
-    = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.questions.first)
+    = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.first_question)
 
 %p= @qcm.desc
 

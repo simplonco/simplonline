@@ -55,9 +55,12 @@ class QcmsControllerTest < ActionController::TestCase
   test "show" do
     setup_with(User::REMOTE)
     qcm = FactoryGirl.create(:qcm, lesson: lesson)
+    second_question = FactoryGirl.create(:question, qcm: qcm, position: 2)
+    first_question = FactoryGirl.create(:question, qcm: qcm, position: 1)
     get :show, lesson_id: lesson.id, id: qcm.id
     assert_response :success
     assert_equal lesson, assigns(:lesson)
     assert_equal qcm, assigns(:qcm)
+    assert_equal [first_question, second_question], assigns(:questions)
   end
 end

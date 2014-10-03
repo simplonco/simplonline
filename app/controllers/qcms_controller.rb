@@ -3,7 +3,7 @@ class QcmsController < ApplicationController
   def show
     @qcm = Qcm.find(params[:id])
     @lesson = @qcm.lesson
-    @questions = @qcm.questions
+    @questions = @qcm.questions.order(:position)
   end
 
   def index
