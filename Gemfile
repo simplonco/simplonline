@@ -10,7 +10,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'redcarpet'
 gem 'rails_12factor'
 
 gem 'jbuilder', '~> 2.0'
@@ -27,6 +26,9 @@ gem 'carrierwave'
 gem 'font-awesome-sass'
 gem 'haml'
 gem 'nested_form'
+
+gem "redcarpet"
+gem 'coderay'
 
 gem 'bcrypt'
 
