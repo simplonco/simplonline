@@ -14,7 +14,6 @@
 - unless current_user.remote?
   %p= link_to t('.add_chapter'), new_lesson_chapter_path(@lesson), class: 'button'
 
-
 %ol
   - @lesson.qcms.each do |qcm|
     %li= link_to qcm.title, lesson_qcm_path(@lesson, qcm)
