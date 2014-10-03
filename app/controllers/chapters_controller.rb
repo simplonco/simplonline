@@ -41,7 +41,7 @@ class ChaptersController < ApplicationController
   private
 
   def chapter_attributes
-    params.require(:chapter).permit(:title, :content, :number, tags: [], author_ids: [])
+    params.require(:chapter).permit(:title, :content, :number, :ask_pair_validation, tags: [], author_ids: [])
   end
 
 end

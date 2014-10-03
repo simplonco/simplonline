@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  skip_filter :remote_cant_access
 
   def new
   end

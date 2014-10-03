@@ -211,6 +211,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   carrierwave
+  coderay
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner

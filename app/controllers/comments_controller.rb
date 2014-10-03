@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  skip_filter :remote_cant_access
 
   def create
     message = Message.find(params[:message_id])

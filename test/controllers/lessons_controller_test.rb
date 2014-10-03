@@ -40,7 +40,7 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "create" do
     setup_with(User::LOCAL)
-    post :create, lesson: {title: 'Something new', author_ids: [user.id.to_s]}
+    post :create, lesson: {title: 'Something new'}
     assert_redirected_to lessons_path
     assert_equal 'Something new', Lesson.first.title
   end
@@ -55,12 +55,11 @@ class LessonsControllerTest < ActionController::TestCase
 
   test "update" do
     setup_with(User::LOCAL)
-    lesson = FactoryGirl.create(:lesson, title: 'Perl', description: 'truc')
-    post :update, id: lesson.id, lesson: {title: 'Python', description: "something other"}
+    lesson = FactoryGirl.create(:lesson, title: 'Perl')
+    post :update, id: lesson.id, lesson: {title: 'Python'}
     assert_redirected_to lesson_path(lesson)
     lesson.reload
     assert_equal 'Python', lesson.title
-    assert_equal 'something other', lesson.description
     assert_equal true, lesson.offline?
   end
 

@@ -2,8 +2,7 @@
   %h1= @chapter.title
 
   %article.content
-    :markdown
-      #{@chapter.content}
+    = markdown(@chapter.content)
 
   %p.tags
     - @chapter.tags.each do |tag|

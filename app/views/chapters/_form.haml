@@ -14,6 +14,10 @@
   = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
 
 %p
+  = c.check_box :ask_pair_validation
+  = c.label :ask_pair_validation
+
+%p
   = c.label :tags
   %br
   = c.select :tags, @available_tags.map{|t| [t("tags.#{t}"), t]}, {}, multiple: true, include_blank: false

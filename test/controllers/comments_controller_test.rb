@@ -5,7 +5,7 @@ class CommentsControllerTest < ActionController::TestCase
   attr_reader :user
 
   def setup
-    @user = FactoryGirl.create(:user, student_type: User::LOCAL)
+    @user = FactoryGirl.create(:user, student_type: User::REMOTE)
     session[:user_id] = @user.id
   end
 

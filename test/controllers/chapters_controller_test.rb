@@ -50,9 +50,10 @@ class ChaptersControllerTest < ActionController::TestCase
   test "update" do
     setup_with(User::LOCAL)
     chapter = FactoryGirl.create(:chapter, content: 'something', lesson: lesson)
-    post :update, lesson_id: lesson, id: chapter.id, chapter: {content: 'something other'}
+    post :update, lesson_id: lesson, id: chapter.id, chapter: {content: 'something other', ask_pair_validation: true}
     assert_redirected_to lesson_chapter_path(lesson, chapter)
     assert_equal 'something other', chapter.reload.content
+    assert_equal true, chapter.reload.ask_pair_validation
   end
 
   test "redirect remote when lesosn is offline" do
