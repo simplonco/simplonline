@@ -170,20 +170,20 @@ fr:
       cancel: "Retour"
       delete_choice: "Supprimer ce choix"
   placeholder:
-    content: "exemple: Un avis, une question"
-    email: 'me@example.com'
+    content: "exemple : Un avis, une question"
+    email: 'exemple : me@example.com'
     number: '0'
-    password: '****'
-    name: 'Edgar Hoover'
-    message: 'All your data are belongs to us...'
-    chapter_title: 'A propos de code...'
-    chapter_content: 'Nous avons découvert cette semaine... '
-    definition_keyword: 'De quel terme parlons-nous'
-    definition_description: "Une manière de l'expliquer serait de dire..."
-    definition_url: 'Un lien qui illustre le propos'
-    description: "Bonjour à tous, ..."
-    title: "Nous avons découvert cette semaine..."
-    date: "Contenu publié le"
+    password: ''
+    name: 'exemple : Edgar Hoover'
+    message: 'exemple : All your data are belongs to us...'
+    chapter_title: 'exemple : A propos de code...'
+    chapter_content: 'exemple : Nous avons découvert cette semaine... '
+    definition_keyword: 'exemple : De quel terme parlons-nous'
+    definition_description: "exemple : Une manière de l'expliquer serait de dire..."
+    definition_url: 'exemple : https://fr.wikipedia.org/wiki/D%C3%A9veloppement_de_logiciel'
+    description: "exemple : Bonjour à tous, ..."
+    title: "exemple : Nous avons découvert cette semaine..."
+    date: "exemple : 25/10/2014"
   static:
     dashboard:
       messages: 'Tous les messages'
