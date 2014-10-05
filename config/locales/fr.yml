@@ -43,6 +43,7 @@ fr:
       cancel: 'Retour'
       post_message: "Poster"
     show:
+      reply: "Répondre"
       post_comment: 'Poster un commentaire'
       cancel: 'Retour'
       title: 'Message'

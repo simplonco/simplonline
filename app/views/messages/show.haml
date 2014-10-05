@@ -22,7 +22,7 @@
 
 = form_for Comment.new, url: message_comments_path(@message) do |c|
   %p
-    = c.label :content
+    = c.label :content, t('.reply')
     %br
     = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.content'), required: true
 
