@@ -1,0 +1,11 @@
+%p
+  = m.label :title
+  %br
+  = m.text_field :title, placeholder: t('placeholder.title'), required: true
+
+%p
+  = m.label :content
+  %br
+  = m.text_area :content, rows: 21, cols: 82,  placeholder: t('placeholder.content'), required: true
+
+

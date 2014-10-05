@@ -38,15 +38,22 @@ fr:
   messages:
     index:
       title: 'Messages'
+      post_new_message: 'Poster un nouveau message'
     new:
       title: "Poster un nouveau message"
       cancel: 'Retour'
       post_message: "Poster"
     show:
+      edit: "Modifier"
+      delete: "Supprimer"
       reply: "Répondre"
       post_comment: 'Poster un commentaire'
       cancel: 'Retour'
       title: 'Message'
+    edit:
+      title: 'Modifier le message'
+      cancel: 'Retour'
+      update: 'Mettre à jour'
   lessons:
     new:
       title: "Créer une session"

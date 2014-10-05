@@ -103,4 +103,11 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [author], User.authors
   end
 
+  test "staff? " do
+    user = FactoryGirl.create(:user, student_type: User::STAFF)
+    assert user.staff?
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    assert !user.staff?
+  end
+
 end

@@ -5,7 +5,11 @@ class MessagesControllerTest < ActionController::TestCase
   attr_reader :user
 
   def setup_with(student_type)
-    @user = FactoryGirl.create(:user, student_type: student_type)
+    if student_type.kind_of?(User)
+      @user = student_type
+    else
+      @user = FactoryGirl.create(:user, student_type: student_type)
+    end
     session[:user_id] = @user.id
   end
 
@@ -42,5 +46,31 @@ class MessagesControllerTest < ActionController::TestCase
     get :show, id: message.id
     assert_response :success
     assert_equal message, assigns(:message)
+  end
+
+  test "edit" do
+    message = FactoryGirl.create(:message)
+    setup_with(message.user)
+    get :show, id: message.id
+    assert_response :success
+    assert_equal message, assigns(:message)
+  end
+
+  test "update" do
+    message = FactoryGirl.create(:message, content: 'something')
+    setup_with(message.user)
+    assert_equal 1, Message.count
+    post :update, id: message.id, message: {content: 'new content'}
+    assert_redirected_to messages_path
+    assert_equal 1, Message.count
+    assert_equal 'new content', message.reload.content
+  end
+
+  test "delete" do
+    message = FactoryGirl.create(:message, content: 'something')
+    setup_with(message.user)
+    post :destroy, id: message.id
+    assert_redirected_to messages_path
+    assert_equal 0, Message.count
   end
 end

@@ -19,6 +19,23 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  def edit
+    @message = Message.find(params[:id])
+  end
+
+  def update
+    message = Message.find(params[:id])
+    message.update_attributes(message_params)
+    message.save!
+    redirect_to messages_path
+  end
+
+  def destroy
+    message = Message.find(params[:id])
+    message.delete
+    redirect_to messages_path
+  end
+
   private
 
   def message_params

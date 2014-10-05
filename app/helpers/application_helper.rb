@@ -19,4 +19,8 @@ module ApplicationHelper
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
   end
+
+  def change_allowed?(message, user)
+    user.staff? || message.user == user
+  end
 end

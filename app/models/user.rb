@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     self.student_type.to_s == User::REMOTE.to_s
   end
 
+  def staff?
+    self.student_type.to_s == User::STAFF.to_s
+  end
+
   def generate_reset_password_key!
     chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
     salt = ""

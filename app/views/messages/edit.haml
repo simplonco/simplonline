@@ -1,0 +1,10 @@
+%h2= t('.title')
+
+= form_for @message do |m|
+
+  = render partial: 'form', locals: {m:m}
+
+  %p
+    = m.submit t('.update')
+    = link_to t('.cancel'), messages_path
+

@@ -3,30 +3,33 @@
 %section
   %h1= @message.title
 
-  %p.author
-    = link_to @message.user_name, user_path(@message.user)
-
   .content
+    %p.author
+      = link_to @message.user_name, user_path(@message.user)
     :markdown
       #{@message.content}
+    - if change_allowed?(@message, current_user)
+      %p
+        = link_to t('.edit'), edit_message_path(@message)
+        = form_for @message, method: :delete do |m|
+          = m.submit t('.delete')
 
-%ol
-  - @message.comments.each do |comment|
-    %li
-      = comment.user_name
-      = comment.updated_at
-      .content
-        :markdown
-          #{comment.content}
+  %ol
+    - @message.comments.each do |comment|
+      %li
+        = comment.user_name
+        = comment.updated_at
+        .content
+          :markdown
+            #{comment.content}
 
+  = form_for Comment.new, url: message_comments_path(@message) do |c|
+    %p
+      = c.label :content, t('.reply')
+      %br
+      = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.content'), required: true
 
-= form_for Comment.new, url: message_comments_path(@message) do |c|
-  %p
-    = c.label :content, t('.reply')
-    %br
-    = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.content'), required: true
-
-  %p
-    = c.submit t('.post_comment')
-    = link_to t('.cancel'), messages_path
+    %p
+      = c.submit t('.post_comment')
+      = link_to t('.cancel'), messages_path
 
