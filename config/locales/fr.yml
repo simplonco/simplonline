@@ -134,6 +134,10 @@ fr:
       cancel: 'annuler'
   next_chapter: 'Chapitre suivant'
   definitions:
+    form:
+      keyword: 'Mot-clé'
+      description: 'Description'
+      url: 'Url'
     index:
       title: 'Toutes les définitions'
       readmore: '...[Lire la suite]'
