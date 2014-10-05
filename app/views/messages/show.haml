@@ -16,12 +16,15 @@
 
   %ol
     - @message.comments.each do |comment|
-      %li
+      %li.content
         = comment.user_name
         = comment.updated_at
-        .content
-          :markdown
-            #{comment.content}
+        :markdown
+          #{comment.content}
+        - if change_allowed?(comment, current_user)
+          = link_to t('.edit'), edit_message_comment_path(@message, comment)
+          = form_for comment, url: message_comment_path(@message, comment), method: :delete do |m|
+            = m.submit t('.delete')
 
   = form_for Comment.new, url: message_comments_path(@message) do |c|
     %p

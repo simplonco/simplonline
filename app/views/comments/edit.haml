@@ -1,0 +1,13 @@
+
+%h2= t('.title')
+
+= form_for @comment, url: message_comment_path(@message, @comment) do |c|
+
+  %p
+    = c.label :content, t('.content')
+    %br
+    = c.text_area :content, rows: 18, cols: 82
+
+  %p
+    = c.submit t('.submit')
+    = link_to t('.cancel'), message_path(@message)

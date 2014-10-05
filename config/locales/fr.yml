@@ -54,6 +54,12 @@ fr:
       title: 'Modifier le message'
       cancel: 'Retour'
       update: 'Mettre à jour'
+  comments:
+    edit:
+      title: 'Modifier un commentaire'
+      cancel: 'Retour au message'
+      submit: 'Modifier'
+      content: 'Commentaire'
   lessons:
     new:
       title: "Créer une session"
