@@ -27,7 +27,7 @@ fr:
       submit: "Enregistrer"
   users:
     show:
-      title: "Profile: %{name},"
+      title: "Profile: %{name}"
       lessons: "voir tous les cours"
       email: "email: [%{email}](mailto:%{email})."
     edit:

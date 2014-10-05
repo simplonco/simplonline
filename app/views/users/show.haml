@@ -3,9 +3,5 @@
   = t('.title', name: @user.name)
 
 %p
-  :markdown
-    #{t('.email', email: @user.email)}
-
-%p
   - if @user == current_user
     = link_to t('.edit'), edit_user_path(current_user)
