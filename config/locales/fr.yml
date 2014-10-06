@@ -242,13 +242,18 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       body: "
         Bonjour %{user_name},
 
-        L'aventure va bientôt commencer et vous pouvez dès maintenant accéder à la plateforme Simplonline. Pour cela, merci de vous rendre sur la page (%{link_to_reset_password}) et de changer votre mot de passe.
+
+        L'aventure va bientôt commencer et vous pouvez dès maintenant accéder à la plateforme Simplonline. Pour cela, merci de vous rendre sur la page de [mise à jour de votre mot de passe](%{link_to_reset_password}) et de le changer.
+
 
         Vous pourrez ensuite vous connecter à la plateforme en utilisant votre adresse mail et votre mot de passe.
 
+
         Si jamais ce message ne correspond pas à une inscription ou une demande de votre part, merci de nous le signaler à [team@simplon.co](mailto:team@simplon.co).
 
+
         À très bientôt !
+
 
         L'équipe Simplon.co
       "
