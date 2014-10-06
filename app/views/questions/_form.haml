@@ -1,26 +1,21 @@
 %p
-  = f.label :title
-  = f.text_field :title
+  = f.label :title, t('.title')
+  = f.text_field :title, size: 30
 
 %p
-  = f.label :position
+  = f.label :position, t('.position')
   = f.number_field :position
 
 = f.fields_for :choices do |choice|
-  %fieldset
-    %p
-      = choice.label :content
-      %br
-      = choice.text_area :content, rows: 8, cols: 80
-
-    %p
-      = choice.label :explanation
-      %br
-      = choice.text_area :explanation, rows: 8, cols: 80
-
-    %p
-      = choice.check_box :valid_answer
-      = choice.label :valid_answer
-      = choice.link_to_remove t('.delete_choice')
+  = choice.label :content, t('.content')
+  = choice.text_field :content, size: 30
+  = choice.check_box :valid_answer
+  = choice.label :valid_answer, t('.valid_answer')
+  = choice.link_to_remove t('.delete_choice')
 
 = f.link_to_add t('.add_choice'), :choices
+
+%p
+  = f.label :tips, t('.tips')
+  %br
+  = f.text_area :tips, rows: 8, cols: 80

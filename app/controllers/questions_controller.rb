@@ -40,13 +40,17 @@ class QuestionsController < ApplicationController
     @qcm = @question.qcm
     @lesson = @qcm.lesson
     @answer = Answer.where(user: current_user, question: @question).first
-    @result = @question.choices.where("id in (?)", @answer.chosen_choices).map(&:explanation).join(', ')
+    if @answer.is_valid?
+      @result = I18n.t('questions.result.good_response')
+    else
+      @result = @question.tips
+    end
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:title, :position, choices_attributes: [:id, :content, :explanation, :valid_answer, :_destroy])
+    params.require(:question).permit(:title, :position, :tips, choices_attributes: [:id, :content, :explanation, :valid_answer, :_destroy])
   end
 
 end

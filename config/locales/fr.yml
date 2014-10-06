@@ -169,9 +169,18 @@ fr:
       delete: 'Supprimer cette définition'
   questions:
     result:
+      question: "Résultat de votre réponse à la question %{question}"
       title: "Résultat"
       your_answer: "votre réponse %{answer}"
+      try_again: "Reessayer"
+      next_question: 'passer à la question suivante'
+      good_response: "Bonne réponse"
     form:
+      position: "Position"
+      title: "Énoncé de la question"
+      tips: "Indice"
+      valid_answer: "Bonne réponse"
+      content: "Réponse possible"
       add_choice: "Ajouter un choix"
       delete_choice: "Supprimer ce choix"
     new:

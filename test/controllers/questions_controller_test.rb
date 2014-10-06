@@ -59,12 +59,12 @@ class QuestionsControllerTest < ActionController::TestCase
 
   test "result" do
     setup_with(User::REMOTE)
-    question = FactoryGirl.create(:question, qcm: qcm, position: 0)
+    question = FactoryGirl.create(:question, qcm: qcm, position: 0, tips: 'try again')
     next_question = FactoryGirl.create(:question, qcm: qcm, position: 1)
     choice = FactoryGirl.create(:choice, question: question, explanation: 'super tu as trouvé la bonne réponse')
     answer = FactoryGirl.create(:answer, question: question, chosen_choices: [choice.id], user: user)
 
-    result = choice.explanation
+    result = question.tips
 
     get :result, lesson_id: lesson.id, qcm_id: qcm.id, question_id: question.id
     assert_response :success

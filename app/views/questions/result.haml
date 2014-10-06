@@ -1,9 +1,8 @@
-%h2= t('.title')
+%p
+  = t('.question', question: @question.title)
 
 %p
-  = @question.title
-
-= markdown(@result)
+  = markdown(@result)
 
 - if @answer.is_valid? && @next_question.present?
   = link_to t('.next_question'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @next_question)
