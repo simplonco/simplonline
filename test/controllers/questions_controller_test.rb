@@ -71,7 +71,6 @@ class QuestionsControllerTest < ActionController::TestCase
     assert_equal question, assigns(:question)
     assert_equal qcm, assigns(:qcm)
     assert_equal lesson, assigns(:lesson)
-    assert_equal result, assigns(:result)
     assert_equal answer, assigns(:answer)
     assert_equal next_question, assigns(:next_question)
   end

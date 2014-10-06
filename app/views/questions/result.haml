@@ -1,8 +1,11 @@
 %p
   = t('.question', question: @question.title)
 
-%p
-  = markdown(@result)
+- if @answer.is_valid? && @next_question.present?
+  = t('.good')
+- else
+  = t('.bad')
+  = markdown(@question.tips) if @question.tips
 
 - if @answer.is_valid? && @next_question.present?
   = link_to t('.next_question'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @next_question)

@@ -27,6 +27,7 @@ FactoryGirl.define do
   end
 
   factory :question do
+    title "An ubber question"
     qcm
   end
 

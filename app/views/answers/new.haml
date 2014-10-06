@@ -1,12 +1,13 @@
 %h2= t('.title')
 
-%p= @question.title
+= markdown(@question.title)
 
 = form_for @answer, url: lesson_qcm_question_answers_path(@question.qcm.lesson.id, @question.qcm.id, @question.id) do |f|
 
   - @question.choices.each do |choice|
     %p
       = check_box_tag "answer[#{choice.id}]"
-      = f.label choice.content, for: "answer_#{choice.id}"
+      = f.label for: "answer_#{choice.id}" do
+        = choice.content
 
   = f.submit t('.submit'), class: 'button'

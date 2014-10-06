@@ -40,11 +40,6 @@ class QuestionsController < ApplicationController
     @qcm = @question.qcm
     @lesson = @qcm.lesson
     @answer = Answer.where(user: current_user, question: @question).first
-    if @answer.is_valid?
-      @result = I18n.t('questions.result.good_response')
-    else
-      @result = @question.tips
-    end
   end
 
   private
