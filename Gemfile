@@ -34,6 +34,8 @@ gem 'bcrypt'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'newrelic_rpm', groups: [:production]
+
 group :development do
   gem 'spring'
   gem 'rails-clean-logs'
