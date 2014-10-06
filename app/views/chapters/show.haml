@@ -14,6 +14,7 @@
 
 %nav
   = link_to t('.back_to_lesson'), lesson_path(@lesson)
-  = link_to_next_chapter(@chapter.lesson, @chapter.id, @chapter.lesson.chapter_ids)
+  - if @chapter.next
+    = link_to t('.next_chapter'), lesson_chapter_path(@lesson, @chapter.next)
   - unless current_user.remote?
     = link_to t('.edit'), edit_lesson_chapter_path(@lesson, @chapter)

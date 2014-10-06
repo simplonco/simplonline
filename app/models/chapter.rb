@@ -22,4 +22,8 @@ class Chapter < ActiveRecord::Base
     tags.reject!(&:blank?)
     write_attribute(:tags, tags)
   end
+
+  def next
+    self.lesson.chapters.where('number > ?', self.number).order(:number).first
+  end
 end
