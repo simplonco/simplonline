@@ -1,7 +1,7 @@
 %p
   = t('.question', question: @question.title)
 
-- if @answer.is_valid? && @next_question.present?
+- if @answer.is_valid?
   = t('.good')
 - else
   = t('.bad')
