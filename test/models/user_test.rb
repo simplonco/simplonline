@@ -110,4 +110,9 @@ class UserTest < ActiveSupport::TestCase
     assert !user.staff?
   end
 
+  test "login without case" do
+    FactoryGirl.create(:user, email: 'rogercyr.aplogan@gmail.com', password: 'tructruc', password_confirmation: 'tructruc')
+    assert User.login('RogerCyr.Aplogan@gmail.com', 'tructruc')
+  end
+
 end

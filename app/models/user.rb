@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   scope :authors, -> { where(student_type: User::LOCAL) }
 
   def self.login(email, password)
-    user = User.find_by(email: email)
+    user = User.find_by(email: email.downcase)
     if user && user.reset_password_key.nil?
       user.authenticate(password)
     end
