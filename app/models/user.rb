@@ -89,7 +89,7 @@ class User < ActiveRecord::Base
 
   def self.save_and_reset_password(email, status)
     tmp_pwd = generate_password
-    user = new(email: email, name: email.split('@').first, password: tmp_pwd, password_confirmation: tmp_pwd, student_type: status)
+    user = new(email: email.downcase, name: email.split('@').first, password: tmp_pwd, password_confirmation: tmp_pwd, student_type: status)
 
     if user.save
       reset_password(user.email)
