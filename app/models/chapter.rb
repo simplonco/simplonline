@@ -1,5 +1,6 @@
 class Chapter < ActiveRecord::Base
   belongs_to :lesson
+  has_many :submissions
 
   has_many :chapter_authors
   has_many :authors, through: :chapter_authors, source: :user
@@ -25,5 +26,9 @@ class Chapter < ActiveRecord::Base
 
   def next
     self.lesson.chapters.where('number > ?', self.number).order(:number).first
+  end
+
+  def user_submission(user)
+    self.submissions.find_by(user: user)
   end
 end

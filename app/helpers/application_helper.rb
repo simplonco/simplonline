@@ -23,4 +23,10 @@ module ApplicationHelper
   def change_allowed?(message, user)
     user.staff? || message.user == user
   end
+
+  def user_submission_allowed?(user, chapter)
+    return false unless chapter.ask_pair_validation
+    return false if chapter.submissions.where(user: user).any?
+    true
+  end
 end

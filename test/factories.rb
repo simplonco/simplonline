@@ -65,6 +65,12 @@ FactoryGirl.define do
     user
     message
   end
+
+  factory :submission do
+    user
+    chapter
+    content 'something to test'
+  end
 end
 
 

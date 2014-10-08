@@ -62,6 +62,19 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal second_chapter, first_chapter.next
     assert_equal nil, second_chapter.next
   end
+
+  test "could have some submissions" do
+    chapter = FactoryGirl.build(:chapter)
+    assert_equal [], chapter.submissions
+  end
+
+  test "user_submission" do
+    chapter = FactoryGirl.build(:chapter)
+    user = FactoryGirl.create(:user)
+    submission = FactoryGirl.create(:submission, chapter: chapter, user:user)
+    other_submission = FactoryGirl.create(:submission, chapter: chapter)
+    assert_equal submission, chapter.user_submission(user)
+  end
 end
 
 

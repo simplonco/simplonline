@@ -20,4 +20,17 @@ class ApplicationHelperTest < ActionView::TestCase
     assert change_allowed?(message, user), "staff users can delete or update other's messages"
   end
 
+  test "user_submission_allowed with chapter" do
+    user = FactoryGirl.build(:user)
+
+    chapter = FactoryGirl.create(:chapter, ask_pair_validation: false)
+    assert ! user_submission_allowed?(user, chapter)
+
+    chapter = FactoryGirl.create(:chapter, ask_pair_validation: true)
+    assert user_submission_allowed?(user, chapter)
+
+    chapter = FactoryGirl.create(:chapter, ask_pair_validation: true)
+    submission = FactoryGirl.create(:submission, chapter: chapter, user: user)
+    assert ! user_submission_allowed?(user, chapter)
+  end
 end

@@ -136,9 +136,13 @@ fr:
       explanations: "Explications"
   chapters:
     show:
+      submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la [refaire](%{edit_link}) ?"
+      submit: "Soumettre"
+      content: "Proposition"
       back_to_lesson: "Retour à la session"
       edit: "Editer le chapitre"
       next_chapter: "Chapitre suivant"
+      ask_pair_validation_on_submission: "Une demande de validation par les pair est demandé dans ce chapitre. Soumettez votre proposition ici, d'autres élèves viendrons le valider ou en parler."
     new:
       title: "Créer un chapitre"
       create: "Enregistrer"
@@ -147,7 +151,23 @@ fr:
       title: 'Modifier un chapitre'
       update: 'Mettre à jour'
       cancel: 'annuler'
+    form:
+      title: "Titre"
+      number: "Position"
+      content: "Contenu"
+      ask_for_pair_validation: "Demande de validation par les pairs"
+      tags: "Tags"
+      authors: "Auteur(s)"
   next_chapter: 'Chapitre suivant'
+  submissions:
+    edit:
+      edit_submission: 'Mise à jour de votre proposition
+
+
+En validant une nouvelle proposition vous annulez les votes déjà obtenu.
+        '
+      content: "Proposition"
+      submit: "Soumettre"
   definitions:
     form:
       keyword: 'Mot-clé'
