@@ -37,8 +37,12 @@ class QcmsController < ApplicationController
 
   def destroy
     lesson = Lesson.find(params[:lesson_id])
-    qcm = lesson.qcms.find(params[:id])
-    qcm.delete
+    if lesson.online?
+      flash[:notice] = I18n.t('notice.cant_delete_online_qcm')
+    else
+      qcm = lesson.qcms.find(params[:id])
+      qcm.delete
+    end
     redirect_to lesson_path(lesson)
   end
 

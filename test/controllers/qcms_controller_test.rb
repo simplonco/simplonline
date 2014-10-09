@@ -72,4 +72,14 @@ class QcmsControllerTest < ActionController::TestCase
     assert_redirected_to lesson_path(lesson)
     assert_equal 0, Qcm.count
   end
+
+  test "cant delete with an online lesson" do
+    setup_with(User::LOCAL)
+    lesson = FactoryGirl.create(:lesson, online: true)
+    qcm = FactoryGirl.create(:qcm, lesson:lesson)
+    post :destroy, id: qcm.id, lesson_id: lesson.id
+    assert_redirected_to lesson_path(lesson)
+    assert_equal 1, Qcm.count
+    assert_equal I18n.t('notice.cant_delete_online_qcm'), flash[:notice]
+  end
 end
