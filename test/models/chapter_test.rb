@@ -62,6 +62,14 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal second_chapter, first_chapter.next
     assert_equal nil, second_chapter.next
   end
+
+  test "prev" do
+    lesson = FactoryGirl.create(:lesson)
+    second_chapter = FactoryGirl.create(:chapter, number: 1, lesson: lesson)
+    first_chapter = FactoryGirl.create(:chapter, number: 0, lesson: lesson)
+    assert_equal first_chapter, second_chapter.prev
+    assert_equal nil, first_chapter.prev
+  end
 end
 
 

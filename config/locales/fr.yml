@@ -139,6 +139,7 @@ fr:
       back_to_lesson: "Retour à la session"
       edit: "Editer le chapitre"
       next_chapter: "Chapitre suivant"
+      prev_chapter: "Chapitre précédent"
     new:
       title: "Créer un chapitre"
       create: "Enregistrer"
