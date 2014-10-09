@@ -63,4 +63,13 @@ class QcmsControllerTest < ActionController::TestCase
     assert_equal qcm, assigns(:qcm)
     assert_equal [first_question, second_question], assigns(:questions)
   end
+
+  test "delete" do
+    setup_with(User::LOCAL)
+    qcm = FactoryGirl.create(:qcm)
+    lesson = qcm.lesson
+    post :destroy, id: qcm.id, lesson_id: lesson.id
+    assert_redirected_to lesson_path(lesson)
+    assert_equal 0, Qcm.count
+  end
 end

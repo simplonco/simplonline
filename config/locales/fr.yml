@@ -114,6 +114,7 @@ fr:
       back_to_lesson: "Retour à la session"
       edit: "Modifier"
       respond: "Répondre"
+      delete: "Supprimer"
       edit_question: "Modifier"
       delete_question: "Supprimer"
       add_question: "Ajouter une question"

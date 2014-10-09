@@ -35,7 +35,11 @@ class QcmsController < ApplicationController
     redirect_to lesson_qcm_path(qcm.lesson, qcm)
   end
 
-  def delete
+  def destroy
+    lesson = Lesson.find(params[:lesson_id])
+    qcm = lesson.qcms.find(params[:id])
+    qcm.delete
+    redirect_to lesson_path(lesson)
   end
 
   private
