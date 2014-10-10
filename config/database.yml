@@ -16,6 +16,7 @@ test: &test
 production:
   pool: 10
   reaping_frequency: 10
+  reconnect: true
   url: <%= ENV['APPSDECK_POSTGRESQL_URL'] %>
 
 
