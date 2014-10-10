@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   resources :lessons do
     resources :chapters do
-      resources :submissions
+      resources :submissions do
+        resource :validation
+      end
     end
     resources :qcms do
       resources :questions do

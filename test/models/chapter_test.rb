@@ -75,6 +75,16 @@ class ChapterTest < ActiveSupport::TestCase
     other_submission = FactoryGirl.create(:submission, chapter: chapter)
     assert_equal submission, chapter.user_submission(user)
   end
+
+  test "submissions_to_validate" do
+    chapter = FactoryGirl.build(:chapter)
+
+    submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: false)
+
+    validated_submission = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, second_validation_status: true)
+
+    assert_equal [submission_to_validate], chapter.submissions_to_validate
+  end
 end
 
 

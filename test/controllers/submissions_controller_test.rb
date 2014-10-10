@@ -38,4 +38,16 @@ class SubmissionsControllerTest < ActionController::TestCase
     assert_redirected_to lesson_chapter_path(lesson, chapter)
     assert_equal 'New content', submission.reload.content
   end
+
+  test "show" do
+    other_user = FactoryGirl.create(:user)
+    submission = FactoryGirl.create(:submission, user: other_user)
+    chapter = submission.chapter
+    lesson = chapter.lesson
+    get :show, lesson_id: lesson.id, chapter_id: chapter.id, id: submission.id
+    assert_response :success
+    assert_equal chapter, assigns(:chapter)
+    assert_equal lesson, assigns(:lesson)
+    assert_equal submission, assigns(:submission)
+  end
 end

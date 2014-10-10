@@ -17,4 +17,19 @@ class SubmissionTest < ActiveSupport::TestCase
   test "invalid without chapter" do
     assert FactoryGirl.build(:submission, chapter: nil).invalid?
   end
+
+  test "user_name extract from user name" do
+    submission = FactoryGirl.build(:submission)
+    user = submission.user
+    assert_not_nil submission.user_name
+    assert_equal user.name, submission.user_name
+  end
+
+  test "add_validation_from" do
+    submission = FactoryGirl.build(:submission)
+    validator = FactoryGirl.create(:user)
+
+    submission.add_validation_from(validator, 'Something to say about submission', true)
+    assert_equal validator, submission.first_validation_user
+  end
 end

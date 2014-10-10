@@ -31,4 +31,8 @@ class Chapter < ActiveRecord::Base
   def user_submission(user)
     self.submissions.find_by(user: user)
   end
+
+  def submissions_to_validate
+    submissions.where(first_validation_status: false)
+  end
 end

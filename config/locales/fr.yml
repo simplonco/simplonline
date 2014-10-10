@@ -137,7 +137,13 @@ fr:
       explanations: "Explications"
   chapters:
     show:
+      submissions_sent:
+        zero: "Aucune proposition à valider pour le moment"
+        one: "Une proposition à valider"
+        other: "%{count} propositions à valider"
+      submissions_to_validate: "Propositions à valider"
       submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la [refaire](%{edit_link}) ?"
+      submission_of: "Proposition de %{name}"
       submit: "Soumettre"
       content: "Proposition"
       back_to_lesson: "Retour à la session"
@@ -169,6 +175,12 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
         '
       content: "Proposition"
       submit: "Soumettre"
+    show:
+      submission_of_about: "Proposition de %{name} à propos de %{about}"
+      valid: 'La proposition est bonne'
+      comment: "Commentaire"
+      submit: "Enregistrer"
+      cancel: 'Retour'
   definitions:
     form:
       keyword: 'Mot-clé'
