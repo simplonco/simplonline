@@ -1,6 +1,8 @@
 fr:
   notice:
     cant_access: "Vous ne pouvez pas accéder à cette page"
+  error:
+    user_not_found: 'Utilisateur non trouvé'
   layouts:
     application:
       session: "Session"
