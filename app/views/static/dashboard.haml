@@ -3,7 +3,7 @@
 
 %section.last-messages
   %h1= t('.last-message-title')
-  %ol
+  %ul
     - @last_messages.each do |message|
       %li
         = link_to message.title, message_path(message)

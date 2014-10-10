@@ -14,6 +14,10 @@ class MessageTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:message, status: nil).invalid?
   end
 
+  test "invalid without title" do
+    assert FactoryGirl.build(:message, title: nil).invalid?
+  end
+
   test "can return user_name" do
     message = FactoryGirl.build(:message)
     user = message.user
@@ -27,7 +31,13 @@ class MessageTest < ActiveSupport::TestCase
     assert_equal [message], Message.recent(1)
   end
 
-  test "have empty comments" do
-    assert_equal [], Message.new.comments
+  test "have empty responses" do
+    assert_equal [], Message.new.responses
+  end
+
+  test "have one response" do
+    message = FactoryGirl.create(:message)
+    response = FactoryGirl.create(:message, parent: message)
+    assert_equal [response], message.responses
   end
 end

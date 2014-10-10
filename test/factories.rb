@@ -58,12 +58,8 @@ FactoryGirl.define do
   end
 
   factory :message do
+    title 'a title'
     user
-  end
-
-  factory :comment do
-    user
-    message
   end
 
   factory :submission do
