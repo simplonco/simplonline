@@ -54,6 +54,9 @@ fr:
       title: 'Modifier le message'
       cancel: 'Retour'
       update: 'Mettre à jour'
+    form:
+      title: 'Titre'
+      content: 'Message'
   comments:
     edit:
       title: 'Modifier un commentaire'

@@ -2,9 +2,15 @@
 
 %ul
   - @messages.each do |message|
-    %li
-      = link_to message.title, message_path(message)
-      = l(message.updated_at)
-      = message.user_name
+    - if message.parent.present?
+      %li
+        = link_to message.title, message_path(message.parent_id, anchor: message)
+        = l(message.updated_at)
+        = message.user_name
+    - else
+      %li
+        = link_to message.title, message_path(message)
+        = l(message.updated_at)
+        = message.user_name
 
 = link_to t('.post_new_message'), new_message_path
