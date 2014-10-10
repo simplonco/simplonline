@@ -40,4 +40,13 @@ class MessageTest < ActiveSupport::TestCase
     response = FactoryGirl.create(:message, parent: message)
     assert_equal [response], message.responses
   end
+
+  test "responses are sorted by created_at" do
+    today = DateTime.new(2013,8,23,14,49)
+    message = FactoryGirl.create(:message, created_at: today)
+    latest_response = FactoryGirl.create(:message, parent: message, created_at: today + 2.hours)
+    response = FactoryGirl.create(:message, parent: message, created_at: today + 1.hour)
+    assert_equal [response, latest_response], message.responses
+  end
+
 end

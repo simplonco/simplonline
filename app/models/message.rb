@@ -2,7 +2,7 @@ class Message < ActiveRecord::Base
   belongs_to :user
 
   belongs_to :parent, class_name: 'Message'
-  has_many :responses, class_name: 'Message', foreign_key: 'parent_id'
+  has_many :responses, -> { order 'created_at' }, class_name: 'Message', foreign_key: 'parent_id'
 
   NORMAL = :normal
 
