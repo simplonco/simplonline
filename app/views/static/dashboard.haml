@@ -37,9 +37,4 @@
     - unless current_user.remote?
       = link_to t('.create_definition'), new_definition_path
 
-%section.your_submissions
-  %h1= t('.your_submissions')
-  %ul
-    - @your_submissions.each do |submission|
-      %li
-        = link_to t('.your_submission_for', chapter_name: submission.chapter.title), lesson_chapter_path(submission.chapter.lesson, submission.chapter)
+= render partial: "submissions_for_#{current_user.student_type}"

@@ -33,6 +33,31 @@ class StaticControllerTest < ActionController::TestCase
     assert_not_nil assigns(:last_definitions)
     assert_equal [message], assigns(:last_messages)
     assert_equal [online_lesson], assigns(:last_lessons)
-    assert_equal [], assigns(:your_submissions)
+    assert_equal [], assigns(:submissions)
   end
+
+  test "dashboard about submission for local user" do
+    user = FactoryGirl.create(:user, student_type: User::LOCAL)
+    session[:user_id] = user.id
+
+    validated_submission = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: FactoryGirl.create(:user))
+    to_validate_submission = FactoryGirl.create(:submission)
+
+    get :dashboard
+    assert_response :success
+    assert_equal [to_validate_submission], assigns(:submissions)
+  end
+
+  test "dashboard about submission for remote user" do
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    session[:user_id] = user.id
+
+    local_submission = FactoryGirl.create(:submission, user: user)
+    other_submission = FactoryGirl.create(:submission)
+
+    get :dashboard
+    assert_response :success
+    assert_equal [local_submission], assigns(:submissions)
+  end
+
 end

@@ -32,4 +32,11 @@ class SubmissionTest < ActiveSupport::TestCase
     submission.add_validation_from(validator, 'Something to say about submission', true)
     assert_equal validator, submission.first_validation_user
   end
+
+  test "to_validate" do
+    to_validate = FactoryGirl.create(:submission)
+    to_validate_by_just_one = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user))
+    validated = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: FactoryGirl.create(:user))
+    assert_equal [to_validate, to_validate_by_just_one].sort, Submission.to_validate.sort
+  end
 end

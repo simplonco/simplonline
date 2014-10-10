@@ -246,9 +246,14 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
     title: "exemple : Nous avons découvert cette semaine..."
     date: "exemple : 25/10/2014"
   static:
+    submissions_for_local:
+      by: "par %{author}"
+      submissions: "Les dernières propositions à valider"
+      submission_for: "Proposition pour le chapitre %{chapter_name}"
+    submissions_for_remote:
+      submissions: "Vos dernières propositions"
+      submission_for: "Proposition pour le chapitre %{chapter_name}"
     dashboard:
-      your_submissions: "Vos dernières propositions"
-      your_submission_for: "Proposition pour le chapitre %{chapter_name}"
       messages: 'Tous les messages'
       post_new_message: 'Poster un message'
       lessons: 'Toutes les sessions'

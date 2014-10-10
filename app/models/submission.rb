@@ -7,6 +7,8 @@ class Submission < ActiveRecord::Base
 
   validates_presence_of :user, :chapter, :content
 
+  scope :to_validate, -> { where(second_validation_user: nil) }
+
   def user_name
     user.name
   end
