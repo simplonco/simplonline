@@ -1,7 +1,9 @@
 class AddColumnForParentMessage < ActiveRecord::Migration
+
   class Message < ActiveRecord::Base
     belongs_to :parent, class_name: 'Message'
     has_many :comments
+    belongs_to :user
   end
 
   class Comment < ActiveRecord::Base
