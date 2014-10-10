@@ -136,12 +136,16 @@ fr:
     show:
       explanations: "Explications"
   chapters:
-    show:
+    ask_validation_local:
       submissions_sent:
+        zero: "Aucune proposition envoyée pour le moment"
+        one: "Une proposition envoyée"
+        other: "%{count} propositions envoyée"
+      submissions_to_validate:
         zero: "Aucune proposition à valider pour le moment"
         one: "Une proposition à valider"
         other: "%{count} propositions à valider"
-      submissions_to_validate: "Propositions à valider"
+    show:
       submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la [refaire](%{edit_link}) ?"
       submission_of: "Proposition de %{name}"
       submit: "Soumettre"
