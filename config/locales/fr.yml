@@ -247,6 +247,8 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
     date: "exemple : 25/10/2014"
   static:
     dashboard:
+      your_submissions: "Vos dernières propositions"
+      your_submission_for: "Proposition pour le chapitre %{chapter_name}"
       messages: 'Tous les messages'
       post_new_message: 'Poster un message'
       lessons: 'Toutes les sessions'

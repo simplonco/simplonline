@@ -33,5 +33,6 @@ class StaticControllerTest < ActionController::TestCase
     assert_not_nil assigns(:last_definitions)
     assert_equal [message], assigns(:last_messages)
     assert_equal [online_lesson], assigns(:last_lessons)
+    assert_equal [], assigns(:your_submissions)
   end
 end
