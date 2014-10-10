@@ -137,6 +137,7 @@ fr:
       explanations: "Explications"
   chapters:
     ask_validation_local:
+      submission_of: "Proposition de %{name}"
       submissions_sent:
         zero: "Aucune proposition envoyée pour le moment"
         one: "Une proposition envoyée"
@@ -147,7 +148,6 @@ fr:
         other: "%{count} propositions à valider"
     show:
       submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la [refaire](%{edit_link}) ?"
-      submission_of: "Proposition de %{name}"
       submit: "Soumettre"
       content: "Proposition"
       back_to_lesson: "Retour à la session"
@@ -291,6 +291,8 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       send: "Envoyer"
       cancel: "Annuler"
   user_mailer:
+    contact:
+      subject: "Contact depuis la plateforme"
     reset_password:
       subject: "Votre accès à la plateforme Simplonline - FOAD de Simplon.co"
       body: "
