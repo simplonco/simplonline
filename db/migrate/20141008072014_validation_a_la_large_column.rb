@@ -1,7 +1,5 @@
 class ValidationALaLargeColumn < ActiveRecord::Migration
   def up
-    drop_table :submission_result
-
     add_belongs_to :submissions, :first_validation_user, class: 'User'
     add_column :submissions, :first_validation_comment, :text
     add_column :submissions, :first_validation_status, :boolean, default: false
@@ -12,9 +10,6 @@ class ValidationALaLargeColumn < ActiveRecord::Migration
   end
 
   def down
-    create_table :submission_result do |t|
-      t.timestamps
-    end
     remove_column :submissions, :first_validation_user_id
     remove_column :submissions, :first_validation_comment
     remove_column :submissions, :first_validation_status
