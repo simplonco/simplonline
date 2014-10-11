@@ -330,6 +330,7 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       next: "Suivant"
       first: "Premier"
       last: "Dernier"
+      truncate: '...'
   time:
     formats:
       default: "%d/%m/%Y %H:%S"
