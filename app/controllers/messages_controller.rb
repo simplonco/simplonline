@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = Message.recent
+    @messages = Message.recent.page(params[:page]).per(20)
   end
 
   def show

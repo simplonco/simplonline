@@ -59,6 +59,7 @@ FactoryGirl.define do
 
   factory :message do
     title 'a title'
+    status Message::NORMAL
     user
   end
 

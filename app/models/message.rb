@@ -8,7 +8,7 @@ class Message < ActiveRecord::Base
 
   validates_presence_of :user, :status, :title
 
-  scope :recent, ->(limit=10) { order('updated_at DESC').limit(limit) }
+  scope :recent, -> { order('updated_at DESC') }
 
   def user_name
     user.name

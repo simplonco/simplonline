@@ -324,6 +324,12 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     code_review: "Explication de code"
     tools: "Outils"
     framework: "Framework & Lib"
+  views:
+    pagination:
+      previous: "Précédent"
+      next: "Suivant"
+      first: "Premier"
+      last: "Dernier"
   time:
     formats:
       default: "%d/%m/%Y %H:%S"

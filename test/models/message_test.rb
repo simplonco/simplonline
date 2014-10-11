@@ -28,7 +28,7 @@ class MessageTest < ActiveSupport::TestCase
     today = DateTime.new(2013,12,23,14,57)
     message = FactoryGirl.create(:message, updated_at: today)
     old_message = FactoryGirl.create(:message, updated_at: today - 40.days)
-    assert_equal [message], Message.recent(1)
+    assert_equal [message, old_message], Message.recent
   end
 
   test "have empty responses" do

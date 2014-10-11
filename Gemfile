@@ -26,6 +26,7 @@ gem 'carrierwave'
 gem 'font-awesome-sass'
 gem 'haml'
 gem 'nested_form'
+gem 'kaminari'
 
 gem "redcarpet"
 gem 'coderay'
