@@ -69,6 +69,7 @@ fr:
     new:
       title: "Créer une session"
       create: "Créer"
+      cancel: "Retour"
     edit:
       title: "Modifier une session"
       update: "Mettre à jour"
@@ -98,6 +99,7 @@ fr:
     new:
       title: 'Créer un exercice'
       submit: 'Enregistrer'
+      cancel: 'Retour'
     form:
       response: "Réponse attendue"
       title_field: "Titre"
@@ -140,6 +142,7 @@ fr:
       title: "Répondre au QCM"
       submit: "Prochaine question"
     show:
+      bad: 'Incorrect'
       explanations: "Explications"
   chapters:
     ask_validation_local:
@@ -197,6 +200,7 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       description: 'Description'
       url: 'Url'
     index:
+      lessons: "Sessions"
       title: 'Toutes les définitions'
       readmore: '...[Lire la suite]'
       add_keyword: 'Ajouter une définition'
@@ -213,6 +217,7 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       delete: 'Supprimer cette définition'
   questions:
     result:
+      bad: 'Incorrect'
       question: "Résultat de votre réponse à la question %{question}"
       title: "Résultat"
       your_answer: "votre réponse %{answer}"
@@ -231,10 +236,15 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       title: "Créer une question"
       cancel: "Retour"
       submit: "Enregistrer"
+      content: "Contenu"
+      valid_answer: "Bonne réponse"
+      delete_choice: "Supprimer ce choix"
     edit:
       title: "Mise à jour de question"
       create: "Enregistrer"
       cancel: "Retour"
+      content: "Contenu"
+      valid_answer: "Réponse valid"
       delete_choice: "Supprimer ce choix"
   placeholder:
     content: "exemple : Un avis, une question"
@@ -298,6 +308,7 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       cancel: "Annuler"
   user_mailer:
     contact:
+      contact_base: "contact depuis: %{name} [%{email}] "
       subject: "Contact depuis la plateforme"
     reset_password:
       subject: "Votre accès à la plateforme Simplonline - FOAD de Simplon.co"
