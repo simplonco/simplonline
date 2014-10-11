@@ -74,6 +74,7 @@ fr:
       update: "Mettre à jour"
       cancel: "Annuler"
     form:
+      online_field: "Publier"
       description: "Édito"
       title_field: "Titre"
       publish_at_field: "Publié le"
