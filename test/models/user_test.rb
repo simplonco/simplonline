@@ -11,13 +11,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "invalid without password if reset password nil" do
-    skip
     assert FactoryGirl.build(:user, password: nil).invalid?
-  end
-
-  test "valid without password if reset password not nil" do
-    skip
-    assert FactoryGirl.build(:user, password: nil, reset_password_key: 'akey322r23r').valid?
   end
 
   test "invalid without email" do
