@@ -34,15 +34,6 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal expected_content, chapter.content
   end
 
-  test "add definitions when an other definition is already linked to chapter" do
-    skip
-    definition = FactoryGirl.create(:definition, keyword: 'agilité')
-    chapter = FactoryGirl.build(:chapter, content: "le mot [agilité](/definitions/#{definition.id}) c'est mieux  le gras **agilité** est-ce mieux ?")
-    chapter.insert_definitions!
-    expected_content = "le mot [agilité](/definitions/#{definition.id}) c'est mieux le gras [**agilité**](/definitions/#{definition.id}) est-ce mieux ?"
-    assert_equal expected_content, chapter.content
-  end
-
   test "filter on tag" do
     tools_chapter = FactoryGirl.create(:chapter, tags: ['tools'])
     kata_chapter = FactoryGirl.create(:chapter, tags: ['kata'])

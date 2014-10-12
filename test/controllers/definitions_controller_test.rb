@@ -56,7 +56,6 @@ class DefinitionsControllerTest < ActionController::TestCase
     setup_with(User::LOCAL)
     definition = FactoryGirl.create(:definition, keyword: 'foo')
     chapter = FactoryGirl.create(:chapter, title: 'something', content: "<a href='/definitions/#{definition.id}' class='definition'>#{definition.keyword}</a>")
-    definition.delete_links_in_chapters
     delete :destroy, id: definition.id
     assert_redirected_to definitions_path
     assert_equal 0, Definition.count

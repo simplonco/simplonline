@@ -5,9 +5,4 @@ class Definition < ActiveRecord::Base
   scope :last_updated, -> { order('updated_at DESC') }
   scope :by_keyword, -> { order('keyword') }
 
-  def add_links_in_chapters
-  end
-
-  def delete_links_in_chapters
-  end
 end
