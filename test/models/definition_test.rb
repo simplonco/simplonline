@@ -36,6 +36,13 @@ class DefinitionTest < ActiveSupport::TestCase
     expected_content = "Le jambon c'est n'**ippon** ni mauvais"
     assert_equal expected_content, Chapter.last.content
   end
+
+  test "by_keyword" do
+    b_def = FactoryGirl.create(:definition, keyword: 'bbb')
+    a_def = FactoryGirl.create(:definition, keyword: 'aaa')
+    assert_equal [a_def, b_def], Definition.by_keyword
+  end
+
 end
 
 

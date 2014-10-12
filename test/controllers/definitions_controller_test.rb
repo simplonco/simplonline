@@ -11,8 +11,11 @@ class DefinitionsControllerTest < ActionController::TestCase
 
   test "index" do
     setup_with(User::REMOTE)
+    b_def = FactoryGirl.create(:definition, keyword: 'bbb')
+    a_def = FactoryGirl.create(:definition, keyword: 'aaa')
     get :index
     assert_response :success
+    assert_equal [a_def, b_def], assigns(:definitions)
   end
 
   test "new" do

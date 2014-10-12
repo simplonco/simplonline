@@ -1,7 +1,7 @@
 class DefinitionsController < ApplicationController
 
   def index
-    @definitions = Definition.all
+    @definitions = Definition.by_keyword.page(params[:page]).per(40)
   end
 
   def new
