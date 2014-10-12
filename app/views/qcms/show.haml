@@ -9,7 +9,8 @@
       = form_for @qcm, method: :delete, url: lesson_qcm_path(@lesson, @qcm), style: 'display:inline' do |f|
         = f.submit t('.delete'), style: 'display:inline'
 
-  = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.first_question)
+  - if @qcm.first_question
+    = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.first_question)
 
 %p= @qcm.desc
 
