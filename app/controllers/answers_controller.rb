@@ -20,7 +20,9 @@ class AnswersController < ApplicationController
       answer = question.answers.new
     end
 
-    answer.chosen_choices = params[:answer].keys.map{|id| id.to_i}
+    param_answer = params[:answer]
+    param_answer ||= {}
+    answer.chosen_choices = param_answer.keys.map{|id| id.to_i}
     answer.user = current_user
 
     if answer.save
