@@ -157,6 +157,8 @@ GEM
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
     ref (1.0.5)
+    rollbar (1.1.0)
+      multi_json (~> 1.3)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -230,6 +232,7 @@ DEPENDENCIES
   rails (= 4.1.1)
   rails_12factor
   redcarpet
+  rollbar
   sass-rails (~> 4.0.3)
   sidekiq
   sinatra (>= 1.3.0)

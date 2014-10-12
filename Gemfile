@@ -34,6 +34,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'newrelic_rpm', groups: [:production]
 gem 'rails_12factor', groups: [:production]
+gem 'puma', groups: [:production]
+gem 'rollbar', groups: [:production]
 
 group :development do
   gem 'pry-rescue'
@@ -46,4 +48,3 @@ group :test do
   gem 'database_cleaner'
 end
 
-gem 'puma'
