@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20141006091544) do
     t.string  "tags",                default: [],              array: true
     t.integer "number",              default: 0
     t.boolean "ask_pair_validation"
-    t.string  "theme"
   end
 
   create_table "choices", force: true do |t|
