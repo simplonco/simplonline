@@ -5,6 +5,6 @@
   = render partial: 'form', locals: {m:m}
 
   %p
-    = m.submit t('.update')
+    = m.submit t('.update'), class: 'button'
     = link_to t('.cancel'), messages_path
 

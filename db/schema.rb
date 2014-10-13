@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006091544) do
+ActiveRecord::Schema.define(version: 20141012102013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20141006091544) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "definitions", ["keyword"], name: "index_definitions_on_keyword", using: :btree
 
   create_table "essais", force: true do |t|
     t.string   "fichier"
@@ -114,6 +116,7 @@ ActiveRecord::Schema.define(version: 20141006091544) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
   create_table "qcm_authors", force: true do |t|
@@ -139,6 +142,29 @@ ActiveRecord::Schema.define(version: 20141006091544) do
     t.datetime "updated_at"
     t.integer  "position"
     t.text     "tips"
+  end
+
+  create_table "submission_results", force: true do |t|
+    t.integer  "submission_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.boolean  "good",          default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "submissions", force: true do |t|
+    t.integer  "chapter_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "first_validation_user_id"
+    t.text     "first_validation_comment"
+    t.boolean  "first_validation_status",   default: false
+    t.integer  "second_validation_user_id"
+    t.text     "second_validation_comment"
+    t.boolean  "second_validation_status",  default: false
   end
 
   create_table "users", force: true do |t|

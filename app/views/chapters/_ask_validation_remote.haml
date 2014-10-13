@@ -1,0 +1,13 @@
+- if user_submission_allowed?(current_user, @chapter)
+  = t('.ask_pair_validation_on_submission')
+  = form_for Submission.new, url: lesson_chapter_submissions_path(@chapter.lesson, @chapter) do |sub|
+    %p
+      = sub.label :content, t('.content')
+      %br
+      = sub.text_area :content, rows: 10, cols: 82
+    %p
+      = sub.submit t('.submit'), class: 'button'
+- elsif @chapter.ask_pair_validation
+  = markdown(t('.submission_already_sent', edit_link: edit_lesson_chapter_submission_path(@lesson, @chapter, @chapter.user_submission(current_user))))
+  .submission
+    = markdown(@chapter.user_submission(current_user).content)

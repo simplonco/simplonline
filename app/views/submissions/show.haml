@@ -1,0 +1,20 @@
+
+%p= t('.submission_of_about', name: @submission.user_name, about: @chapter.title)
+
+.content
+  = markdown(@submission.content)
+
+- if current_user.local?
+  = form_tag lesson_chapter_submission_validation_path(@lesson, @chapter, @submission) do
+    %p
+      = label_tag :comment, t('.comment')
+      %br
+      = text_area_tag :comment, '', rows: 10, cols: 82
+
+    %p
+      = check_box_tag :valid
+      = label_tag :valid, t('.valid')
+
+    %p
+      = submit_tag t('.submit'), class: 'button'
+      = link_to t('.cancel'), lesson_chapter_path(@lesson, @chapter)

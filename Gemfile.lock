@@ -97,6 +97,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kaminari (0.16.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -105,6 +108,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.5)
+    minitest-color (0.0.1)
     multi_json (1.10.1)
     multi_test (0.1.1)
     nested_form (0.3.2)
@@ -137,7 +141,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.1)
       sprockets-rails (~> 2.0)
-    rails-clean-logs (1.1)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -149,22 +152,19 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
-    rdoc (4.1.1)
-      json (~> 1.4)
     redcarpet (3.1.2)
     redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
     ref (1.0.5)
+    rollbar (1.1.0)
+      multi_json (~> 1.3)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.0)
-      json (~> 1.8)
-      rdoc (~> 4.0, < 5.0)
     sidekiq (3.1.4)
       celluloid (>= 0.15.2)
       connection_pool (>= 2.0.0)
@@ -176,7 +176,6 @@ GEM
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
     slop (3.5.0)
-    spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -223,20 +222,20 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
+  minitest-color
   nested_form
   newrelic_rpm
   pg
   pry-rescue
   puma
   rails (= 4.1.1)
-  rails-clean-logs
   rails_12factor
   redcarpet
+  rollbar
   sass-rails (~> 4.0.3)
-  sdoc (~> 0.4.0)
   sidekiq
   sinatra (>= 1.3.0)
-  spring
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)

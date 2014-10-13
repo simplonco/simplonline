@@ -1,7 +1,7 @@
 class DefinitionsController < ApplicationController
 
   def index
-    @definitions = Definition.all
+    @definitions = Definition.by_keyword.page(params[:page]).per(40)
   end
 
   def new
@@ -11,7 +11,6 @@ class DefinitionsController < ApplicationController
     definition = Definition.new(definition_attributes)
     definition.save!
     redirect_to action: :index, anchor: definition.keyword
-    definition.add_links_in_chapters
   end
 
   def edit
@@ -27,7 +26,6 @@ class DefinitionsController < ApplicationController
 
   def destroy
     definition = Definition.find(params[:id])
-    definition.delete_links_in_chapters
     definition.delete
     redirect_to action: :index
   end

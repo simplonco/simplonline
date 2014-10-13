@@ -11,8 +11,11 @@ class DefinitionsControllerTest < ActionController::TestCase
 
   test "index" do
     setup_with(User::REMOTE)
+    b_def = FactoryGirl.create(:definition, keyword: 'bbb')
+    a_def = FactoryGirl.create(:definition, keyword: 'aaa')
     get :index
     assert_response :success
+    assert_equal [a_def, b_def], assigns(:definitions)
   end
 
   test "new" do
@@ -53,7 +56,6 @@ class DefinitionsControllerTest < ActionController::TestCase
     setup_with(User::LOCAL)
     definition = FactoryGirl.create(:definition, keyword: 'foo')
     chapter = FactoryGirl.create(:chapter, title: 'something', content: "<a href='/definitions/#{definition.id}' class='definition'>#{definition.keyword}</a>")
-    definition.delete_links_in_chapters
     delete :destroy, id: definition.id
     assert_redirected_to definitions_path
     assert_equal 0, Definition.count

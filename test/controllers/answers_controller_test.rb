@@ -52,6 +52,19 @@ class AnswersControllerTest < ActionController::TestCase
     assert_redirected_to lesson_qcm_question_result_path(question.qcm.lesson, question.qcm, question)
   end
 
+  test "create no choise" do
+    question = FactoryGirl.create(:question)
+    good_choice = FactoryGirl.create(:choice, question: question)
+    bad_choice = FactoryGirl.create(:choice, question: question)
+    qcm = question.qcm
+    lesson = qcm.lesson
+
+    post :create, lesson_id: lesson.id, qcm_id: qcm.id, question_id: question.id, answer: nil
+
+    assert_equal 1, Answer.count
+    assert_redirected_to lesson_qcm_question_result_path(question.qcm.lesson, question.qcm, question)
+  end
+
   test "create replace old answer" do
     question = FactoryGirl.create(:question)
 

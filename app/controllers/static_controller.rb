@@ -20,6 +20,11 @@ class StaticController < ApplicationController
     @user = current_user
     @last_lessons = Lesson.last_lessons
     @last_definitions = Definition.last_updated
-    @last_messages = Message.recent
+    @last_messages = Message.recent.page(1).per(10)
+    if current_user.remote?
+      @submissions = Submission.where(user: current_user)
+    else
+      @submissions = Submission.to_validate
+    end
   end
 end

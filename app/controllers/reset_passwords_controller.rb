@@ -12,6 +12,10 @@ class ResetPasswordsController < ApplicationController
 
   def edit
     @user = User.find_by(reset_password_key: params[:key])
+    if @user.nil?
+      flash[:error] = I18n.t('error.user_not_found')
+      redirect_to welcome_path
+    end
   end
 
   def update
