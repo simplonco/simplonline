@@ -14,25 +14,25 @@
         = form_for @message, method: :delete do |m|
           = m.submit t('.delete')
 
-  %ol
-    - @message.comments.each do |comment|
-      %li.content
-        = comment.user_name
-        = comment.updated_at
+  %ul
+    - @message.responses.each do |response|
+      %li.content{id: response.id}
+        = response.user_name
+        = response.updated_at
         :markdown
-          #{comment.content}
-        - if change_allowed?(comment, current_user)
-          = link_to t('.edit'), edit_message_comment_path(@message, comment)
-          = form_for comment, url: message_comment_path(@message, comment), method: :delete do |m|
+          #{response.content}
+        - if change_allowed?(response, current_user)
+          = link_to t('.edit'), edit_message_path(response)
+          = form_for response, url: message_path(response), method: :delete do |m|
             = m.submit t('.delete')
 
-  = form_for Comment.new, url: message_comments_path(@message) do |c|
+  = form_for @message.responses.new, url: message_comments_path(@message) do |c|
     %p
       = c.label :content, t('.reply')
       %br
       = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.content'), required: true
 
     %p
-      = c.submit t('.post_comment')
+      = c.submit t('.post_comment'), class: 'button'
       = link_to t('.cancel'), messages_path
 

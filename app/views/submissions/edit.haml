@@ -1,0 +1,13 @@
+
+.explanation
+  = markdown(t('.edit_submission'))
+
+= form_for @submission, url: lesson_chapter_submission_path(@lesson, @chapter, @submission) do |s|
+
+  %p
+    = s.label :content, t('.content')
+    %br
+    = s.text_area :content, rows: 12, cols: 82
+
+  %p
+    = s.submit t('.submit')

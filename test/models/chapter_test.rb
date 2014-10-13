@@ -34,15 +34,6 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal expected_content, chapter.content
   end
 
-  test "add definitions when an other definition is already linked to chapter" do
-    skip
-    definition = FactoryGirl.create(:definition, keyword: 'agilité')
-    chapter = FactoryGirl.build(:chapter, content: "le mot [agilité](/definitions/#{definition.id}) c'est mieux  le gras **agilité** est-ce mieux ?")
-    chapter.insert_definitions!
-    expected_content = "le mot [agilité](/definitions/#{definition.id}) c'est mieux le gras [**agilité**](/definitions/#{definition.id}) est-ce mieux ?"
-    assert_equal expected_content, chapter.content
-  end
-
   test "filter on tag" do
     tools_chapter = FactoryGirl.create(:chapter, tags: ['tools'])
     kata_chapter = FactoryGirl.create(:chapter, tags: ['kata'])
@@ -69,6 +60,29 @@ class ChapterTest < ActiveSupport::TestCase
     first_chapter = FactoryGirl.create(:chapter, number: 0, lesson: lesson)
     assert_equal first_chapter, second_chapter.prev
     assert_equal nil, first_chapter.prev
+  end
+
+  test "could have some submissions" do
+    chapter = FactoryGirl.build(:chapter)
+    assert_equal [], chapter.submissions
+  end
+
+  test "user_submission" do
+    chapter = FactoryGirl.build(:chapter)
+    user = FactoryGirl.create(:user)
+    submission = FactoryGirl.create(:submission, chapter: chapter, user:user)
+    other_submission = FactoryGirl.create(:submission, chapter: chapter)
+    assert_equal submission, chapter.user_submission(user)
+  end
+
+  test "submissions_to_validate" do
+    chapter = FactoryGirl.build(:chapter)
+
+    submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: false)
+
+    validated_submission = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, second_validation_status: true)
+
+    assert_equal [submission_to_validate], chapter.submissions_to_validate
   end
 end
 

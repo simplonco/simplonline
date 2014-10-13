@@ -58,12 +58,15 @@ FactoryGirl.define do
   end
 
   factory :message do
+    title 'a title'
+    status Message::NORMAL
     user
   end
 
-  factory :comment do
+  factory :submission do
     user
-    message
+    chapter
+    content 'something to test'
   end
 end
 

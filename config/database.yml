@@ -2,7 +2,6 @@ default: &default
   adapter: postgresql
   host: localhost
   port: 5432
-  pool: 10
   username: sensei
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
@@ -15,6 +14,9 @@ test: &test
   database: sensei_test
 
 production:
+  pool: 10
+  reaping_frequency: 10
+  reconnect: true
   url: <%= ENV['APPSDECK_POSTGRESQL_URL'] %>
 
 

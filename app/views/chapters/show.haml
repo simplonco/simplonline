@@ -21,6 +21,9 @@
     - @chapter.authors.each do |author|
       = link_to(author.name, user_path(author))
 
+  - if @chapter.ask_pair_validation
+    = render partial: "ask_validation_#{current_user.student_type}"
+
 %nav
   = link_to t('.back_to_lesson'), lesson_path(@lesson)
   - if @chapter.prev

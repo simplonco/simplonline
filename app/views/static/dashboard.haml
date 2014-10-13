@@ -3,12 +3,18 @@
 
 %section.last-messages
   %h1= t('.last-message-title')
-  %ol
+  %ul
     - @last_messages.each do |message|
-      %li
-        = link_to message.title, message_path(message)
-        = l(message.updated_at)
-        = message.user_name
+      - if message.parent.present?
+        %li
+          = link_to message.title, message_path(message.parent_id, anchor: message)
+          = l(message.updated_at)
+          = message.user_name
+      - else
+        %li
+          = link_to message.title, message_path(message)
+          = l(message.updated_at)
+          = message.user_name
   %p
     = link_to t('.messages'), messages_path
     = link_to t('.post_new_message'), new_message_path
@@ -37,4 +43,4 @@
     - unless current_user.remote?
       = link_to t('.create_definition'), new_definition_path
 
-
+= render partial: "submissions_for_#{current_user.student_type}"

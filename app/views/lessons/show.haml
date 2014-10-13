@@ -14,7 +14,7 @@
 - unless current_user.remote?
   %p= link_to t('.add_chapter'), new_lesson_chapter_path(@lesson)
 
-%ol
+%ul
   - @lesson.qcms.each do |qcm|
     %li= link_to qcm.title, lesson_qcm_path(@lesson, qcm)
 
@@ -22,7 +22,7 @@
   %p
     = link_to t('.add_qcm'), new_lesson_qcm_path(@lesson)
 
-%ol
+%ul
   - @lesson.exercices.each do |exercice|
     %li= link_to exercice.title, lesson_exercice_path(@lesson, exercice)
 

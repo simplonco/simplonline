@@ -34,10 +34,12 @@ class MessagesControllerTest < ActionController::TestCase
 
   test "index" do
     setup_with(User::REMOTE)
-    message = FactoryGirl.create(:message)
+    today = DateTime.new(2014,12,3,14,56)
+    oldest_message = FactoryGirl.create(:message, updated_at: today - 1.day)
+    message = FactoryGirl.create(:message, updated_at: today)
     get :index
     assert_response :success
-    assert_equal [message], assigns(:messages)
+    assert_equal [message, oldest_message], assigns(:messages)
   end
 
   test "show" do
