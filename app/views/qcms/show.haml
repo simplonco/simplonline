@@ -5,8 +5,12 @@
   = link_to t('.back_to_lesson'), lesson_path(@lesson)
   - unless current_user.remote?
     = link_to t('.edit'), edit_lesson_qcm_path(@lesson, @qcm)
+    - if @lesson.offline?
+      = form_for @qcm, method: :delete, url: lesson_qcm_path(@lesson, @qcm), style: 'display:inline' do |f|
+        = f.submit t('.delete'), style: 'display:inline'
 
-  = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.first_question)
+  - if @qcm.first_question
+    = link_to t('.respond'), new_lesson_qcm_question_answer_path(@lesson, @qcm, @qcm.first_question)
 
 %p= @qcm.desc
 

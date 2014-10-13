@@ -1,5 +1,6 @@
 class Chapter < ActiveRecord::Base
   belongs_to :lesson
+  has_many :submissions
 
   has_many :chapter_authors
   has_many :authors, through: :chapter_authors, source: :user
@@ -24,6 +25,25 @@ class Chapter < ActiveRecord::Base
   end
 
   def next
-    self.lesson.chapters.where('number > ?', self.number).order(:number).first
+    next_prev('number > ?')
   end
+  
+  def prev
+    next_prev('number < ?')
+  end
+
+  def user_submission(user)
+    self.submissions.find_by(user: user)
+  end
+
+  def submissions_to_validate
+    submissions.where(first_validation_status: false)
+  end
+
+  private
+  
+  def next_prev(direction)
+    self.lesson.chapters.where(direction, self.number).order(:number).first
+  end
+
 end

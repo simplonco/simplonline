@@ -1,4 +1,13 @@
 %section
+%nav
+  = link_to t('.back_to_lesson'), lesson_path(@lesson)
+  - if @chapter.prev
+    = link_to t('.prev_chapter'), lesson_chapter_path(@lesson, @chapter.prev) 
+  - if @chapter.next
+    = link_to t('.next_chapter'), lesson_chapter_path(@lesson, @chapter.next)
+  - unless current_user.remote?
+    = link_to t('.edit'), edit_lesson_chapter_path(@lesson, @chapter)
+
   %h1= @chapter.title
 
   %article.content
@@ -12,8 +21,13 @@
     - @chapter.authors.each do |author|
       = link_to(author.name, user_path(author))
 
+  - if @chapter.ask_pair_validation
+    = render partial: "ask_validation_#{current_user.student_type}"
+
 %nav
   = link_to t('.back_to_lesson'), lesson_path(@lesson)
+  - if @chapter.prev
+    = link_to t('.prev_chapter'), lesson_chapter_path(@lesson, @chapter.prev) 
   - if @chapter.next
     = link_to t('.next_chapter'), lesson_chapter_path(@lesson, @chapter.next)
   - unless current_user.remote?

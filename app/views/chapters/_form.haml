@@ -1,29 +1,29 @@
 %p
-  = c.label :title
+  = c.label :title, t('.title')
   %br
   = c.text_field :title, placeholder: t('placeholder.chapter_title'), required: true
 
 %p
-  = c.label :number
+  = c.label :number, t('.number')
   %br
   = c.number_field :number, placeholder: t('placeholder.number'), required: true
 
 %p
-  = c.label :content
+  = c.label :content, t('.content')
   %br
   = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
 
 %p
   = c.check_box :ask_pair_validation
-  = c.label :ask_pair_validation
+  = c.label :ask_pair_validation, t('.ask_for_pair_validation')
 
 %p
-  = c.label :tags
+  = c.label :tags, t('.tags')
   %br
   = c.select :tags, @available_tags.map{|t| [t("tags.#{t}"), t]}, {}, multiple: true, include_blank: false
 
 %p
-  = c.label :author_ids
+  = c.label :author_ids, t('.authors')
   %br
   = c.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true, include_blank: false
 

@@ -1,6 +1,8 @@
 fr:
   notice:
     cant_access: "Vous ne pouvez pas accéder à cette page"
+  error:
+    user_not_found: 'Utilisateur non trouvé'
   layouts:
     application:
       session: "Session"
@@ -54,6 +56,9 @@ fr:
       title: 'Modifier le message'
       cancel: 'Retour'
       update: 'Mettre à jour'
+    form:
+      title: 'Titre'
+      content: 'Message'
   comments:
     edit:
       title: 'Modifier un commentaire'
@@ -64,11 +69,13 @@ fr:
     new:
       title: "Créer une session"
       create: "Créer"
+      cancel: "Retour"
     edit:
       title: "Modifier une session"
       update: "Mettre à jour"
       cancel: "Annuler"
     form:
+      online_field: "Publier"
       description: "Édito"
       title_field: "Titre"
       publish_at_field: "Publié le"
@@ -92,6 +99,7 @@ fr:
     new:
       title: 'Créer un exercice'
       submit: 'Enregistrer'
+      cancel: 'Retour'
     form:
       response: "Réponse attendue"
       title_field: "Titre"
@@ -114,6 +122,7 @@ fr:
       back_to_lesson: "Retour à la session"
       edit: "Modifier"
       respond: "Répondre"
+      delete: "Supprimer"
       edit_question: "Modifier"
       delete_question: "Supprimer"
       add_question: "Ajouter une question"
@@ -133,12 +142,30 @@ fr:
       title: "Répondre au QCM"
       submit: "Prochaine question"
     show:
+      bad: 'Incorrect'
       explanations: "Explications"
   chapters:
+    ask_validation_local:
+      submission_of: "Proposition de %{name}"
+      submissions_sent:
+        zero: "Aucune proposition envoyée pour le moment"
+        one: "Une proposition envoyée"
+        other: "%{count} propositions envoyée"
+      submissions_to_validate:
+        zero: "Aucune proposition à valider pour le moment"
+        one: "Une proposition à valider"
+        other: "%{count} propositions à valider"
     show:
+      submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la [refaire](%{edit_link}) ?"
+      submit: "Soumettre"
+      content: "Proposition"
       back_to_lesson: "Retour à la session"
       edit: "Editer le chapitre"
       next_chapter: "Chapitre suivant"
+      prev_chapter: "Chapitre précédent"
+
+      ask_pair_validation_on_submission: "Une demande de validation par les pair est demandé dans ce chapitre. Soumettez votre proposition ici, d'autres élèves viendrons le valider ou en parler."
+
     new:
       title: "Créer un chapitre"
       create: "Enregistrer"
@@ -147,13 +174,36 @@ fr:
       title: 'Modifier un chapitre'
       update: 'Mettre à jour'
       cancel: 'annuler'
+    form:
+      title: "Titre"
+      number: "Position"
+      content: "Contenu"
+      ask_for_pair_validation: "Demande de validation par les pairs"
+      tags: "Tags"
+      authors: "Auteur(s)"
   next_chapter: 'Chapitre suivant'
+  submissions:
+    edit:
+      edit_submission: 'Mise à jour de votre proposition
+
+
+En validant une nouvelle proposition vous annulez les votes déjà obtenu.
+        '
+      content: "Proposition"
+      submit: "Soumettre"
+    show:
+      submission_of_about: "Proposition de %{name} à propos de %{about}"
+      valid: 'La proposition est bonne'
+      comment: "Commentaire"
+      submit: "Enregistrer"
+      cancel: 'Retour'
   definitions:
     form:
       keyword: 'Mot-clé'
       description: 'Description'
       url: 'Url'
     index:
+      lessons: "Sessions"
       title: 'Toutes les définitions'
       readmore: '...[Lire la suite]'
       add_keyword: 'Ajouter une définition'
@@ -170,6 +220,7 @@ fr:
       delete: 'Supprimer cette définition'
   questions:
     result:
+      bad: 'Incorrect'
       question: "Résultat de votre réponse à la question %{question}"
       title: "Résultat"
       your_answer: "votre réponse %{answer}"
@@ -188,10 +239,15 @@ fr:
       title: "Créer une question"
       cancel: "Retour"
       submit: "Enregistrer"
+      content: "Contenu"
+      valid_answer: "Bonne réponse"
+      delete_choice: "Supprimer ce choix"
     edit:
       title: "Mise à jour de question"
       create: "Enregistrer"
       cancel: "Retour"
+      content: "Contenu"
+      valid_answer: "Réponse valid"
       delete_choice: "Supprimer ce choix"
   placeholder:
     content: "exemple : Un avis, une question"
@@ -209,6 +265,13 @@ fr:
     title: "exemple : Nous avons découvert cette semaine..."
     date: "exemple : 25/10/2014"
   static:
+    submissions_for_local:
+      by: "par %{author}"
+      submissions: "Les dernières propositions à valider"
+      submission_for: "Proposition pour le chapitre %{chapter_name}"
+    submissions_for_remote:
+      submissions: "Vos dernières propositions"
+      submission_for: "Proposition pour le chapitre %{chapter_name}"
     dashboard:
       messages: 'Tous les messages'
       post_new_message: 'Poster un message'
@@ -247,6 +310,9 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       send: "Envoyer"
       cancel: "Annuler"
   user_mailer:
+    contact:
+      contact_base: "contact depuis: %{name} [%{email}] "
+      subject: "Contact depuis la plateforme"
     reset_password:
       subject: "Votre accès à la plateforme Simplonline - FOAD de Simplon.co"
       body: "
@@ -273,6 +339,13 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     code_review: "Explication de code"
     tools: "Outils"
     framework: "Framework & Lib"
+  views:
+    pagination:
+      previous: "Précédent"
+      next: "Suivant"
+      first: "Premier"
+      last: "Dernier"
+      truncate: '...'
   time:
     formats:
       default: "%d/%m/%Y %H:%S"

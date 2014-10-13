@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   resource :reset_password
 
   resources :lessons do
-    resources :chapters
+    resources :chapters do
+      resources :submissions do
+        resource :validation
+      end
+    end
     resources :qcms do
       resources :questions do
         resources :answers
