@@ -25,11 +25,11 @@ class Chapter < ActiveRecord::Base
   end
 
   def next
-    next_prev('number > ?')
+    next_prev('number > ?').first
   end
   
   def prev
-    next_prev('number < ?')
+    next_prev('number < ?').last
   end
 
   def user_submission(user)
@@ -43,7 +43,7 @@ class Chapter < ActiveRecord::Base
   private
   
   def next_prev(direction)
-    self.lesson.chapters.where(direction, self.number).order(:number).first
+    self.lesson.chapters.where(direction, self.number).order(:number)
   end
 
 end
