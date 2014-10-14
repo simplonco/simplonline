@@ -155,8 +155,14 @@ fr:
         zero: "Aucune proposition à valider pour le moment"
         one: "Une proposition à valider"
         other: "%{count} propositions à valider"
+    ask_validation_remote:
+      submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la %{edit_link} ?"
+      already_validate_by:
+       zero: "Il vous manque deux validations"
+       one: "Il vous manque une validation"
+       other: "Votre proposition à été validée"
+      redo: "refaire"
     show:
-      submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la [refaire](%{edit_link}) ?"
       submit: "Soumettre"
       content: "Proposition"
       back_to_lesson: "Retour à la session"

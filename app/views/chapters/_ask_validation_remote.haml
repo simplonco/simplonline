@@ -8,6 +8,9 @@
     %p
       = sub.submit t('.submit'), class: 'button'
 - elsif @chapter.ask_pair_validation
-  = markdown(t('.submission_already_sent', edit_link: edit_lesson_chapter_submission_path(@lesson, @chapter, @chapter.user_submission(current_user))))
+  %p
+    = t('.submission_already_sent', edit_link: link_to(t('.redo'), edit_lesson_chapter_submission_path(@lesson, @chapter, @chapter.user_submission(current_user)))).html_safe
+  %p
+    = t('.already_validate_by', count: @chapter.user_submission(current_user).missing_validations)
   .submission
     = markdown(@chapter.user_submission(current_user).content)
