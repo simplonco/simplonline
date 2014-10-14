@@ -93,6 +93,7 @@ class ChapterTest < ActiveSupport::TestCase
 
     assert_equal [submission_to_validate], chapter.submissions_to_validate
   end
+
 end
 
 

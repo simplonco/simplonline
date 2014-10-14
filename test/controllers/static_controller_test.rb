@@ -38,10 +38,11 @@ class StaticControllerTest < ActionController::TestCase
 
   test "dashboard about submission for local user" do
     user = FactoryGirl.create(:user, student_type: User::LOCAL)
+    chapter = FactoryGirl.create(:chapter, ask_pair_validation: true)
     session[:user_id] = user.id
 
-    validated_submission = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: FactoryGirl.create(:user))
-    to_validate_submission = FactoryGirl.create(:submission)
+    validated_submission = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: FactoryGirl.create(:user), chapter: chapter)
+    to_validate_submission = FactoryGirl.create(:submission, chapter: chapter)
 
     get :dashboard
     assert_response :success

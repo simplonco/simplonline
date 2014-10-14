@@ -2,6 +2,7 @@
   = t('.submissions_sent', count: @chapter.submissions.count)
 %p
   = t('.submissions_to_validate', count: @chapter.submissions_to_validate.count)
+
 %ul
   - @chapter.submissions_to_validate.each do |submission|
     %li

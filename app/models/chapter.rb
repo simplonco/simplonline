@@ -27,7 +27,7 @@ class Chapter < ActiveRecord::Base
   def next
     next_prev('number > ?').first
   end
-  
+
   def prev
     next_prev('number < ?').last
   end
@@ -41,7 +41,7 @@ class Chapter < ActiveRecord::Base
   end
 
   private
-  
+
   def next_prev(direction)
     self.lesson.chapters.where(direction, self.number).order(:number)
   end

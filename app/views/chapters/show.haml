@@ -2,7 +2,7 @@
 %nav
   = link_to t('.back_to_lesson'), lesson_path(@lesson)
   - if @chapter.prev
-    = link_to t('.prev_chapter'), lesson_chapter_path(@lesson, @chapter.prev) 
+    = link_to t('.prev_chapter'), lesson_chapter_path(@lesson, @chapter.prev)
   - if @chapter.next
     = link_to t('.next_chapter'), lesson_chapter_path(@lesson, @chapter.next)
   - unless current_user.remote?
@@ -27,7 +27,7 @@
 %nav
   = link_to t('.back_to_lesson'), lesson_path(@lesson)
   - if @chapter.prev
-    = link_to t('.prev_chapter'), lesson_chapter_path(@lesson, @chapter.prev) 
+    = link_to t('.prev_chapter'), lesson_chapter_path(@lesson, @chapter.prev)
   - if @chapter.next
     = link_to t('.next_chapter'), lesson_chapter_path(@lesson, @chapter.next)
   - unless current_user.remote?
