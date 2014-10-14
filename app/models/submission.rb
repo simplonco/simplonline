@@ -7,10 +7,16 @@ class Submission < ActiveRecord::Base
 
   validates_presence_of :user, :chapter, :content
 
-  scope :to_validate, -> { where(second_validation_user: nil) }
 
   def user_name
     user.name
+  end
+
+  def self.to_validate(user)
+    result = []
+    result = where(second_validation_user: nil)
+    result = result.select {|e| e.first_validation_user != user}
+    result
   end
 
   def add_validation_from(user, status, comment)

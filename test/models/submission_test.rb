@@ -34,10 +34,22 @@ class SubmissionTest < ActiveSupport::TestCase
   end
 
   test "to_validate" do
+    user = FactoryGirl.create(:user)
+    other_user = FactoryGirl.create(:user)
+
     to_validate = FactoryGirl.create(:submission)
-    to_validate_by_just_one = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user))
-    validated = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: FactoryGirl.create(:user))
-    assert_equal [to_validate, to_validate_by_just_one].sort, Submission.to_validate.sort
+    to_validate_by_just_one = FactoryGirl.create(:submission, first_validation_user: other_user)
+    already_validated_by_me = FactoryGirl.create(:submission, first_validation_user: user)
+    validated_by_me = FactoryGirl.create(:submission, first_validation_user: user, second_validation_user: other_user)
+    validated = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: other_user)
+
+    assert_equal [to_validate, to_validate_by_just_one].sort, Submission.to_validate(user).sort
+  end
+
+  test "to_validate without one's that already validated by me" do
+    user = FactoryGirl.create(:user)
+    already_validated_by_me = FactoryGirl.create(:submission, first_validation_user: user)
+    assert_equal [], Submission.to_validate(user)
   end
 
   test "missing_validations" do

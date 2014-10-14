@@ -24,7 +24,7 @@ class StaticController < ApplicationController
     if current_user.remote?
       @submissions = Submission.where(user: current_user)
     else
-      @submissions = Submission.to_validate
+      @submissions = Submission.to_validate(current_user)
     end
   end
 end
