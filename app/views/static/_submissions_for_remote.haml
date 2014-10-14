@@ -4,3 +4,4 @@
     - @submissions.each do |submission|
       %li
         = link_to t('.submission_for', chapter_name: submission.chapter.title), lesson_chapter_path(submission.chapter.lesson, submission.chapter)
+        = t('.missing_validation', count: submission.missing_validations)

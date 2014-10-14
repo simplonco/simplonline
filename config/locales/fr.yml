@@ -270,6 +270,11 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       submissions: "Les dernières propositions à valider"
       submission_for: "Proposition pour le chapitre %{chapter_name}"
     submissions_for_remote:
+      missing_validation:
+        zero: 'Proposition validée'
+        one: 'Il manque une validation'
+        two: 'Il manque deux validations'
+        other: 'Il manque quelques validations'
       submissions: "Vos dernières propositions"
       submission_for: "Proposition pour le chapitre %{chapter_name}"
     dashboard:

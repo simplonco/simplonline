@@ -18,4 +18,10 @@ class Submission < ActiveRecord::Base
     self.first_validation_status = status
     self.first_validation_comment = comment
   end
+
+  def missing_validations
+    return 0 if first_validation_user && second_validation_user
+    return 1 if first_validation_user
+    2
+  end
 end

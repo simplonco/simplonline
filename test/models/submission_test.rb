@@ -39,4 +39,15 @@ class SubmissionTest < ActiveSupport::TestCase
     validated = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: FactoryGirl.create(:user))
     assert_equal [to_validate, to_validate_by_just_one].sort, Submission.to_validate.sort
   end
+
+  test "missing_validations" do
+    sub = FactoryGirl.create(:submission)
+    assert_equal 2, sub.missing_validations
+
+    sub = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user))
+    assert_equal 1, sub.missing_validations
+
+    sub = FactoryGirl.create(:submission, first_validation_user: FactoryGirl.create(:user), second_validation_user: FactoryGirl.create(:user))
+    assert_equal 0, sub.missing_validations
+  end
 end
