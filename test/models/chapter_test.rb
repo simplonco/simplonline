@@ -18,22 +18,6 @@ class ChapterTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:chapter, number: nil).invalid?, 'should have an number'
   end
 
-  test "add definitions to chapter" do
-    definition = FactoryGirl.create(:definition, keyword: "word")
-    chapter = FactoryGirl.build(:chapter, content: "Word")
-    chapter.insert_definitions!
-    expected_content = "[Word](/definitions/#{definition.id})"
-    assert_equal expected_content, chapter.content
-  end
-
-  test "insert defintion" do
-    definition = FactoryGirl.create(:definition, keyword: 'keyword')
-    chapter = FactoryGirl.build(:chapter, content: "a content with some **keyword** that I wanna link to *definition*")
-    chapter.insert_definitions!
-    expected_content = "a content with some [**keyword**](/definitions/#{definition.id}) that I wanna link to *definition*"
-    assert_equal expected_content, chapter.content
-  end
-
   test "filter on tag" do
     tools_chapter = FactoryGirl.create(:chapter, tags: ['tools'])
     kata_chapter = FactoryGirl.create(:chapter, tags: ['kata'])
@@ -92,6 +76,21 @@ class ChapterTest < ActiveSupport::TestCase
     validated_submission = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, second_validation_status: true)
 
     assert_equal [submission_to_validate], chapter.submissions_to_validate
+  end
+
+  test "delete submission when delete chapter" do
+    chapter = FactoryGirl.create(:chapter)
+    submission = FactoryGirl.create(:submission, chapter: chapter)
+    chapter.destroy
+    assert_equal 0, Submission.count
+  end
+
+  test "delete submission when chapter stop ask for pair validation" do
+    chapter = FactoryGirl.create(:chapter, ask_pair_validation: true)
+    submission = FactoryGirl.create(:submission, chapter: chapter)
+    chapter.ask_pair_validation = false
+    chapter.save!
+    assert_equal 0, Submission.count
   end
 
 end

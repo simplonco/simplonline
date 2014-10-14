@@ -1,6 +1,6 @@
 class Chapter < ActiveRecord::Base
   belongs_to :lesson
-  has_many :submissions
+  has_many :submissions, dependent: :destroy
 
   has_many :chapter_authors
   has_many :authors, through: :chapter_authors, source: :user
@@ -13,15 +13,16 @@ class Chapter < ActiveRecord::Base
 
   default_scope { order(:number) }
 
-  def insert_definitions!
-    Definition.all.each do |definition|
-      self.content = self.content.gsub(/[\*]*#{definition.keyword.to_sym}[\*]*/i) { |s| "[#{s}](/definitions/#{definition.id})" }
-    end
-  end
-
   def tags=(tags)
     tags.reject!(&:blank?)
     write_attribute(:tags, tags)
+  end
+
+  def ask_pair_validation=(value)
+    unless value
+      submissions.delete_all
+    end
+    write_attribute(:ask_pair_validation, value)
   end
 
   def next

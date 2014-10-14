@@ -15,7 +15,6 @@ class Submission < ActiveRecord::Base
   def self.to_validate(user)
     result = []
     result = where(second_validation_user: nil)
-    result = result.select {|e| e.chapter.ask_pair_validation?}
     result = result.select {|e| e.first_validation_user != user}
     result
   end
