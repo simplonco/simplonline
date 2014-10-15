@@ -5,8 +5,8 @@ fr:
     user_not_found: 'Utilisateur non trouvé'
   layouts:
     application:
-      session: "Session"
-      definition: "Définition"
+      session: "Sessions"
+      definition: "Léxique"
       home: "Tableau de bord"
       title_window: "Simplonline"
       title: "Simplonline"

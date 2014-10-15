@@ -1,6 +1,19 @@
 %h2
   = t('.title', name: @user.name)
 
+%section.last-lessons
+  %h1= t('.last-lessons-title')
+  %ul
+    - @last_lessons.each do |lesson|
+      %li
+        = link_to lesson.title, lesson_path(lesson)
+
+  %p
+    = link_to t('.lessons'), lessons_path
+    - unless current_user.remote?
+      = link_to t('.create_lesson'), new_lesson_path
+
+
 %section.last-messages
   %h1= t('.last-message-title')
   %ul
@@ -19,17 +32,7 @@
     = link_to t('.messages'), messages_path
     = link_to t('.post_new_message'), new_message_path
 
-%section.last-lessons
-  %h1= t('.last-lessons-title')
-  %ul
-    - @last_lessons.each do |lesson|
-      %li
-        = link_to lesson.title, lesson_path(lesson)
-
-  %p
-    = link_to t('.lessons'), lessons_path
-    - unless current_user.remote?
-      = link_to t('.create_lesson'), new_lesson_path
+= render partial: "submissions_for_#{current_user.student_type}"
 
 %section.last-definitions
   %h1= t('.last-definitions-title')
@@ -43,4 +46,3 @@
     - unless current_user.remote?
       = link_to t('.create_definition'), new_definition_path
 
-= render partial: "submissions_for_#{current_user.student_type}"
