@@ -172,6 +172,7 @@ fr:
        one: "Il vous manque une validation"
        other: "Il vous manque deux validations"
       redo: "refaire"
+      validation_comment_by: "commentaire de %{name}"
     show:
       submit: "Soumettre"
       content: "Proposition"
