@@ -20,9 +20,15 @@ class Submission < ActiveRecord::Base
   end
 
   def add_validation_from(user, status, comment)
-    self.first_validation_user = user
-    self.first_validation_status = status
-    self.first_validation_comment = comment
+    if self.first_validation_user
+      self.second_validation_user = user
+      self.second_validation_status = status
+      self.second_validation_comment = comment
+    else
+      self.first_validation_user = user
+      self.first_validation_status = status
+      self.first_validation_comment = comment
+    end
   end
 
   def missing_validations

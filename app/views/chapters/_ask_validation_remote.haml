@@ -12,5 +12,6 @@
     = t('.submission_already_sent', edit_link: link_to(t('.redo'), edit_lesson_chapter_submission_path(@lesson, @chapter, @chapter.user_submission(current_user)))).html_safe
   %p
     = t('.already_validate_by', count: @chapter.user_submission(current_user).missing_validations)
+    = @chapter.user_submission(current_user).missing_validations
   .submission
     = markdown(@chapter.user_submission(current_user).content)

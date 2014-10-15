@@ -168,9 +168,9 @@ fr:
     ask_validation_remote:
       submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la %{edit_link} ?"
       already_validate_by:
-       zero: "Il vous manque deux validations"
+       zero: "Votre proposition a été validée"
        one: "Il vous manque une validation"
-       other: "Votre proposition à été validée"
+       other: "Il vous manque deux validations"
       redo: "refaire"
     show:
       submit: "Soumettre"

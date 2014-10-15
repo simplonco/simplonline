@@ -33,6 +33,16 @@ class SubmissionTest < ActiveSupport::TestCase
     assert_equal validator, submission.first_validation_user
   end
 
+  test "add second validation_from" do
+    previous_validator = FactoryGirl.create(:user)
+    validator = FactoryGirl.create(:user)
+    submission = FactoryGirl.build(:submission, first_validation_status: true, first_validation_user: previous_validator)
+
+    submission.add_validation_from(validator, 'Something to say about submission', true)
+    assert_equal previous_validator, submission.first_validation_user
+    assert_equal validator, submission.second_validation_user
+  end
+
   test "to_validate" do
     user = FactoryGirl.create(:user)
     other_user = FactoryGirl.create(:user)
