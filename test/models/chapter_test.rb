@@ -69,13 +69,34 @@ class ChapterTest < ActiveSupport::TestCase
   end
 
   test "submissions_to_validate" do
+    user = FactoryGirl.create(:user)
     chapter = FactoryGirl.build(:chapter)
 
     submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: false)
 
     validated_submission = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, second_validation_status: true)
 
-    assert_equal [submission_to_validate], chapter.submissions_to_validate
+    assert_equal [submission_to_validate], chapter.submissions_to_validate(user)
+  end
+
+  test "submissions_to_validate contains second_validation needed" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.build(:chapter)
+
+    submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, first_validation_user: FactoryGirl.create(:user))
+
+    validated_submission = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, second_validation_status: true)
+
+    assert_equal [submission_to_validate], chapter.submissions_to_validate(user)
+  end
+
+  test "My validated sub dont come with sub to validate" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.build(:chapter)
+
+    submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true)
+    already_validated = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, first_validation_user: user)
+    assert_equal [submission_to_validate], chapter.submissions_to_validate(user)
   end
 
   test "delete submission when delete chapter" do

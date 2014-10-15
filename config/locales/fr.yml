@@ -145,6 +145,16 @@ fr:
       bad: 'Incorrect'
       explanations: "Explications"
   chapters:
+    ask_validation_staff:
+      submission_of: "Proposition de %{name}"
+      submissions_sent:
+        zero: "Aucune proposition envoyée pour le moment"
+        one: "Une proposition envoyée"
+        other: "%{count} propositions envoyée"
+      submissions_to_validate:
+        zero: "Aucune proposition à valider pour le moment"
+        one: "Une proposition à valider"
+        other: "%{count} propositions à valider"
     ask_validation_local:
       submission_of: "Proposition de %{name}"
       submissions_sent:
