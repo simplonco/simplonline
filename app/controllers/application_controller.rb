@@ -1,10 +1,24 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
   helper_method :current_user
+
   before_filter :authenticate_user, :track
   before_filter :remote_cant_access, except: [:index, :show]
+  before_filter :http_basic_auth, :if => :http_basic_auth_required?
 
   private
+
+  def http_basic_auth
+    authenticate_or_request_with_http_basic do |id, password|
+      id == ENV['DEMO_USER'] && password == ENV['DEMO_PASSWORD']
+    end
+  end
+
+  def http_basic_auth_required?
+    Rails.env.staging?
+  end
+
 
   def authenticate_user
     redirect_to welcome_path unless current_user

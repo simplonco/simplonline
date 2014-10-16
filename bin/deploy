@@ -14,6 +14,6 @@ git push simplon-dev master && \
 
 echo "git push $DESTINATION $BRANCH:master"
 git push $DESTINATION dev:master
-#appsdeck run rake db:migrate
+appsdeck -a simplonline-$BRANCH run rake db:migrate
 
 
