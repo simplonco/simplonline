@@ -6,7 +6,7 @@ fr:
   layouts:
     application:
       session: "Sessions"
-      definition: "Léxique"
+      definition: "Lexique"
       home: "Tableau de bord"
       title_window: "Simplonline"
       title: "Simplonline"
