@@ -1,5 +1,11 @@
 #!/bin/sh
 
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+DESTINATION="git@appsdeck.eu:simplonline-$BRANCH.git"
+
+echo "Deploiement sur $DESTINATION"
+
 git pull && \
 bundle exec rake test && \
 bundle exec cucumber && \
