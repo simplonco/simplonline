@@ -1,10 +1,19 @@
 #!/bin/sh
 
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+DESTINATION="git@appsdeck.eu:simplonline-$BRANCH.git"
+
+echo "Deploiement sur $DESTINATION"
+
 git pull && \
 bundle exec rake test && \
 bundle exec cucumber && \
 git push && \
 git push simplon-dev master && \
-git push appsdeck-prod master && \
-appsdeck run rake db:migrate
+
+echo "git push $DESTINATION $BRANCH:master"
+git push $DESTINATION dev:master
+#appsdeck run rake db:migrate
+
 
