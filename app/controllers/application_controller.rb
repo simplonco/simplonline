@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def http_basic_auth_required?
-    Rails.env.staging?
+    ENV['DEMO_USER'].present? && ENV['DEMO_PASSWORD'].present?
   end
 
 
