@@ -44,6 +44,7 @@ group :development do
   gem 'rack-livereload'
   gem 'pry-rescue'
   gem 'factory_girl_rails'
+  gem 'brakeman', require: false
 end
 
 group :test do
