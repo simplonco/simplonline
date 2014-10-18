@@ -45,6 +45,7 @@ group :development do
   gem 'pry-rescue'
   gem 'factory_girl_rails'
   gem 'brakeman', require: false
+  gem "rails_best_practices"
 end
 
 group :test do
