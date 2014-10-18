@@ -32,7 +32,6 @@ gem 'bcrypt'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
-gem 'rack-livereload', :groups => [:development]
 
 gem 'newrelic_rpm', groups: [:production]
 gem 'rails_12factor', groups: [:production]
@@ -40,6 +39,8 @@ gem 'puma', groups: [:production]
 gem 'rollbar', groups: [:production]
 
 group :development do
+  gem 'traceroute'
+  gem 'rack-livereload'
   gem 'pry-rescue'
   gem 'factory_girl_rails'
 end
