@@ -51,5 +51,7 @@ group :test do
   gem 'minitest-color'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'colored'
+  gem 'deadweight', :require => 'deadweight/hijack/rails'
 end
 

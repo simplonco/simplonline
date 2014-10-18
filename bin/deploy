@@ -8,12 +8,13 @@ echo "Deploiement sur $DESTINATION"
 
 git pull && \
 bundle exec rake test && \
-bundle exec cucumber && \
+bundle exec rake test DEADWEIGHT=true && \
+bundle exec rake cucumber && \
+bundle exec rake cucumber DEADWEIGHT=true && \
 git push && \
 git push simplon-dev master && \
-
-echo "git push $DESTINATION $BRANCH:master"
-git push $DESTINATION dev:master
+echo "git push $DESTINATION $BRANCH:master" && \
+git push $DESTINATION dev:master && \
 appsdeck -a simplonline-$BRANCH run rake db:migrate
 
 
