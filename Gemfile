@@ -40,6 +40,7 @@ gem 'rollbar', groups: [:production]
 
 group :development do
   gem 'traceroute'
+  gem 'bullet'
   gem 'rack-livereload'
   gem 'pry-rescue'
   gem 'factory_girl_rails'
