@@ -17,9 +17,16 @@ class StaticControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "send contact" do
+  test "send message" do
     post :send_contact, email: 'te@example.com', name: "tete", message: 'a message that contains chars'
     assert_redirected_to root_path
+    assert_nil flash[:error]
+  end
+
+  test "dont send message without text" do
+    post :send_contact, email: 'te@example.com', name: "tete"
+    assert_redirected_to contact_path
+    assert_equal I18n.t('error.message_missing'), flash[:error]
   end
 
   test "dashboard" do
