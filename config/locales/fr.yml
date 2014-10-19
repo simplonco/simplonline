@@ -30,9 +30,11 @@ fr:
   users:
     show:
       title: "Profile: %{name}"
+      edit: "Modifier"
       lessons: "voir tous les cours"
       email: "email: [%{email}](mailto:%{email})."
     edit:
+      user_email: "Email"
       title: "Modifier mon compte"
       user_name: "Nom"
       cancel: "Annuler"

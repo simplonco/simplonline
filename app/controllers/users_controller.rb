@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_filter :remote_cant_access
 
   def edit
     @user = current_user
