@@ -9,8 +9,13 @@ class StaticController < ApplicationController
   end
 
   def send_contact
-    UserMailer.contact(params[:email], params[:name], params[:message]).deliver
-    redirect_to root_path
+    if params[:message] && params[:message].present?
+      UserMailer.contact(params[:email], params[:name], params[:message]).deliver
+      redirect_to root_path
+    else
+      flash[:error] = I18n.t('error.message_missing')
+      redirect_to contact_path
+    end
   end
 
   def legal
