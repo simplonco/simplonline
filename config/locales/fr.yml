@@ -286,8 +286,8 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
   static:
     submissions_for_local:
       by: "par %{author}"
-      submissions: "Les dernières propositions à valider"
-      submission_for: "Proposition pour le chapitre %{chapter_name}"
+      submissions: "Propositions à valider"
+      submission_for: "Propositions pour le chapitre %{chapter_name}"
     submissions_for_remote:
       missing_validation:
         zero: 'Proposition validée'
@@ -297,17 +297,19 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       submissions: "Vos dernières propositions"
       submission_for: "Proposition pour le chapitre %{chapter_name}"
     dashboard:
+      submissions: "Propositions à valider"
       messages: 'Tous les messages'
       post_new_message: 'Poster un message'
       lessons: 'Toutes les sessions'
       definitions: 'Lexique'
       title: 'Tableau de bord'
-      last-message-title: "Voici les derniers messages sur le forum"
-      last-lessons-title: "Les dernières sessions disponibles"
+      last-message-title: "Derniers messages sur le forum"
+      last-lessons-title: "Dernières sessions"
       last-qcms-title: "Les derniers QCMs"
-      last-definitions-title: "Les dernières Définitions"
+      last-definitions-title: "Dernières définitions"
+      last-submissions-title: "Dernières propositions à valider"
       create_lesson: "Créer une session"
-      create_definition: "Ajouter un mot dans le lexique"
+      create_definition: "Ajouter une définition"
     legal:
       title: "Mentions légales"
       content: "Ce site appartient à Simplon(tm)..."

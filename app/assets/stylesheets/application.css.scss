@@ -51,11 +51,34 @@ hgroup {
   line-height: 1.5;
   margin: 1.5em 0 0;
 }
-h1,h2,h3,h4,h5,h6{
-  text-transform:capitalize;
-  font-weight: normal;
+h1:first-letter,
+h2:first-letter,
+h3:first-letter,
+h4:first-letter,
+h5:first-letter,
+h6:first-letter{
+  text-transform: capitalize;
 }
 
+.dashboard-box{
+  width: 45%;
+  min-width: 320px;
+  height: 300px;
+  float: left;
+  padding: 0.8em;
+  margin: 0.5em;
+  border-radius: .25rem;
+  background: rgba(255,255,255,.6);
+  border-left: 0.7em solid rgba(18,179,174,.3);
+}
+
+.dashboard-list{
+  padding-bottom: 0em;
+}
+
+.dashboard-list li a{
+  text-decoration: none;
+}
 
 h1, .h1-like {
   font-size: 1.8571em; /* equiv 26px */
@@ -293,6 +316,7 @@ a, button, label, .button { cursor: pointer;}
 }
 
 .content {
+  clear: both;
   max-width: 80em;
   margin:4rem auto;
   padding: 2em;
