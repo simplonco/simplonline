@@ -51,13 +51,18 @@ hgroup {
   line-height: 1.5;
   margin: 1.5em 0 0;
 }
+h1,h2,h3,h4,h5,h6{
+  text-transform:capitalize;
+  font-weight: normal;
+}
+
 
 h1, .h1-like {
   font-size: 1.8571em; /* equiv 26px */
-  font-weight: normal;
   line-height: 1.6154em;
   margin: .8077em 0 0 0;
-}
+
+  }
 
 h2, .h2-like {
   font-size: 1.7143em; /* equiv 24px */
@@ -298,12 +303,6 @@ a, button, label, .button { cursor: pointer;}
   -webkit-border-image: asset-url('border-01.png') 10 / 10px  stretch;
   -o-border-image: asset-url('border-01.png') 10 / 10px  stretch;
   border-image: asset-url('border-01.png') 10 / 10px  stretch;
-}
-
-.content h3 {
-  font-family: 'futuraheavy',Arial,Helvetica,sans-serif;
-  font-size: 2rem;
-  margin: 1.2em;
 }
 
 .content p  {
