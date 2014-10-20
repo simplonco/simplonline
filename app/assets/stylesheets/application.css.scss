@@ -347,12 +347,13 @@ a, button, label, .button { cursor: pointer;}
   display: inline;
 }
 
-.code {
+.CodeRay {
   line-height: 1;
   margin: none;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.027);
   font-family: Courier;
   padding:5px;
+  border: 1px dotted lightgrey;
 }
 
 .design-01 {
