@@ -114,6 +114,13 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal 0, Submission.count
   end
 
+  test "validated_submission" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.create(:chapter)
+    validated_sub = FactoryGirl.create(:submission, user: user, chapter: chapter, first_validation_user: FactoryGirl.create(:user), first_validation_status: true)
+    assert_equal [validated_sub], chapter.validated_submissions(user)
+  end
+
 end
 
 

@@ -14,12 +14,15 @@
     = t('.already_validate_by', count: @chapter.user_submission(current_user).missing_validations)
   .submission
     = markdown(@chapter.user_submission(current_user).content)
+
   %ul.comments
-    %li
-      %blockquote
-        = @chapter.user_submission(current_user).first_validation_comment
-        = t('.validation_comment_by', name: @chapter.user_submission(current_user).first_validation_user.name)
-    %li
-      %blockquote
-        = @chapter.user_submission(current_user).second_validation_comment
-        = t('.validation_comment_by', name: @chapter.user_submission(current_user).second_validation_user.name)
+    - if @chapter.user_submission(current_user).present? && @chapter.user_submission(current_user).first_validation_user.present?
+      %li
+        %blockquote
+          = @chapter.user_submission(current_user).first_validation_comment
+          = t('.validation_comment_by', name: @chapter.user_submission(current_user).first_validation_user.name)
+    - if @chapter.user_submission(current_user).present? && @chapter.user_submission(current_user).second_validation_user.present?
+      %li
+        %blockquote
+          = @chapter.user_submission(current_user).second_validation_comment
+          = t('.validation_comment_by', name: @chapter.user_submission(current_user).second_validation_user.name)

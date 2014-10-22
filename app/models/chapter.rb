@@ -45,6 +45,16 @@ class Chapter < ActiveRecord::Base
     subs.uniq
   end
 
+  def validated_submissions(user)
+    subs = []
+    subs.concat(submissions.where(first_validation_status: true))
+    subs = subs.select{|s| s.first_validation_user != user }
+    subs.concat(submissions.where(second_validation_status: true))
+    subs = subs.select{|s| s.second_validation_user != user }
+    subs.uniq
+  end
+
+
   private
 
   def next_prev(direction)

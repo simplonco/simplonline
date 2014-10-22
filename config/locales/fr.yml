@@ -168,6 +168,9 @@ fr:
         one: "Une proposition à valider"
         other: "%{count} propositions à valider"
     ask_validation_remote:
+      ask_pair_validation_on_submission: "Demande de validation par les pairs"
+      content: "Proposition"
+      submit: "Envoyer"
       submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la %{edit_link} ?"
       already_validate_by:
        zero: "Votre proposition a été validée"
