@@ -6,15 +6,15 @@ class SessionsController < ApplicationController
     user = User.login(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_path, notice: "Connecté!"
+      redirect_to root_path, notice: "Connecté !"
     else
-      flash[:error] = 'User or password invalid'
+      flash[:error] = 'Identifiant ou mot de passe non valide'
       redirect_to welcome_path
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: 'Déconnecté!'
+    redirect_to root_url, notice: 'Déconnecté !'
   end
 end
