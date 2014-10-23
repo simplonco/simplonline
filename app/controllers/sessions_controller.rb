@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: "Connecté !"
     else
-      flash[:error] = 'Identifiant ou mot de passe non valide'
+      flash[:error] = I18n.t('error.invalid_user')
       redirect_to welcome_path
     end
   end

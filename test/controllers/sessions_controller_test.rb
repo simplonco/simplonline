@@ -11,7 +11,7 @@ class SessionsControllerTest < ActionController::TestCase
   test "redirected to login page when error" do
     post :create, email: 'nobody@something.com', password: 'a'
     assert_redirected_to welcome_path
-    assert_equal 'User or password invalid', flash[:error]
+    assert_equal I18n.t('error.invalid_user'), flash[:error]
   end
 end
 

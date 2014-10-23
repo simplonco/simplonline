@@ -6,7 +6,7 @@
   %ul.dashboard-list
     - @last_lessons.each do |lesson|
       %li
-        = link_to lesson.title, lesson_path(lesson)
+        = link_to truncate(lesson.title, length: 40, separator: ' '), lesson_path(lesson)
   %p
     = link_to t('.lessons'), lessons_path
     - unless current_user.remote?
@@ -42,7 +42,7 @@
   %ul.dashboard-list
     - @last_definitions.each do |definition|
       %li
-        = link_to definition.keyword, definitions_path(anchor: definition.keyword)
+        = link_to truncate(definition.keyword, length: 40, separator: ' '), definitions_path(anchor: definition.keyword)
   %p
     = link_to t('.definitions'), definitions_path
     - unless current_user.remote?
