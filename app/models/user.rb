@@ -78,6 +78,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def can_validate_for?(chapter)
+    self.local? || chapter.user_submission_validated?(self)
+  end
+
   private
 
   def self.generate_password
