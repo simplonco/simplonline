@@ -3,6 +3,7 @@ fr:
     cant_access: "Vous ne pouvez pas accéder à cette page"
   error:
     user_not_found: 'Utilisateur non trouvé'
+    you_are_not_allowed_to_validate_submissions: "Vous n'êtes pas encore authorisé à valider des propositions."
   layouts:
     application:
       session: "Sessions"
@@ -168,6 +169,12 @@ fr:
         one: "Une proposition à valider"
         other: "%{count} propositions à valider"
     ask_validation_remote:
+      submission_of: "Proposition de %{name}"
+      submissions_to_validate:
+        zero: "Aucune proposition à valider pour le moment"
+        one: "Une proposition à valider"
+        other: "%{count} propositions à valider"
+      you_can_validate_submission_now: "Votre proposition à été validé, vous devez maintenant vous aussi valider celles des autres."
       ask_pair_validation_on_submission: "Demande de validation par les pairs"
       content: "Proposition"
       submit: "Envoyer"

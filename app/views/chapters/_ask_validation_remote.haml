@@ -26,3 +26,16 @@
         %blockquote
           = @chapter.user_submission(current_user).second_validation_comment
           = t('.validation_comment_by', name: @chapter.user_submission(current_user).second_validation_user.name)
+
+  - if current_user.can_validate_for?(@chapter)
+    %p
+      = t('.you_can_validate_submission_now')
+
+    %p
+      = t('.submissions_to_validate', count: @chapter.submissions_to_validate(current_user).count)
+
+    %ul
+      - @chapter.submissions_to_validate(current_user).each do |submission|
+        %li
+          = link_to t('.submission_of', name: submission.user_name), lesson_chapter_submission_path(@lesson, @chapter, submission)
+

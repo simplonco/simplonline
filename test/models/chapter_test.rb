@@ -121,6 +121,19 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal [validated_sub], chapter.validated_submissions(user)
   end
 
+  test "user can validate other sub when self already validated" do
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    chapter = FactoryGirl.create(:chapter)
+    FactoryGirl.create(:submission, user: user, chapter: chapter, first_validation_status: true, second_validation_status: true)
+    assert chapter.user_submission_validated?(user), "user can validate other submissions only when self have been validated"
+  end
+
+  test "user cant validate other sub when self not yet validated" do
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    chapter = FactoryGirl.create(:chapter)
+    FactoryGirl.create(:submission, user: user, chapter: chapter, first_validation_status: true, second_validation_status: false)
+    assert ! chapter.user_submission_validated?(user), "user can validate other submissions only when self have been validated"
+  end
 end
 
 
