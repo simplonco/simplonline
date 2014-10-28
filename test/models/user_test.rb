@@ -109,4 +109,17 @@ class UserTest < ActiveSupport::TestCase
     assert User.login('RogerCyr.Aplogan@gmail.com', 'tructruc')
   end
 
+  test "can validate for chapter when type present" do
+    user = FactoryGirl.create(:user, student_type: User::LOCAL)
+    chapter = FactoryGirl.create(:chapter)
+    assert user.can_validate_for?(chapter), "Present user can validate submission"
+  end
+
+  test "can validate for chapter where self submission already validated" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.create(:chapter)
+    FactoryGirl.create(:submission, chapter: chapter, user: user, first_validation_status: true, second_validation_status: true)
+    assert user.can_validate_for?(chapter), "Remote user can validate when self submission have been validated"
+  end
+
 end

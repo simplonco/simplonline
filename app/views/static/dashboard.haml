@@ -1,46 +1,48 @@
-%h2
+%h2.dashboard-title
   = t('.title', name: @user.name)
 
-%section.last-lessons
-  %h1= t('.last-lessons-title')
-  %ul
+%section.last-lessons.dashboard-box
+  %h3= t('.last-lessons-title')
+  %ul.dashboard-list
     - @last_lessons.each do |lesson|
       %li
-        = link_to lesson.title, lesson_path(lesson)
-
+        = link_to truncate(lesson.title, length: 40, separator: ' '), lesson_path(lesson)
   %p
     = link_to t('.lessons'), lessons_path
     - unless current_user.remote?
       = link_to t('.create_lesson'), new_lesson_path
 
-
-%section.last-messages
-  %h1= t('.last-message-title')
-  %ul
+%section.last-messages.dashboard-box
+  %h3= t('.last-message-title')
+  %ul.dashboard-list
     - @last_messages.each do |message|
       - if message.parent.present?
         %li
-          = link_to message.title, message_path(message.parent_id, anchor: message)
+          = link_to truncate(message.title, length: 40, separator: ' '), message_path(message.parent_id, anchor: message)
           = l(message.updated_at)
           = message.user_name
       - else
         %li
-          = link_to message.title, message_path(message)
+          = link_to truncate(message.title, length: 40, separator: ' ')
+          %br
           = l(message.updated_at)
           = message.user_name
   %p
     = link_to t('.messages'), messages_path
     = link_to t('.post_new_message'), new_message_path
 
-= render partial: "submissions_for_#{current_user.student_type}"
+%section.submissions.dashboard-box
+  %h3= t('.submissions')
+  %ul.dashboard-list
+    - @submissions.each do |submission|
+      = render partial: "submissions_for_#{current_user.student_type}", locals: {submission: submission}
 
-%section.last-definitions
-  %h1= t('.last-definitions-title')
-  %ul
+%section.last-definitions.dashboard-box
+  %h3= t('.last-definitions-title')
+  %ul.dashboard-list
     - @last_definitions.each do |definition|
       %li
-        = link_to definition.keyword, definitions_path(anchor: definition.keyword)
-
+        = link_to truncate(definition.keyword, length: 40, separator: ' '), definitions_path(anchor: definition.keyword)
   %p
     = link_to t('.definitions'), definitions_path
     - unless current_user.remote?
