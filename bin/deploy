@@ -15,4 +15,3 @@ git push && \
 echo "git push $DESTINATION $BRANCH:master" && \
 git push $DESTINATION $BRANCH:master && \
 appsdeck -a simplonline-$BRANCH run rake db:migrate
-

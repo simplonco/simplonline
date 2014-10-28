@@ -24,8 +24,8 @@ class StaticController < ApplicationController
   def dashboard
     @user = current_user
     @last_lessons = Lesson.last_lessons.limit(6)
-    @last_definitions = Definition.last_updated
-    @last_messages = Message.recent.page(1).per(10)
+    @last_definitions = Definition.last_updated.limit(6)
+    @last_messages = Message.recent.page(1).per(3)
     if current_user.remote?
       @submissions = Submission.where(user: current_user)
     else
