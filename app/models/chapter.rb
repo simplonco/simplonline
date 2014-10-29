@@ -37,11 +37,24 @@ class Chapter < ActiveRecord::Base
     self.submissions.find_by(user: user)
   end
 
+  def user_submission_validated?(user)
+    self.submissions.where(user: user).where(first_validation_status: true, second_validation_status: true).exists?
+  end
+
   def submissions_to_validate(user)
     subs = []
     subs.concat(submissions.where(first_validation_status: false))
     subs.concat(submissions.where(second_validation_status: false))
     subs = subs.select{|s| s.first_validation_user != user }
+    subs.uniq
+  end
+
+  def validated_submissions(user)
+    subs = []
+    subs.concat(submissions.where(first_validation_status: true))
+    subs = subs.select{|s| s.first_validation_user != user }
+    subs.concat(submissions.where(second_validation_status: true))
+    subs = subs.select{|s| s.second_validation_user != user }
     subs.uniq
   end
 

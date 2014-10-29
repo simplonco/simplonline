@@ -4,7 +4,7 @@
 .content
   = markdown(@submission.content)
 
-- if current_user.local?
+- if current_user.can_validate_for?(@chapter)
   = form_tag lesson_chapter_submission_validation_path(@lesson, @chapter, @submission) do
     %p
       = label_tag :comment, t('.comment')

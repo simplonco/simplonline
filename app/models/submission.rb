@@ -7,7 +7,6 @@ class Submission < ActiveRecord::Base
 
   validates_presence_of :user, :chapter, :content
 
-
   def user_name
     user.name
   end
