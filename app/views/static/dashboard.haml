@@ -19,13 +19,12 @@
       - if message.parent.present?
         %li
           = link_to truncate(message.title, length: 40, separator: ' '), message_path(message.parent_id, anchor: message)
-          = l(message.updated_at)
+          = t('.by') 
           = message.user_name
       - else
         %li
           = link_to truncate(message.title, length: 40, separator: ' ')
-          %br
-          = l(message.updated_at)
+          = t('.by')
           = message.user_name
   %p
     = link_to t('.messages'), messages_path
