@@ -3,10 +3,12 @@ fr:
     cant_access: "Vous ne pouvez pas accéder à cette page"
   error:
     user_not_found: 'Utilisateur non trouvé'
+    invalid_user: 'Identifiant ou mot de passe non valide'
+    you_are_not_allowed_to_validate_submissions: "Vous n'êtes pas encore autorisé à valider des propositions."
   layouts:
     application:
-      session: "Session"
-      definition: "Définition"
+      session: "Sessions"
+      definition: "Lexique"
       home: "Tableau de bord"
       title_window: "Simplonline"
       title: "Simplonline"
@@ -30,9 +32,11 @@ fr:
   users:
     show:
       title: "Profile: %{name}"
+      edit: "Modifier"
       lessons: "voir tous les cours"
       email: "email: [%{email}](mailto:%{email})."
     edit:
+      user_email: "Email"
       title: "Modifier mon compte"
       user_name: "Nom"
       cancel: "Annuler"
@@ -145,6 +149,16 @@ fr:
       bad: 'Incorrect'
       explanations: "Explications"
   chapters:
+    ask_validation_staff:
+      submission_of: "Proposition de %{name}"
+      submissions_sent:
+        zero: "Aucune proposition envoyée pour le moment"
+        one: "Une proposition envoyée"
+        other: "%{count} propositions envoyée"
+      submissions_to_validate:
+        zero: "Aucune proposition à valider pour le moment"
+        one: "Une proposition à valider"
+        other: "%{count} propositions à valider"
     ask_validation_local:
       submission_of: "Proposition de %{name}"
       submissions_sent:
@@ -155,8 +169,24 @@ fr:
         zero: "Aucune proposition à valider pour le moment"
         one: "Une proposition à valider"
         other: "%{count} propositions à valider"
+    ask_validation_remote:
+      submit: "Soumettre"
+      content: "Proposition"
+      ask_pair_validation_on_submission: "Demande de validation par les pairs"
+      submission_of: "Proposition de %{name}"
+      submissions_to_validate:
+        zero: "Aucune proposition à valider pour le moment"
+        one: "Une proposition à valider"
+        other: "%{count} propositions à valider"
+      you_can_validate_submission_now: "Votre proposition à été validé, vous devez maintenant vous aussi valider celles des autres."
+      submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la %{edit_link} ?"
+      already_validate_by:
+       zero: "Votre proposition a été validée"
+       one: "Il vous manque une validation"
+       other: "Il vous manque deux validations"
+      redo: "refaire"
+      validation_comment_by: "commentaire de %{name}"
     show:
-      submission_already_sent: "Vous avez déjà envoyer une proposition. Voulez-vous la [refaire](%{edit_link}) ?"
       submit: "Soumettre"
       content: "Proposition"
       back_to_lesson: "Retour à la session"
@@ -164,7 +194,7 @@ fr:
       next_chapter: "Chapitre suivant"
       prev_chapter: "Chapitre précédent"
 
-      ask_pair_validation_on_submission: "Une demande de validation par les pair est demandé dans ce chapitre. Soumettez votre proposition ici, d'autres élèves viendrons le valider ou en parler."
+      ask_pair_validation_on_submission: "Une demande de validation par les pairs est demandée dans ce chapitre. Soumettez votre proposition ici, d'autres élèves viendront la valider ou en parler."
 
     new:
       title: "Créer un chapitre"
@@ -216,6 +246,7 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       update: 'Mettre à jour'
       cancel: 'Annuler'
     show:
+      definitions: 'Définitions'
       edit: 'Modifier cette définition'
       delete: 'Supprimer cette définition'
   questions:
@@ -265,25 +296,34 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
     title: "exemple : Nous avons découvert cette semaine..."
     date: "exemple : 25/10/2014"
   static:
+    submissions_for_staff:
+      nothing: "Vous n'avez pas besoin de valider des propositions."
     submissions_for_local:
       by: "par %{author}"
-      submissions: "Les dernières propositions à valider"
-      submission_for: "Proposition pour le chapitre %{chapter_name}"
+      submissions: "Propositions à valider"
+      submission_for: "Propositions pour le chapitre"
     submissions_for_remote:
+      missing_validation:
+        zero: 'Proposition validée'
+        one: 'Il manque une validation'
+        two: 'Il manque deux validations'
+        other: 'Il manque quelques validations'
       submissions: "Vos dernières propositions"
-      submission_for: "Proposition pour le chapitre %{chapter_name}"
+      submission_for: "Proposition pour le chapitre "
     dashboard:
+      submissions: "Propositions à valider"
       messages: 'Tous les messages'
       post_new_message: 'Poster un message'
       lessons: 'Toutes les sessions'
       definitions: 'Lexique'
       title: 'Tableau de bord'
-      last-message-title: "Voici les derniers messages sur le forum"
-      last-lessons-title: "Les dernières sessions disponibles"
+      last-message-title: "Derniers messages sur le forum"
+      last-lessons-title: "Dernières sessions"
       last-qcms-title: "Les derniers QCMs"
-      last-definitions-title: "Les dernières Définitions"
+      last-definitions-title: "Dernières définitions"
+      last-submissions-title: "Dernières propositions à valider"
       create_lesson: "Créer une session"
-      create_definition: "Ajouter un mot dans le lexique"
+      create_definition: "Ajouter une définition"
     legal:
       title: "Mentions légales"
       content: "Ce site appartient à Simplon(tm)..."

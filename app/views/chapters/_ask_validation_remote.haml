@@ -8,6 +8,34 @@
     %p
       = sub.submit t('.submit'), class: 'button'
 - elsif @chapter.ask_pair_validation
-  = markdown(t('.submission_already_sent', edit_link: edit_lesson_chapter_submission_path(@lesson, @chapter, @chapter.user_submission(current_user))))
+  %p
+    = t('.submission_already_sent', edit_link: link_to(t('.redo'), edit_lesson_chapter_submission_path(@lesson, @chapter, @chapter.user_submission(current_user)))).html_safe
+  %p
+    = t('.already_validate_by', count: @chapter.user_submission(current_user).missing_validations)
   .submission
     = markdown(@chapter.user_submission(current_user).content)
+
+  %ul.comments
+    - if @chapter.user_submission(current_user).present? && @chapter.user_submission(current_user).first_validation_user.present?
+      %li
+        %blockquote
+          = @chapter.user_submission(current_user).first_validation_comment
+          = t('.validation_comment_by', name: @chapter.user_submission(current_user).first_validation_user.name)
+    - if @chapter.user_submission(current_user).present? && @chapter.user_submission(current_user).second_validation_user.present?
+      %li
+        %blockquote
+          = @chapter.user_submission(current_user).second_validation_comment
+          = t('.validation_comment_by', name: @chapter.user_submission(current_user).second_validation_user.name)
+
+  - if current_user.can_validate_for?(@chapter)
+    %p
+      = t('.you_can_validate_submission_now')
+
+    %p
+      = t('.submissions_to_validate', count: @chapter.submissions_to_validate(current_user).count)
+
+    %ul
+      - @chapter.submissions_to_validate(current_user).each do |submission|
+        %li
+          = link_to t('.submission_of', name: submission.user_name), lesson_chapter_submission_path(@lesson, @chapter, submission)
+

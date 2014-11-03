@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.3'
 
 gem 'rails', '4.1.1'
 gem 'pg'
@@ -32,19 +32,29 @@ gem 'bcrypt'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+
 gem 'newrelic_rpm', groups: [:production]
 gem 'rails_12factor', groups: [:production]
 gem 'puma', groups: [:production]
 gem 'rollbar', groups: [:production]
 
 group :development do
+  gem 'traceroute'
+  gem 'bullet'
+  gem 'rack-livereload'
   gem 'pry-rescue'
   gem 'factory_girl_rails'
+  gem 'brakeman', require: false
+  gem "rails_best_practices"
+  gem 'rubocop', require: false
+  gem "rubycritic", :require => false
 end
 
 group :test do
   gem 'minitest-color'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'colored'
+  gem 'deadweight', :require => 'deadweight/hijack/rails'
 end
 

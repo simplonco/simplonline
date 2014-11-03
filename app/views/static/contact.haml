@@ -14,12 +14,12 @@
     %p
       = label :name, t('.your_name')
     %p
-      = text_field_tag :name, '', placeholder: t('placeholder.name')
+      = text_field_tag :name, '', placeholder: t('placeholder.name'), required: true
 
   %p
     = label :message, t('.your_message')
   %p
-    = text_area_tag :message, '', rows: 17, cols: 82, placeholder: t('placeholder.message')
+    = text_area_tag :message, '', rows: 17, cols: 82, placeholder: t('placeholder.message'), required: true
   %p
-    = submit_tag t('.send')
+    = submit_tag t('.send'), class: 'button'
     = link_to t('.cancel'), root_path

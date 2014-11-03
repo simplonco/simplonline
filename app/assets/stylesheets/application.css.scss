@@ -51,13 +51,41 @@ hgroup {
   line-height: 1.5;
   margin: 1.5em 0 0;
 }
+h1:first-letter,
+h2:first-letter,
+h3:first-letter,
+h4:first-letter,
+h5:first-letter,
+h6:first-letter{
+  text-transform: capitalize;
+}
+
+.dashboard-box{
+  width: 45%;
+  min-width: 320px;
+  height: 300px;
+  float: left;
+  padding: 0.8em;
+  margin: 0.5em;
+  border-radius: .25rem;
+  background: rgba(255,255,255,.6);
+  border-left: 0.7em solid rgba(18,179,174,.3);
+}
+
+.dashboard-list{
+  padding-bottom: 0em;
+}
+
+.dashboard-list li a{
+  text-decoration: none;
+}
 
 h1, .h1-like {
   font-size: 1.8571em; /* equiv 26px */
-  font-weight: normal;
   line-height: 1.6154em;
   margin: .8077em 0 0 0;
-}
+
+  }
 
 h2, .h2-like {
   font-size: 1.7143em; /* equiv 24px */
@@ -288,6 +316,7 @@ a, button, label, .button { cursor: pointer;}
 }
 
 .content {
+  clear: both;
   max-width: 80em;
   margin:4rem auto;
   padding: 2em;
@@ -298,12 +327,6 @@ a, button, label, .button { cursor: pointer;}
   -webkit-border-image: asset-url('border-01.png') 10 / 10px  stretch;
   -o-border-image: asset-url('border-01.png') 10 / 10px  stretch;
   border-image: asset-url('border-01.png') 10 / 10px  stretch;
-}
-
-.content h3 {
-  font-family: 'futuraheavy',Arial,Helvetica,sans-serif;
-  font-size: 2rem;
-  margin: 1.2em;
 }
 
 .content p  {
@@ -348,12 +371,13 @@ a, button, label, .button { cursor: pointer;}
   display: inline;
 }
 
-.code {
+.CodeRay {
   line-height: 1;
   margin: none;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.027);
   font-family: Courier;
   padding:5px;
+  border: 1px dotted lightgrey;
 }
 
 .design-01 {

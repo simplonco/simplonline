@@ -5,6 +5,7 @@ class Lesson < ActiveRecord::Base
 
   validates_presence_of :title
 
+  default_scope -> { order(:created_at) }
   scope :last_lessons, -> { where(online: true) }
   scope :online, -> { where(online: true) }
 

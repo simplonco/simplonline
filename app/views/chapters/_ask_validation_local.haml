@@ -1,9 +1,10 @@
 %p
   = t('.submissions_sent', count: @chapter.submissions.count)
 %p
-  = t('.submissions_to_validate', count: @chapter.submissions_to_validate.count)
+  = t('.submissions_to_validate', count: @chapter.submissions_to_validate(current_user).count)
+
 %ul
-  - @chapter.submissions_to_validate.each do |submission|
+  - @chapter.submissions_to_validate(current_user).each do |submission|
     %li
       = link_to t('.submission_of', name: submission.user_name), lesson_chapter_submission_path(@lesson, @chapter, submission)
 

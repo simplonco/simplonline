@@ -85,13 +85,70 @@ class ChapterTest < ActiveSupport::TestCase
   end
 
   test "submissions_to_validate" do
+    user = FactoryGirl.create(:user)
     chapter = FactoryGirl.build(:chapter)
 
     submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: false)
 
     validated_submission = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, second_validation_status: true)
 
-    assert_equal [submission_to_validate], chapter.submissions_to_validate
+    assert_equal [submission_to_validate], chapter.submissions_to_validate(user)
+  end
+
+  test "submissions_to_validate contains second_validation needed" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.build(:chapter)
+
+    submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, first_validation_user: FactoryGirl.create(:user))
+
+    validated_submission = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, second_validation_status: true)
+
+    assert_equal [submission_to_validate], chapter.submissions_to_validate(user)
+  end
+
+  test "My validated sub dont come with sub to validate" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.build(:chapter)
+
+    submission_to_validate = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true)
+    already_validated = FactoryGirl.create(:submission, chapter: chapter, first_validation_status: true, first_validation_user: user)
+    assert_equal [submission_to_validate], chapter.submissions_to_validate(user)
+  end
+
+  test "delete submission when delete chapter" do
+    chapter = FactoryGirl.create(:chapter)
+    submission = FactoryGirl.create(:submission, chapter: chapter)
+    chapter.destroy
+    assert_equal 0, Submission.count
+  end
+
+  test "delete submission when chapter stop ask for pair validation" do
+    chapter = FactoryGirl.create(:chapter, ask_pair_validation: true)
+    submission = FactoryGirl.create(:submission, chapter: chapter)
+    chapter.ask_pair_validation = false
+    chapter.save!
+    assert_equal 0, Submission.count
+  end
+
+  test "validated_submission" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.create(:chapter)
+    validated_sub = FactoryGirl.create(:submission, user: user, chapter: chapter, first_validation_user: FactoryGirl.create(:user), first_validation_status: true)
+    assert_equal [validated_sub], chapter.validated_submissions(user)
+  end
+
+  test "user can validate other sub when self already validated" do
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    chapter = FactoryGirl.create(:chapter)
+    FactoryGirl.create(:submission, user: user, chapter: chapter, first_validation_status: true, second_validation_status: true)
+    assert chapter.user_submission_validated?(user), "user can validate other submissions only when self have been validated"
+  end
+
+  test "user cant validate other sub when self not yet validated" do
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    chapter = FactoryGirl.create(:chapter)
+    FactoryGirl.create(:submission, user: user, chapter: chapter, first_validation_status: true, second_validation_status: false)
+    assert ! chapter.user_submission_validated?(user), "user can validate other submissions only when self have been validated"
   end
 end
 
