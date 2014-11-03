@@ -68,4 +68,16 @@ class StaticControllerTest < ActionController::TestCase
     assert_equal [local_submission], assigns(:submissions)
   end
 
+  test "dashboard about show max lessons" do
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    session[:user_id] = user.id
+
+    7.times do
+      FactoryGirl.create(:lesson, online: true)
+    end
+    get :dashboard
+    assert_response :success
+    assert_equal 6, assigns(:last_lessons).count
+  end
+
 end

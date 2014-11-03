@@ -12,9 +12,6 @@ bundle exec rake test DEADWEIGHT=true && \
 bundle exec rake cucumber && \
 bundle exec rake cucumber DEADWEIGHT=true && \
 git push && \
-git push simplon-dev $BRANCH && \
 echo "git push $DESTINATION $BRANCH:master" && \
 git push $DESTINATION $BRANCH:master && \
 appsdeck -a simplonline-$BRANCH run rake db:migrate
-
-
