@@ -311,6 +311,7 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       submissions: "Vos dernières propositions"
       submission_for: "Proposition pour le chapitre "
     dashboard:
+      by: "par "
       submissions: "Propositions à valider"
       messages: 'Tous les messages'
       post_new_message: 'Poster un message'
