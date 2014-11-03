@@ -26,7 +26,7 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal expected_content, chapter.content
   end
 
-  test "insert defintion" do
+  test "insert definition" do
     definition = FactoryGirl.create(:definition, keyword: 'keyword')
     chapter = FactoryGirl.build(:chapter, content: "a content with some **keyword** that I wanna link to *definition*")
     chapter.insert_definitions!
