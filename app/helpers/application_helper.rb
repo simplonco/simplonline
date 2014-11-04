@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def markdown(text)
-    coderayified = CodeRayify.new(:filter_html => true,
+    coderayified = CodeRayify.new(:filter_html => false,
                                   :hard_wrap => true)
     options = {
       :fenced_code_blocks => true,
