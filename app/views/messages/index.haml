@@ -1,16 +1,22 @@
 %h2= t('.title')
 
+%h3= t('.topics')
+
 %ul
   - @messages.each do |message|
     - if message.parent.present?
       %li
-        = link_to message.title, message_path(message.parent_id, anchor: message)
+        = link_to message.parent.title, message_path(message.parent_id)
+        = t('.last_answer')
         = l(message.updated_at)
+        = t('.by')
         = message.user_name
     - else
       %li
         = link_to message.title, message_path(message)
+        = t('.initial_subject')
         = l(message.updated_at)
+        = t('.by')
         = message.user_name
 
 = paginate @messages

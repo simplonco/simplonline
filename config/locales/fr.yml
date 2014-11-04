@@ -43,8 +43,12 @@ fr:
       submit: "Mettre à jour"
   messages:
     index:
-      title: 'Messages'
+      title: 'Forum'
+      topics: 'Les sujets de discussion'
       post_new_message: 'Poster un nouveau message'
+      last_answer: ': dernière réponse postée le'
+      initial_subject: ': sujet lancé le'
+      by: 'par'
     new:
       title: "Poster un nouveau message"
       cancel: 'Retour'
