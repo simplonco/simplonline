@@ -18,20 +18,6 @@ class ChapterTest < ActiveSupport::TestCase
     assert FactoryGirl.build(:chapter, number: nil).invalid?, 'should have an number'
   end
 
-  test "add definitions to chapter" do
-    definition = FactoryGirl.create(:definition, keyword: "word")
-    chapter = FactoryGirl.build(:chapter, content: "Word")
-    expected_content = "[Word](/definitions/#{definition.id})"
-    assert_equal expected_content, chapter.content
-  end
-
-  test "insert definition" do
-    definition = FactoryGirl.create(:definition, keyword: 'keyword')
-    chapter = FactoryGirl.build(:chapter, content: "a content with some **keyword** that I wanna link to *definition*")
-    expected_content = "a content with some [**keyword**](/definitions/#{definition.id}) that I wanna link to *definition*"
-    assert_equal expected_content, chapter.content
-  end
-
   test "filter on tag" do
     tools_chapter = FactoryGirl.create(:chapter, tags: ['tools'])
     kata_chapter = FactoryGirl.create(:chapter, tags: ['kata'])
