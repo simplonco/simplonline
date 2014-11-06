@@ -21,7 +21,6 @@ class ChapterTest < ActiveSupport::TestCase
   test "add definitions to chapter" do
     definition = FactoryGirl.create(:definition, keyword: "word")
     chapter = FactoryGirl.build(:chapter, content: "Word")
-    chapter.insert_definitions!
     expected_content = "[Word](/definitions/#{definition.id})"
     assert_equal expected_content, chapter.content
   end
@@ -29,7 +28,6 @@ class ChapterTest < ActiveSupport::TestCase
   test "insert definition" do
     definition = FactoryGirl.create(:definition, keyword: 'keyword')
     chapter = FactoryGirl.build(:chapter, content: "a content with some **keyword** that I wanna link to *definition*")
-    chapter.insert_definitions!
     expected_content = "a content with some [**keyword**](/definitions/#{definition.id}) that I wanna link to *definition*"
     assert_equal expected_content, chapter.content
   end
