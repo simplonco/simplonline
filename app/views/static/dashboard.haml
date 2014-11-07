@@ -21,7 +21,7 @@
           = link_to truncate(message.title, length: 40, separator: ' '), message_path(message.parent_id, anchor: message)
       - else
         %li
-          = link_to truncate(message.title, length: 40, separator: ' ')
+          = link_to truncate(message.title, length: 40, separator: ' '), message_path(message.id)
   %p
     = link_to t('.messages'), messages_path
     = link_to t('.post_new_message'), new_message_path
