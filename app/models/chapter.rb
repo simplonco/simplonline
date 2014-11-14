@@ -7,8 +7,6 @@ class Chapter < ActiveRecord::Base
 
   validates_presence_of :lesson, :title, :authors, :number
 
-  Tags = %w{ code_review book_review kata tools framework }
-
   scope :about, ->(tag) { where("ARRAY[?]::varchar[] && tags", tag) }
 
   default_scope { order(:number) }

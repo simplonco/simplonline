@@ -8,15 +8,13 @@
   - unless current_user.remote?
     = link_to t('.edit'), edit_lesson_chapter_path(@lesson, @chapter)
 
-
-
 %article.content
-  %h1= @chapter.title
+  %h1= "#{@chapter.category} - #{@chapter.title}"
   = markdown(@chapter.content)
 
 %p.tags
   - @chapter.tags.each do |tag|
-    = link_to(t("tags.#{tag}"), tag_path(id: tag))
+    = link_to(tag, tag_path(id: tag))
 
 %p.authors
   - @chapter.authors.each do |author|

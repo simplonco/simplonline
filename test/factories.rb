@@ -48,6 +48,7 @@ FactoryGirl.define do
 
   factory :chapter do
     lesson
+    category "Test"
     title { generate(:name) }
     authors {|t| [t.association(:user)] }
   end

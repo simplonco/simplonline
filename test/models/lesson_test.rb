@@ -58,4 +58,14 @@ class LessonTest < ActiveSupport::TestCase
     first_chapter = FactoryGirl.create(:chapter, number: 0, lesson: lesson)
     assert_equal [first_chapter, second_chapter], lesson.chapters
   end
+
+  I18n.t('categories').each do |cat|
+    test "have #{cat}_chapters" do
+      lesson = FactoryGirl.create(:lesson)
+      in_chapter = FactoryGirl.create(:chapter, category: cat, lesson: lesson)
+      out_chapter = FactoryGirl.create(:chapter, lesson: lesson)
+      assert_equal [in_chapter], lesson.send("#{cat}_chapters")
+    end
+  end
+
 end

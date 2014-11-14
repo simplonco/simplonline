@@ -19,7 +19,8 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal lesson, assigns(:lesson)
     assert_equal [user], assigns(:available_authors)
-    assert_equal Chapter::Tags, assigns(:available_tags)
+    assert_equal I18n.t(:tags), assigns(:available_tags)
+    assert_equal I18n.t(:categories), assigns(:available_categories)
   end
 
   test "can go to new when remote student" do
@@ -44,16 +45,18 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_equal chapter, assigns(:chapter)
     assert_equal lesson, assigns(:lesson)
     assert_equal [user], assigns(:available_authors)
-    assert_equal Chapter::Tags, assigns(:available_tags)
+    assert_equal I18n.t(:tags), assigns(:available_tags)
+    assert_equal I18n.t(:categories), assigns(:available_categories)
   end
 
   test "update" do
     setup_with(User::LOCAL)
     chapter = FactoryGirl.create(:chapter, content: 'something', lesson: lesson)
-    post :update, lesson_id: lesson, id: chapter.id, chapter: {content: 'something other', ask_pair_validation: true}
+    post :update, lesson_id: lesson, id: chapter.id, chapter: {content: 'something other', ask_pair_validation: true, category: 'Culture'}
     assert_redirected_to lesson_chapter_path(lesson, chapter)
-    assert_equal 'something other', chapter.reload.content
-    assert_equal true, chapter.reload.ask_pair_validation
+    chapter.reload
+    assert_equal 'something other', chapter.content
+    assert_equal 'Culture', chapter.category
   end
 
   test "redirect remote when lesosn is offline" do

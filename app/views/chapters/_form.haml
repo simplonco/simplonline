@@ -9,6 +9,11 @@
   = c.number_field :number, placeholder: t('placeholder.number'), required: true
 
 %p
+  = c.label :category, t('.category')
+  %br
+  = c.select :category, @available_categories, {}, include_blank: false
+
+%p
   = c.label :content, t('.content')
   %br
   = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
@@ -20,7 +25,7 @@
 %p
   = c.label :tags, t('.tags')
   %br
-  = c.select :tags, @available_tags.map{|t| [t("tags.#{t}"), t]}, {}, multiple: true, include_blank: false
+  = c.select :tags, @available_tags, {}, multiple: true, include_blank: false
 
 %p
   = c.label :author_ids, t('.authors')

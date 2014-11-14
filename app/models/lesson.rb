@@ -9,6 +9,14 @@ class Lesson < ActiveRecord::Base
   scope :last_lessons, -> { where(online: true) }
   scope :online, -> { where(online: true) }
 
+  scope :edito_chapters, -> { where(category: 'edito') }
+
+  I18n.t(:categories).each do |cat|
+    define_method("#{cat}_chapters") do
+      chapters.where(category: cat)
+    end
+  end
+
   def offline?
     ! online
   end

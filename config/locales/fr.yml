@@ -209,6 +209,7 @@ fr:
       update: 'Mettre à jour'
       cancel: 'annuler'
     form:
+      category: "Catégorie"
       title: "Titre"
       number: "Position"
       content: "Contenu"
@@ -285,6 +286,7 @@ En validant une nouvelle proposition vous annulez les votes déjà obtenu.
       valid_answer: "Réponse valid"
       delete_choice: "Supprimer ce choix"
   placeholder:
+    category: "exemple : Culture"
     content: "exemple : Un avis, une question"
     email: 'exemple : me@example.com'
     number: '0'
@@ -378,12 +380,6 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
 
         L'équipe Simplon.co
       "
-  tags:
-    kata: "Kata"
-    book_review: "Livre"
-    code_review: "Explication de code"
-    tools: "Outils"
-    framework: "Framework & Lib"
   views:
     pagination:
       previous: "Précédent"
@@ -397,3 +393,18 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
   date:
     formats:
       default: "%d/%m/%Y %H:%S"
+  categories: ['ÉDITO',
+    'MOT DU PROF',
+    'CULTURE',
+    'MÉTHODE',
+    'ACTIVITÉES'
+  ]
+  tags: ['Infrastructure',
+    'Software',
+    "Explication de code",
+    "Livre",
+    "Kata",
+    "Outils",
+    "Framework & Lib"
+  ]
+

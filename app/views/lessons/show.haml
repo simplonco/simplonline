@@ -5,9 +5,10 @@
 - unless current_user.remote?
   %p= link_to t('.edit'), edit_lesson_path(@lesson)
 
-%ol
+%ul
   - @lesson.chapters.each do |chapter|
     %li
+      = chapter.category
       = link_to chapter.title, lesson_chapter_path(@lesson, chapter)
       = t('.by', authors: chapter.authors.map{|a| link_to(a.name, user_path(a))}.join(', ')).html_safe
 
