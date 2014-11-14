@@ -14,6 +14,8 @@
         |
         = link_to t('.session'), lessons_path
         |
+        = link_to t('.messages'), messages_path
+        |
         = link_to t('.definition'), definitions_path
         |
         = link_to "#{current_user.name.capitalize}", user_path(current_user), title: t('.update_login')
