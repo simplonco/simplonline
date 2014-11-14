@@ -122,4 +122,11 @@ class UserTest < ActiveSupport::TestCase
     assert user.can_validate_for?(chapter), "Remote user can validate when self submission have been validated"
   end
 
+  test "has many chapters" do
+    user = FactoryGirl.create(:user)
+    chapter = FactoryGirl.create(:chapter, authors: [user])
+    FactoryGirl.create(:chapter)
+    assert_equal [chapter], user.chapters
+  end
+
 end

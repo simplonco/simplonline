@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
 
   has_many :essais, dependent: :destroy
 
+  has_many :chapter_authors
+  has_many :chapters, through: :chapter_authors, source: :chapter
+
   LOCAL = :local
   REMOTE = :remote
   STAFF = :staff
