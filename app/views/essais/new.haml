@@ -7,15 +7,15 @@
 = form_for(@essai, url: exercice_essais_path(@essai.exercice)) do |f|
   - case @essai.exercice.format_reponse
   - when 1 || 2
-    = f.text_area :reponse_char
+    = f.text_area :reponse_char, class: 'field'
   - when 3
-    = f.file_field :fichier
+    = f.file_field :fichier, class: 'field'
   - when 4
     = f.label :fichier
-    = f.file_field :fichier
+    = f.file_field :fichier, class: 'field'
     = f.label :fichier_tests
-    = f.file_field :fichier_tests
+    = f.file_field :fichier_tests, class: 'field'
   - when 5
-    = f.file_field :fichier_tests
+    = f.file_field :fichier_tests, class: 'field'
   = f.submit class: 'button'
   = link_to "Revenir à l'exercice", exercice_path(@essai.exercice.id)

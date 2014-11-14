@@ -3,7 +3,7 @@
 = form_tag reset_password_path do
   %label
     = t('.email')
-    = email_field_tag :email, ''
+    = email_field_tag :email, '', class: 'field'
 
   = submit_tag t('.ask_for_reset_password')
 

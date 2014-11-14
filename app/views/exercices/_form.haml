@@ -1,29 +1,29 @@
 %p
   = exo.label :titre, t('.title_field')
   %br
-  = exo.text_field :titre
+  = exo.text_field :titre, class: 'field'
 
 %p
   = exo.label :consigne, t('.consigne')
   %br
-  = exo.text_area :consigne, rows: 21, cols: 82
+  = exo.text_area :consigne, rows: 21, cols: 82, class: 'field'
 
 %p
   = exo.label :format_echantillon, t('.format_echantillon')
   %br
-  = exo.select :format_echantillon, [['String', 1], ['JSON', 2]]
+  = exo.select :format_echantillon, [['String', 1], ['JSON', 2]], class: 'field'
 
 %p
   = exo.label :echantillon, t('.echantillon')
   %br
-  = exo.text_area :echantillon, rows: 21, cols: 82
+  = exo.text_area :echantillon, rows: 21, cols: 82, class: 'field'
 
 %p
   = exo.label :format_reponse, t('.format_response')
   %br
-  = exo.select :format_reponse, [['Texte/chiffre', 1], ['JSON', 2], ['Programme', 3], ['Programme + tests', 4], ['Tests', 5]]
+  = exo.select :format_reponse, [['Texte/chiffre', 1], ['JSON', 2], ['Programme', 3], ['Programme + tests', 4], ['Tests', 5]], class: 'field'
 
 %p
   = exo.label :reponse, t('.response')
   %br
-  = exo.text_area :reponse
+  = exo.text_area :reponse, class: 'field'

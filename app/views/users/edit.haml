@@ -4,12 +4,12 @@
   %p
     = f.label :name, t('.user_name')
     %br
-    = f.text_field :name
+    = f.text_field :name, class: 'field'
 
   %p
     = f.label :email, t('.user_email')
     %br
-    = f.email_field :email
+    = f.email_field :email, class: 'field'
 
   %p
     = f.submit t('.submit'), class: 'button small success radius'

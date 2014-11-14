@@ -1,15 +1,15 @@
 %p
   = f.label :title, t('.title')
-  = f.text_field :title, size: 30
+  = f.text_field :title, size: 30, class: 'field'
 
 %p
   = f.label :position, t('.position')
-  = f.number_field :position
+  = f.number_field :position, class: 'field'
 
 = f.fields_for :choices do |choice|
   = choice.label :content, t('.content')
-  = choice.text_field :content, size: 30
-  = choice.check_box :valid_answer
+  = choice.text_field :content, size: 30, class: 'field'
+  = choice.check_box :valid_answer, class: 'field'
   = choice.label :valid_answer, t('.valid_answer')
   = choice.link_to_remove t('.delete_choice')
 
@@ -18,4 +18,4 @@
 %p
   = f.label :tips, t('.tips')
   %br
-  = f.text_area :tips, rows: 8, cols: 80
+  = f.text_area :tips, rows: 8, cols: 80, class: 'field'

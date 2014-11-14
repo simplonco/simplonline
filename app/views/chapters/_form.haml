@@ -1,34 +1,34 @@
 %p
   = c.label :title, t('.title')
   %br
-  = c.text_field :title, placeholder: t('placeholder.chapter_title'), required: true
+  = c.text_field :title, placeholder: t('placeholder.chapter_title'), required: true, class: 'field'
 
 %p
   = c.label :number, t('.number')
   %br
-  = c.number_field :number, placeholder: t('placeholder.number'), required: true
+  = c.number_field :number, placeholder: t('placeholder.number'), required: true, class: 'field'
 
 %p
   = c.label :category, t('.category')
   %br
-  = c.select :category, @available_categories, {}, include_blank: false
+  = c.select :category, @available_categories, {}, include_blank: false, class: 'field'
 
 %p
   = c.label :content, t('.content')
   %br
-  = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content')
+  = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content'), class: 'field'
 
 %p
-  = c.check_box :ask_pair_validation
+  = c.check_box :ask_pair_validation, class: 'field'
   = c.label :ask_pair_validation, t('.ask_for_pair_validation')
 
 %p
   = c.label :tags, t('.tags')
   %br
-  = c.select :tags, @available_tags, {}, multiple: true, include_blank: false
+  = c.select :tags, @available_tags, {}, multiple: true, include_blank: false, class: 'field'
 
 %p
   = c.label :author_ids, t('.authors')
   %br
-  = c.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true, include_blank: false
+  = c.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true, include_blank: false, class: 'field'
 

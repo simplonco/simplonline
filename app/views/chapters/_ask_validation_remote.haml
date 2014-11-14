@@ -4,7 +4,7 @@
     %p
       = sub.label :content, t('.content')
       %br
-      = sub.text_area :content, rows: 10, cols: 82
+      = sub.text_area :content, rows: 10, cols: 82, class: 'field'
     %p
       = sub.submit t('.submit'), class: 'button'
 - elsif @chapter.ask_pair_validation

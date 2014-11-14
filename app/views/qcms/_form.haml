@@ -1,16 +1,16 @@
 %p
   = f.label :title, t(".title")
 %p
-  = f.text_field :title
+  = f.text_field :title, class: 'field'
 
 %p
   = f.label :desc, t(".description")
 %p
-  = f.text_area :desc
+  = f.text_area :desc, class: 'field'
 
 %p
   = f.label :author_ids
   %br
-  = f.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true
+  = f.select :author_ids, @available_authors.map{|a| [a.name, a.id]}, {}, multiple: true, class: 'field'
 
 

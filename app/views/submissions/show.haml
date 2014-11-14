@@ -9,10 +9,10 @@
     %p
       = label_tag :comment, t('.comment')
       %br
-      = text_area_tag :comment, '', rows: 10, cols: 82
+      = text_area_tag :comment, '', rows: 10, cols: 82, class: 'field'
 
     %p
-      = check_box_tag :valid
+      = check_box_tag :valid, class: 'field'
       = label_tag :valid, t('.valid')
 
     %p

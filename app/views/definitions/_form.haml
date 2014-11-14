@@ -2,15 +2,15 @@
 %p
   = l.label :keyword, t('.keyword')
   %br
-  = l.text_field :keyword, placeholder: t('placeholder.definition_keyword')
+  = l.text_field :keyword, placeholder: t('placeholder.definition_keyword'), class: 'field'
 
 %p
   = l.label :description, t('.description')
   %br
-  = l.text_area :description, rows: 21, cols: 82, placeholder: t('placeholder.definition_description')
+  = l.text_area :description, rows: 21, cols: 82, placeholder: t('placeholder.definition_description'), class: 'field'
 
 %p
   = l.label :url, t('.url')
   %br
-  = l.url_field :url, placeholder: t('placeholder.definition_url')
+  = l.url_field :url, placeholder: t('placeholder.definition_url'), class: 'field'
 
