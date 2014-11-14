@@ -394,17 +394,23 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     formats:
       default: "%d/%m/%Y %H:%S"
   categories: ['ÉDITO',
-    'MOT DU PROF',
+    'MOT DU FORMATEUR',
     'CULTURE',
     'MÉTHODE',
-    'ACTIVITÉES'
+    'OUTIL',
+    'LANGAGE',
+    'FRAMEWORK',
+    'INSTALLATION',
+    'PRATIQUE',
+    'BONUS',
+    'ACTIVITÉ'
   ]
-  tags: ['Infrastructure',
-    'Software',
-    "Explication de code",
-    "Livre",
-    "Kata",
-    "Outils",
-    "Framework & Lib"
+  tags: ['#Infrastructure',
+    '#Software',
+    "#Explication de code",
+    "#Livre",
+    "#Kata",
+    "#Outils",
+    "#Framework & Lib"
   ]
 
