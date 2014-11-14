@@ -5,7 +5,7 @@
 - unless current_user.remote?
   %p= link_to t('.edit'), edit_lesson_path(@lesson)
 
-%ul
+%ul.chapter-list
   - @lesson.chapters.each do |chapter|
     %li
       = chapter.category
