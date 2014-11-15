@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
   skip_filter :remote_cant_access
+  before_filter :set_message, except: [:new, :create, :index]
+  before_filter :can_access_message, only: [:edit, :update, :destroy]
 
   def new
   end
@@ -16,23 +18,19 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
   end
 
   def edit
-    @message = Message.find(params[:id])
   end
 
   def update
-    message = Message.find(params[:id])
-    message.update_attributes(message_params)
-    message.save!
+    @message.update_attributes(message_params)
+    @message.save!
     redirect_to messages_path
   end
 
   def destroy
-    message = Message.find(params[:id])
-    message.delete
+    @message.delete
     redirect_to messages_path
   end
 
@@ -40,6 +38,14 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:title, :content)
+  end
+
+  def set_message
+    @message = Message.find(params[:id])
+  end
+  
+  def can_access_message
+    redirect_to(root_url, status: 403) unless current_user == @message.user
   end
 
 end
