@@ -17,6 +17,11 @@ class StaticControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "about" do
+    get :about
+    assert_response :success
+  end
+
   test "send message" do
     post :send_contact, email: 'te@example.com', name: "tete", message: 'a message that contains chars'
     assert_redirected_to root_path

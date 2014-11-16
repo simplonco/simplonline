@@ -18,6 +18,8 @@
         |
         = link_to t('.definition'), definitions_path
         |
+        = link_to t('.about'), about_path
+        |
         = link_to "#{current_user.name.capitalize}", user_path(current_user), title: t('.update_login')
         |
         = form_tag sessions_path, method: 'delete', class: 'little-form' do

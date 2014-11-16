@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/welcome', to: 'static#welcome'
   get '/contact', to: 'static#contact'
   post '/contact', to: 'static#send_contact'
+  get '/about', to: 'static#about'
   get '/legal', to: 'static#legal'
 
   root 'static#dashboard'
