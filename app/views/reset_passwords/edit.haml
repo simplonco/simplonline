@@ -1,6 +1,6 @@
 %h1= t('.title')
 
-= form_tag(reset_password_path(user_id: @user.id), method: 'put') do
+= form_tag(reset_password_path(reset_password_key: @key), method: 'put') do
   %p
     = label_tag :password
     %br
