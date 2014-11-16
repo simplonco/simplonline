@@ -53,7 +53,7 @@ class MessagesControllerTest < ActionController::TestCase
   test "edit" do
     message = FactoryGirl.create(:message)
     setup_with(message.user)
-    get :show, id: message.id
+    get :edit, id: message.id
     assert_response :success
     assert_equal message, assigns(:message)
   end
@@ -75,4 +75,17 @@ class MessagesControllerTest < ActionController::TestCase
     assert_redirected_to messages_path
     assert_equal 0, Message.count
   end
+
+  test "redirect forbidden user" do
+    forbidden_user = FactoryGirl.create(:user)
+    message = FactoryGirl.create(:message)
+    session[:user_id] = forbidden_user.id
+    actions = [:edit, :update, :destroy]
+
+    actions.each do |action|
+       get action, id: message.id
+       assert_response :forbidden
+    end
+  end
+
 end
