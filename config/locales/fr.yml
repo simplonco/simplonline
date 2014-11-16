@@ -9,6 +9,7 @@ fr:
     application:
       session: "Sessions"
       definition: "Lexique"
+      about: "À propos"
       home: "Tableau de bord"
       messages: "Messages"
       title_window: "Simplonline"
@@ -357,6 +358,119 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       your_message: "Message"
       send: "Envoyer"
       cancel: "Annuler"
+    about:
+      content: "## Simplon.co ?
+
+
+        Nous sommes une entreprise sociale et solidaire :-)
+        Notre mission vise à utiliser les métiers techniques du numérique, notamment la programmation informatique, comme levier d'inclusion, d'insertion, de mixité et d'innovation sociale.
+
+        C'est pour cela que nous proposons des formations gratuites prioritairement aux demandeurs d'emploi, aux allocataires du RSA, aux adultes handicapés et aux séniors, mais également aux femmes, qui sont souvent exclues des métiers techniques du numérique, et enfin aux innovateurs sociaux voulant capitaliser sur le numérique pour obtenir plus d'impact.
+
+
+        Il est primordial pour nous de maintenir la gratuité des formations pour ces publics.  C’est pourquoi nous avons mis en place des sources de revenus diversifiées comme l'essaimage de Simplon.co en en France et à l'étranger, qui permet d'élargir le nombre de personnes formées gratuitement et de consolider notre modèle économique, mais également la vente de prestations (formation à distance et formations courtes éligibles au DIF, réalisation d'événements d'innovation et de hackathons, production d'applications et de sites, création de MOOCs...).
+
+
+        SIMPLONLINE à trois objectifs directement rattachés d'une part, à notre mission sociale (élargir le nombre de personnes formées via un tarif spécial chômeur, étudiant et RSA), d’autre part à notre modèle pédagogique, car ce sont les élèves de Simplon.co Montreuil qui crééent les contenus de la FOAD et enfin au financement de notre action sociale globale.
+
+
+      Un dernier élément très important : nous sommes conscients qu'en vous inscrivant à SIMPLONLINE vous vous attendiez peut-être à retrouver quelque chose de proche de ce que proposent Openclassroom, Codeschool ou Codeacademy dont les modèles sont gratuits.
+        Mais, vous l'aurez compris, nous proposons quelque chose de radicalement différent, dans l'approche pédagogique, le parcours de formation, et surtout, de par le lien avec ceux qui transmettent... au plus proche de ce qu'est l'univers des développeurs et dans le prolongement de la mission sociale que nous nous sommes fixés.
+
+
+        ### Notre pédagogie et nos objectifs, pour tous les Simploniens.
+
+        Pour vous permettre de bien comprendre et de bien vous approprier la FOAD, nous devons d’abord éclaircir certains points sur la formation « Simplon » dans sa globalité, nos choix pédagogiques et nos objectifs respectifs à l’issue de chacune de ces formations.
+
+
+        La formation en présentiel a pour objectif d’apporter aux élèves les attitudes du développeur, pour qu’ils puissent ensuite progresser en toute autonomie. **Notre formation est donc fortement axée pratique**. Elle s’articule en une série de “moments”, de mises en situation. Les élèves avancent au fil de leurs découvertes et de leurs acquis. C’est pourquoi la formation n’est pas strictement soumise à une maquette de cours. **Tous ensembles, nous nous adaptons sans cesse, pivotons, découvrons, creusons, testons pour nous approprier les connaissances et les méthodes**.
+
+
+        Adapté à la contrainte de la distance, la formation en ligne, elle, restitue en un condensé de seulement quelques heures par semaine, les travaux des élèves.
+        Elle a donc pour objectif de vous doter d’une très bonne **culture du code**, en vous faisant découvrir à vous aussi les attitudes du développeur, les bons gestes, en vous aidant à « apprendre à apprendre ».
+        Vous suivez donc l’apprentissage des élèves en présentiel qui vous restituent leurs découvertes, tests, exercices… qui vous transmettent ce qu’ils ont acquis.
+
+
+        Cette formation a pour objectif de faire de vous des personnes capables de travailler avec des développeurs, de comprendre leurs méthodes, outils, contraintes, et mode de raisonnement. **Cette formation fera de vous des « ponts »**, capable de **faire dialoguer plusieurs professions**, et donc de participer à la **conception**, puis à la **gestion d’un projet web ou logiciel**, capable aussi de vendre un service en développement, et ce en connaissance de cause, ce qui est encore rare.
+        Nous espérons également que cette aventure donnera a certains d’entre vous un goût prononcé pour le code et l’envie de poursuivre une formation.
+
+
+        ### Des langages, des outils, des méthodes… Une formation articulée en une série de moments…
+
+        Ces moments dont on parle, ce sont toutes les mises en situation qui permettent aux élèves d’apprendre…
+      La lecture de code qui consiste à décoder des morceaux de code. Les Dojos, en mode randori : de petits exercices de code simples que l'on exécute dans divers langages, plusieurs fois, en essayant de le faire de la meilleur façon possible. Le développement piloté par les tests (TDD) et le binômage, avec un changement de pilote (celui qui tape au clavier) toutes les 5 minutes (voir http://codingdojo.org). Le MobProgramming : programmation en équipe sur un écran et un ordinateur. Et des exposés sur un sujet, qui vous sont restitués sous forme d’articles, avec des pistes vous donnant la possibilité de creuser.
+
+
+        Et les méthodes ? les pratiques ?
+
+        Il est primordiale de vous transmettre les meilleures pratiques pour la réalisation logiciel ou le développement web, comme le TDD qui permet d’écrire rapidement un code juste et suffisant. La livraison fréquente, pour avoir un feedback rapide des utilisateurs. Le binômage, pour éviter les erreurs évitables et gagner du temps… le management visuel, pour le suivi de projet et la gestion d’équipe....
+
+
+        Notre but, lorsque l’on vous fait découvrir des mises en situation et méthodes, est de vous doter d’éléments de connaissance sur les bonnes pratiques du développeur.
+        D’abord parce que c’est un bagage important de votre culture, ensuite, parce que cela vous donne des repaires, pour pouvoir demain choisir un prestataire, choisir un mode d’organisation dans le développement d’un projet, ou encore débloquer une équipe…
+
+
+        Nous parlons bien, en revanche d’éléments de connaissance. Aucun des exercices de mise en pratique n’est obligatoire pour suivre la formation. Il est normal que vous ne puissiez pas les reproduire chez vous, pour la plupart. Ce n’est pas ce que nous demandons.
+        Mais pour faciliter la démarche de ceux qui voudraient tout de même essayer, qui auraient l’énergie et le temps, nous devons vous donner toutes les informations, comme le lien vers codingdojo.org par exemple.
+
+
+        Qu’en est il des langages ?
+
+
+        Nous l’avons déjà dis, l’environnement informatique est en constante évolution, et les formations sont courtes. Nous sommes donc convaincus qu’il est plus pertinent de vous apporter des bases, un état d’esprit et des réflexes, plutôt que la connaissance poussée d’un langage spécifique.
+
+        C’est pourquoi la liste des langages qui seront probablement abordés, ci-dessous, est non exhaustive, car influencée par l'actualité, le formateur et les élèves.
+
+
+        En revanche, vous découvrirez bien toutes les « familles » de langage.
+
+
+        Les langages de présentation (HTML, CSS, Json, Yaml ...), les langages de programmation orientée objet (Ruby, Python, Java, Go, Javascript), les langages de programmation fonctionnelle (Haskell, Erlang, Clojure).
+
+
+        Et les outils ?
+
+
+      Ils sont indispensables pour réaliser une application, les élèves vous feront donc découvrir  au fil du temps une grande partie des outils existants. Parmi eux :
+
+
+        Les éditeurs de texte et IDE : Sublime Text, Emacs, Vi, Atom, Bracket, Netbeans, Eclipse… Les terminaux : Unix, MacOS, CygWin sur Windows… Le shell, pour créer des scripts divers. Les outils du développeurs dans le navigateur : inspecteur d’éléments, console javascript… Les fameux frameworks pour le développement de sites : comme Sinatra, Rails, Snap, React, Meteor... Et les incontournables gestionnaires de version Git, Mercurial…
+
+
+        Comme pour les langages, cette liste est non exhaustive et évoluera en fonction du formateur et des élèves et de manière à s’adapter aux mieux à l'actualité tech.
+
+
+
+        Votre expérience d’apprenants au sein de la plateforme…
+
+
+        Petit à petit nous construisons une navigation plus fluide à l’intérieur de la plateforme, pour vous offrir une meilleure expérience utilisateur.
+
+
+        Nous structurons les contenus de telle manière à ce que vous puissiez vous aussi découvrir les sujets, puis tester, puis creuser… pour vous les approprier.
+
+
+        Nous savons qu’il n’y a pas deux personnes qui recherchent, apprennent et retiennent de la même façon.  Certains sont visuels, d’autres auditifs, d’autres encore, sont expérientiels…
+
+        Nous ajouterons donc petit à petit d’autres types de contenus : screencasts, vidéos, articles pour aller plus loin, liens vers des tutoriaux interactifs… pour que chacun y trouve son compte.
+
+
+        Notre parti pris pédagogique est de laisser chacun trouver la manière qui lui est propre, celle avec laquelle il est le plus à l’aise.
+
+
+        C’est précisément pour ça que la formation est structurée sous forme de « moments ». Pour que chacun avance à son rythme, avec une méthode qui lui convient.
+
+
+        En revanche, si vous rencontrez des problèmes pour avancer, ou que vous avez l’impression de ne pas avoir de méthode, faites le nous savoir vos mentors sont là pour vous aider.
+
+        La formation à distance demande structuration, rigueur et autonomie, et parfois les marques sont difficiles à trouver. Alors n’oubliez pas, être développeurs c’est avant tout faire partie d’une communauté, et qui dit communauté dit échanges, entraide, partage et rencontres en ligne ou en réel.
+
+
+        Nous vous encourageons vivement à vous emparer du forum, du chat IRC, du groupe Facebook avec lequel vous êtes à l’aise. De poster, comme certains le font déjà, les contenus complémentaires que vous avez trouvés. D’organiser entre vous des hangout, voir des scéances de mobprogramming et surtout, dans la mesure de vos possibilités, d’organiser des meet-up ou simplement des apéros, ensembles.
+
+
+        Pour ceux qui en ont la possibilité voici une liste des espaces de coworking, par ville. Des bars « développeurs friendly » et la page du Ruby User Group, qui recense les membres actifs de la  communauté Ruby en France et dans le monde, si vous avez envie de rentrer en contact avec cette communauté.
+        "
   user_mailer:
     contact:
       contact_base: "contact depuis: %{name} [%{email}] "
