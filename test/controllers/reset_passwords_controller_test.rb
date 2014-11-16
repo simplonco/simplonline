@@ -30,9 +30,16 @@ class ResetPasswordsControllerTest < ActionController::TestCase
   end
 
   test "update" do
-    user = FactoryGirl.create(:user)
-    post :update, user_id: user.id, password: 'newpass', password_confirmation: 'newpass'
+    user = FactoryGirl.create(:user, reset_password_key: 'somethingstrong')
+    post :update, key: user.reset_password_key, password: 'newpass', password_confirmation: 'newpass'
     assert_redirected_to root_path
+  end
+
+  test "update redirect to root when user not found" do
+    user = FactoryGirl.create(:user, reset_password_key: 'somethingstrong')
+    post :update, key: 'otherkey', password: 'newpass', password_confirmation: 'newpass'
+    assert_redirected_to welcome_path
+    assert_equal I18n.t('error.user_not_found'), flash[:error]
   end
 end
 
