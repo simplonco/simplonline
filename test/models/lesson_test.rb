@@ -21,7 +21,7 @@ class LessonTest < ActiveSupport::TestCase
   test "default scope to order by created_at" do
     today = DateTime.new(2013, 12, 23, 15, 47)
     second_lesson = FactoryGirl.create(:lesson, created_at: today)
-    first_lesson = FactoryGirl.create(:lesson, created_at: today - 1.week)
+    first_lesson = FactoryGirl.create(:lesson, created_at: today + 1.week)
     assert_equal [first_lesson, second_lesson], Lesson.all
   end
 
