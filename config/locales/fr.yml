@@ -534,7 +534,6 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#Kata",
     "#Outils",
     "#Framework & Lib",
-    "#infrastructure",
     "#software",
     "#licences",
     "#free",
@@ -548,9 +547,12 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#shell",
     "#interface",
     "#code",
+<<<<<<< HEAD
     "#Rails",
     "#Ruby/Rails",
     "#hackathon",
+=======
+>>>>>>> Add coma in table
     "#TDD",
     "#methods",
     "#tests" ,
@@ -568,7 +570,11 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#BASIC",
     "#HTML" ,
     "#java" ,
+<<<<<<< HEAD
     "#javascript",
+=======
+    "#js" ,
+>>>>>>> Add coma in table
     "#node.js",
     "#CSS",
     "#Ruby" ,
@@ -581,11 +587,18 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#compile",
     "#interpreter",
     "#intermediaire",
+<<<<<<< HEAD
     "#versions",
     "#setup",
     "#install",
     "#server",
     "#FTP",
+=======
+    "#ruby",
+    "#versions",
+    "#setup",
+    "#install",
+>>>>>>> Add coma in table
     "#syntax" ,
     "#environnement" ,
     "#library" ,
@@ -632,6 +645,7 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#hackers" ,
     "#neutrality" ,
     "#W3C",
+<<<<<<< HEAD
     "#anonymous",
     "#OperatingSystem",
     "#Windows",
@@ -653,6 +667,9 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#development",
     "#maintenance",
     "#API"
+=======
+    "#anonymous"
+>>>>>>> Add coma in table
   ]
 
 
