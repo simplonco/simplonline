@@ -25,8 +25,12 @@ class ResetPasswordsController < ApplicationController
       flash[:error] = I18n.t('error.user_not_found')
       redirect_to welcome_path
     else
-      @user.update_password(params[:password], params[:password_confirmation])
-      redirect_to root_path
+      if @user.update_password(params[:password], params[:password_confirmation])
+        redirect_to root_path
+      else
+        flash[:error] = @user.errors.full_messages
+        redirect_to edit_reset_password_path(key: params[:key])
+      end
     end
   end
 

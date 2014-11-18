@@ -35,6 +35,13 @@ class ResetPasswordsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
+  test "update cant be done because it's not the sane password" do
+    user = FactoryGirl.create(:user, reset_password_key: 'somethingstrong')
+    post :update, key: user.reset_password_key, password: 'newpass', password_confirmation: 'otherpass'
+    assert_redirected_to edit_reset_password_path(key: user.reset_password_key)
+    assert_equal ["Password confirmation #{I18n.t('activerecord.errors.models.user.attributes.password_confirmation.confirmation')}"], flash[:error]
+  end
+
   test "update redirect to root when user not found" do
     user = FactoryGirl.create(:user, reset_password_key: 'somethingstrong')
     post :update, key: 'otherkey', password: 'newpass', password_confirmation: 'newpass'

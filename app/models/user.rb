@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   validates :student_type, presence: true
   validates :name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
+  validates_confirmation_of :password_confirmation, message: I18n.t('error.password_not_confirmed')
 
   scope :authors, -> { where(student_type: User::LOCAL) }
 
@@ -58,7 +59,7 @@ class User < ActiveRecord::Base
     self.reset_password_key = nil
     self.password = password
     self.password_confirmation = password_confirmation
-    self.save!
+    self.save
   end
 
   def self.inscription(email)
