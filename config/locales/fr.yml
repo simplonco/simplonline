@@ -583,8 +583,13 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#versions",
     "#setup",
     "#install",
+<<<<<<< HEAD
     "#server",
     "#FTP",
+=======
+    "#server"
+    "#FTP"
+>>>>>>> Ajout de #hashtag
     "#syntax" ,
     "#environnement" ,
     "#library" ,
@@ -631,6 +636,7 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#hackers" ,
     "#neutrality" ,
     "#W3C",
+<<<<<<< HEAD
     "#anonymous",
     "#OperatingSystem",
     "#Windows",
@@ -651,6 +657,28 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#meetup",
     "#development",
     "#maintenance",
+=======
+    "#anonymous"
+    "#OperatingSystem"
+    "#Windows"
+    "#Linux"
+    "#MacOS"
+    "#terminal"
+    "#protocol"
+    "#http"
+    "#request"
+    "#URL"
+    "#WorldWideWeb"
+    "#run"
+    "#gem"
+    "#gemlist"
+    "#refactoring"
+    "#Sinatra"
+    "#screencast"
+    "#meetup"
+    "#development"
+    "#maintenance"
+>>>>>>> Ajout de #hashtag
     "#API"
   ]
 
