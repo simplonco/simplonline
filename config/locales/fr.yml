@@ -547,18 +547,9 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#shell",
     "#interface",
     "#code",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "#Rails",
     "#Ruby/Rails",
     "#hackathon",
-=======
->>>>>>> Add coma in table
-=======
-    "#Rails"
-    "#Ruby/Rails"
-    "#hackathon"
->>>>>>> Ajout de #hashtag
     "#TDD",
     "#methods",
     "#tests" ,
@@ -576,15 +567,7 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#BASIC",
     "#HTML" ,
     "#java" ,
-<<<<<<< HEAD
-<<<<<<< HEAD
     "#javascript",
-=======
-    "#js" ,
->>>>>>> Add coma in table
-=======
-    "#javascript",
->>>>>>> Ajout de #hashtag
     "#node.js",
     "#CSS",
     "#Ruby" ,
@@ -597,26 +580,11 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#compile",
     "#interpreter",
     "#intermediaire",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "#versions",
     "#setup",
     "#install",
     "#server",
     "#FTP",
-=======
-    "#ruby",
-    "#versions",
-    "#setup",
-    "#install",
->>>>>>> Add coma in table
-=======
-    "#versions",
-    "#setup",
-    "#install",
-    "#server"
-    "#FTP"
->>>>>>> Ajout de #hashtag
     "#syntax" ,
     "#environnement" ,
     "#library" ,
@@ -663,7 +631,6 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#hackers" ,
     "#neutrality" ,
     "#W3C",
-<<<<<<< HEAD
     "#anonymous",
     "#OperatingSystem",
     "#Windows",
@@ -685,32 +652,6 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#development",
     "#maintenance",
     "#API"
-=======
-    "#anonymous"
-<<<<<<< HEAD
->>>>>>> Add coma in table
-=======
-    "#OperatingSystem"
-    "#Windows"
-    "#Linux"
-    "#MacOS"
-    "#terminal"
-    "#protocol"
-    "#http"
-    "#request"
-    "#URL"
-    "#WorldWideWeb"
-    "#run"
-    "#gem"
-    "#gemlist"
-    "#refactoring"
-    "#Sinatra"
-    "#screencast"
-    "#meetup"
-    "#development"
-    "#maintenance"
-    "#API"
->>>>>>> Ajout de #hashtag
   ]
 
 
