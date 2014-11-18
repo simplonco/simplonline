@@ -502,6 +502,13 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
       first: "Premier"
       last: "Dernier"
       truncate: '...'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "Les mots de passes ne sont pas identique"
   time:
     formats:
       default: "%d/%m/%Y %H:%S"
@@ -647,4 +654,5 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#maintenance"
     "#API"
   ]
+
 
