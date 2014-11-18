@@ -22,8 +22,12 @@ class ChaptersController < ApplicationController
     chapter = Chapter.find(params[:id])
     lesson = chapter.lesson
     chapter.update_attributes(chapter_attributes)
-    chapter.save!
-    redirect_to lesson_chapter_path(lesson, chapter)
+    if chapter.save
+      redirect_to lesson_chapter_path(lesson, chapter)
+    else
+      flash[:error] = mon,erreur
+      redirect_to edit_lesson_chapter_path(lesson, chapter)
+    end
   end
 
   def show
