@@ -527,7 +527,7 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#Kata",
     "#Outils",
     "#Framework & Lib",
-    "##infrastructure",
+    "#infrastructure",
     "#software",
     "#licences",
     "#free",
@@ -541,6 +541,9 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#shell",
     "#interface",
     "#code",
+    "#Rails"
+    "#Ruby/Rails"
+    "#hackathon"
     "#TDD",
     "#methods",
     "#tests" ,
@@ -558,7 +561,7 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#BASIC",
     "#HTML" ,
     "#java" ,
-    "#js" ,
+    "#javascript",
     "#node.js",
     "#CSS",
     "#Ruby" ,
@@ -571,10 +574,11 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#compile",
     "#interpreter",
     "#intermediaire",
-    "#ruby",
     "#versions",
     "#setup",
     "#install",
+    "#server"
+    "#FTP"
     "#syntax" ,
     "#environnement" ,
     "#library" ,
@@ -622,5 +626,25 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#neutrality" ,
     "#W3C",
     "#anonymous"
+    "#OperatingSystem"
+    "#Windows"
+    "#Linux"
+    "#MacOS"
+    "#terminal"
+    "#protocol"
+    "#http"
+    "#request"
+    "#URL"
+    "#WorldWideWeb"
+    "#run"
+    "#gem"
+    "#gemlist"
+    "#refactoring"
+    "#Sinatra"
+    "#screencast"
+    "#meetup"
+    "#development"
+    "#maintenance"
+    "#API"
   ]
 
