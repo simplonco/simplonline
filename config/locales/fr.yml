@@ -586,6 +586,8 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#install",
     "#server",
     "#FTP",
+    "#server",
+    "#FTP",
     "#syntax" ,
     "#environnement" ,
     "#library" ,
