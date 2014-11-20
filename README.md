@@ -21,66 +21,70 @@ Il y a une partie web et un worker qui sert pour la vérification d'exercice. En
 
 Pré-requis :
 
-* Avoir installé Rails
+- Avoir installé Rails
 
-```sudo gem install rails --no-ri --no-rdoc```
+`sudo gem install rails --no-ri --no-rdoc`
 
-* Dans rbenv, être en environnement ruby 2.1.2
+Dans rbenv, être en environnement ruby 2.1.2
 
 Commandes utiles
 
-        
-        rbenv versions  
-        rbenv install 2.1.2
-        rbenv global 2.1.2
-        rbenv rehash
+```
+    rbenv versions  
+    rbenv install 2.1.2
+    rbenv global 2.1.2
+    rbenv rehash
 
-* Avoir installé PostgreSQL
+Avoir installé PostgreSQL
 
-```sudo apt-get install postgres```
+`sudo apt-get install postgresql`
 
-* Avoir installé Redis
+Avoir installé Redis
 
-```sudo apt-get install redis-server```
+`sudo apt-get install redis-server`
 
-* Ensuite, récupérer les fichiers source sur Github
+Ensuite, récupérer les fichiers source sur Github :
 
-```git clone https://github.com/simplonco/simplonline```
+`git clone https://github.com/simplonco/simplonline`
 
-* Copier le dossier ```dotenv``` dans le dossier ```.env``` :
+Renommer le fichier `dotenv` en fichier `.env` :
 
-```cp dotenv .env```
+`cp dotenv .env`
+
+Fermer puis rouvrir le Terminal.
+
+Entrer dans le dossier simplonline.
 
 Configurer le compte utilisateur dans PostgreSQL :
 
-```sudo su postgres```
+`sudo su postgres`
 
 puis 
 
-```PSQL```
+`psql`
 
 puis 
 
-```create role sensei with createdb login password ‘something’;```
+`create role sensei with createdb login password 'something';`
 
-* Pour vérifier que le changement est OK :
+Pour vérifier que le changement est OK :
 
-```\dgh```
+`\dgh`
 
-* Pour voir l’aide :  ```\?```
+Pour voir l’aide de Postgres :  ```\?```
 
-* Pour sortir de la console PSQL et revenir à la ligne de commande du terminal ```Ctrl  D``` (deux fois). 
+Pour sortir de la console PSQL et revenir à la ligne de commande du terminal ```Ctrl  D``` (deux fois !). 
 
-* Puis installer les gems nécessaires :
+Puis installer les gems nécessaires :
 
 ```
 gem install bundler
 bundle install 
 ```
 
-Si ```error pg```   ------>       ```sudo apt-get intall lipq-dev```         
+Si `error pg`   ------>    `sudo apt-get intall lipq-dev`         
 
-* Puis configurer la base de données :
+Puis configurer la base de données :
 
 ```
 rake  db:create
@@ -88,9 +92,9 @@ rake  db:migrate
 rake  db:seed
 ```
 
-* Pour lancer le site de test en local :
+Pour lancer le site de test en local (localhost port 3000):
 
-```foreman start web```
+`foreman start web`
 
 
 ## Production
