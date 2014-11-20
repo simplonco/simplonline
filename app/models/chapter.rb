@@ -23,11 +23,6 @@ class Chapter < ActiveRecord::Base
     write_attribute(:ask_pair_validation, value)
   end
 
-  def content=(chapter_content)
-    chapter_content = chapter_content.split("\n").map!(&:strip).join("\n")
-    write_attribute(:content, chapter_content)
-  end
-
   def next
     next_prev('number > ?').first
   end
