@@ -24,7 +24,7 @@ class Chapter < ActiveRecord::Base
   end
 
   def content=(chapter_content)
-    chapter_content.to_s.rstrip
+    chapter_content = chapter_content.split("\n").map!(&:strip).join("\n")
     write_attribute(:content, chapter_content)
   end
 
