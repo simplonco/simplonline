@@ -6,7 +6,9 @@ class ResetPasswordsController < ApplicationController
   end
 
   def create
-    User.reset_password(params[:email])
+    unless User.reset_password(params[:email])
+      flash[:error] = I18n.t('error.cant_reset_password')
+    end
     redirect_to welcome_path
   end
 
@@ -26,6 +28,7 @@ class ResetPasswordsController < ApplicationController
       redirect_to welcome_path
     else
       if @user.update_password(params[:password], params[:password_confirmation])
+        flash[:notice] = I18n.t('notice.password_changed')
         redirect_to root_path
       else
         flash[:error] = @user.errors.full_messages

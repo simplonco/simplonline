@@ -12,6 +12,11 @@ class ResetPasswordsControllerTest < ActionController::TestCase
     assert_redirected_to welcome_path
   end
 
+  test "cant create password" do
+    post :create, email: 'me@somewhere.com'
+    assert_redirected_to welcome_path
+  end
+
   test "edit" do
     other_user = FactoryGirl.create(:user)
     user = FactoryGirl.create(:user, reset_password_key: 'something')

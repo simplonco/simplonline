@@ -44,15 +44,17 @@ class User < ActiveRecord::Base
     1.upto(7) { |i| salt << chars[rand(chars.size-1)] }
     key = Digest::SHA1.hexdigest("#{salt}--#{self.email}--")
     self.reset_password_key = key
-    self.save!
   end
 
   def self.reset_password(email)
-    user = User.where(email: email).first
+    user = User.find_by(email: email.downcase)
     if user
       user.generate_reset_password_key!
-      UserMailer.reset_password(user).deliver
+      if user.save
+        UserMailer.reset_password(user).deliver
+      end
     end
+    false
   end
 
   def update_password(password, password_confirmation)
