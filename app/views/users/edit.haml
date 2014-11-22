@@ -1,6 +1,6 @@
 %h1=t('.title')
 
-= form_for @user do |f|
+= form_for current_user do |f|
   %p
     = f.label :name, t('.user_name')
     %br
@@ -15,4 +15,8 @@
     = f.submit t('.submit'), class: 'button small success radius'
     = link_to t('.cancel'), root_url
 
+
+= form_tag reset_password_path do
+  = hidden_field_tag :email, current_user.email, class: 'field'
+  = submit_tag t('.ask_for_reset_password'), class: 'button small success radius'
 

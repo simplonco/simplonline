@@ -65,6 +65,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil user.reload.reset_password_key
   end
 
+  test "reset_password false if user not found" do
+    user = FactoryGirl.create(:user, reset_password_key: nil)
+    assert ! User.reset_password(user.email)
+  end
+
   test "update_password" do
     user = FactoryGirl.create(:user, reset_password_key: 'ert')
     user.update_password('truc', 'truc')

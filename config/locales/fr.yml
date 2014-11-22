@@ -1,10 +1,12 @@
 fr:
   notice:
     cant_access: "Vous ne pouvez pas accéder à cette page"
+    password_changed: "Changement de mot de passe effectué avec succès."
   error:
     user_not_found: 'Utilisateur non trouvé'
     invalid_user: 'Identifiant ou mot de passe non valide'
     you_are_not_allowed_to_validate_submissions: "Vous n'êtes pas encore autorisé à valider des propositions."
+    cant_reset_password: "Une erreur est survenue pendant la mise à zéro de votre mot de passe"
   layouts:
     application:
       session: "Sessions"
@@ -38,6 +40,7 @@ fr:
       lessons: "voir tous les cours"
       email: "email: [%{email}](mailto:%{email})."
     edit:
+      ask_for_reset_password: "Changer de mot de passe"
       user_email: "Email"
       title: "Modifier mon compte"
       user_name: "Nom"
