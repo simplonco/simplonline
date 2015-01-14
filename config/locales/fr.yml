@@ -207,7 +207,9 @@ fr:
 
       ask_pair_validation_on_submission: "Une demande de validation par les pairs est demandée dans ce chapitre. Soumettez votre proposition ici, d'autres élèves viendront la valider ou en parler."
     index:
-      title: 'Tous les chapitres'
+      title: 'Rechercher un chapitre'
+      search: 'Rechercher'
+      all_chapters: 'Tous les chapitres'
     new:
       title: "Créer un chapitre"
       create: "Enregistrer"
