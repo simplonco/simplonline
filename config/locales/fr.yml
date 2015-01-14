@@ -209,6 +209,7 @@ fr:
     index:
       title: 'Rechercher un chapitre'
       search: 'Rechercher'
+      results_title: 'Résultat(s)'
       all_chapters: 'Tous les chapitres'
     new:
       title: "Créer un chapitre"
