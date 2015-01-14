@@ -10,6 +10,7 @@ fr:
   layouts:
     application:
       session: "Sessions"
+      chapters: "Chapitres"
       definition: "Lexique"
       about: "À propos"
       home: "Tableau de bord"
@@ -205,7 +206,8 @@ fr:
       prev_chapter: "Chapitre précédent"
 
       ask_pair_validation_on_submission: "Une demande de validation par les pairs est demandée dans ce chapitre. Soumettez votre proposition ici, d'autres élèves viendront la valider ou en parler."
-
+    index:
+      title: 'Tous les chapitres'
     new:
       title: "Créer un chapitre"
       create: "Enregistrer"
@@ -660,5 +662,3 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     "#maintenance",
     "#API"
   ]
-
-

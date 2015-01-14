@@ -8,6 +8,7 @@ en:
       footer-text: 'Site design by [simplon.co](http://simplon.co) with a design of [Pierre Kowarsky](http://pkowarsky.fr) hosted at [appsdeck.eu](http://appsdeck.eu)'
       contact: 'Contact'
       legal: 'Legal mentions'
+      chapters: 'Chapters'
       login: 'Login'
       irc: 'Chatroom'
       email: 'Email'
@@ -53,6 +54,8 @@ en:
       create: 'Save'
       title: 'Create a new MCQ'
   chapters:
+    index:
+      title: 'All chapters'
     new:
       title: 'Add a chapter'
       create: 'Save'
@@ -87,7 +90,7 @@ en:
       content: "Copyright Simplon(tm)..."
     welcome:
       title: 'Welcome to Simplonline'
-      explain: "[Simplonline](http://simplon.co/foad) is a platform that allows trainees from Montreuil, Distant Training subscribers and former Simplonians to collaborate and share their experience. Every Mondays around 6:00pm, trainees release a class session for distants subscribers. These sessions contain the best of what they learnt during the week and lessons, exercices, videos, MCQs. The common discussion forum allows to continue learning together what have been written in sessions. For a subscriber to the Distant Training the estimated time per week is 2 to 4 hours, ressources can satisfy the motivated ones who want more ;-) 
+      explain: "[Simplonline](http://simplon.co/foad) is a platform that allows trainees from Montreuil, Distant Training subscribers and former Simplonians to collaborate and share their experience. Every Mondays around 6:00pm, trainees release a class session for distants subscribers. These sessions contain the best of what they learnt during the week and lessons, exercices, videos, MCQs. The common discussion forum allows to continue learning together what have been written in sessions. For a subscriber to the Distant Training the estimated time per week is 2 to 4 hours, ressources can satisfy the motivated ones who want more ;-)
 
 Opening on the *6th October 2014*. Subscriptions will be close by then."
 
