@@ -56,4 +56,3 @@ group :test do
   gem 'colored'
   gem 'deadweight', :require => 'deadweight/hijack/rails'
 end
-
