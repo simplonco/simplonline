@@ -1,6 +1,17 @@
 %h3= t('.title')
 
+= form_tag chapters_path, :method => 'get' do
+  %p
+    = text_field_tag :search, params[:search]
+    = submit_tag t('.search'), :name => nil
+
 %ul
-  - @chapters.each do |chapter|
-    %li
-      = link_to chapter.title, lesson_chapter_path(:lesson_id, :id)
+  - if @chapters != nil
+    - @chapters.each do |chapter|
+      %li= link_to chapter.title, lesson_chapter_path(chapter.lesson, chapter)
+
+%h3= t('.all_chapters')
+
+%ul
+  - @all_chapters.each do |chapter|
+    %li= link_to chapter.title, lesson_chapter_path(:lesson_id, :id)
