@@ -57,6 +57,7 @@ en:
     index:
       title: 'Search in chapters'
       search: 'Search'
+      results_title: 'Result(s)'
       all_chapters: 'All chapters'
     new:
       title: 'Add a chapter'
