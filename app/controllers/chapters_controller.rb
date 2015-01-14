@@ -1,5 +1,9 @@
 class ChaptersController < ApplicationController
 
+  def index
+    @chapters = Chapter.all
+  end
+
   def new
     @lesson = Lesson.find(params[:lesson_id])
     set_available_data
