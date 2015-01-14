@@ -55,7 +55,9 @@ en:
       title: 'Create a new MCQ'
   chapters:
     index:
-      title: 'All chapters'
+      title: 'Search in chapters'
+      search: 'Search'
+      all_chapters: 'All chapters'
     new:
       title: 'Add a chapter'
       create: 'Save'
