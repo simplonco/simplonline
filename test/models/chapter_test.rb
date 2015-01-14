@@ -134,6 +134,17 @@ class ChapterTest < ActiveSupport::TestCase
     FactoryGirl.create(:submission, user: user, chapter: chapter, first_validation_status: true, second_validation_status: false)
     assert ! chapter.user_submission_validated?(user), "user can validate other submissions only when self have been validated"
   end
+
+  test "search return result when query matches" do
+    tools_chapter = FactoryGirl.create(:chapter, title: 'tools', content: 'There are many tools you can use in programming.')
+    kata_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'How to begin your first kata.')
+    assert_equal [kata_chapter], Chapter.search('kata')
+  end
+
+  test "search return nil when no match with query" do
+    tools_chapter = FactoryGirl.create(:chapter, title: 'tools', content: 'There are many tools you can use in programming.')
+    kata_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'How to begin your first kata.')
+    assert_equal [], Chapter.search('foo')
+  end
+
 end
-
-
