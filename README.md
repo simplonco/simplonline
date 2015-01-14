@@ -6,7 +6,7 @@ Simplonline
 ### Principe
 
 * Les élèves en présentiel rédigent des contenus représentant le meilleur de ce qu'ils ont appris dans la semaine.
-* Les éléves en présentiel définissent des exercices lors de la restitution du vendredi.
+* Les élèves en présentiel définissent des exercices lors de la restitution du vendredi.
 * Les élèves à distance peuvent accéder aux cours et aux exercices.
 
 ## Développement / Déploiement
@@ -34,6 +34,7 @@ Commandes utiles
     rbenv install 2.1.2
     rbenv global 2.1.2
     rbenv rehash
+```
 
 Avoir installé PostgreSQL
 
@@ -59,11 +60,11 @@ Configurer le compte utilisateur dans PostgreSQL :
 
 `sudo su postgres`
 
-puis 
+puis
 
 `psql`
 
-puis 
+puis
 
 `create role sensei with createdb login password 'something';`
 
@@ -73,16 +74,16 @@ Pour vérifier que le changement est OK :
 
 Pour voir l’aide de Postgres :  ```\?```
 
-Pour sortir de la console PSQL et revenir à la ligne de commande du terminal ```Ctrl  D``` (deux fois !). 
+Pour sortir de la console PSQL et revenir à la ligne de commande du terminal ```Ctrl  D``` (deux fois !).
 
 Puis installer les gems nécessaires :
 
 ```
 gem install bundler
-bundle install 
+bundle install
 ```
 
-Si `error pg`   ------>    `sudo apt-get intall lipq-dev`         
+Si `error pg`   ------>    `sudo apt-get install libpq-dev`
 
 Puis configurer la base de données :
 
@@ -99,4 +100,4 @@ Pour lancer le site de test en local (localhost port 3000):
 
 ## Production
 
-Pour le moment, nous déployons sur http://foad.simplon.co 
+Pour le moment, nous déployons sur http://foad.simplon.co
