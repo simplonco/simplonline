@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/about', to: 'static#about'
   get '/legal', to: 'static#legal'
 
+  get '/chapters', to: 'chapters#index'
+
   root 'static#dashboard'
 
   resource :sessions, only: [:create, :destroy]
