@@ -49,4 +49,21 @@ class MessageTest < ActiveSupport::TestCase
     assert_equal [response, latest_response], message.responses
   end
 
+  test "search return result when query matches" do
+    tools_message = FactoryGirl.create(:message, title: 'tools', content: 'There are too many tools to use in programming.')
+    kata_message = FactoryGirl.create(:message, title: 'kata', content: 'How do I begin my first kata?')
+    assert_equal [kata_message], Message.search('kata')
+  end
+
+  test "search return result when query matches one word in title and another word in content" do
+    kata_tools_message = FactoryGirl.create(:message, title: 'kata', content: 'Do you know programming kata?')
+    assert_equal [kata_tools_message], Message.search('kata tools')
+  end
+
+  test "search return nil when no match with query" do
+    tools_message = FactoryGirl.create(:message, title: 'tools', content: 'There are too many tools to use in programming.')
+    kata_message = FactoryGirl.create(:message, title: 'kata', content: 'How do I begin my first kata?')
+    assert_equal [], Message.search('foo')
+  end
+
 end
