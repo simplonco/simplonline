@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
   end
 
   def index
+    @result_messages = Message.search(params[:query])
     @messages = Message.recent.page(params[:page]).per(20)
   end
 
@@ -43,7 +44,7 @@ class MessagesController < ApplicationController
   def set_message
     @message = Message.find(params[:id])
   end
-  
+
   def can_access_message
     redirect_to(root_url, status: 403) unless current_user == @message.user
   end
