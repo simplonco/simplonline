@@ -26,6 +26,35 @@ en:
       user_name: 'Name'
       cancel: 'Cancel'
       submit: 'Update'
+  messages:
+    index:
+      title: 'Forum'
+      topics: 'All topics'
+      post_new_message: 'Post a new message'
+      last_answer: ': last answer posted on'
+      initial_subject: ': initial topic on'
+      by: 'by'
+      search_title: 'Search in forum'
+      search: 'Search'
+      results_title: 'Result'
+    new:
+      title: "Post a new message"
+      cancel: 'Back'
+      post_message: "Post"
+    show:
+      edit: "Edit"
+      delete: "Delete"
+      reply: "Reply"
+      post_comment: 'Post comment'
+      cancel: 'Back'
+      title: 'Message'
+    edit:
+      title: 'Edit message'
+      cancel: 'Back'
+      update: 'Update'
+    form:
+      title: 'Title'
+      content: 'Message'
   lessons:
     new:
       title: 'Create a session'
