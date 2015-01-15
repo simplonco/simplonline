@@ -141,6 +141,11 @@ class ChapterTest < ActiveSupport::TestCase
     assert_equal [kata_chapter], Chapter.search('kata')
   end
 
+  test "search return result when query matches one word in title and another word in content" do
+    kata_tools_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'Do you know programming kata?')
+    assert_equal [kata_tools_chapter], Chapter.search('kata tools')
+  end
+
   test "search return nil when no match with query" do
     tools_chapter = FactoryGirl.create(:chapter, title: 'tools', content: 'There are many tools you can use in programming.')
     kata_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'How to begin your first kata.')
