@@ -10,7 +10,7 @@ fr:
   layouts:
     application:
       session: "Sessions"
-      chapters: "Chapitres"
+      chapters: "Chercher un chapitre"
       definition: "Lexique"
       about: "À propos"
       home: "Tableau de bord"
