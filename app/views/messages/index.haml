@@ -1,5 +1,21 @@
 %h3= t('.topics')
 
+= form_tag messages_path, :method => 'get' do
+  %p
+    = text_field_tag :query, params[:query]
+    = submit_tag t('.search')
+
+%ul
+  - if @result_messages != nil
+    %h3= t('.results_title')
+    - @result_messages.each do |message|
+      %li
+        = link_to message.title, message_path(message)
+        = t('.initial_subject')
+        = l(message.updated_at)
+        = t('.by')
+        = message.user_name
+
 %ul
   - @messages.each do |message|
     - if message.parent.present?
