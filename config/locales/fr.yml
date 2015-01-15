@@ -56,6 +56,9 @@ fr:
       last_answer: ': dernière réponse postée le'
       initial_subject: ': sujet lancé le'
       by: 'par'
+      search_title: 'Rechercher un message sur le forum'
+      search: 'Rechercher'
+      results_title: 'Résultat(s)'
     new:
       title: "Poster un nouveau message"
       cancel: 'Retour'
