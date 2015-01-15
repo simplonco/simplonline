@@ -56,9 +56,12 @@ class Chapter < ActiveRecord::Base
     subs.uniq
   end
 
-  def self.search(search)
-    if search
-      where("title @@ :s or content @@ :s or category @@ :s", s: search)
+  def self.search(query)
+    if query
+      pg_query = query.split(' ').join(' | ')
+      where("to_tsvector(title) @@ to_tsquery('#{pg_query}')
+      or to_tsvector(content) @@ to_tsquery('#{pg_query}')
+      or to_tsvector(category) @@ to_tsquery('#{pg_query}')")
     else
       @all_chapters
     end

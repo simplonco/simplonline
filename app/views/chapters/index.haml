@@ -2,8 +2,8 @@
 
 = form_tag chapters_path, :method => 'get' do
   %p
-    = text_field_tag :search, params[:search]
-    = submit_tag t('.search'), :name => nil
+    = text_field_tag :query, params[:query]
+    = submit_tag t('.search')
 
 %ul
   - if @chapters != nil

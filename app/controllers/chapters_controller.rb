@@ -1,7 +1,7 @@
 class ChaptersController < ApplicationController
 
   def index
-    @chapters = Chapter.search(params[:search])
+    @chapters = Chapter.search(params[:query])
     @all_chapters = Chapter.all
   end
 
