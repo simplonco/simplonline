@@ -2,12 +2,12 @@ default: &default
   adapter: postgresql
   host: localhost
   port: 5432
-  username: sensei
-  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
   database: sensei_dev
+  username: sensei
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test: &test
   <<: *default
