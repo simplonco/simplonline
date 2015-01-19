@@ -25,11 +25,12 @@ class ChaptersController < ApplicationController
 
   def update
     chapter = Chapter.find(params[:id])
-    lesson = chapter.lesson
     chapter.update_attributes(chapter_attributes)
     if chapter.save
+      lesson = chapter.reload.lesson
       redirect_to lesson_chapter_path(lesson, chapter)
     else
+      lesson = chapter.lesson
       flash[:error] = mon,erreur
       redirect_to edit_lesson_chapter_path(lesson, chapter)
     end
@@ -48,12 +49,13 @@ class ChaptersController < ApplicationController
 
   def set_available_data
     @available_authors = User.authors
+    @available_lessons = Lesson.all
     @available_tags = I18n.t(:tags)
     @available_categories = I18n.t(:categories)
   end
 
   def chapter_attributes
-    params.require(:chapter).permit(:title, :content, :number, :ask_pair_validation, :category, tags: [], author_ids: [])
+    params.require(:chapter).permit(:title, :content, :number, :lesson_id, :category, tags: [], author_ids: [])
   end
 
 end

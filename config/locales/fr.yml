@@ -228,6 +228,7 @@ fr:
       title: "Titre"
       number: "Position"
       content: "Contenu"
+      lesson: "Session"
       ask_for_pair_validation: "Demande de validation par les pairs"
       tags: "Tags"
       authors: "Auteur(s)"
