@@ -4,6 +4,11 @@
   = c.text_field :title, placeholder: t('placeholder.chapter_title'), required: true, class: 'field'
 
 %p
+  = c.label :lesson, t('.lesson')
+  %br
+  = c.select :lesson_id, @available_lessons.map{|l| ["#{l.id}- #{l.title}", l.id]}, include_blank: false, required: true, class: 'field'
+
+%p
   = c.label :number, t('.number')
   %br
   = c.number_field :number, placeholder: t('placeholder.number'), required: true, class: 'field'
@@ -11,7 +16,7 @@
 %p
   = c.label :category, t('.category')
   %br
-  = c.select :category, @available_categories, {}, include_blank: false, class: 'field'
+  = c.select :category, @available_categories, include_blank: false, class: 'field'
 
 %p
   = c.label :content, t('.content')
