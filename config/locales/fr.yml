@@ -223,6 +223,7 @@ fr:
       update: 'Mettre à jour'
       cancel: 'annuler'
     form:
+      pair_validation_explain: "N'hésitez pas à proposer une revue par les pairs. Pour le faire, créer un projet sur le compte [github simplonco](http://github.com/simplonco), puis communiqué l'url du projet. Les élèves distants devront faire une pull request."
       category: "Catégorie"
       title: "Titre"
       number: "Position"

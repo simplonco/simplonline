@@ -19,8 +19,8 @@
   = c.text_area :content, rows: 21, cols: 82, placeholder: t('placeholder.chapter_content'), class: 'field'
 
 %p
-  = c.check_box :ask_pair_validation, class: 'field'
-  = c.label :ask_pair_validation, t('.ask_for_pair_validation')
+  :markdown
+    #{t('.pair_validation_explain')}
 
 %p
   = c.label :tags, t('.tags')
