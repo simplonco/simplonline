@@ -15,4 +15,4 @@
 
 %ul
   - @all_chapters.each do |chapter|
-    %li= link_to chapter.title, lesson_chapter_path(:lesson_id, :id)
+    %li= link_to chapter.title, lesson_chapter_path(chapter.lesson, chapter)
