@@ -5,14 +5,8 @@
     = text_field_tag :query, params[:query]
     = submit_tag t('.search')
 
+%h3= t('.results_title')
 %ul
-  - if @chapters != nil
-    %h3= t('.results_title')
-    - @chapters.each do |chapter|
-      %li= link_to chapter.title, lesson_chapter_path(chapter.lesson, chapter)
-
-%h3= t('.all_chapters')
-
-%ul
-  - @all_chapters.each do |chapter|
+  - @chapters.each do |chapter|
     %li= link_to chapter.title, lesson_chapter_path(chapter.lesson, chapter)
+

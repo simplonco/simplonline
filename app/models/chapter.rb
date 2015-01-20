@@ -62,8 +62,6 @@ class Chapter < ActiveRecord::Base
       where("to_tsvector(title) @@ to_tsquery('#{pg_query}')
       or to_tsvector(content) @@ to_tsquery('#{pg_query}')
       or to_tsvector(category) @@ to_tsquery('#{pg_query}')")
-    else
-      @all_chapters
     end
   end
 
