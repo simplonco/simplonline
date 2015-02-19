@@ -31,4 +31,12 @@ class Message < ActiveRecord::Base
     end
   end
 
+  def users_to_notify
+    if parent
+      [parent.user].concat(parent.users_to_notify).uniq
+    else
+      []
+    end 
+  end
+
 end

@@ -66,4 +66,18 @@ class MessageTest < ActiveSupport::TestCase
     assert_equal [], Message.search('foo')
   end
 
+  test "users to notify" do
+    parent_message = FactoryGirl.create(:message)
+    message = FactoryGirl.create(:message, parent: parent_message)
+    user = parent_message.user
+    assert_equal [user], message.users_to_notify
+  end
+
+  test "users to notify without duplicate" do
+    grand_parent_message = FactoryGirl.create(:message)
+    user = grand_parent_message.user
+    parent_message = FactoryGirl.create(:message, user: user, parent: grand_parent_message)
+    message = FactoryGirl.create(:message, parent: parent_message)
+    assert_equal [user], message.users_to_notify
+  end
 end
