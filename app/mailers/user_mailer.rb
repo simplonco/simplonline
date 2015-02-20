@@ -15,5 +15,10 @@ class UserMailer < ActionMailer::Base
     mail(to: 'foad@simplon.co', from: @email, subject: t('.subject'))
   end
 
+  def message_post_notification(user, message)
+    @user = user
+    @message = message
+    mail(to: "#{user.email}", subject: "New post in #{message.title}")
+  end
 
 end

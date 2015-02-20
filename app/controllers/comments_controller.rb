@@ -7,7 +7,16 @@ class CommentsController < ApplicationController
     message.user = current_user
     message.title = "RE: #{parent.title}"
     message.save!
+
+    users = message.users_to_notify
+    users.each do |user|
+      UserMailer.message_post_notification(user, message).deliver
+    end
+
     redirect_to message_path(parent, anchor: message)
+  end
+
+  def index
   end
 
   private
