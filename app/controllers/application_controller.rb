@@ -3,9 +3,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  before_filter :authenticate_user, :track
+  before_filter :authenticate_user, :track, :record_activity
   before_filter :remote_cant_access, except: [:index, :show]
   before_filter :http_basic_auth, :if => :http_basic_auth_required?
+
+  def record_activity
+    if current_user && current_user.remote?
+      current_user.last_active_at = DateTime.now
+      current_user.save
+    end
+  end
 
   private
 

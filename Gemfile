@@ -55,4 +55,5 @@ group :test do
   gem 'database_cleaner'
   gem 'colored'
   gem 'deadweight', :require => 'deadweight/hijack/rails'
+  gem 'mocha'
 end
