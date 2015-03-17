@@ -89,5 +89,13 @@ class ChaptersControllerTest < ActionController::TestCase
     assert_equal lesson, assigns(:lesson)
   end
 
-
+  test "save user last activity timestamp" do
+    user = FactoryGirl.create(:user, student_type: User::REMOTE)
+    session[:user_id] = user.id
+    some_date = DateTime.new(2014, 12, 12, 1, 1, 1)
+    DateTime.stubs(:now).returns(some_date)
+    get :index
+    user.reload
+    assert_equal(some_date, user.last_active_at)
+  end
 end

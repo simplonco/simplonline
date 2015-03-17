@@ -133,4 +133,13 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [chapter], user.chapters
   end
 
+  test "user last active at" do
+    user = FactoryGirl.build(:user)
+    a_date = DateTime.new(2015, 3, 1, 1, 1, 1)
+    assert_nothing_raised do
+      user.last_active_at = a_date
+    end
+    assert_equal(a_date, user.last_active_at)
+  end
+
 end

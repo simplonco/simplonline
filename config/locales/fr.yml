@@ -490,6 +490,22 @@ Nous organiserons également des rencontres physiques à l'occasion d'évènemen
     contact:
       contact_base: "contact depuis: %{name} [%{email}] "
       subject: "Contact depuis la plateforme"
+    reminder_to_inactive_users:
+      subject: "Vous nous manquez ! - FOAD de Simplon.co"
+      body: "
+      #Vous n'avez pas visité la FOAD depuis une semaine !
+
+
+      Bonjour %{user_name},
+
+
+      Nous avons noté que vous n'aviez pas eu l'occasion de visiter la FOAD depuis une semaine. Beaucoup de choses se sont passées depuis : n'hésitez pas à lire [la dernière leçon mise en ligne](http://foad.simplon.co/lessons) ou [les derniers messages postés sur le forum](http://foad.simplon.co/messages).
+
+
+      A bientôt !
+
+
+      L'équipe Simplon"
     reset_password:
       subject: "Votre accès à la plateforme Simplonline - FOAD de Simplon.co"
       body: "
