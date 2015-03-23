@@ -58,10 +58,8 @@ class Chapter < ActiveRecord::Base
 
   def self.search(query)
     if query
-      pg_query = query.split(' ').join(' | ')
-      where("to_tsvector(title) @@ to_tsquery('#{pg_query}')
-      or to_tsvector(content) @@ to_tsquery('#{pg_query}')
-      or to_tsvector(category) @@ to_tsquery('#{pg_query}')")
+      pg_query = query.split(' ').join(' & ')
+      where("to_tsvector(title || ' ' || content || ' ' || category) @@ to_tsquery('#{pg_query}')")
     end
   end
 

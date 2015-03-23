@@ -135,18 +135,25 @@ class ChapterTest < ActiveSupport::TestCase
     assert ! chapter.user_submission_validated?(user), "user can validate other submissions only when self have been validated"
   end
 
-  test "search return result when query matches" do
+  test "search return result when one word query matches" do
     tools_chapter = FactoryGirl.create(:chapter, title: 'tools', content: 'There are many tools you can use in programming.')
     kata_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'How to begin your first kata.')
     assert_equal [kata_chapter], Chapter.search('kata')
   end
 
   test "search return result when query matches one word in title and another word in content" do
-    kata_tools_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'Do you know programming kata?')
+    kata_tools_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'Do you know programming tools?')
+    kata_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'How to start your first kata?')
     assert_equal [kata_tools_chapter], Chapter.search('kata tools')
   end
 
-  test "search return nil when no match with query" do
+  test "search return result when query matches one word in title and another word in category" do
+    kata_tools_chapter = FactoryGirl.create(:chapter, title: 'kata', category: 'Tools')
+    kata_chapter = FactoryGirl.create(:chapter, title: 'kata', category: 'Kata')
+    assert_equal [kata_tools_chapter], Chapter.search('kata tools')
+  end
+
+  test "search return nil when no match" do
     tools_chapter = FactoryGirl.create(:chapter, title: 'tools', content: 'There are many tools you can use in programming.')
     kata_chapter = FactoryGirl.create(:chapter, title: 'kata', content: 'How to begin your first kata.')
     assert_equal [], Chapter.search('foo')
