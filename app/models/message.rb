@@ -23,7 +23,7 @@ class Message < ActiveRecord::Base
 
   def self.search(query)
     if query
-      pg_query = query.split(' ').join(' | ')
+      pg_query = query.split(' ').join(' & ')
       where("to_tsvector(title) @@ to_tsquery('#{pg_query}')
       or to_tsvector(content) @@ to_tsquery('#{pg_query}')")
     else
