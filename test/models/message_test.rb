@@ -56,7 +56,8 @@ class MessageTest < ActiveSupport::TestCase
   end
 
   test "search return result when query matches one word in title and another word in content" do
-    kata_tools_message = FactoryGirl.create(:message, title: 'kata', content: 'Do you know programming kata?')
+    kata_tools_message = FactoryGirl.create(:message, title: 'kata', content: 'Do you know programming tools?')
+    kata_message = FactoryGirl.create(:message, title: 'kata', content: 'How to start a kata?')
     assert_equal [kata_tools_message], Message.search('kata tools')
   end
 
