@@ -1,0 +1,81 @@
+body { /* Modifications : la couleur de fond de page - la police - l'unité utilisée pour la taille de la police  */
+  background-color:#fff;
+  font-family:Serif;
+  font-size:15pt;
+}
+
+#page { /* Modifications : suppression de la bordure - marges */
+  margin:0;
+  border:none;
+}
+
+#banner, #menuright, #footer { /* Les éléments qui ne seront pas affichés  */
+  display:none;
+}
+
+h1#top { /* Affichage du titre */
+  margin:0;
+  padding:0;
+  text-indent:0;
+  line-height:25pt;
+  font-size:25pt;
+}
+
+h2, h3, #contenu h3, #contenu a, a { /* Modification de la couleur des titres et liens */
+  color:#000;
+}
+
+h2 { /* Modifications : marges - police - couleur du souligné */
+  padding-bottom:2pt;
+  padding-left:0;
+  font:bold 20pt Serif;
+  border-bottom:1pt solid #000;
+}
+
+a { /* Empèche le souligné par défaut du titre h1 */
+  text-decoration:none;
+}
+
+a:hover { /* Suppression du souligné */
+  text-decoration:none;
+}
+
+p { /* Modifications : alignement du texte - marges - unité des marges, police et taille de la police */
+  text-align:justify;
+  margin:2pt 1pt 6pt 0;
+  font-size:12pt;
+  color:#000;
+}
+
+#contenu { /* Modifications : suppression du float - adaptation de la largeur*/
+  float:none;
+  width:100%;
+  margin:0;
+  padding:0;
+  text-align:left;
+}
+
+#contenu h3 { /* Modifications : marges - unité des marges, police et taille de la police */
+  font-size:15pt;
+  font-weight:bold;
+  margin: 10pt 0 5pt 0;
+}
+
+#contenu a { /* Modifications : suppression du gras et du souligné */
+  font-weight:normal;
+  text-decoration:none;
+}
+
+img { /* Modifications : couleur de la bordure - unités et marges */
+  float:left;
+  margin:3pt 6pt 3pt 6pt;
+  padding:8pt;
+  background:#fff;
+  border:1pt solid #000;
+}
+
+img.droite {
+  float:right;
+}
+
+nav, .connexion, footer { display:none}

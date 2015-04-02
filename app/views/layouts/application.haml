@@ -6,6 +6,7 @@
     %link{:href => "/apple-touch-icon-152x152.jpg", :rel => "apple-touch-icon", :sizes => "152x152"}
     %title= content_for?(:title) ? yield(:title) : t('.title_window')
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'print', media: 'print'
     = csrf_meta_tags
   %body
     .connexion
